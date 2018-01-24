@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:elevation="4dp"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
+    app:titleTextColor="#fff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ps"
+        android:id="@+id/title1"
+        android:visibility="visible"
+        android:text="FOOD"
+        android:textColor="#fff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/psb"
+        android:text="X"
+        android:visibility="visible"
+        android:id="@+id/title2"
+        android:textColor="#fff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ps"
+        android:id="@+id/menu1"
+        android:visibility="invisible"
+        android:text="MENU"
+        android:textColor="#06C7DA"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/psb"
+        android:text="X"
+        android:visibility="invisible"
+        android:id="@+id/menu2"
+        android:textColor="#06C7DA"
+        android:textSize="25sp" />
+
+
+
+</android.support.v7.widget.Toolbar>

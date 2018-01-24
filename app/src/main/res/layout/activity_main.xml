@@ -10,39 +10,18 @@
 
     tools:context="com.foodx.nsh.MainActivity">
 
+    <include layout="@layout/toolbar"
+        android:id="@+id/tool"/>
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tool"
         android:background="@color/grey"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:elevation="4dp"
-
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/ps"
-                android:text="FOOD"
-                android:textColor="#fff"
-                android:textSize="25sp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/psb"
-                android:text="X"
-                android:textColor="#fff"
-                android:textSize="25sp" />
-        </android.support.v7.widget.Toolbar>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -53,11 +32,36 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <com.tzanou.PercentVisibleLayout.PercentVisibleLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:id="@+id/custom_layout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ps"
+
+                        android:layout_margin="16dp"
+                        android:id="@+id/menu10"
+                        android:visibility="visible"
+                        android:text="MENU"
+                        android:textColor="#fff"
+                        android:textSize="25sp" />
+
+
+
+                </com.tzanou.PercentVisibleLayout.PercentVisibleLayout>
+
+
                 <RelativeLayout
                     android:id="@+id/item1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
+
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
                     android:background="#f3f3f3">
@@ -115,17 +119,18 @@
                         android:textSize="15sp" />
 
                     <ImageView
+                        android:id="@+id/cart1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
                         android:paddingBottom="8dp"
                         android:paddingRight="8dp"
-                        android:src="@drawable/add_cart"
-android:id="@+id/cart1"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"/>
+                        android:src="@drawable/add_cart" />
 
 
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:id="@+id/item2"
                     android:layout_width="match_parent"
@@ -188,15 +193,39 @@ android:id="@+id/cart1"
                         android:textSize="15sp" />
 
                     <ImageView
+                        android:id="@+id/cart2"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
                         android:paddingBottom="8dp"
                         android:paddingRight="8dp"
-                        android:src="@drawable/add_cart"
-                        android:id="@+id/cart2"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"/>
+                        android:src="@drawable/add_cart" />
                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+
+
+
+
+
+
+
 
             </LinearLayout>
         </ScrollView>
@@ -204,15 +233,15 @@ android:id="@+id/cart1"
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="8dp"
-        app:fabSize="normal"
-android:backgroundTint="@color/black"
-        android:src="@drawable/cart48"
-        />
+    <!-- <android.support.design.widget.FloatingActionButton
+           android:id="@+id/fab"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:layout_margin="8dp"
+           app:fabSize="normal"
+   android:backgroundTint="@color/black"
+           android:src="@drawable/cart48"
+           />-->
 </RelativeLayout>
