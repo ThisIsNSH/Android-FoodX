@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 public class MainActivity extends AppCompatActivity {
+    Animation animFadein,animFadein1;
+
     private int a=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
         final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
 
+
+
+
+        animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slideup);
+        animFadein1 = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slideup1);
+
+
         mCustomLayout.setOnVisibilityPercentChangedListener(new PercentVisibleLayout.OnVisibilityPercentChanged() {
             @Override
             public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
@@ -35,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (percentageHeight <50 && a==1)
                 {   a=0;
-                    title1.setVisibility(View.GONE);
-                    title2.setVisibility(View.GONE);
+                    title1.startAnimation(animFadein);
+                    title2.startAnimation(animFadein);
+                    menu1.startAnimation(animFadein1);
+                    menu2.startAnimation(animFadein1);
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
 
@@ -52,15 +67,17 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("this", "onVisibilityChange: "+percentageHeight);
 
                 if (percentageHeight <50 && a==1)
+
                 {
-                    title1.setVisibility(View.GONE);
-                    title2.setVisibility(View.GONE);
+                    title1.startAnimation(animFadein);
+                    title2.startAnimation(animFadein);
+                    menu1.startAnimation(animFadein1);
+                    menu2.startAnimation(animFadein1);
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
 
 
                 }
-
             }
         });
     }

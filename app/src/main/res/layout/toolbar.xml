@@ -12,7 +12,9 @@
     android:orientation="vertical"
     android:theme="@style/Theme.AppCompat.NoActionBar"
     app:titleTextColor="#fff">
-
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +30,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"
         android:text="X"
+        android:layout_marginTop="-3dp"
+        android:layout_toRightOf="@id/title1"
         android:visibility="visible"
         android:id="@+id/title2"
         android:textColor="#fff"
@@ -38,7 +42,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/ps"
         android:id="@+id/menu1"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:text="MENU"
         android:textColor="#06C7DA"
         android:textSize="25sp" />
@@ -47,12 +51,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"
+        android:layout_toRightOf="@id/menu1"
+        android:layout_marginTop="-3dp"
         android:text="X"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:id="@+id/menu2"
         android:textColor="#06C7DA"
         android:textSize="25sp" />
 
 
-
+</RelativeLayout>
 </android.support.v7.widget.Toolbar>
