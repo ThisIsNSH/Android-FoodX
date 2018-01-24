@@ -119,7 +119,7 @@ android:id="@+id/scrollView"
                         android:fontFamily="@font/psi"
                         android:gravity="center_vertical"
                         android:padding="4dp"
-                        android:text="Spice: Medium"
+                        android:text="Little Spicy"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
@@ -194,7 +194,7 @@ android:id="@+id/scrollView"
                         android:fontFamily="@font/psi"
                         android:gravity="center_vertical"
                         android:padding="4dp"
-                        android:text="Spice: Minimum"
+                        android:text="Not Spicy"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
@@ -240,7 +240,7 @@ android:id="@+id/scrollView"
 
     </LinearLayout>
 
-    <!-- <android.support.design.widget.FloatingActionButton
+    <android.support.design.widget.FloatingActionButton
            android:id="@+id/fab"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -250,5 +250,5 @@ android:id="@+id/scrollView"
            app:fabSize="normal"
    android:backgroundTint="@color/black"
            android:src="@drawable/cart48"
-           />-->
+           />
 </RelativeLayout>

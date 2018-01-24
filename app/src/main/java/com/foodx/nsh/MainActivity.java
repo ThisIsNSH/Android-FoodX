@@ -15,7 +15,7 @@ import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 public class MainActivity extends AppCompatActivity {
     Animation animFadein,animFadein1;
 
-    private int a=1;
+    private int a=1,cart=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
         final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
 
-
+final TextView menu10 = findViewById(R.id.menu10);
 
 
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -55,6 +55,18 @@ public class MainActivity extends AppCompatActivity {
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
 
+                    if (cart==0)
+                    {
+                        menu10.setTextSize(20);
+
+                        menu10.setText("CartX is Empty.");
+
+                    }
+                    else if (cart>0){
+                        menu10.setTextSize(20);
+                        menu10.setText("CartX has "+cart+ " items.");
+                    }
+
                 }
 
             }
@@ -76,8 +88,21 @@ public class MainActivity extends AppCompatActivity {
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
 
+                    if ( cart==0)
+                    {
+                        menu10.setTextSize(20);
+
+                        menu10.setText("CartX is Empty.");
+
+                    }
+                    else if (cart>0){
+                        menu10.setTextSize(20);
+                        menu10.setText("CartX has "+cart+ " items.");
+                    }
 
                 }
+
+
             }
         });
     }
