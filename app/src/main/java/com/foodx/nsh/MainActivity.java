@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
@@ -24,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
         final TextView menu2 = findViewById(R.id.menu2);
 
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
+        final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
 
-        boolean isViewVisible = mCustomLayout.isShown();
+        mCustomLayout.setOnVisibilityPercentChangedListener(new PercentVisibleLayout.OnVisibilityPercentChanged() {
+            @Override
+            public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
 
-        Log.i("s", "onCreate: " + isViewVisible);
+                Log.d("this", "onVisibilityChange: "+percentageHeight);
 
-                if (!isViewVisible)
+                if (percentageHeight <50 && a==1)
                 {   a=0;
                     title1.setVisibility(View.GONE);
                     title2.setVisibility(View.GONE);
@@ -38,7 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+            }
+        });
+
+        mCustomLayout1.setOnVisibilityPercentChangedListener(new PercentVisibleLayout.OnVisibilityPercentChanged() {
+            @Override
+            public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
+
+                Log.d("this", "onVisibilityChange: "+percentageHeight);
+
+                if (percentageHeight <50 && a==1)
+                {
+                    title1.setVisibility(View.GONE);
+                    title2.setVisibility(View.GONE);
+                    menu1.setVisibility(View.VISIBLE);
+                    menu2.setVisibility(View.VISIBLE);
 
 
+                }
+
+            }
+        });
     }
 }

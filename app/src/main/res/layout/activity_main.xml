@@ -25,6 +25,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
+android:id="@+id/scrollView"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -55,7 +56,12 @@
 
                 </com.tzanou.PercentVisibleLayout.PercentVisibleLayout>
 
+                <com.tzanou.PercentVisibleLayout.PercentVisibleLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
 
+                    android:gravity="center"
+                    android:id="@+id/custom_layout1">
                 <RelativeLayout
                     android:id="@+id/item1"
                     android:layout_width="match_parent"
@@ -130,6 +136,7 @@
 
 
                 </RelativeLayout>
+                </com.tzanou.PercentVisibleLayout.PercentVisibleLayout>
 
                 <RelativeLayout
                     android:id="@+id/item2"
