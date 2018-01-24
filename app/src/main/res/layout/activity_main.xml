@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/grey"
     android:layout_height="match_parent"
+    android:background="@color/grey"
 
     tools:context="com.foodx.nsh.MainActivity">
 
@@ -34,6 +34,7 @@
                 android:textColor="#fff"
                 android:textSize="25sp" />
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,69 +50,152 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:background="#f3f3f3"
                     android:id="@+id/item1"
-
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_height="150dp">
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
                         android:id="@+id/image1"
-                        android:src="@color/colorAccent"
-                        />
+                        android:layout_width="120dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="8dp"
+                        android:src="@color/colorAccent" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dal Kachori"
-                        android:fontFamily="@font/psb"
-                        android:textSize="25sp"
                         android:id="@+id/name1"
-                        android:layout_toRightOf="@id/image1"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:textColor="@color/black"/>
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price: 20"
-                        android:fontFamily="@font/ps"
-                        android:textSize="20sp"
+                        android:layout_marginLeft="16dp"
+
+
+                        android:layout_marginTop="24dp"
+                        android:layout_toRightOf="@id/image1"
+                        android:fontFamily="@font/psb"
+                        android:text="Dal Kachori"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
                         android:id="@+id/price1"
-                        android:layout_below="@id/name1"
-                        android:layout_toRightOf="@id/image1"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginLeft="16dp"
-                        android:textColor="@color/black"/>
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Spice: Medium"
-                        android:fontFamily="@font/psi"
-                        android:textSize="15sp"
-                        android:textAllCaps="true"
-                        android:padding="4dp"
-                        android:background="@drawable/spice_mid"
-                        android:id="@+id/spice1"
-                        android:layout_below="@id/price1"
-                        android:layout_toRightOf="@id/image1"
-                        android:layout_marginTop="0dp"
+                        android:layout_below="@id/name1"
                         android:layout_marginLeft="16dp"
-                        android:textColor="@color/black"/>
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@id/image1"
+                        android:fontFamily="@font/ps"
+                        android:gravity="center_vertical"
+                        android:text="Price: 20"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/spice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/image1"
+                        android:background="@drawable/spice_mid"
+                        android:fontFamily="@font/psi"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="Spice: Medium"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@drawable/add_cart"
+android:id="@+id/cart1"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"/>
 
 
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3">
 
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="120dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="8dp"
+                        android:src="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+
+
+                        android:layout_marginTop="24dp"
+                        android:layout_toRightOf="@id/image2"
+                        android:fontFamily="@font/psb"
+                        android:text="Poha"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/price2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name2"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@id/image2"
+                        android:fontFamily="@font/ps"
+                        android:gravity="center_vertical"
+                        android:text="Price: 20"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/spice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price2"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/image2"
+                        android:background="@drawable/spice_min"
+                        android:fontFamily="@font/psi"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="Spice: Minimum"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@drawable/add_cart"
+                        android:id="@+id/cart2"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -119,4 +203,16 @@
 
 
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        app:fabSize="normal"
+android:backgroundTint="@color/black"
+        android:src="@drawable/cart48"
+        />
 </RelativeLayout>
