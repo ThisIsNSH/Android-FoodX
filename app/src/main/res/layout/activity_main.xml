@@ -140,6 +140,8 @@ android:textAlignment="center"
                     android:id="@+id/custom_layout1">
                 <RelativeLayout
                     android:id="@+id/item1"
+                    android:elevation="4dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -151,8 +153,8 @@ android:textAlignment="center"
                     <ImageView
                         android:id="@+id/image1"
                         android:layout_width="120dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="8dp"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
                         android:src="@color/colorAccent" />
 
                     <TextView
@@ -162,7 +164,7 @@ android:textAlignment="center"
                         android:layout_marginLeft="16dp"
 
 
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="16dp"
                         android:layout_toRightOf="@id/image1"
                         android:fontFamily="@font/psb"
                         android:text="Dal Kachori"
@@ -200,15 +202,6 @@ android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 
-                    <ImageView
-                        android:id="@+id/cart1"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:paddingBottom="8dp"
-                        android:paddingRight="8dp"
-                        android:src="@drawable/add_cart" />
 
 
                 </RelativeLayout>
@@ -216,6 +209,8 @@ android:textAlignment="center"
 
                 <RelativeLayout
                     android:id="@+id/item2"
+                    android:elevation="4dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -226,8 +221,8 @@ android:textAlignment="center"
                     <ImageView
                         android:id="@+id/image2"
                         android:layout_width="120dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="8dp"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
                         android:src="@color/colorAccent" />
 
                     <TextView
@@ -237,7 +232,7 @@ android:textAlignment="center"
                         android:layout_marginLeft="16dp"
 
 
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="16dp"
                         android:layout_toRightOf="@id/image2"
                         android:fontFamily="@font/psb"
                         android:text="Poha"
@@ -275,80 +270,141 @@ android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 
-                    <ImageView
-                        android:id="@+id/cart2"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:paddingBottom="8dp"
-                        android:paddingRight="8dp"
-                        android:src="@drawable/add_cart" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/item3"
+                    android:elevation="4dp"
+
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                    android:background="#f3f3f3">
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:src="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+
+
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@id/image3"
+                        android:fontFamily="@font/psb"
+                        android:text="Parantha"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/price3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name3"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@id/image3"
+                        android:fontFamily="@font/ps"
+                        android:gravity="center_vertical"
+                        android:text="Price: 20"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/spice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price3"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/image3"
+                        android:background="@drawable/spice_max"
+                        android:fontFamily="@font/psi"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="Very Spicy"
+                        android:textAllCaps="true"
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
+
+
+                </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/item4"
+                    android:elevation="4dp"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                    android:background="#f3f3f3">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                    <ImageView
+                        android:id="@+id/image4"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:src="@color/colorAccent" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                    <TextView
+                        android:id="@+id/name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@id/image4"
+                        android:fontFamily="@font/psb"
+                        android:text="Tikki"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                    <TextView
+                        android:id="@+id/price4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name4"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@id/image4"
+                        android:fontFamily="@font/ps"
+                        android:gravity="center_vertical"
+                        android:text="Price: 20"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3"/>
+                    <TextView
+                        android:id="@+id/spice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price4"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/image4"
+                        android:background="@drawable/spice_min"
+                        android:fontFamily="@font/psi"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="Not Spicy"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+
+                </RelativeLayout>
+
+
 
 
 
@@ -364,12 +420,6 @@ android:textAlignment="center"
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-
-        android:background="@drawable/black_gradient"/>
 
 
 </RelativeLayout>
