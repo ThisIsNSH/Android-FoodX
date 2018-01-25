@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Animation animFadein, animFadein1;
 
     private int a = 1, cart = 0;
+    private float x1,x2;
+    static final int MIN_DISTANCE = 150;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

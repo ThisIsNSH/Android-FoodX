@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -141,11 +139,11 @@ android:textAlignment="center"
                 <RelativeLayout
                     android:id="@+id/item1"
                     android:elevation="4dp"
-
+                    android:onClick="click1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-
+                    android:clickable="true"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
                     android:background="#f3f3f3">
@@ -210,7 +208,8 @@ android:textAlignment="center"
                 <RelativeLayout
                     android:id="@+id/item2"
                     android:elevation="4dp"
-
+                    android:clickable="true"
+                    android:onClick="click2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -276,7 +275,8 @@ android:textAlignment="center"
                 <RelativeLayout
                     android:id="@+id/item3"
                     android:elevation="4dp"
-
+                    android:clickable="true"
+                    android:onClick="click3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -342,6 +342,8 @@ android:textAlignment="center"
                 <RelativeLayout
                     android:id="@+id/item4"
                     android:elevation="4dp"
+                    android:clickable="true"
+                    android:onClick="click4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
