@@ -13,66 +13,66 @@
     <include layout="@layout/toolbar"
         android:id="@+id/tool"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back to menu"
-        android:fontFamily="@font/psb"
-        android:textSize="20sp"
-        android:id="@+id/back"
-        android:visibility="invisible"
-        android:elevation="4dp"
-        android:layout_below="@id/tool"
-        android:onClick="backtomenu"
-        android:textColor="#fff"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_below="@id/tool"
-    android:background="@color/l_grey"
-    android:id="@+id/cart"
-    android:orientation="vertical"
-    android:visibility="visible"
-    android:layout_height="match_parent"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back to menu"
-        android:fontFamily="@font/psb"
-        android:textSize="20sp"
-        android:layout_below="@id/tool"
-        android:textColor="#fff"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"/>
+    <!-- <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="back to menu"
+         android:fontFamily="@font/psb"
+         android:textSize="20sp"
+         android:id="@+id/back"
+         android:visibility="invisible"
+         android:elevation="4dp"
+         android:layout_below="@id/tool"
+         android:onClick="backtomenu"
+         android:textColor="#fff"
+         android:layout_marginTop="16dp"
+         android:layout_marginLeft="16dp"/>
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_below="@id/tool"
+     android:background="@color/l_grey"
+     android:id="@+id/cart"
+     android:orientation="vertical"
+     android:visibility="visible"
+     android:layout_height="match_parent"
+     >
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="back to menu"
+         android:fontFamily="@font/psb"
+         android:textSize="20sp"
+         android:layout_below="@id/tool"
+         android:textColor="#fff"
+         android:layout_marginTop="16dp"
+         android:layout_marginLeft="16dp"/>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dal kachori:"
-        android:fontFamily="@font/psb"
-        android:textSize="20sp"
-        android:id="@+id/cartname1"
-        android:layout_marginTop="16dp"
-        android:textColor="#fff"
-        android:layout_marginLeft="32dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="poha:"
-        android:fontFamily="@font/psb"
-        android:textSize="20sp"
-        android:textColor="#fff"
-        android:id="@+id/cartname2"
-        android:layout_marginLeft="32dp"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="dal kachori:"
+         android:fontFamily="@font/psb"
+         android:textSize="20sp"
+         android:id="@+id/cartname1"
+         android:layout_marginTop="16dp"
+         android:textColor="#fff"
+         android:layout_marginLeft="32dp"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="poha:"
+         android:fontFamily="@font/psb"
+         android:textSize="20sp"
+         android:textColor="#fff"
+         android:id="@+id/cartname2"
+         android:layout_marginLeft="32dp"/>
 
 
 
 
 
-</LinearLayout>
+ </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,16 +100,33 @@ android:id="@+id/scrollView"
                     android:id="@+id/custom_layout">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/ps"
-
-                        android:layout_margin="16dp"
-                        android:id="@+id/menu10"
+                        android:fontFamily="@font/psbi"
+                        android:layout_marginLeft="64dp"
+                        android:layout_marginRight="64dp"
+                        android:layout_marginTop="16dp"
+                        android:id="@+id/quote1"
+android:textAlignment="center"
                         android:visibility="visible"
-                        android:text="MENU"
+                        android:text="Quote of the Week:"
                         android:textColor="#fff"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/psi"
+android:layout_marginLeft="64dp"
+                        android:layout_marginRight="64dp"
+android:textAlignment="center"
+                        android:layout_below="@id/quote1"
+                        android:id="@+id/quote2"
+                        android:visibility="visible"
+                        android:text="'You made my heart\nskip a beat'"
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
 
 
 
@@ -268,6 +285,54 @@ android:id="@+id/scrollView"
                         android:paddingRight="8dp"
                         android:src="@drawable/add_cart" />
                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#f3f3f3"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"

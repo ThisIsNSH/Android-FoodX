@@ -28,7 +28,20 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
+        final TextView menu10 = findViewById(R.id.menu10);
 
+
+        if ( cart==0)
+        {
+            menu10.setTextSize(20);
+
+            menu10.setText("CartX is Empty.");
+
+        }
+        else if (cart>0){
+            menu10.setTextSize(20);
+            menu10.setText("CartX has "+cart+ " items.");
+        }
 
 
         final TextView title1 = findViewById(R.id.title1);
@@ -39,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
         final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
 
-        final TextView menu10 = findViewById(R.id.menu10);
 
 
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -63,17 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
 
-                    if (cart==0)
-                    {
-                        menu10.setTextSize(20);
 
-                        menu10.setText("CartX is Empty.");
-
-                    }
-                    else if (cart>0){
-                        menu10.setTextSize(20);
-                        menu10.setText("CartX has "+cart+ " items.");
-                    }
 
                 }
 
@@ -96,19 +98,11 @@ public class MainActivity extends AppCompatActivity {
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
 
-                    if ( cart==0)
-                    {
-                        menu10.setTextSize(20);
 
-                        menu10.setText("CartX is Empty.");
-
-                    }
-                    else if (cart>0){
-                        menu10.setTextSize(20);
-                        menu10.setText("CartX has "+cart+ " items.");
-                    }
 
                 }
+
+
 
 
             }
