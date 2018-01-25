@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
         final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
 
-final TextView menu10 = findViewById(R.id.menu10);
+        final TextView menu10 = findViewById(R.id.menu10);
 
 
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -123,6 +123,29 @@ final TextView menu10 = findViewById(R.id.menu10);
                R.anim.cartenter);
         final TextView back = findViewById(R.id.back);
         main.startAnimation(animFadein2);
+
+       final TextView cart1 = findViewById(R.id.cart1);
+       final TextView cart2 = findViewById(R.id.cart2);
+       final TextView title1 = findViewById(R.id.title1);
+       final TextView title2 = findViewById(R.id.title2);
+       final TextView menu1 = findViewById(R.id.menu1);
+       final TextView menu2 = findViewById(R.id.menu2);
+
+       Animation animFadein4 = AnimationUtils.loadAnimation(getApplicationContext(),
+               R.anim.slideup);
+       Animation animFadein5 = AnimationUtils.loadAnimation(getApplicationContext(),
+               R.anim.slideright);
+       menu1.startAnimation(animFadein4);
+       menu2.startAnimation(animFadein4);
+
+       cart1.startAnimation(animFadein5);
+       cart2.startAnimation(animFadein5);
+        title1.setVisibility(View.INVISIBLE);
+        title2.setVisibility(View.INVISIBLE);
+        menu1.setVisibility(View.INVISIBLE);
+        menu2.setVisibility(View.INVISIBLE);
+
+
        animFadein2.setAnimationListener(new Animation.AnimationListener() {
            @Override
            public void onAnimationStart(Animation animation) {
@@ -152,6 +175,16 @@ back.setVisibility(View.VISIBLE);
 
        main.startAnimation(animFadein3);
        back.setVisibility(View.INVISIBLE);
+
+       final TextView cart1 = findViewById(R.id.cart1);
+       final TextView cart2 = findViewById(R.id.cart2);
+       final TextView title1 = findViewById(R.id.title1);
+       final TextView title2 = findViewById(R.id.title2);
+       final TextView menu1 = findViewById(R.id.menu1);
+       final TextView menu2 = findViewById(R.id.menu2);
+
+
+
 
    }
 }
