@@ -115,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-   public void cart(View view)
+/* public void cart(View view)
    {
        final LinearLayout main = findViewById(R.id.main);
        animFadein2 = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -183,10 +182,40 @@ back.setVisibility(View.VISIBLE);
        final TextView menu1 = findViewById(R.id.menu1);
        final TextView menu2 = findViewById(R.id.menu2);
 
+       Animation animFadein4 = AnimationUtils.loadAnimation(getApplicationContext(),
+               R.anim.slideleft);
+       cart1.startAnimation(animFadein4);
+       cart2.startAnimation(animFadein4);
+       cart1.setVisibility(View.INVISIBLE);
+       cart2.setVisibility(View.INVISIBLE);
 
 
+       Animation animFadein6 = AnimationUtils.loadAnimation(getApplicationContext(),
+               R.anim.slidedown);
+       title1.setAnimation(animFadein6);
+       title2.setAnimation(animFadein6);
+       animFadein6.setAnimationListener(new Animation.AnimationListener() {
+           @Override
+           public void onAnimationStart(Animation animation) {
 
-   }
+           }
+
+           @Override
+           public void onAnimationEnd(Animation animation) {
+               title1.setVisibility(View.VISIBLE);
+               title2.setVisibility(View.VISIBLE);
+               menu1.setVisibility(View.INVISIBLE);
+               menu2.setVisibility(View.INVISIBLE);
+           }
+
+           @Override
+           public void onAnimationRepeat(Animation animation) {
+
+           }
+       });
+
+
+   }*/
 }
 
 
