@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -18,9 +19,10 @@ import android.widget.Toast;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 public class MainActivity extends AppCompatActivity {
-    Animation animFadein,animFadein1,animFadein2,animFadein3;
+    Animation animFadein, animFadein1;
 
-    private int a=1,cart=0;
+    private int a = 1, cart = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +31,14 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
-      
-
-
         final TextView title1 = findViewById(R.id.title1);
         final TextView title2 = findViewById(R.id.title2);
         final TextView menu1 = findViewById(R.id.menu1);
         final TextView menu2 = findViewById(R.id.menu2);
-
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
         final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
+
+
 
 
 
@@ -53,17 +52,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
 
-                Log.d("this", "onVisibilityChange: "+percentageHeight);
+                Log.d("this", "onVisibilityChange: " + percentageHeight);
 
-                if (percentageHeight <50 && a==1)
-                {   a=0;
+                if (percentageHeight < 50 && a == 1) {
+                    a = 0;
                     title1.startAnimation(animFadein);
                     title2.startAnimation(animFadein);
                     menu1.startAnimation(animFadein1);
                     menu2.startAnimation(animFadein1);
                     menu1.setVisibility(View.VISIBLE);
                     menu2.setVisibility(View.VISIBLE);
-
 
 
                 }
@@ -75,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
 
-                Log.d("this", "onVisibilityChange: "+percentageHeight);
+                Log.d("this", "onVisibilityChange: " + percentageHeight);
 
-                if (percentageHeight <50 && a==1)
+                if (percentageHeight < 50 && a == 1)
 
                 {
                     title1.startAnimation(animFadein);
@@ -88,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
                     menu2.setVisibility(View.VISIBLE);
 
 
-
                 }
-
-
 
 
             }
         });
+
+
+
     }
 
 /* public void cart(View view)
