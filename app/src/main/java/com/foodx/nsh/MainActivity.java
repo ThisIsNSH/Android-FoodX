@@ -1,19 +1,24 @@
 package com.foodx.nsh;
 
+import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 public class MainActivity extends AppCompatActivity {
-    Animation animFadein,animFadein1;
+    Animation animFadein,animFadein1,animFadein2,animFadein3;
 
     private int a=1,cart=0;
     @Override
@@ -22,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+
+
+
 
         final TextView title1 = findViewById(R.id.title1);
         final TextView title2 = findViewById(R.id.title2);
@@ -106,4 +114,46 @@ final TextView menu10 = findViewById(R.id.menu10);
             }
         });
     }
+
+
+   public void cart(View view)
+   {
+       final LinearLayout main = findViewById(R.id.main);
+       animFadein2 = AnimationUtils.loadAnimation(getApplicationContext(),
+               R.anim.cartenter);
+        final TextView back = findViewById(R.id.back);
+        main.startAnimation(animFadein2);
+       animFadein2.setAnimationListener(new Animation.AnimationListener() {
+           @Override
+           public void onAnimationStart(Animation animation) {
+           }
+
+           @Override
+           public void onAnimationEnd(Animation animation) {
+back.setVisibility(View.VISIBLE);
+           }
+
+           @Override
+           public void onAnimationRepeat(Animation animation) {
+
+           }
+       });
+
+
+
+   }
+
+   public void backtomenu(View view)
+   {
+       LinearLayout main = findViewById(R.id.main);
+       animFadein3 = AnimationUtils.loadAnimation(getApplicationContext(),
+               R.anim.cartexit);
+       TextView back = findViewById(R.id.back);
+
+       main.startAnimation(animFadein3);
+       back.setVisibility(View.INVISIBLE);
+
+   }
 }
+
+
