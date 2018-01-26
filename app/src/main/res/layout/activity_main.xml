@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/black"
 
     tools:context="com.foodx.nsh.MainActivity">
 
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tool"
         android:id="@+id/main"
-        android:background="@color/grey"
+
         android:orientation="vertical">
 
 
@@ -90,382 +90,179 @@ android:id="@+id/scrollView"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.tzanou.PercentVisibleLayout.PercentVisibleLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:gravity="center"
-                    android:id="@+id/custom_layout">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/psbi"
-                        android:layout_marginLeft="64dp"
-                        android:layout_marginRight="64dp"
-                        android:layout_marginTop="16dp"
-                        android:id="@+id/quote1"
-android:textAlignment="center"
-                        android:visibility="gone"
-                        android:text="Quote of the Week:"
-                        android:textColor="#fff"
-                        android:textSize="22sp" />
 
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/psi"
-android:layout_marginLeft="64dp"
-                        android:layout_marginRight="64dp"
-android:textAlignment="center"
-                        android:layout_below="@id/quote1"
-                        android:id="@+id/quote2"
-                        android:layout_marginTop="16dp"
-                        android:visibility="visible"
-                        android:text="Swipe right to add\nand left to remove !!"
-                        android:textColor="#fff"
-                        android:textSize="20sp" />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="horizontal"
+                   android:id="@+id/group1"
+                   android:layout_height="wrap_content">
+
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:elevation="4dp"
+                       android:layout_weight="1"
+                       android:gravity="center"
+                       android:layout_margin="16dp"
+                       android:orientation="vertical"
+                       android:background="@drawable/shape"
+                       android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_margin="16dp"
+                            android:id="@+id/image1"
+                            android:src="@color/colorAccent"
+                            android:layout_height="120dp" />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Dal Kachori"
+                           android:id="@+id/title1"
+                           android:fontFamily="@font/psb"
+                           android:textSize="20sp"
+                           android:layout_marginTop="-8dp"
+                           android:textColor="@color/black"
+
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Price: 20"
+                           android:id="@+id/price1"
+                           android:fontFamily="@font/ps"
+                           android:textSize="20sp"
+                           android:layout_marginBottom="8dp"
+                           android:textColor="@color/black"
+
+                           />
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_marginLeft="16dp"
+                           android:layout_marginRight="16dp"
+                           android:layout_marginBottom="8dp"
+                           android:background="#b2b2b2"/>
+
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginLeft="16dp"
+                           android:layout_marginRight="16dp"
+                           android:layout_marginBottom="16dp"
+                           android:orientation="horizontal">
+
+                           <ImageButton
+                               android:layout_width="30dp"
+                               android:layout_height="30dp"
+                               android:background="?attr/selectableItemBackgroundBorderless"
+                               android:scaleType="centerCrop"
+                               android:id="@+id/sub1"
+                               android:src="@drawable/rm_cart"/>
+
+                           <ImageButton
+                               android:layout_width="30dp"
+                               android:layout_height="30dp"
+                               android:background="?attr/selectableItemBackgroundBorderless"
+                               android:scaleType="centerCrop"
+                               android:id="@+id/add1"
+                               android:layout_marginLeft="16dp"
+                               android:src="@drawable/add_cart"/>
+
+                       </LinearLayout>
+
+
+                   </LinearLayout>
+                   <LinearLayout
+                       android:elevation="4dp"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_marginTop="16dp"
+                       android:layout_marginRight="16dp"
+                       android:layout_marginBottom="16dp"
+                       android:orientation="vertical"
+                       android:gravity="center"
+                       android:background="@drawable/shape"
+                       android:layout_height="wrap_content">
+
+                       <ImageView
+                           android:layout_width="match_parent"
+                           android:layout_margin="16dp"
+                           android:id="@+id/image2"
+                           android:src="@color/colorAccent"
+                           android:layout_height="120dp" />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Pohe"
+                           android:layout_marginTop="-8dp"
+
+                           android:id="@+id/title2"
+                           android:fontFamily="@font/psb"
+                           android:textSize="20sp"
+                           android:textColor="@color/black"
+
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Price: 10"
+                           android:id="@+id/price2"
+                           android:fontFamily="@font/ps"
+                           android:textSize="20sp"
+                           android:layout_marginBottom="8dp"
+                           android:textColor="@color/black"
+
+                           />
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_marginLeft="16dp"
+                           android:layout_marginRight="16dp"
+                           android:layout_marginBottom="8dp"
+                           android:background="#b2b2b2"/>
+
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_marginLeft="16dp"
+                           android:layout_marginRight="16dp"
+                           android:layout_marginBottom="16dp"
+                           android:orientation="horizontal">
+
+                           <ImageButton
+                               android:layout_width="30dp"
+                               android:layout_height="30dp"
+                               android:background="?attr/selectableItemBackgroundBorderless"
+                               android:scaleType="centerCrop"
+                               android:id="@+id/sub2"
+                               android:src="@drawable/rm_cart"/>
+
+                           <ImageButton
+                               android:layout_width="30dp"
+                               android:layout_height="30dp"
+                               android:background="?attr/selectableItemBackgroundBorderless"
+                               android:scaleType="centerCrop"
+                               android:id="@+id/add2"
+                               android:layout_marginLeft="16dp"
+                               android:src="@drawable/add_cart"/>
+
+                       </LinearLayout>
+
+
+                   </LinearLayout>
 
 
 
-                </com.tzanou.PercentVisibleLayout.PercentVisibleLayout>
-
-                <com.tzanou.PercentVisibleLayout.PercentVisibleLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:gravity="center"
-                    android:id="@+id/custom_layout1">
-                <RelativeLayout
-                    android:id="@+id/item1"
-                    android:elevation="4dp"
-                    android:focusableInTouchMode="true"
-                    android:focusable="true"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:clickable="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3">
-
-                    <ImageView
-                        android:id="@+id/image1"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:src="@color/colorAccent" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:text="0"
-                        android:paddingTop="16dp"
-                        android:id="@+id/quantity1"
-                        android:layout_centerVertical="true"
-                        android:textAlignment="center"
-
-                        android:fontFamily="@font/psb"
-                        android:textColor="#fff"
-                        android:textSize="55sp"
-                        android:background="@drawable/quantity_shape"
-                        android:visibility="invisible"
-                        android:layout_marginLeft="16dp"/>
-
-                    <TextView
-                        android:id="@+id/name1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
 
 
-                        android:layout_marginTop="16dp"
-                        android:layout_toRightOf="@id/image1"
-                        android:fontFamily="@font/psb"
-                        android:text="Dal Kachori"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/price1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/name1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_toRightOf="@id/image1"
-                        android:fontFamily="@font/ps"
-                        android:gravity="center_vertical"
-                        android:text="Price: 20"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/spice1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/price1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_toRightOf="@id/image1"
-                        android:background="@drawable/spice_mid"
-                        android:fontFamily="@font/psi"
-                        android:gravity="center_vertical"
-                        android:padding="4dp"
-                        android:text="Little Spicy"
-                        android:textAllCaps="true"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
+               </LinearLayout>
 
 
-
-                </RelativeLayout>
-                </com.tzanou.PercentVisibleLayout.PercentVisibleLayout>
-
-                <RelativeLayout
-                    android:id="@+id/item2"
-                    android:elevation="4dp"
-                    android:clickable="true"
-                    android:focusableInTouchMode="true"
-                    android:focusable="true"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3">
-
-                    <ImageView
-                        android:id="@+id/image2"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:src="@color/colorAccent" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/quantity2"
-                        android:layout_centerVertical="true"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/psb"
-                        android:textColor="@color/black"
-                        android:textSize="55sp"
-                        android:visibility="invisible"
-                        android:layout_marginLeft="16dp"/>
-
-                    <TextView
-                        android:id="@+id/name2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-
-
-                        android:layout_marginTop="16dp"
-                        android:layout_toRightOf="@id/image2"
-                        android:fontFamily="@font/psb"
-                        android:text="Poha"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/price2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/name2"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_toRightOf="@id/image2"
-                        android:fontFamily="@font/ps"
-                        android:gravity="center_vertical"
-                        android:text="Price: 20"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/spice2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/price2"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_toRightOf="@id/image2"
-                        android:background="@drawable/spice_min"
-                        android:fontFamily="@font/psi"
-                        android:gravity="center_vertical"
-                        android:padding="4dp"
-                        android:text="Not Spicy"
-                        android:textAllCaps="true"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/item3"
-                    android:elevation="4dp"
-                    android:focusableInTouchMode="true"
-                    android:focusable="true"
-
-                    android:clickable="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3">
-
-                    <ImageView
-                        android:id="@+id/image3"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:src="@color/colorAccent" />
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/quantity3"
-                        android:layout_centerVertical="true"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/psb"
-                        android:textColor="@color/black"
-                        android:textSize="55sp"
-                        android:visibility="invisible"
-                        android:layout_marginLeft="16dp"/>
-                    <TextView
-                        android:id="@+id/name3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-
-
-                        android:layout_marginTop="16dp"
-                        android:layout_toRightOf="@id/image3"
-                        android:fontFamily="@font/psb"
-                        android:text="Parantha"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/price3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/name3"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_toRightOf="@id/image3"
-                        android:fontFamily="@font/ps"
-                        android:gravity="center_vertical"
-                        android:text="Price: 20"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/spice3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/price3"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_toRightOf="@id/image3"
-                        android:background="@drawable/spice_max"
-                        android:fontFamily="@font/psi"
-                        android:gravity="center_vertical"
-                        android:padding="4dp"
-                        android:text="Very Spicy"
-                        android:textAllCaps="true"
-                        android:textColor="#fff"
-                        android:textSize="15sp" />
-
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/item4"
-                    android:elevation="4dp"
-                    android:clickable="true"
-android:focusableInTouchMode="true"
-                    android:focusable="true"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="#f3f3f3">
-
-                    <ImageView
-                        android:id="@+id/image4"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:src="@color/colorAccent" />
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/quantity4"
-                        android:layout_centerVertical="true"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/psb"
-                        android:textColor="@color/black"
-                        android:textSize="55sp"
-                        android:visibility="invisible"
-                        android:layout_marginLeft="16dp"/>
-                    <TextView
-                        android:id="@+id/name4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-
-
-                        android:layout_marginTop="16dp"
-                        android:layout_toRightOf="@id/image4"
-                        android:fontFamily="@font/psb"
-                        android:text="Tikki"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/price4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/name4"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_toRightOf="@id/image4"
-                        android:fontFamily="@font/ps"
-                        android:gravity="center_vertical"
-                        android:text="Price: 20"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/spice4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/price4"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_toRightOf="@id/image4"
-                        android:background="@drawable/spice_min"
-                        android:fontFamily="@font/psi"
-                        android:gravity="center_vertical"
-                        android:padding="4dp"
-                        android:text="Not Spicy"
-                        android:textAllCaps="true"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-
-
-                </RelativeLayout>
 
 
 
