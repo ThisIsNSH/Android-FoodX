@@ -1,6 +1,12 @@
 package com.foodx.nsh;
 
 import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
     Animation animFadein, animFadein1;
 
     private int a = 1, cart = 0;
-    private float x1,x2;
-    static final int MIN_DISTANCE = 150;
+    private float x1,x2,y1,y2;
+    static final int MIN_RIGHT = 50,MIN_LEFT=-50;
+    private int q1=0,q2=0,q3=0,q4=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,130 @@ public class MainActivity extends AppCompatActivity {
         final PercentVisibleLayout mCustomLayout = (PercentVisibleLayout) findViewById(R.id.custom_layout);
         final PercentVisibleLayout mCustomLayout1 = (PercentVisibleLayout) findViewById(R.id.custom_layout1);
 
+        final View item1 = findViewById(R.id.item1);
+        final View item2 = findViewById(R.id.item2);
+        final View item3 = findViewById(R.id.item3);
+        final View item4 = findViewById(R.id.item4);
+
+        final TextView quantity10 = findViewById(R.id.quantity1);
+        final TextView quantity20 = findViewById(R.id.quantity2);
+        final TextView quantity30 = findViewById(R.id.quantity3);
+        final TextView quantity40 = findViewById(R.id.quantity4);
+
+        /*    item1.setOnTouchListener(new View.OnTouchListener() {
+
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        x1 = event.getX();
+                        y1 = event.getY();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        x2 = event.getX();
+                        y2 = event.getY();
+                        float deltaX = x2 - x1;
+                        float deltaY = y2 - y1;
+                        Log.i("this", "onTouch: "+deltaX);
+                        Log.i("this", "onTouch: "+deltaY);
+                        if ((deltaX) > MIN_RIGHT ) {
+                            q1+=1;
+                            Log.i("this", "item1: " + q1);
+                            if (q1>0)
+                            {
+                                quantity10.setText(Integer.toString(q1));
+                                quantity10.setVisibility(View.VISIBLE);
+                            }
+                            else
+                            {
+                                quantity10.setVisibility(View.INVISIBLE);
+                            }
+                        } else if ((deltaX) < MIN_LEFT ) {
+                            if (q1>0)
+                            q1-=1;
+                            Log.i("this", "item1: " + q1);
+                            if (q1>0)
+                            {
+                                quantity10.setText(Integer.toString(q1));
+                                quantity10.setVisibility(View.VISIBLE);
+                            }
+                            else
+                            {
+                                quantity10.setVisibility(View.INVISIBLE);
+                            }
+                        }else{
+
+                        }
+
+                        break;
+                }
+
+                return false;
+            }
+        });*/
+
+/*
+        item2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+                Sensor gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+                SensorEventListener gyroscopeSensorListener = new SensorEventListener(){
+                  @Override
+
+                };
+            }
+        });
+        item2.
+
+*/      Context context = item1.getContext();
+        SensorManager sensorManager = (SensorManager) context.getSystemService(SENSOR_SERVICE);
+        Sensor gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+
+        SensorEventListener gyroscopeSensorListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+
+                Log.i("this", "onSensorChanged: "+sensorEvent.values[2]);
+                if(sensorEvent.values[2] > 2f) { // anticlockwise
+                    if (q1>0)
+                        q1-=1;
+                    Log.i("this", "item1: " + q1);
+                    if (q1>0)
+                    {
+                        quantity10.setText(Integer.toString(q1));
+                        quantity10.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        quantity10.setVisibility(View.INVISIBLE);
+                    }
+                } else if(sensorEvent.values[2] < -2f) { // clockwise
+                    q1+=1;
+                    Log.i("this", "item1: " + q1);
+                    if (q1>0)
+                    {
+                        quantity10.setText(Integer.toString(q1));
+                        quantity10.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        quantity10.setVisibility(View.INVISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {
+            }
+        };
+
+// Register the listener
+        sensorManager.registerListener(gyroscopeSensorListener,
+                gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);
+
+
 
 
 
@@ -54,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
 
-                Log.d("this", "onVisibilityChange: " + percentageHeight);
 
                 if (percentageHeight < 50 && a == 1) {
                     a = 0;
@@ -75,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onVisibilityChange(int fromHeight, int fromWidth, int percentageHeight, int percentageWidth) {
 
-                Log.d("this", "onVisibilityChange: " + percentageHeight);
 
                 if (percentageHeight < 50 && a == 1)
 
