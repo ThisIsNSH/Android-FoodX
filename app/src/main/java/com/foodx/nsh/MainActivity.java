@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     Animation animFadein, animFadein1;
 
     private int a = 1, cart = 0;
-    private float x1,x2,y1,y2;
-    static final int MIN_RIGHT = 50,MIN_LEFT=-50;
-    private int q1=0,q2=0,q3=0,q4=0;
+    private float x1, x2, y1, y2;
+    static final int MIN_RIGHT = 50, MIN_LEFT = -50;
+    private int q1 = 0, q2 = 0, q3 = 0, q4 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,215 +59,170 @@ public class MainActivity extends AppCompatActivity {
         final TextView quantity40 = findViewById(R.id.quantity4);
 
 
-        /*    item1.setOnTouchListener(new View.OnTouchListener() {
-
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        x1 = event.getX();
-                        y1 = event.getY();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        x2 = event.getX();
-                        y2 = event.getY();
-                        float deltaX = x2 - x1;
-                        float deltaY = y2 - y1;
-                        Log.i("this", "onTouch: "+deltaX);
-                        Log.i("this", "onTouch: "+deltaY);
-                        if ((deltaX) > MIN_RIGHT ) {
-                            q1+=1;
-                            Log.i("this", "item1: " + q1);
-                            if (q1>0)
-                            {
-                                quantity10.setText(Integer.toString(q1));
-                                quantity10.setVisibility(View.VISIBLE);
-                            }
-                            else
-                            {
-                                quantity10.setVisibility(View.INVISIBLE);
-                            }
-                        } else if ((deltaX) < MIN_LEFT ) {
-                            if (q1>0)
-                            q1-=1;
-                            Log.i("this", "item1: " + q1);
-                            if (q1>0)
-                            {
-                                quantity10.setText(Integer.toString(q1));
-                                quantity10.setVisibility(View.VISIBLE);
-                            }
-                            else
-                            {
-                                quantity10.setVisibility(View.INVISIBLE);
-                            }
-                        }else{
-
-                        }
-
-                        break;
-                }
-
-                return false;
-            }
-        });*/
-
-/*
-        item2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-                Sensor gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-                SensorEventListener gyroscopeSensorListener = new SensorEventListener(){
-                  @Override
-
-                };
-            }
-        });
-        item2.
-
-
-
-*/
         item1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-         Context context1 = item1.getContext();
-          SensorManager sensorManager = (SensorManager) context1.getSystemService(SENSOR_SERVICE);
-
-
-
-          Sensor rotationVectorSensor =
-                sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
-        // Create a listener
-                 SensorEventListener rvListener = new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent sensorEvent) {
-                float[] rotationMatrix = new float[16];
-                SensorManager.getRotationMatrixFromVector(
-                        rotationMatrix, sensorEvent.values);
-                float[] remappedRotationMatrix = new float[16];
-                SensorManager.remapCoordinateSystem(rotationMatrix,
-                        SensorManager.AXIS_X,
-                        SensorManager.AXIS_Z,
-                        remappedRotationMatrix);
+                Context context1 = item1.getContext();
+                SensorManager sensorManager = (SensorManager) context1.getSystemService(SENSOR_SERVICE);
+                Sensor rotationVectorSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+                // Create a listener
+                SensorEventListener rvListener = new SensorEventListener() {
+                    @Override
+                    public void onSensorChanged(SensorEvent sensorEvent) {
+                        float[] rotationMatrix = new float[16];
+                        SensorManager.getRotationMatrixFromVector(
+                                rotationMatrix, sensorEvent.values);
+                        float[] remappedRotationMatrix = new float[16];
+                        SensorManager.remapCoordinateSystem(rotationMatrix,
+                                SensorManager.AXIS_X,
+                                SensorManager.AXIS_Z,
+                                remappedRotationMatrix);
 
 // Convert to orientations
-                float[] orientations = new float[3];
-                SensorManager.getOrientation(remappedRotationMatrix, orientations);
+                        float[] orientations = new float[3];
+                        SensorManager.getOrientation(remappedRotationMatrix, orientations);
 
-                for(int i = 0; i < 3; i++) {
-                    orientations[i] = (float)(Math.toDegrees(orientations[i]));
-                }
+                        for (int i = 0; i < 3; i++) {
+                            orientations[i] = (float) (Math.toDegrees(orientations[i]));
+                        }
 
-                if(orientations[2] > 30) {
-                    q1+=1;
-                    if (q1>0)
-                    {
-                        quantity10.setText(Integer.toString(q1));
-                        quantity10.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
-                        quantity10.setVisibility(View.INVISIBLE);
-                    }                }
+                        if (orientations[2] > 30) {
+                            if (q1<=15)
+                            q1 += 1;
+                            if (q1 > 0) {
+                                quantity10.setText(Integer.toString(q1));
+                                quantity10.setVisibility(View.VISIBLE);
+                            } else {
+                                quantity10.setVisibility(View.INVISIBLE);
+                            }
+                        } else if (orientations[2] < -30) {
+                            if (q1 > 0)
+                                q1 -= 1;
+                            if (q1 > 0) {
+                                quantity10.setText(Integer.toString(q1));
+                                quantity10.setVisibility(View.VISIBLE);
+                            } else {
+                                quantity10.setVisibility(View.INVISIBLE);
+                            }
+                        }}
 
-                    else if(orientations[2] < -30) {
-                    if (q1>0)
-                        q1-=1;
-                    if (q1>0)
-                    {
-                        quantity10.setText(Integer.toString(q1));
-                        quantity10.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
-                        quantity10.setVisibility(View.INVISIBLE);
-                    }                }
-
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int i) {
-            }
-        };
-
+                    @Override
+                    public void onAccuracyChanged(Sensor sensor, int i) {
+                    }};
 // Register it
-        sensorManager.registerListener(rvListener   ,
-                rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+                sensorManager.registerListener(rvListener,
+                        rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            }});
 
-
-
-            }
-
-
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*        SensorManager sensorManager = (SensorManager) context.getSystemService(SENSOR_SERVICE);
-        Sensor gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-
-        SensorEventListener gyroscopeSensorListener = new SensorEventListener() {
+        item2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSensorChanged(SensorEvent sensorEvent) {
+            public void onClick(View v) {
+                Context context2 = item2.getContext();
+                SensorManager sensorManager = (SensorManager) context2.getSystemService(SENSOR_SERVICE);
+                Sensor rotationVectorSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+                // Create a listener
+                SensorEventListener rvListener = new SensorEventListener() {
+                    @Override
+                    public void onSensorChanged(SensorEvent sensorEvent) {
+                        float[] rotationMatrix = new float[16];
+                        SensorManager.getRotationMatrixFromVector(
+                                rotationMatrix, sensorEvent.values);
+                        float[] remappedRotationMatrix = new float[16];
+                        SensorManager.remapCoordinateSystem(rotationMatrix,
+                                SensorManager.AXIS_X,
+                                SensorManager.AXIS_Z,
+                                remappedRotationMatrix);
 
-                Log.i("this", "onSensorChanged: "+sensorEvent.values[2]);
-                if(sensorEvent.values[2] > 2f) { // anticlockwise
-                    if (q1>0)
-                        q1-=1;
-                    Log.i("this", "item1: " + q1);
-                    if (q1>0)
-                    {
-                        quantity10.setText(Integer.toString(q1));
-                        quantity10.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
-                        quantity10.setVisibility(View.INVISIBLE);
-                    }
-                } else if(sensorEvent.values[2] < -2f) { // clockwise
-                    q1+=1;
-                    Log.i("this", "item1: " + q1);
-                    if (q1>0)
-                    {
-                        quantity10.setText(Integer.toString(q1));
-                        quantity10.setVisibility(View.VISIBLE);
-                    }
-                    else
-                    {
-                        quantity10.setVisibility(View.INVISIBLE);
-                    }
-                }
-            }
+// Convert to orientations
+                        float[] orientations = new float[3];
+                        SensorManager.getOrientation(remappedRotationMatrix, orientations);
 
+                        for (int i = 0; i < 3; i++) {
+                            orientations[i] = (float) (Math.toDegrees(orientations[i]));
+                        }
+
+                        if (orientations[2] > 30) {
+                            if (q2<=15)
+                                q2 += 1;
+                            if (q2 > 0) {
+                                quantity20.setText(Integer.toString(q2));
+                                quantity20.setVisibility(View.VISIBLE);
+                            } else {
+                                quantity20.setVisibility(View.INVISIBLE);
+                            }
+                        } else if (orientations[2] < -30) {
+                            if (q2 > 0)
+                                q2 -= 1;
+                            if (q2 > 0) {
+                                quantity20.setText(Integer.toString(q2));
+                                quantity20.setVisibility(View.VISIBLE);
+                            } else {
+                                quantity20.setVisibility(View.INVISIBLE);
+                            }
+                        }}
+
+                    @Override
+                    public void onAccuracyChanged(Sensor sensor, int i) {
+                    }};
+// Register it
+                sensorManager.registerListener(rvListener,
+                        rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            }});
+
+        item3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAccuracyChanged(Sensor sensor, int i) {
-            }
-        };
+            public void onClick(View v) {
+                Context context3 = item3.getContext();
+                SensorManager sensorManager = (SensorManager) context3.getSystemService(SENSOR_SERVICE);
+                Sensor rotationVectorSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+                // Create a listener
+                SensorEventListener rvListener = new SensorEventListener() {
+                    @Override
+                    public void onSensorChanged(SensorEvent sensorEvent) {
+                        float[] rotationMatrix = new float[16];
+                        SensorManager.getRotationMatrixFromVector(
+                                rotationMatrix, sensorEvent.values);
+                        float[] remappedRotationMatrix = new float[16];
+                        SensorManager.remapCoordinateSystem(rotationMatrix,
+                                SensorManager.AXIS_X,
+                                SensorManager.AXIS_Z,
+                                remappedRotationMatrix);
 
-// Register the listener
-        sensorManager.registerListener(gyroscopeSensorListener,
-                gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);*/
+// Convert to orientations
+                        float[] orientations = new float[3];
+                        SensorManager.getOrientation(remappedRotationMatrix, orientations);
 
+                        for (int i = 0; i < 3; i++) {
+                            orientations[i] = (float) (Math.toDegrees(orientations[i]));
+                        }
 
+                        if (orientations[2] > 30) {
+                            if (q3<=15)
+                                q3 += 1;
+                            if (q3 > 0) {
+                                quantity30.setText(Integer.toString(q3));
+                                quantity30.setVisibility(View.VISIBLE);
+                            } else {
+                                quantity30.setVisibility(View.INVISIBLE);
+                            }
+                        } else if (orientations[2] < -30) {
+                            if (q3 > 0)
+                                q3 -= 1;
+                            if (q3 > 0) {
+                                quantity30.setText(Integer.toString(q3));
+                                quantity30.setVisibility(View.VISIBLE);
+                            } else {
+                                quantity30.setVisibility(View.INVISIBLE);
+                            }
+                        }}
 
-
+                    @Override
+                    public void onAccuracyChanged(Sensor sensor, int i) {
+                    }};
+// Register it
+                sensorManager.registerListener(rvListener,
+                        rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            }});
 
 
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -319,110 +274,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
-
-/* public void cart(View view)
-   {
-       final LinearLayout main = findViewById(R.id.main);
-       animFadein2 = AnimationUtils.loadAnimation(getApplicationContext(),
-               R.anim.cartenter);
-        final TextView back = findViewById(R.id.back);
-        main.startAnimation(animFadein2);
-
-       final TextView cart1 = findViewById(R.id.cart1);
-       final TextView cart2 = findViewById(R.id.cart2);
-       final TextView title1 = findViewById(R.id.title1);
-       final TextView title2 = findViewById(R.id.title2);
-       final TextView menu1 = findViewById(R.id.menu1);
-       final TextView menu2 = findViewById(R.id.menu2);
-
-       Animation animFadein4 = AnimationUtils.loadAnimation(getApplicationContext(),
-               R.anim.slideup);
-       Animation animFadein5 = AnimationUtils.loadAnimation(getApplicationContext(),
-               R.anim.slideright);
-       menu1.startAnimation(animFadein4);
-       menu2.startAnimation(animFadein4);
-
-       cart1.startAnimation(animFadein5);
-       cart2.startAnimation(animFadein5);
-        title1.setVisibility(View.INVISIBLE);
-        title2.setVisibility(View.INVISIBLE);
-        menu1.setVisibility(View.INVISIBLE);
-        menu2.setVisibility(View.INVISIBLE);
-
-
-       animFadein2.setAnimationListener(new Animation.AnimationListener() {
-           @Override
-           public void onAnimationStart(Animation animation) {
-           }
-
-           @Override
-           public void onAnimationEnd(Animation animation) {
-back.setVisibility(View.VISIBLE);
-           }
-
-           @Override
-           public void onAnimationRepeat(Animation animation) {
-
-           }
-       });
-
-
-
-   }
-
-   public void backtomenu(View view)
-   {
-       LinearLayout main = findViewById(R.id.main);
-       animFadein3 = AnimationUtils.loadAnimation(getApplicationContext(),
-               R.anim.cartexit);
-       TextView back = findViewById(R.id.back);
-
-       main.startAnimation(animFadein3);
-       back.setVisibility(View.INVISIBLE);
-
-       final TextView cart1 = findViewById(R.id.cart1);
-       final TextView cart2 = findViewById(R.id.cart2);
-       final TextView title1 = findViewById(R.id.title1);
-       final TextView title2 = findViewById(R.id.title2);
-       final TextView menu1 = findViewById(R.id.menu1);
-       final TextView menu2 = findViewById(R.id.menu2);
-
-       Animation animFadein4 = AnimationUtils.loadAnimation(getApplicationContext(),
-               R.anim.slideleft);
-       cart1.startAnimation(animFadein4);
-       cart2.startAnimation(animFadein4);
-       cart1.setVisibility(View.INVISIBLE);
-       cart2.setVisibility(View.INVISIBLE);
-
-
-       Animation animFadein6 = AnimationUtils.loadAnimation(getApplicationContext(),
-               R.anim.slidedown);
-       title1.setAnimation(animFadein6);
-       title2.setAnimation(animFadein6);
-       animFadein6.setAnimationListener(new Animation.AnimationListener() {
-           @Override
-           public void onAnimationStart(Animation animation) {
-
-           }
-
-           @Override
-           public void onAnimationEnd(Animation animation) {
-               title1.setVisibility(View.VISIBLE);
-               title2.setVisibility(View.VISIBLE);
-               menu1.setVisibility(View.INVISIBLE);
-               menu2.setVisibility(View.INVISIBLE);
-           }
-
-           @Override
-           public void onAnimationRepeat(Animation animation) {
-
-           }
-       });
-
-
-   }*/
 }
 
 
