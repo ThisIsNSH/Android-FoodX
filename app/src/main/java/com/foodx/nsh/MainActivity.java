@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView quantity20 = findViewById(R.id.quantity2);
         final TextView quantity30 = findViewById(R.id.quantity3);
         final TextView quantity40 = findViewById(R.id.quantity4);
+
 
         /*    item1.setOnTouchListener(new View.OnTouchListener() {
 
@@ -124,8 +126,101 @@ public class MainActivity extends AppCompatActivity {
         });
         item2.
 
-*/      Context context = item1.getContext();
-        SensorManager sensorManager = (SensorManager) context.getSystemService(SENSOR_SERVICE);
+
+
+*/
+        item1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+         Context context1 = item1.getContext();
+          SensorManager sensorManager = (SensorManager) context1.getSystemService(SENSOR_SERVICE);
+
+
+
+          Sensor rotationVectorSensor =
+                sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+        // Create a listener
+                 SensorEventListener rvListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                float[] rotationMatrix = new float[16];
+                SensorManager.getRotationMatrixFromVector(
+                        rotationMatrix, sensorEvent.values);
+                float[] remappedRotationMatrix = new float[16];
+                SensorManager.remapCoordinateSystem(rotationMatrix,
+                        SensorManager.AXIS_X,
+                        SensorManager.AXIS_Z,
+                        remappedRotationMatrix);
+
+// Convert to orientations
+                float[] orientations = new float[3];
+                SensorManager.getOrientation(remappedRotationMatrix, orientations);
+
+                for(int i = 0; i < 3; i++) {
+                    orientations[i] = (float)(Math.toDegrees(orientations[i]));
+                }
+
+                if(orientations[2] > 30) {
+                    q1+=1;
+                    if (q1>0)
+                    {
+                        quantity10.setText(Integer.toString(q1));
+                        quantity10.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        quantity10.setVisibility(View.INVISIBLE);
+                    }                }
+
+                    else if(orientations[2] < -30) {
+                    if (q1>0)
+                        q1-=1;
+                    if (q1>0)
+                    {
+                        quantity10.setText(Integer.toString(q1));
+                        quantity10.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        quantity10.setVisibility(View.INVISIBLE);
+                    }                }
+
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {
+            }
+        };
+
+// Register it
+        sensorManager.registerListener(rvListener   ,
+                rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+
+
+
+            }
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*        SensorManager sensorManager = (SensorManager) context.getSystemService(SENSOR_SERVICE);
         Sensor gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
 
         SensorEventListener gyroscopeSensorListener = new SensorEventListener() {
@@ -168,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
 
 // Register the listener
         sensorManager.registerListener(gyroscopeSensorListener,
-                gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);
+                gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);*/
 
 
 
