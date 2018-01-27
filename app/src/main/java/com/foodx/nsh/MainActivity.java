@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
                     q1-=1;
                 }
                 if (q1>0){
-                    quantity1.setText(Integer.toString(q1));
+                    quantity1.setText(Integer.toString(q1*p1));
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);

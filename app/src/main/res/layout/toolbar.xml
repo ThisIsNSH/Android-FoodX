@@ -37,6 +37,42 @@
         android:textColor="#fff"
         android:textSize="25sp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ps"
+        android:id="@+id/total1"
+        android:visibility="invisible"
+        android:text="TOTAL"
+        android:textColor="#2ecc71"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/psb"
+        android:text="X"
+        android:layout_marginTop="-2dp"
+        android:layout_toRightOf="@id/total1"
+        android:visibility="invisible"
+        android:id="@+id/total2"
+        android:textColor="#2ecc71"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/psb"
+        android:text="X"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/total2"
+        android:visibility="invisible"
+        android:id="@+id/total3"
+        android:textColor="#2ecc71"
+        android:textSize="25sp" />
+
+
+
 
 
 </RelativeLayout>
