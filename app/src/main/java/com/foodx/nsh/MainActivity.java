@@ -417,7 +417,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -450,7 +450,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -482,7 +482,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -514,7 +514,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -546,7 +546,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -578,7 +578,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -610,7 +610,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -642,7 +642,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -674,7 +674,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (total>0 && check==1){
                     total3.setText(Integer.toString(total));
                 }
-                else if (total==0)
+                else if (total==0 && check==1)
                 {
                     appBarAnim1();
                 }
@@ -690,7 +690,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q10>0){
                     quantity10.setText(Integer.toString(q10*p10));
-                    total-=(p10);
+
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     amount10.setVisibility(View.VISIBLE);
@@ -708,7 +708,7 @@ public class MainActivity extends AppCompatActivity {
                     total3.setText(Integer.toString(total));
 
                 }
-                else if (total==0)
+                else if (total==0  && check==1)
                 {
                     appBarAnim1();
                 }
