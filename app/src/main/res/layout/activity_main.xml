@@ -117,13 +117,15 @@
                             android:layout_height="120dp"
                             android:layout_margin="16dp"
                             android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
@@ -131,8 +133,37 @@
                                 android:background="#80000000"
                                 android:id="@+id/quantity1"/>
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real1"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
+
 
                         </RelativeLayout>
+
                         <TextView
                             android:id="@+id/title1"
                             android:layout_width="wrap_content"
@@ -217,19 +248,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity2"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real2"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -326,19 +387,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity3"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real3"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -427,19 +518,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity4"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real4"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -535,19 +656,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity5"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real5"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -636,19 +787,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity6"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real6"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -745,19 +926,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity7"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real7"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -846,19 +1057,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity8"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real8"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -955,19 +1196,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity9"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real9"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
@@ -1056,19 +1327,49 @@
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:src="@color/colorAccent" />
+
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
                                 android:text="0"
                                 android:visibility="invisible"
-                                android:paddingTop="24dp"
+                                android:paddingTop="40dp"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/psb"
                                 android:textSize="45dp"
                                 android:textColor="#fff"
                                 android:background="#80000000"
                                 android:id="@+id/quantity10"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Amount"
+                                android:visibility="invisible"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/ps"
+                                android:textSize="20sp"
+                                android:paddingTop="16sp"
+                                android:textColor="#fff"
+                                android:layout_margin="16dp"/>
+
+                            <TextView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/circle_red"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible"
+                                android:id="@+id/real10"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:fontFamily="@font/psb"
+                                android:textAlignment="center"
+                                />
 
 
                         </RelativeLayout>
