@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/grey"
 
     tools:context="com.foodx.nsh.MainActivity">
 
@@ -108,13 +108,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
                         <ImageView
                             android:id="@+id/image1"
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
                             android:layout_margin="16dp"
                             android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity1"/>
 
+
+                        </RelativeLayout>
                         <TextView
                             android:id="@+id/title1"
                             android:layout_width="wrap_content"
@@ -190,12 +208,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image2"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image2"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity2"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title2"
@@ -263,6 +300,7 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/group2"
                     android:layout_width="match_parent"
@@ -279,12 +317,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image3"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image3"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity3"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title3"
@@ -361,13 +418,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image4"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image4"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity4"/>
 
+
+                        </RelativeLayout>
                         <TextView
                             android:id="@+id/title4"
                             android:layout_width="wrap_content"
@@ -434,6 +509,7 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/group3"
                     android:layout_width="match_parent"
@@ -450,12 +526,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image5"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image5"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity5"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title5"
@@ -532,12 +627,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image6"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image6"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity6"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title6"
@@ -605,6 +719,7 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/group4"
                     android:layout_width="match_parent"
@@ -621,12 +736,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image7"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image7"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity7"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title7"
@@ -703,12 +837,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image8"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image8"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity8"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title8"
@@ -776,6 +929,7 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/group5"
                     android:layout_width="match_parent"
@@ -792,12 +946,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image9"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image9"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity9"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title9"
@@ -874,12 +1047,31 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/image10"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_margin="16dp"
-                            android:src="@color/colorAccent" />
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image10"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:src="@color/colorAccent" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:text="0"
+                                android:visibility="invisible"
+                                android:paddingTop="24dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/psb"
+                                android:textSize="45dp"
+                                android:textColor="#fff"
+                                android:background="#80000000"
+                                android:id="@+id/quantity10"/>
+
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title10"

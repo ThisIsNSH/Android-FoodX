@@ -19,77 +19,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ps"
-        android:id="@+id/title1"
-        android:visibility="visible"
-        android:text="FOOD"
-        android:textColor="#fff"
-        android:textSize="25sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/psb"
-        android:text="X"
-        android:layout_marginTop="-2dp"
-        android:layout_toRightOf="@id/title1"
-        android:visibility="visible"
-        android:id="@+id/title2"
-        android:textColor="#fff"
-        android:textSize="25sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/ps"
         android:id="@+id/menu1"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:text="MENU"
-        android:textColor="#06C7DA"
+        android:textColor="#fff"
         android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"
+        android:text="X"
+        android:layout_marginTop="-2dp"
         android:layout_toRightOf="@id/menu1"
-        android:layout_marginTop="-2dp"
-        android:text="X"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:id="@+id/menu2"
-        android:textColor="#06C7DA"
+        android:textColor="#fff"
         android:textSize="25sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/ps"
-        android:id="@+id/cart1"
-        android:visibility="invisible"
-        android:text="CART"
-        android:textColor="#FFC300"
-        android:textSize="25sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/psb"
-        android:layout_toRightOf="@id/cart1"
-        android:layout_marginTop="-2dp"
-        android:text="X"
-        android:visibility="invisible"
-        android:id="@+id/cart2"
-        android:textColor="#FFC300"
-        android:textSize="25sp" />
-
-    <!--<ImageView-->
-        <!--android:layout_width="30dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:onClick="cart"-->
-
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:src="@drawable/cart48"/>-->
 
 </RelativeLayout>
 </android.support.v7.widget.Toolbar>
