@@ -231,8 +231,167 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
+        sub1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q1>0)
+                {
+                    q1-=1;
+                }
+                if (q1>0){
+                    quantity1.setText(Integer.toString(q1));
+                    quantity1.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity1.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
+        sub2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q2>0)
+                {
+                    q2-=1;
+                }
+                if (q2>0){
+                    quantity2.setText(Integer.toString(q2));
+                    quantity2.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity2.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q3>0)
+                {
+                    q3-=1;
+                }
+                if (q3>0){
+                    quantity3.setText(Integer.toString(q3));
+                    quantity3.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity3.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q4>0)
+                {
+                    q4-=1;
+                }
+                if (q4>0){
+                    quantity4.setText(Integer.toString(q4));
+                    quantity4.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity4.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q5>0)
+                {
+                    q5-=1;
+                }
+                if (q5>0){
+                    quantity5.setText(Integer.toString(q5));
+                    quantity5.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity5.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q6>0)
+                {
+                    q6-=1;
+                }
+                if (q6>0){
+                    quantity6.setText(Integer.toString(q6));
+                    quantity6.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity6.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q7>0)
+                {
+                    q7-=1;
+                }
+                if (q7>0){
+                    quantity7.setText(Integer.toString(q7));
+                    quantity7.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity7.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q8>0)
+                {
+                    q8-=1;
+                }
+                if (q8>0){
+                    quantity8.setText(Integer.toString(q8));
+                    quantity8.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity8.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q9>0)
+                {
+                    q9-=1;
+                }
+                if (q9>0){
+                    quantity9.setText(Integer.toString(q9));
+                    quantity9.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity9.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        sub10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (q10>0)
+                {
+                    q10-=1;
+                }
+                if (q10>0){
+                    quantity10.setText(Integer.toString(q10));
+                    quantity10.setVisibility(View.VISIBLE);
+                }
+                else{
+                    quantity10.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
 
     }
