@@ -137,6 +137,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
+                                android:id="@+id/amount1"
                                 android:visibility="invisible"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
@@ -154,6 +155,7 @@
                                 android:textSize="20sp"
                                 android:visibility="invisible"
                                 android:id="@+id/real1"
+                                android:paddingTop="2dp"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
@@ -269,6 +271,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
                                 android:visibility="invisible"
+                                android:id="@+id/amount2"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
                                 android:textSize="20sp"
@@ -285,6 +288,8 @@
                                 android:textSize="20sp"
                                 android:visibility="invisible"
                                 android:id="@+id/real2"
+                                android:paddingTop="2dp"
+
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
@@ -407,6 +412,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
+                                android:id="@+id/amount3"
                                 android:visibility="invisible"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
@@ -423,6 +429,8 @@
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:visibility="invisible"
+                                android:paddingTop="2dp"
+
                                 android:id="@+id/real3"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
@@ -538,6 +546,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
+                                android:id="@+id/amount4"
                                 android:visibility="invisible"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
@@ -553,6 +562,8 @@
                                 android:text="0"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
+                                android:paddingTop="2dp"
+
                                 android:visibility="invisible"
                                 android:id="@+id/real4"
                                 android:layout_alignParentBottom="true"
@@ -676,6 +687,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
+                                android:id="@+id/amount5"
                                 android:visibility="invisible"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
@@ -690,6 +702,8 @@
                                 android:background="@drawable/circle_red"
                                 android:text="0"
                                 android:textColor="@color/black"
+                                android:paddingTop="2dp"
+
                                 android:textSize="20sp"
                                 android:visibility="invisible"
                                 android:id="@+id/real5"
@@ -807,6 +821,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
+                                android:id="@+id/amount6"
                                 android:visibility="invisible"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
@@ -816,6 +831,8 @@
                                 android:layout_margin="16dp"/>
 
                             <TextView
+                                android:paddingTop="2dp"
+
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:background="@drawable/circle_red"
@@ -946,6 +963,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Amount"
+                                android:id="@+id/amount7"
                                 android:visibility="invisible"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/ps"
@@ -956,6 +974,8 @@
 
                             <TextView
                                 android:layout_width="30dp"
+                                android:paddingTop="2dp"
+
                                 android:layout_height="30dp"
                                 android:background="@drawable/circle_red"
                                 android:text="0"
@@ -1082,10 +1102,13 @@
                                 android:fontFamily="@font/ps"
                                 android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:id="@+id/amount8"
                                 android:textColor="#fff"
                                 android:layout_margin="16dp"/>
 
                             <TextView
+                                android:paddingTop="2dp"
+
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:background="@drawable/circle_red"
@@ -1221,6 +1244,7 @@
                                 android:fontFamily="@font/ps"
                                 android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:id="@+id/amount9"
                                 android:textColor="#fff"
                                 android:layout_margin="16dp"/>
 
@@ -1233,6 +1257,8 @@
                                 android:textSize="20sp"
                                 android:visibility="invisible"
                                 android:id="@+id/real9"
+                                android:paddingTop="2dp"
+
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
@@ -1352,6 +1378,7 @@
                                 android:fontFamily="@font/ps"
                                 android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:id="@+id/amount10"
                                 android:textColor="#fff"
                                 android:layout_margin="16dp"/>
 
@@ -1364,6 +1391,8 @@
                                 android:textSize="20sp"
                                 android:visibility="invisible"
                                 android:id="@+id/real10"
+                                android:paddingTop="2dp"
+
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"

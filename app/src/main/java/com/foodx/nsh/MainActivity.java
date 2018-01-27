@@ -29,7 +29,7 @@ import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 public class MainActivity extends AppCompatActivity {
 
     public int q1=0,q2=0,q3=0,q4=0,q5=0,q6=0,q7=0,q8=0,q9=0,q10=0;
-    public int p1=0,p2=0,p3=0,p4=0,p5=0,p6=0,p7=0,p8=0,p9=0,p10=0;
+    public int p1=10,p2=10,p3=10,p4=10,p5=10,p6=10,p7=10,p8=10,p9=10,p10=10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
         final TextView quantity9 = findViewById(R.id.quantity9);
         final TextView quantity10 = findViewById(R.id.quantity10);
 
+        final TextView amount1 = findViewById(R.id.amount1);
+        final TextView amount2 = findViewById(R.id.amount2);
+        final TextView amount3 = findViewById(R.id.amount3);
+        final TextView amount4 = findViewById(R.id.amount4);
+        final TextView amount5 = findViewById(R.id.amount5);
+        final TextView amount6 = findViewById(R.id.amount6);
+        final TextView amount7 = findViewById(R.id.amount7);
+        final TextView amount8 = findViewById(R.id.amount8);
+        final TextView amount9 = findViewById(R.id.amount9);
+        final TextView amount10 = findViewById(R.id.amount10);
 
         final ImageButton add1 = findViewById(R.id.add1);
         final ImageButton add2 = findViewById(R.id.add2);
@@ -93,10 +103,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);
+                    amount1.setVisibility(View.VISIBLE);
                     }
                 else{
                     quantity1.setVisibility(View.INVISIBLE);
                     real1.setVisibility(View.INVISIBLE);
+                    amount1.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -108,14 +120,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q2<15)
                     q2+=1;
                 if (q2>0){
-                    quantity2.setText(Integer.toString(q2));
+                    quantity2.setText(Integer.toString(q2*p2));
                     quantity2.setVisibility(View.VISIBLE);
                     real2.setText(Integer.toString(q2));
                     real2.setVisibility(View.VISIBLE);
+                    amount2.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity2.setVisibility(View.INVISIBLE);
                     real2.setVisibility(View.INVISIBLE);
+                    amount2.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -127,14 +141,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q3<15)
                     q3+=1;
                 if (q3>0){
-                    quantity3.setText(Integer.toString(q3));
+                    quantity3.setText(Integer.toString(q3*p3));
                     quantity3.setVisibility(View.VISIBLE);
                     real3.setText(Integer.toString(q3));
                     real3.setVisibility(View.VISIBLE);
+                    amount3.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity3.setVisibility(View.INVISIBLE);
                     real3.setVisibility(View.INVISIBLE);
+                    amount3.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -146,14 +162,17 @@ public class MainActivity extends AppCompatActivity {
                 if (q4<15)
                     q4+=1;
                 if (q4>0){
-                    quantity4.setText(Integer.toString(q4));
+                    quantity4.setText(Integer.toString(q4*p4));
                     quantity4.setVisibility(View.VISIBLE);
                     real4.setText(Integer.toString(q4));
+
                     real4.setVisibility(View.VISIBLE);
+                    amount4.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity4.setVisibility(View.INVISIBLE);
                     real4.setVisibility(View.INVISIBLE);
+                    amount4.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -165,14 +184,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q5<15)
                     q5+=1;
                 if (q5>0){
-                    quantity5.setText(Integer.toString(q5));
+                    quantity5.setText(Integer.toString(q5*p5));
                     quantity5.setVisibility(View.VISIBLE);
                     real5.setText(Integer.toString(q5));
                     real5.setVisibility(View.VISIBLE);
+                    amount5.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity5.setVisibility(View.INVISIBLE);
                     real5.setVisibility(View.INVISIBLE);
+                    amount5.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -184,14 +205,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q6<15)
                     q6+=1;
                 if (q6>0){
-                    quantity6.setText(Integer.toString(q6));
+                    quantity6.setText(Integer.toString(q6*p6));
                     quantity6.setVisibility(View.VISIBLE);
                     real6.setText(Integer.toString(q6));
                     real6.setVisibility(View.VISIBLE);
+                    amount6.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity6.setVisibility(View.INVISIBLE);
                     real6.setVisibility(View.INVISIBLE);
+                    amount6.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -203,14 +226,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q7<15)
                     q7+=1;
                 if (q7>0){
-                    quantity7.setText(Integer.toString(q7));
+                    quantity7.setText(Integer.toString(q7*p7));
                     quantity7.setVisibility(View.VISIBLE);
                     real7.setText(Integer.toString(q7));
                     real7.setVisibility(View.VISIBLE);
+                    amount7.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity7.setVisibility(View.INVISIBLE);
                     real7.setVisibility(View.INVISIBLE);
+                    amount7.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -222,14 +247,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q8<15)
                     q8+=1;
                 if (q8>0){
-                    quantity8.setText(Integer.toString(q8));
+                    quantity8.setText(Integer.toString(q8*p8));
                     quantity8.setVisibility(View.VISIBLE);
                     real8.setText(Integer.toString(q8));
                     real8.setVisibility(View.VISIBLE);
+                    amount8.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity8.setVisibility(View.INVISIBLE);
                     real8.setVisibility(View.INVISIBLE);
+                    amount8.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -241,14 +268,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q9<15)
                     q9+=1;
                 if (q9>0){
-                    quantity9.setText(Integer.toString(q9));
+                    quantity9.setText(Integer.toString(q9*p9));
                     quantity9.setVisibility(View.VISIBLE);
                     real9.setText(Integer.toString(q9));
                     real9.setVisibility(View.VISIBLE);
+                    amount9.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity9.setVisibility(View.INVISIBLE);
                     real9.setVisibility(View.INVISIBLE);
+                    amount9.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -260,14 +289,16 @@ public class MainActivity extends AppCompatActivity {
                 if (q10<15)
                     q10+=1;
                 if (q10>0){
-                    quantity10.setText(Integer.toString(q10));
+                    quantity10.setText(Integer.toString(q10*p10));
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     real10.setVisibility(View.VISIBLE);
+                    amount10.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity10.setVisibility(View.INVISIBLE);
                     real10.setVisibility(View.INVISIBLE);
+                    amount10.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -283,9 +314,14 @@ public class MainActivity extends AppCompatActivity {
                 if (q1>0){
                     quantity1.setText(Integer.toString(q1));
                     quantity1.setVisibility(View.VISIBLE);
+                    real1.setText(Integer.toString(q1));
+                    real1.setVisibility(View.VISIBLE);
+                    amount1.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity1.setVisibility(View.INVISIBLE);
+                    real1.setVisibility(View.INVISIBLE);
+                    amount1.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -298,11 +334,16 @@ public class MainActivity extends AppCompatActivity {
                     q2-=1;
                 }
                 if (q2>0){
-                    quantity2.setText(Integer.toString(q2));
+                    quantity2.setText(Integer.toString(q2*p2));
                     quantity2.setVisibility(View.VISIBLE);
+                    real2.setText(Integer.toString(q2));
+                    real2.setVisibility(View.VISIBLE);
+                    amount2.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity2.setVisibility(View.INVISIBLE);
+                    real2.setVisibility(View.INVISIBLE);
+                    amount2.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -314,11 +355,16 @@ public class MainActivity extends AppCompatActivity {
                     q3-=1;
                 }
                 if (q3>0){
-                    quantity3.setText(Integer.toString(q3));
+                    quantity3.setText(Integer.toString(q3*p3));
                     quantity3.setVisibility(View.VISIBLE);
+                    real3.setText(Integer.toString(q3));
+                    real3.setVisibility(View.VISIBLE);
+                    amount3.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity3.setVisibility(View.INVISIBLE);
+                    real3.setVisibility(View.INVISIBLE);
+                    amount3.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -330,11 +376,16 @@ public class MainActivity extends AppCompatActivity {
                     q4-=1;
                 }
                 if (q4>0){
-                    quantity4.setText(Integer.toString(q4));
+                    quantity4.setText(Integer.toString(q4*p4));
                     quantity4.setVisibility(View.VISIBLE);
+                    real4.setText(Integer.toString(q4));
+                    real4.setVisibility(View.VISIBLE);
+                    amount4.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity4.setVisibility(View.INVISIBLE);
+                    real4.setVisibility(View.INVISIBLE);
+                    amount4.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -346,11 +397,16 @@ public class MainActivity extends AppCompatActivity {
                     q5-=1;
                 }
                 if (q5>0){
-                    quantity5.setText(Integer.toString(q5));
+                    quantity5.setText(Integer.toString(q5*p5));
                     quantity5.setVisibility(View.VISIBLE);
+                    real5.setText(Integer.toString(q5));
+                    real5.setVisibility(View.VISIBLE);
+                    amount5.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity5.setVisibility(View.INVISIBLE);
+                    real5.setVisibility(View.INVISIBLE);
+                    amount5.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -362,11 +418,16 @@ public class MainActivity extends AppCompatActivity {
                     q6-=1;
                 }
                 if (q6>0){
-                    quantity6.setText(Integer.toString(q6));
+                    quantity6.setText(Integer.toString(q6*p6));
                     quantity6.setVisibility(View.VISIBLE);
+                    real6.setText(Integer.toString(q6));
+                    real6.setVisibility(View.VISIBLE);
+                    amount6.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity6.setVisibility(View.INVISIBLE);
+                    real6.setVisibility(View.INVISIBLE);
+                    amount6.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -378,11 +439,16 @@ public class MainActivity extends AppCompatActivity {
                     q7-=1;
                 }
                 if (q7>0){
-                    quantity7.setText(Integer.toString(q7));
+                    quantity7.setText(Integer.toString(q7*p7));
                     quantity7.setVisibility(View.VISIBLE);
+                    real7.setText(Integer.toString(q7));
+                    real7.setVisibility(View.VISIBLE);
+                    amount7.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity7.setVisibility(View.INVISIBLE);
+                    real7.setVisibility(View.INVISIBLE);
+                    amount7.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -394,11 +460,16 @@ public class MainActivity extends AppCompatActivity {
                     q8-=1;
                 }
                 if (q8>0){
-                    quantity8.setText(Integer.toString(q8));
+                    quantity8.setText(Integer.toString(q8*p8));
                     quantity8.setVisibility(View.VISIBLE);
+                    real8.setText(Integer.toString(q8));
+                    real8.setVisibility(View.VISIBLE);
+                    amount8.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity8.setVisibility(View.INVISIBLE);
+                    real8.setVisibility(View.INVISIBLE);
+                    amount8.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -410,11 +481,16 @@ public class MainActivity extends AppCompatActivity {
                     q9-=1;
                 }
                 if (q9>0){
-                    quantity9.setText(Integer.toString(q9));
+                    quantity9.setText(Integer.toString(q9*p9));
                     quantity9.setVisibility(View.VISIBLE);
+                    real9.setText(Integer.toString(q9));
+                    real9.setVisibility(View.VISIBLE);
+                    amount9.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity9.setVisibility(View.INVISIBLE);
+                    real9.setVisibility(View.INVISIBLE);
+                    amount9.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -426,11 +502,16 @@ public class MainActivity extends AppCompatActivity {
                     q10-=1;
                 }
                 if (q10>0){
-                    quantity10.setText(Integer.toString(q10));
+                    quantity10.setText(Integer.toString(q10*p10));
                     quantity10.setVisibility(View.VISIBLE);
+                    real10.setText(Integer.toString(q10));
+                    amount10.setVisibility(View.VISIBLE);
+                    real10.setVisibility(View.VISIBLE);
                 }
                 else{
                     quantity10.setVisibility(View.INVISIBLE);
+                    real10.setVisibility(View.INVISIBLE);
+                    amount10.setVisibility(View.INVISIBLE);
                 }
             }
         });
