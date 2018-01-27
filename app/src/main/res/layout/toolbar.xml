@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/ps"
         android:id="@+id/total1"
+
         android:visibility="invisible"
         android:text="TOTAL"
         android:textColor="#2ecc71"
@@ -60,6 +61,8 @@
         android:textSize="25sp" />
 
     <TextView
+        android:layout_marginTop="-2dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"

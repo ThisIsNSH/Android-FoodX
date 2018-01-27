@@ -2,6 +2,7 @@ package com.foodx.nsh;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     public int q1=0,q2=0,q3=0,q4=0,q5=0,q6=0,q7=0,q8=0,q9=0,q10=0;
     public int p1=10,p2=10,p3=10,p4=10,p5=10,p6=10,p7=10,p8=10,p9=10,p10=10;
+    public int total=0;
+    public int check=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +96,19 @@ public class MainActivity extends AppCompatActivity {
         final TextView real9 = findViewById(R.id.real9);
         final TextView real10 = findViewById(R.id.real10);
 
+        final TextView menu1 = findViewById(R.id.menu1);
+        final TextView menu2 = findViewById(R.id.menu2);
+        final TextView total1 = findViewById(R.id.total1);
+        final TextView total2 = findViewById(R.id.total2);
+        final TextView total3 = findViewById(R.id.total3);
+
+
+
+
+
+
+        //Clicking Listeners begin here
+
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 q1+=1;
                 if (q1>0){
                     quantity1.setText(Integer.toString(q1*p1));
+                    total+=(p1);
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);
@@ -109,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity1.setVisibility(View.INVISIBLE);
                     real1.setVisibility(View.INVISIBLE);
                     amount1.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -121,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     q2+=1;
                 if (q2>0){
                     quantity2.setText(Integer.toString(q2*p2));
+                    total+=(p2);
                     quantity2.setVisibility(View.VISIBLE);
                     real2.setText(Integer.toString(q2));
                     real2.setVisibility(View.VISIBLE);
@@ -130,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity2.setVisibility(View.INVISIBLE);
                     real2.setVisibility(View.INVISIBLE);
                     amount2.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -142,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     q3+=1;
                 if (q3>0){
                     quantity3.setText(Integer.toString(q3*p3));
+                    total+=(p3);
                     quantity3.setVisibility(View.VISIBLE);
                     real3.setText(Integer.toString(q3));
                     real3.setVisibility(View.VISIBLE);
@@ -151,6 +182,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity3.setVisibility(View.INVISIBLE);
                     real3.setVisibility(View.INVISIBLE);
                     amount3.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -163,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                     q4+=1;
                 if (q4>0){
                     quantity4.setText(Integer.toString(q4*p4));
+                    total+=(p4);
                     quantity4.setVisibility(View.VISIBLE);
                     real4.setText(Integer.toString(q4));
 
@@ -173,6 +211,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity4.setVisibility(View.INVISIBLE);
                     real4.setVisibility(View.INVISIBLE);
                     amount4.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -185,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
                     q5+=1;
                 if (q5>0){
                     quantity5.setText(Integer.toString(q5*p5));
+                    total+=(p5);
                     quantity5.setVisibility(View.VISIBLE);
                     real5.setText(Integer.toString(q5));
                     real5.setVisibility(View.VISIBLE);
@@ -194,6 +239,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity5.setVisibility(View.INVISIBLE);
                     real5.setVisibility(View.INVISIBLE);
                     amount5.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -206,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
                     q6+=1;
                 if (q6>0){
                     quantity6.setText(Integer.toString(q6*p6));
+                    total+=(p6);
                     quantity6.setVisibility(View.VISIBLE);
                     real6.setText(Integer.toString(q6));
                     real6.setVisibility(View.VISIBLE);
@@ -215,6 +267,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity6.setVisibility(View.INVISIBLE);
                     real6.setVisibility(View.INVISIBLE);
                     amount6.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -227,6 +285,7 @@ public class MainActivity extends AppCompatActivity {
                     q7+=1;
                 if (q7>0){
                     quantity7.setText(Integer.toString(q7*p7));
+                    total+=(p7);
                     quantity7.setVisibility(View.VISIBLE);
                     real7.setText(Integer.toString(q7));
                     real7.setVisibility(View.VISIBLE);
@@ -236,6 +295,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity7.setVisibility(View.INVISIBLE);
                     real7.setVisibility(View.INVISIBLE);
                     amount7.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -248,6 +313,7 @@ public class MainActivity extends AppCompatActivity {
                     q8+=1;
                 if (q8>0){
                     quantity8.setText(Integer.toString(q8*p8));
+                    total+=(p8);
                     quantity8.setVisibility(View.VISIBLE);
                     real8.setText(Integer.toString(q8));
                     real8.setVisibility(View.VISIBLE);
@@ -257,6 +323,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity8.setVisibility(View.INVISIBLE);
                     real8.setVisibility(View.INVISIBLE);
                     amount8.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -269,6 +341,7 @@ public class MainActivity extends AppCompatActivity {
                     q9+=1;
                 if (q9>0){
                     quantity9.setText(Integer.toString(q9*p9));
+                    total+=(p9);
                     quantity9.setVisibility(View.VISIBLE);
                     real9.setText(Integer.toString(q9));
                     real9.setVisibility(View.VISIBLE);
@@ -278,6 +351,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity9.setVisibility(View.INVISIBLE);
                     real9.setVisibility(View.INVISIBLE);
                     amount9.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -290,6 +369,7 @@ public class MainActivity extends AppCompatActivity {
                     q10+=1;
                 if (q10>0){
                     quantity10.setText(Integer.toString(q10*p10));
+                    total+=(p10);
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     real10.setVisibility(View.VISIBLE);
@@ -299,6 +379,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity10.setVisibility(View.INVISIBLE);
                     real10.setVisibility(View.INVISIBLE);
                     amount10.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
 
             }
@@ -313,6 +399,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q1>0){
                     quantity1.setText(Integer.toString(q1*p1));
+                    total-=(p1);
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);
@@ -322,6 +409,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity1.setVisibility(View.INVISIBLE);
                     real1.setVisibility(View.INVISIBLE);
                     amount1.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -335,6 +428,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q2>0){
                     quantity2.setText(Integer.toString(q2*p2));
+                    total-=(p2);
                     quantity2.setVisibility(View.VISIBLE);
                     real2.setText(Integer.toString(q2));
                     real2.setVisibility(View.VISIBLE);
@@ -344,6 +438,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity2.setVisibility(View.INVISIBLE);
                     real2.setVisibility(View.INVISIBLE);
                     amount2.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -356,6 +456,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q3>0){
                     quantity3.setText(Integer.toString(q3*p3));
+                    total-=(p3);
                     quantity3.setVisibility(View.VISIBLE);
                     real3.setText(Integer.toString(q3));
                     real3.setVisibility(View.VISIBLE);
@@ -365,6 +466,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity3.setVisibility(View.INVISIBLE);
                     real3.setVisibility(View.INVISIBLE);
                     amount3.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -377,6 +484,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q4>0){
                     quantity4.setText(Integer.toString(q4*p4));
+                    total-=(p4);
                     quantity4.setVisibility(View.VISIBLE);
                     real4.setText(Integer.toString(q4));
                     real4.setVisibility(View.VISIBLE);
@@ -386,6 +494,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity4.setVisibility(View.INVISIBLE);
                     real4.setVisibility(View.INVISIBLE);
                     amount4.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -398,6 +512,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q5>0){
                     quantity5.setText(Integer.toString(q5*p5));
+                    total-=(p5);
                     quantity5.setVisibility(View.VISIBLE);
                     real5.setText(Integer.toString(q5));
                     real5.setVisibility(View.VISIBLE);
@@ -407,6 +522,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity5.setVisibility(View.INVISIBLE);
                     real5.setVisibility(View.INVISIBLE);
                     amount5.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -419,6 +540,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q6>0){
                     quantity6.setText(Integer.toString(q6*p6));
+                    total-=(p6);
                     quantity6.setVisibility(View.VISIBLE);
                     real6.setText(Integer.toString(q6));
                     real6.setVisibility(View.VISIBLE);
@@ -428,6 +550,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity6.setVisibility(View.INVISIBLE);
                     real6.setVisibility(View.INVISIBLE);
                     amount6.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -440,6 +568,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q7>0){
                     quantity7.setText(Integer.toString(q7*p7));
+                    total-=(p7);
                     quantity7.setVisibility(View.VISIBLE);
                     real7.setText(Integer.toString(q7));
                     real7.setVisibility(View.VISIBLE);
@@ -449,6 +578,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity7.setVisibility(View.INVISIBLE);
                     real7.setVisibility(View.INVISIBLE);
                     amount7.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -461,6 +596,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q8>0){
                     quantity8.setText(Integer.toString(q8*p8));
+                    total-=(p8);
                     quantity8.setVisibility(View.VISIBLE);
                     real8.setText(Integer.toString(q8));
                     real8.setVisibility(View.VISIBLE);
@@ -470,6 +606,12 @@ public class MainActivity extends AppCompatActivity {
                     quantity8.setVisibility(View.INVISIBLE);
                     real8.setVisibility(View.INVISIBLE);
                     amount8.setVisibility(View.INVISIBLE);
+                }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
                 }
             }
         });
@@ -482,6 +624,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q9>0){
                     quantity9.setText(Integer.toString(q9*p9));
+                    total-=(p9);
                     quantity9.setVisibility(View.VISIBLE);
                     real9.setText(Integer.toString(q9));
                     real9.setVisibility(View.VISIBLE);
@@ -492,6 +635,13 @@ public class MainActivity extends AppCompatActivity {
                     real9.setVisibility(View.INVISIBLE);
                     amount9.setVisibility(View.INVISIBLE);
                 }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
+                }
+
             }
         });
         sub10.setOnClickListener(new View.OnClickListener() {
@@ -503,6 +653,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (q10>0){
                     quantity10.setText(Integer.toString(q10*p10));
+                    total-=(p10);
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     amount10.setVisibility(View.VISIBLE);
@@ -513,10 +664,48 @@ public class MainActivity extends AppCompatActivity {
                     real10.setVisibility(View.INVISIBLE);
                     amount10.setVisibility(View.INVISIBLE);
                 }
+                if (total>0 && check==0){
+                    appBarAnim(total);
+                }
+                else if (total>0 && check==1){
+                    total3.setText(Integer.toString(total));
+                }
             }
         });
 
 
+
+
+
     }
+
+public void appBarAnim(int total) {
+        final TextView menu1 = findViewById(R.id.menu1);
+        final TextView menu2 = findViewById(R.id.menu2);
+        final TextView total1 = findViewById(R.id.total1);
+        final TextView total2 = findViewById(R.id.total2);
+        final TextView total3 = findViewById(R.id.total3);
+
+
+        Animation zero_up = AnimationUtils.loadAnimation(this, R.anim.slideup);
+        Animation down_zero = AnimationUtils.loadAnimation(this, R.anim.slideup1);
+
+        total3.setText(Integer.toString(total));
+        menu1.startAnimation(zero_up);
+        menu2.startAnimation(zero_up);
+        menu1.setVisibility(View.INVISIBLE);
+        menu2.setVisibility(View.INVISIBLE);
+
+        total1.startAnimation(down_zero);
+        total2.startAnimation(down_zero);
+        total3.startAnimation(down_zero);
+        total1.setVisibility(View.VISIBLE);
+        total2.setVisibility(View.VISIBLE);
+        total3.setVisibility(View.VISIBLE);
+
+        check=1;
+
+}
+
 }
 
