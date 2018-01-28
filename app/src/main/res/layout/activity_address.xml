@@ -35,6 +35,36 @@
             android:textColor="@color/black"
             android:layout_marginLeft="16dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile:"
+            android:fontFamily="@font/psb"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ps"
+            android:text="None"
+            android:layout_marginTop="8dp"
+            android:id="@+id/oldphone"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="ADD NEW ADDRESS"
+            android:fontFamily="@font/psb"
+            android:id="@+id/addclick"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"/>
+
 
         <EditText
             android:layout_width="match_parent"
@@ -43,6 +73,17 @@
             android:textSize="20sp"
             android:id="@+id/newaddress"
             android:hint="Add New Address"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ps"
+            android:textSize="20sp"
+            android:id="@+id/newphone"
+            android:hint="Add New Mobile Number"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:textColor="@color/black"/>
