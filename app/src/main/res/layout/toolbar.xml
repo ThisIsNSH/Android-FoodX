@@ -74,6 +74,18 @@
         android:textColor="#2ecc71"
         android:textSize="25sp" />
 
+    <ImageButton
+        android:layout_width="32dp"
+        android:id="@+id/cart"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cart"
+        android:layout_marginRight="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentRight="true"
+
+        />
 
 
 

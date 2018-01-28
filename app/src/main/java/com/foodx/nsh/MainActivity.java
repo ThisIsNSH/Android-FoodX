@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView total2 = findViewById(R.id.total2);
         final TextView total3 = findViewById(R.id.total3);
 
+        final ImageButton cart = findViewById(R.id.cart);
 
 
 
@@ -716,7 +717,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,cart.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

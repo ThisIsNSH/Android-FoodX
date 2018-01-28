@@ -21,7 +21,9 @@ android {
 dependencies {
     compile 'com.tzanou:PercentVisibleLayout:1.1.2@aar'
 }
-
+dependencies {
+    compile 'jp.wasabeef:blurry:2.1.1'
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.airbnb.android:lottie:2.2.5'
@@ -36,6 +38,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
 }
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
