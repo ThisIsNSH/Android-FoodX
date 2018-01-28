@@ -3,30 +3,154 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/relativemain"
+
     android:layout_height="match_parent"
     tools:context="com.foodx.nsh.cart">
 
     <include layout="@layout/toolbar" android:id="@+id/tool1" android:visibility="invisible"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_below="@id/tool1"
         android:layout_centerVertical="true"
-        android:background="@drawable/shape"
-        android:layout_margin="32dp"
-        android:theme="@style/Theme.AppCompat.Dialog"
 
+        android:background="#a0141414"
         android:orientation="vertical"
-        android:layout_height="230dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Review Order"
             android:fontFamily="@font/psb"
-            android:textColor="@color/black"
-            android:layout_margin="8dp"
-            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_margin="16dp"
+            android:textSize="25sp"
             android:layout_gravity="center"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/one"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/two"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/three"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/four"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/five"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/six"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/seven"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/eight"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/nine"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="25sp"
+            android:text="Title: "
+            android:id="@+id/ten"
+            android:visibility="visible"
+            android:textColor="#fff"/>
+        </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            android:fontFamily="@font/psb"
+            android:textColor="@color/black"
+            android:backgroundTint="#2ecc71"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
             />
 
 

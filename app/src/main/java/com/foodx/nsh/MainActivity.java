@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -26,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
+
+import jp.wasabeef.blurry.Blurry;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -104,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ImageButton cart = findViewById(R.id.cart);
 
+        final LinearLayout main = findViewById(R.id.main);
 
 
 
@@ -722,6 +726,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,cart.class);
                 startActivity(intent);
+
             }
         });
 
