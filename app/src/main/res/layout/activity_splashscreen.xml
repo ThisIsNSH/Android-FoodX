@@ -11,12 +11,13 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_margin="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:lottie_fileName="data.json"
-app:lottie_cacheStrategy="strong"
 
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:lottie_fileName="data1.json"
+        app:lottie_cacheStrategy="strong"
         app:lottie_autoPlay="true" />
+
+
 
 </RelativeLayout>

@@ -12,66 +12,8 @@
         android:id="@+id/tool"
         layout="@layout/toolbar" />
 
-    <!-- <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="back to menu"
-         android:fontFamily="@font/psb"
-         android:textSize="20sp"
-         android:id="@+id/back"
-         android:visibility="invisible"
-         android:elevation="4dp"
-         android:layout_below="@id/tool"
-         android:onClick="backtomenu"
-         android:textColor="#fff"
-         android:layout_marginTop="16dp"
-         android:layout_marginLeft="16dp"/>
- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_below="@id/tool"
-     android:background="@color/l_grey"
-     android:id="@+id/cart"
-     android:orientation="vertical"
-     android:visibility="visible"
-     android:layout_height="match_parent"
-     >
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="back to menu"
-         android:fontFamily="@font/psb"
-         android:textSize="20sp"
-         android:layout_below="@id/tool"
-         android:textColor="#fff"
-         android:layout_marginTop="16dp"
-         android:layout_marginLeft="16dp"/>
 
-
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="dal kachori:"
-         android:fontFamily="@font/psb"
-         android:textSize="20sp"
-         android:id="@+id/cartname1"
-         android:layout_marginTop="16dp"
-         android:textColor="#fff"
-         android:layout_marginLeft="32dp"/>
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="poha:"
-         android:fontFamily="@font/psb"
-         android:textSize="20sp"
-         android:textColor="#fff"
-         android:id="@+id/cartname2"
-         android:layout_marginLeft="32dp"/>
-
-
-
-
-
- </LinearLayout>-->
+    
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
