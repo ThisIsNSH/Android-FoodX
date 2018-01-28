@@ -32,9 +32,9 @@ import jp.wasabeef.blurry.Blurry;
 
 public class MainActivity extends AppCompatActivity {
 
-    public int q1=0,q2=0,q3=0,q4=0,q5=0,q6=0,q7=0,q8=0,q9=0,q10=0;
-    public int p1=10,p2=10,p3=10,p4=10,p5=10,p6=10,p7=10,p8=10,p9=10,p10=10;
-    public int total=0;
+    public static int q1=0,q2=0,q3=0,q4=0,q5=0,q6=0,q7=0,q8=0,q9=0,q10=0;
+    public static int p1=10,p2=10,p3=10,p4=10,p5=10,p6=10,p7=10,p8=10,p9=10,p10=10;
+    public static int total=0;
     public int check=0;
 
     @Override

@@ -15,7 +15,7 @@
         android:layout_below="@id/tool1"
         android:layout_centerVertical="true"
 
-        android:background="#a0141414"
+        android:background="#d0141414"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
