@@ -1,6 +1,7 @@
 package com.foodx.nsh;
 
 import android.content.SharedPreferences;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -25,6 +26,9 @@ public class address extends AppCompatActivity {
         final EditText newp = findViewById(R.id.newphone);
         final TextView addclick = findViewById(R.id.addclick);
 
+        final TextInputLayout inputa = findViewById(R.id.input_layout_address);
+        final TextInputLayout inputm = findViewById(R.id.input_layout_phone);
+
         final SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         final SharedPreferences.Editor editor = pref.edit();
 
@@ -32,8 +36,9 @@ public class address extends AppCompatActivity {
         old.setText(pref.getString("address","No Address"));
         oldp.setText(pref.getString("phone","No Mobile Number"));
 
-        new1.setVisibility(View.GONE);
-        newp.setVisibility(View.GONE);
+
+        inputa.setVisibility(View.GONE);
+    inputm.setVisibility(View.GONE);
 
         addclick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +50,8 @@ public class address extends AppCompatActivity {
                 old.setVisibility(View.GONE);
                 oldp.setVisibility(View.GONE);
                 addclick.setVisibility(View.GONE);
-                new1.setVisibility(View.VISIBLE);
-                newp.setVisibility(View.VISIBLE);
+                inputa.setVisibility(View.VISIBLE);
+                inputm.setVisibility(View.VISIBLE);
 
                 new1.addTextChangedListener(new TextWatcher() {
                     @Override
