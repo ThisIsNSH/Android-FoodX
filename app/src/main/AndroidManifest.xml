@@ -16,7 +16,7 @@
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".splashscreen"
             android:screenOrientation="portrait">
@@ -26,10 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".cart"
-            android:theme="@style/Theme.Transparent"
+        <activity
+            android:name=".cart"
             android:screenOrientation="portrait"
-            ></activity>
+            android:theme="@style/Theme.Transparent" />
+
+        <activity android:name=".address"
+            android:theme="@style/Theme.Transparent"></activity>
     </application>
 
 </manifest>

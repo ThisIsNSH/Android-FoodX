@@ -1,10 +1,12 @@
 package com.foodx.nsh;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -41,6 +43,8 @@ public class cart extends AppCompatActivity {
         final TextView eight = findViewById(R.id.eight);
         final TextView nine = findViewById(R.id.nine);
         final TextView ten = findViewById(R.id.ten);
+
+        final Button address = findViewById(R.id.address);
 
         one.setVisibility(GONE);
         two.setVisibility(GONE);
@@ -105,5 +109,12 @@ public class cart extends AppCompatActivity {
             ten.setVisibility(View.VISIBLE);
         }
 
+       address.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(cart.this,address.class);
+               startActivity(intent);
+           }
+       });
     }
 }
