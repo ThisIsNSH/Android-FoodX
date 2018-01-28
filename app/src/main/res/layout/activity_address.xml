@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:text="Address:"
             android:fontFamily="@font/psb"
+            android:id="@+id/a"
             android:textColor="@color/black"
             android:layout_marginLeft="8dp"
             android:textSize="20sp"
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:text="Mobile:"
             android:fontFamily="@font/psb"
+            android:id="@+id/m"
             android:textColor="@color/black"
             android:layout_marginLeft="8dp"
             android:textSize="20sp"
@@ -63,7 +65,7 @@
             android:fontFamily="@font/psb"
             android:id="@+id/addclick"
             android:layout_gravity="center"
-            android:layout_margin="8dp"/>
+            android:layout_marginTop="16dp"/>
 
 
         <EditText
@@ -71,6 +73,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ps"
             android:textSize="20sp"
+            android:layout_marginTop="16dp"
             android:id="@+id/newaddress"
             android:hint="Add New Address"
             android:layout_marginLeft="8dp"
