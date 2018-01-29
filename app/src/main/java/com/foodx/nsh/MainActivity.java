@@ -112,6 +112,31 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton cart = findViewById(R.id.cart);
 
         final LinearLayout main = findViewById(R.id.main);
+        final LinearLayout g1 = findViewById(R.id.group1);
+        final LinearLayout g2 = findViewById(R.id.group2);
+        final LinearLayout g3 = findViewById(R.id.group3);
+        final LinearLayout g4 = findViewById(R.id.group4);
+        final LinearLayout g5 = findViewById(R.id.group5);
+
+        Animation main_anim = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
+        main_anim.setStartOffset(200);
+        g1.startAnimation(main_anim);
+
+        Animation main_anim1 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
+main_anim1.setStartOffset(400);
+        g2.startAnimation(main_anim1);
+
+        Animation main_anim2 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
+main_anim2.setStartOffset(600);
+        g3.startAnimation(main_anim2);
+
+        Animation main_anim3 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
+main_anim3.setStartOffset(800);
+        g4.startAnimation(main_anim3);
+
+        Animation main_anim4 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
+main_anim4.setStartOffset(1000);
+        g5.startAnimation(main_anim4);
 
 
 

@@ -91,13 +91,25 @@
         android:layout_height="32dp"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/cart"
+        android:theme="@style/AppTheme2"
+        android:src="@drawable/tick"
+        android:layout_marginRight="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_toLeftOf="@id/info"
+
+        />
+    <ImageButton
+        android:layout_width="32dp"
+        android:id="@+id/info"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_info_outline_white_48dp"
         android:layout_marginRight="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:layout_alignParentRight="true"
 
         />
-
 
 
 
