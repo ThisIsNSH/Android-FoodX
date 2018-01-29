@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context="com.foodx.nsh.cart">
 
-    <include layout="@layout/toolbar" android:id="@+id/tool1" android:visibility="invisible"/>
+    <include layout="@layout/toolbar1" android:id="@+id/tool1"  android:visibility="visible"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Review Order"
@@ -28,7 +28,14 @@
             android:layout_margin="16dp"
             android:textSize="25sp"
             android:layout_gravity="center"
-            />
+            />-->
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            app:lottie_fileName="order.json"
+            app:lottie_cacheStrategy="strong"
+            app:lottie_autoPlay="true" />
 
         <ScrollView
             android:layout_width="match_parent"
