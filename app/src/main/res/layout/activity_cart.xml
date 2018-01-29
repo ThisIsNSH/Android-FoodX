@@ -44,8 +44,9 @@
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:text="Title: "
+                android:layout_margin="4dp"
             android:id="@+id/one"
-                android:fontFamily="@font/ps"
+                android:fontFamily="@font/psb"
             android:visibility="visible"
             android:textColor="#fff"/>
 
@@ -54,10 +55,12 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:textSize="25sp"
+            android:layout_margin="4dp"
+
             android:text="Title: "
             android:id="@+id/two"
             android:visibility="visible"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
             android:textColor="#fff"/>
         <TextView
             android:layout_width="wrap_content"
@@ -73,8 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
 
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
             android:textSize="25sp"
             android:text="Title: "
             android:id="@+id/four"
@@ -84,7 +88,10 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"            android:textSize="25sp"
+            android:fontFamily="@font/psb"
+            android:layout_margin="4dp"
+
+            android:textSize="25sp"
             android:text="Title: "
             android:id="@+id/five"
             android:visibility="visible"
@@ -93,8 +100,10 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"            android:textSize="25sp"
+            android:fontFamily="@font/psb"            android:textSize="25sp"
             android:text="Title: "
+            android:layout_margin="4dp"
+
             android:id="@+id/six"
             android:visibility="visible"
             android:textColor="#fff"/>
@@ -102,8 +111,10 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
             android:textSize="25sp"
+            android:layout_margin="4dp"
+
             android:text="Title: "
             android:id="@+id/seven"
             android:visibility="visible"
@@ -112,7 +123,9 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
+            android:layout_margin="4dp"
+
             android:textSize="25sp"
             android:text="Title: "
             android:id="@+id/eight"
@@ -122,7 +135,9 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
+            android:layout_margin="4dp"
+
             android:textSize="25sp"
             android:text="Title: "
             android:id="@+id/nine"
@@ -132,7 +147,9 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
+            android:layout_margin="4dp"
+
             android:textSize="25sp"
             android:text="Title: "
             android:id="@+id/ten"
