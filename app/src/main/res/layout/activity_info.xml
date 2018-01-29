@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.foodx.nsh.info">
@@ -12,7 +13,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="-32dp"
         app:lottie_fileName="data1.json"
         app:lottie_cacheStrategy="strong"
         app:lottie_autoPlay="true" />
@@ -34,7 +35,7 @@
         android:textColor="#fff"
         android:textSize="20sp"
         android:fontFamily="@font/ps"
-        android:layout_margin="0dp"
+        android:layout_margin="8dp"
         android:layout_gravity="center"/>
 
     <TextView
@@ -55,6 +56,6 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:fontFamily="@font/ps"
-        android:layout_margin="0dp"
+        android:layout_margin="8dp"
         android:layout_gravity="center"/>
 </LinearLayout>

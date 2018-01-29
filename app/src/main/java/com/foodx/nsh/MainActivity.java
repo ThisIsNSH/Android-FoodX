@@ -33,10 +33,10 @@ import jp.wasabeef.blurry.Blurry;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int q1=0,q2=0,q3=0,q4=0,q5=0,q6=0,q7=0,q8=0,q9=0,q10=0;
-    public static int p1=10,p2=10,p3=10,p4=10,p5=10,p6=10,p7=10,p8=10,p9=10,p10=10;
-    public static int total=0;
-    public int check=0;
+    public static int q1 = 0, q2 = 0, q3 = 0, q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0;
+    public static int p1 = 10, p2 = 10, p3 = 10, p4 = 10, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
+    public static int total = 0;
+    public int check = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView total3 = findViewById(R.id.total3);
 
         final ImageButton cart = findViewById(R.id.cart);
+        final ImageButton info = findViewById(R.id.info);
 
         final LinearLayout main = findViewById(R.id.main);
         final LinearLayout g1 = findViewById(R.id.group1);
@@ -118,27 +119,25 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout g4 = findViewById(R.id.group4);
         final LinearLayout g5 = findViewById(R.id.group5);
 
-        Animation main_anim = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
+        Animation main_anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
         main_anim.setStartOffset(200);
         g1.startAnimation(main_anim);
 
-        Animation main_anim1 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
-main_anim1.setStartOffset(400);
+        Animation main_anim1 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
+        main_anim1.setStartOffset(400);
         g2.startAnimation(main_anim1);
 
-        Animation main_anim2 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
-main_anim2.setStartOffset(600);
+        Animation main_anim2 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
+        main_anim2.setStartOffset(600);
         g3.startAnimation(main_anim2);
 
-        Animation main_anim3 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
-main_anim3.setStartOffset(800);
+        Animation main_anim3 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
+        main_anim3.setStartOffset(800);
         g4.startAnimation(main_anim3);
 
-        Animation main_anim4 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.slideup_main);
-main_anim4.setStartOffset(1000);
+        Animation main_anim4 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
+        main_anim4.setStartOffset(1000);
         g5.startAnimation(main_anim4);
-
-
 
 
         //Clicking Listeners begin here
@@ -146,25 +145,23 @@ main_anim4.setStartOffset(1000);
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q1<15)
-                q1+=1;
-                if (q1>0){
-                    quantity1.setText(Integer.toString(q1*p1));
-                    total+=(p1);
+                if (q1 < 15)
+                    q1 += 1;
+                if (q1 > 0) {
+                    quantity1.setText(Integer.toString(q1 * p1));
+                    total += (p1);
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);
                     amount1.setVisibility(View.VISIBLE);
-                    }
-                else{
+                } else {
                     quantity1.setVisibility(View.INVISIBLE);
                     real1.setVisibility(View.INVISIBLE);
                     amount1.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -174,25 +171,23 @@ main_anim4.setStartOffset(1000);
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q2<15)
-                    q2+=1;
-                if (q2>0){
-                    quantity2.setText(Integer.toString(q2*p2));
-                    total+=(p2);
+                if (q2 < 15)
+                    q2 += 1;
+                if (q2 > 0) {
+                    quantity2.setText(Integer.toString(q2 * p2));
+                    total += (p2);
                     quantity2.setVisibility(View.VISIBLE);
                     real2.setText(Integer.toString(q2));
                     real2.setVisibility(View.VISIBLE);
                     amount2.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity2.setVisibility(View.INVISIBLE);
                     real2.setVisibility(View.INVISIBLE);
                     amount2.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -202,25 +197,23 @@ main_anim4.setStartOffset(1000);
         add3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q3<15)
-                    q3+=1;
-                if (q3>0){
-                    quantity3.setText(Integer.toString(q3*p3));
-                    total+=(p3);
+                if (q3 < 15)
+                    q3 += 1;
+                if (q3 > 0) {
+                    quantity3.setText(Integer.toString(q3 * p3));
+                    total += (p3);
                     quantity3.setVisibility(View.VISIBLE);
                     real3.setText(Integer.toString(q3));
                     real3.setVisibility(View.VISIBLE);
                     amount3.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity3.setVisibility(View.INVISIBLE);
                     real3.setVisibility(View.INVISIBLE);
                     amount3.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -230,26 +223,24 @@ main_anim4.setStartOffset(1000);
         add4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q4<15)
-                    q4+=1;
-                if (q4>0){
-                    quantity4.setText(Integer.toString(q4*p4));
-                    total+=(p4);
+                if (q4 < 15)
+                    q4 += 1;
+                if (q4 > 0) {
+                    quantity4.setText(Integer.toString(q4 * p4));
+                    total += (p4);
                     quantity4.setVisibility(View.VISIBLE);
                     real4.setText(Integer.toString(q4));
 
                     real4.setVisibility(View.VISIBLE);
                     amount4.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity4.setVisibility(View.INVISIBLE);
                     real4.setVisibility(View.INVISIBLE);
                     amount4.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -259,25 +250,23 @@ main_anim4.setStartOffset(1000);
         add5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q5<15)
-                    q5+=1;
-                if (q5>0){
-                    quantity5.setText(Integer.toString(q5*p5));
-                    total+=(p5);
+                if (q5 < 15)
+                    q5 += 1;
+                if (q5 > 0) {
+                    quantity5.setText(Integer.toString(q5 * p5));
+                    total += (p5);
                     quantity5.setVisibility(View.VISIBLE);
                     real5.setText(Integer.toString(q5));
                     real5.setVisibility(View.VISIBLE);
                     amount5.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity5.setVisibility(View.INVISIBLE);
                     real5.setVisibility(View.INVISIBLE);
                     amount5.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -287,25 +276,23 @@ main_anim4.setStartOffset(1000);
         add6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q6<15)
-                    q6+=1;
-                if (q6>0){
-                    quantity6.setText(Integer.toString(q6*p6));
-                    total+=(p6);
+                if (q6 < 15)
+                    q6 += 1;
+                if (q6 > 0) {
+                    quantity6.setText(Integer.toString(q6 * p6));
+                    total += (p6);
                     quantity6.setVisibility(View.VISIBLE);
                     real6.setText(Integer.toString(q6));
                     real6.setVisibility(View.VISIBLE);
                     amount6.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity6.setVisibility(View.INVISIBLE);
                     real6.setVisibility(View.INVISIBLE);
                     amount6.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -315,25 +302,23 @@ main_anim4.setStartOffset(1000);
         add7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q7<15)
-                    q7+=1;
-                if (q7>0){
-                    quantity7.setText(Integer.toString(q7*p7));
-                    total+=(p7);
+                if (q7 < 15)
+                    q7 += 1;
+                if (q7 > 0) {
+                    quantity7.setText(Integer.toString(q7 * p7));
+                    total += (p7);
                     quantity7.setVisibility(View.VISIBLE);
                     real7.setText(Integer.toString(q7));
                     real7.setVisibility(View.VISIBLE);
                     amount7.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity7.setVisibility(View.INVISIBLE);
                     real7.setVisibility(View.INVISIBLE);
                     amount7.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -343,25 +328,23 @@ main_anim4.setStartOffset(1000);
         add8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q8<15)
-                    q8+=1;
-                if (q8>0){
-                    quantity8.setText(Integer.toString(q8*p8));
-                    total+=(p8);
+                if (q8 < 15)
+                    q8 += 1;
+                if (q8 > 0) {
+                    quantity8.setText(Integer.toString(q8 * p8));
+                    total += (p8);
                     quantity8.setVisibility(View.VISIBLE);
                     real8.setText(Integer.toString(q8));
                     real8.setVisibility(View.VISIBLE);
                     amount8.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity8.setVisibility(View.INVISIBLE);
                     real8.setVisibility(View.INVISIBLE);
                     amount8.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -371,25 +354,23 @@ main_anim4.setStartOffset(1000);
         add9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q9<15)
-                    q9+=1;
-                if (q9>0){
-                    quantity9.setText(Integer.toString(q9*p9));
-                    total+=(p9);
+                if (q9 < 15)
+                    q9 += 1;
+                if (q9 > 0) {
+                    quantity9.setText(Integer.toString(q9 * p9));
+                    total += (p9);
                     quantity9.setVisibility(View.VISIBLE);
                     real9.setText(Integer.toString(q9));
                     real9.setVisibility(View.VISIBLE);
                     amount9.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity9.setVisibility(View.INVISIBLE);
                     real9.setVisibility(View.INVISIBLE);
                     amount9.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -399,25 +380,23 @@ main_anim4.setStartOffset(1000);
         add10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q10<15)
-                    q10+=1;
-                if (q10>0){
-                    quantity10.setText(Integer.toString(q10*p10));
-                    total+=(p10);
+                if (q10 < 15)
+                    q10 += 1;
+                if (q10 > 0) {
+                    quantity10.setText(Integer.toString(q10 * p10));
+                    total += (p10);
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     real10.setVisibility(View.VISIBLE);
                     amount10.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity10.setVisibility(View.INVISIBLE);
                     real10.setVisibility(View.INVISIBLE);
                     amount10.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
                 }
 
@@ -427,32 +406,27 @@ main_anim4.setStartOffset(1000);
         sub1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q1>0)
-                {
-                    q1-=1;
-                    total-=(p1);
+                if (q1 > 0) {
+                    q1 -= 1;
+                    total -= (p1);
                 }
-                if (q1>0){
-                    quantity1.setText(Integer.toString(q1*p1));
+                if (q1 > 0) {
+                    quantity1.setText(Integer.toString(q1 * p1));
 
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);
                     amount1.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity1.setVisibility(View.INVISIBLE);
                     real1.setVisibility(View.INVISIBLE);
                     amount1.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -461,31 +435,27 @@ main_anim4.setStartOffset(1000);
         sub2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q2>0)
-                {   total-=(p2);
-                    q2-=1;
+                if (q2 > 0) {
+                    total -= (p2);
+                    q2 -= 1;
                 }
-                if (q2>0){
-                    quantity2.setText(Integer.toString(q2*p2));
+                if (q2 > 0) {
+                    quantity2.setText(Integer.toString(q2 * p2));
 
                     quantity2.setVisibility(View.VISIBLE);
                     real2.setText(Integer.toString(q2));
                     real2.setVisibility(View.VISIBLE);
                     amount2.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity2.setVisibility(View.INVISIBLE);
                     real2.setVisibility(View.INVISIBLE);
                     amount2.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -493,31 +463,27 @@ main_anim4.setStartOffset(1000);
         sub3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q3>0)
-                {   total-=(p3);
-                    q3-=1;
+                if (q3 > 0) {
+                    total -= (p3);
+                    q3 -= 1;
                 }
-                if (q3>0){
-                    quantity3.setText(Integer.toString(q3*p3));
+                if (q3 > 0) {
+                    quantity3.setText(Integer.toString(q3 * p3));
 
                     quantity3.setVisibility(View.VISIBLE);
                     real3.setText(Integer.toString(q3));
                     real3.setVisibility(View.VISIBLE);
                     amount3.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity3.setVisibility(View.INVISIBLE);
                     real3.setVisibility(View.INVISIBLE);
                     amount3.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -525,31 +491,27 @@ main_anim4.setStartOffset(1000);
         sub4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q4>0)
-                {total-=(p4);
-                    q4-=1;
+                if (q4 > 0) {
+                    total -= (p4);
+                    q4 -= 1;
                 }
-                if (q4>0){
-                    quantity4.setText(Integer.toString(q4*p4));
+                if (q4 > 0) {
+                    quantity4.setText(Integer.toString(q4 * p4));
 
                     quantity4.setVisibility(View.VISIBLE);
                     real4.setText(Integer.toString(q4));
                     real4.setVisibility(View.VISIBLE);
                     amount4.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity4.setVisibility(View.INVISIBLE);
                     real4.setVisibility(View.INVISIBLE);
                     amount4.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -557,31 +519,27 @@ main_anim4.setStartOffset(1000);
         sub5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q5>0)
-                {   total-=(p5);
-                    q5-=1;
+                if (q5 > 0) {
+                    total -= (p5);
+                    q5 -= 1;
                 }
-                if (q5>0){
-                    quantity5.setText(Integer.toString(q5*p5));
+                if (q5 > 0) {
+                    quantity5.setText(Integer.toString(q5 * p5));
 
                     quantity5.setVisibility(View.VISIBLE);
                     real5.setText(Integer.toString(q5));
                     real5.setVisibility(View.VISIBLE);
                     amount5.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity5.setVisibility(View.INVISIBLE);
                     real5.setVisibility(View.INVISIBLE);
                     amount5.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -589,31 +547,27 @@ main_anim4.setStartOffset(1000);
         sub6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q6>0)
-                {total-=(p6);
-                    q6-=1;
+                if (q6 > 0) {
+                    total -= (p6);
+                    q6 -= 1;
                 }
-                if (q6>0){
-                    quantity6.setText(Integer.toString(q6*p6));
+                if (q6 > 0) {
+                    quantity6.setText(Integer.toString(q6 * p6));
 
                     quantity6.setVisibility(View.VISIBLE);
                     real6.setText(Integer.toString(q6));
                     real6.setVisibility(View.VISIBLE);
                     amount6.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity6.setVisibility(View.INVISIBLE);
                     real6.setVisibility(View.INVISIBLE);
                     amount6.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -621,31 +575,27 @@ main_anim4.setStartOffset(1000);
         sub7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q7>0)
-                {total-=(p7);
-                    q7-=1;
+                if (q7 > 0) {
+                    total -= (p7);
+                    q7 -= 1;
                 }
-                if (q7>0){
-                    quantity7.setText(Integer.toString(q7*p7));
+                if (q7 > 0) {
+                    quantity7.setText(Integer.toString(q7 * p7));
 
                     quantity7.setVisibility(View.VISIBLE);
                     real7.setText(Integer.toString(q7));
                     real7.setVisibility(View.VISIBLE);
                     amount7.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity7.setVisibility(View.INVISIBLE);
                     real7.setVisibility(View.INVISIBLE);
                     amount7.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -653,31 +603,27 @@ main_anim4.setStartOffset(1000);
         sub8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q8>0)
-                {total-=(p8);
-                    q8-=1;
+                if (q8 > 0) {
+                    total -= (p8);
+                    q8 -= 1;
                 }
-                if (q8>0){
-                    quantity8.setText(Integer.toString(q8*p8));
+                if (q8 > 0) {
+                    quantity8.setText(Integer.toString(q8 * p8));
 
                     quantity8.setVisibility(View.VISIBLE);
                     real8.setText(Integer.toString(q8));
                     real8.setVisibility(View.VISIBLE);
                     amount8.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity8.setVisibility(View.INVISIBLE);
                     real8.setVisibility(View.INVISIBLE);
                     amount8.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -685,31 +631,27 @@ main_anim4.setStartOffset(1000);
         sub9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q9>0)
-                {total-=(p9);
-                    q9-=1;
+                if (q9 > 0) {
+                    total -= (p9);
+                    q9 -= 1;
                 }
-                if (q9>0){
-                    quantity9.setText(Integer.toString(q9*p9));
+                if (q9 > 0) {
+                    quantity9.setText(Integer.toString(q9 * p9));
 
                     quantity9.setVisibility(View.VISIBLE);
                     real9.setText(Integer.toString(q9));
                     real9.setVisibility(View.VISIBLE);
                     amount9.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity9.setVisibility(View.INVISIBLE);
                     real9.setVisibility(View.INVISIBLE);
                     amount9.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
-                }
-                else if (total==0 && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
 
@@ -718,32 +660,28 @@ main_anim4.setStartOffset(1000);
         sub10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (q10>0)
-                {   total-=(p10);
-                    q10-=1;
+                if (q10 > 0) {
+                    total -= (p10);
+                    q10 -= 1;
                 }
-                if (q10>0){
-                    quantity10.setText(Integer.toString(q10*p10));
+                if (q10 > 0) {
+                    quantity10.setText(Integer.toString(q10 * p10));
 
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     amount10.setVisibility(View.VISIBLE);
                     real10.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     quantity10.setVisibility(View.INVISIBLE);
                     real10.setVisibility(View.INVISIBLE);
                     amount10.setVisibility(View.INVISIBLE);
                 }
-                if (total>0 && check==0){
+                if (total > 0 && check == 0) {
                     appBarAnim(total);
-                }
-                else if (total>0 && check==1){
+                } else if (total > 0 && check == 1) {
                     total3.setText(Integer.toString(total));
 
-                }
-                else if (total==0  && check==1)
-                {
+                } else if (total == 0 && check == 1) {
                     appBarAnim1();
                 }
             }
@@ -753,16 +691,24 @@ main_anim4.setStartOffset(1000);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,cart.class);
+                Intent intent = new Intent(MainActivity.this, cart.class);
                 startActivity(intent);
 
             }
         });
 
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, info.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
-public void appBarAnim(int total) {
+    public void appBarAnim(int total) {
 
        /* final TextView menu1 = findViewById(R.id.menu1);
         final TextView menu2 = findViewById(R.id.menu2);*/
@@ -772,8 +718,7 @@ public void appBarAnim(int total) {
         final LottieAnimationView anim = findViewById(R.id.menu_anim);
 
 
-
-    Animation zero_up = AnimationUtils.loadAnimation(this, R.anim.slideup);
+        Animation zero_up = AnimationUtils.loadAnimation(this, R.anim.slideup);
         Animation down_zero = AnimationUtils.loadAnimation(this, R.anim.slideup1);
 
         total3.setText(Integer.toString(total));
@@ -792,21 +737,21 @@ public void appBarAnim(int total) {
         total2.setVisibility(View.VISIBLE);
         total3.setVisibility(View.VISIBLE);
 
-        check=1;
+        check = 1;
 
-}
+    }
 
-public void appBarAnim1(){
+    public void appBarAnim1() {
 /*    final TextView menu1 = findViewById(R.id.menu1);
     final TextView menu2 = findViewById(R.id.menu2);*/
-    final TextView total1 = findViewById(R.id.total1);
-    final TextView total2 = findViewById(R.id.total2);
-    final TextView total3 = findViewById(R.id.total3);
-    final LottieAnimationView anim = findViewById(R.id.menu_anim);
+        final TextView total1 = findViewById(R.id.total1);
+        final TextView total2 = findViewById(R.id.total2);
+        final TextView total3 = findViewById(R.id.total3);
+        final LottieAnimationView anim = findViewById(R.id.menu_anim);
 
 
-    Animation up_zero = AnimationUtils.loadAnimation(this, R.anim.slideup2);
-    Animation zero_down = AnimationUtils.loadAnimation(this, R.anim.slideup3);
+        Animation up_zero = AnimationUtils.loadAnimation(this, R.anim.slideup2);
+        Animation zero_down = AnimationUtils.loadAnimation(this, R.anim.slideup3);
 
  /*   menu1.startAnimation(up_zero);
     menu2.startAnimation(up_zero);
@@ -814,18 +759,18 @@ public void appBarAnim1(){
     menu2.setVisibility(View.VISIBLE);
 */
 
-    anim.startAnimation(up_zero);
-    anim.setVisibility(View.VISIBLE);
+        anim.startAnimation(up_zero);
+        anim.setVisibility(View.VISIBLE);
 
-    total1.startAnimation(zero_down);
-    total2.startAnimation(zero_down);
-    total3.startAnimation(zero_down);
-    total1.setVisibility(View.INVISIBLE);
-    total2.setVisibility(View.INVISIBLE);
-    total3.setVisibility(View.INVISIBLE);
+        total1.startAnimation(zero_down);
+        total2.startAnimation(zero_down);
+        total3.startAnimation(zero_down);
+        total1.setVisibility(View.INVISIBLE);
+        total2.setVisibility(View.INVISIBLE);
+        total3.setVisibility(View.INVISIBLE);
 
 
-    check=0;
+        check = 0;
 
     }
 
