@@ -30,9 +30,10 @@
             android:name=".cart"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
-
-        <activity android:name=".address"
-            android:theme="@style/Theme.Transparent"></activity>
+        <activity
+            android:name=".address"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".info"></activity>
     </application>
 
 </manifest>

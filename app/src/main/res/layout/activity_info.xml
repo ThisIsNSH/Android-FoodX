@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.foodx.nsh.info">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        app:lottie_fileName="data1.json"
+        app:lottie_cacheStrategy="strong"
+        app:lottie_autoPlay="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FOODX"
+        android:textColor="#fff"
+        android:textSize="40sp"
+        android:fontFamily="@font/psb"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VERSION 1.0"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:fontFamily="@font/ps"
+        android:layout_margin="0dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTRIBUTORS"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:fontFamily="@font/psb"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NISHANT\nSUYASH\nVISHAL"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:fontFamily="@font/ps"
+        android:layout_margin="0dp"
+        android:layout_gravity="center"/>
+</LinearLayout>
