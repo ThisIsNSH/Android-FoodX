@@ -15,7 +15,7 @@
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-    <TextView
+<!--    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ps"
@@ -31,11 +31,22 @@
         android:fontFamily="@font/psb"
         android:text="X"
         android:layout_marginTop="-2dp"
-        android:layout_toRightOf="@id/menu1"
+    android:layout_toRightOf="@id/menu1"
         android:visibility="visible"
         android:id="@+id/menu2"
         android:textColor="#fff"
-        android:textSize="25sp" />
+        android:textSize="25sp" />-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="-4dp"
+        android:layout_marginLeft="-86dp"
+        android:id="@+id/menu_anim"
+        app:lottie_fileName="menu.json"
+        app:lottie_cacheStrategy="strong"
+        app:lottie_autoPlay="true" />
 
     <TextView
         android:layout_width="wrap_content"

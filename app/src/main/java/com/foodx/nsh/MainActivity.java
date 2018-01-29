@@ -26,6 +26,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 import jp.wasabeef.blurry.Blurry;
@@ -99,8 +100,11 @@ public class MainActivity extends AppCompatActivity {
         final TextView real9 = findViewById(R.id.real9);
         final TextView real10 = findViewById(R.id.real10);
 
-        final TextView menu1 = findViewById(R.id.menu1);
-        final TextView menu2 = findViewById(R.id.menu2);
+       /* final TextView menu1 = findViewById(R.id.menu1);
+        final TextView menu2 = findViewById(R.id.menu2);*/
+
+        final LottieAnimationView anim = findViewById(R.id.menu_anim);
+
         final TextView total1 = findViewById(R.id.total1);
         final TextView total2 = findViewById(R.id.total2);
         final TextView total3 = findViewById(R.id.total3);
@@ -734,21 +738,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 public void appBarAnim(int total) {
-        final TextView menu1 = findViewById(R.id.menu1);
-        final TextView menu2 = findViewById(R.id.menu2);
+
+       /* final TextView menu1 = findViewById(R.id.menu1);
+        final TextView menu2 = findViewById(R.id.menu2);*/
         final TextView total1 = findViewById(R.id.total1);
         final TextView total2 = findViewById(R.id.total2);
         final TextView total3 = findViewById(R.id.total3);
+        final LottieAnimationView anim = findViewById(R.id.menu_anim);
 
 
-        Animation zero_up = AnimationUtils.loadAnimation(this, R.anim.slideup);
+
+    Animation zero_up = AnimationUtils.loadAnimation(this, R.anim.slideup);
         Animation down_zero = AnimationUtils.loadAnimation(this, R.anim.slideup1);
 
         total3.setText(Integer.toString(total));
-        menu1.startAnimation(zero_up);
+        /*menu1.startAnimation(zero_up);
         menu2.startAnimation(zero_up);
         menu1.setVisibility(View.INVISIBLE);
         menu2.setVisibility(View.INVISIBLE);
+*/
+        anim.startAnimation(zero_up);
+        anim.setVisibility(View.INVISIBLE);
 
         total1.startAnimation(down_zero);
         total2.startAnimation(down_zero);
@@ -762,19 +772,25 @@ public void appBarAnim(int total) {
 }
 
 public void appBarAnim1(){
-    final TextView menu1 = findViewById(R.id.menu1);
-    final TextView menu2 = findViewById(R.id.menu2);
+/*    final TextView menu1 = findViewById(R.id.menu1);
+    final TextView menu2 = findViewById(R.id.menu2);*/
     final TextView total1 = findViewById(R.id.total1);
     final TextView total2 = findViewById(R.id.total2);
     final TextView total3 = findViewById(R.id.total3);
+    final LottieAnimationView anim = findViewById(R.id.menu_anim);
+
 
     Animation up_zero = AnimationUtils.loadAnimation(this, R.anim.slideup2);
     Animation zero_down = AnimationUtils.loadAnimation(this, R.anim.slideup3);
 
-    menu1.startAnimation(up_zero);
+ /*   menu1.startAnimation(up_zero);
     menu2.startAnimation(up_zero);
     menu1.setVisibility(View.VISIBLE);
     menu2.setVisibility(View.VISIBLE);
+*/
+
+    anim.startAnimation(up_zero);
+    anim.setVisibility(View.VISIBLE);
 
     total1.startAnimation(zero_down);
     total2.startAnimation(zero_down);
