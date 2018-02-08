@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/black"
+    android:background="#d0000000"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
@@ -21,22 +21,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FOODX"
+        android:text="Version X.1"
         android:textColor="#fff"
         android:textSize="40sp"
         android:fontFamily="@font/psb"
         android:layout_marginTop="16dp"
         android:layout_gravity="center"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VERSION 1.0"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:fontFamily="@font/ps"
-        android:layout_margin="8dp"
-        android:layout_gravity="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,7 +42,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NISHANT\nSUYASH\nVISHAL"
+        android:text="SUYASH\nVISHAL"
         android:textColor="#fff"
         android:textAlignment="center"
         android:textSize="20sp"
