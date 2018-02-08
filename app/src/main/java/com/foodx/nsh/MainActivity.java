@@ -51,7 +51,7 @@ import jp.wasabeef.blurry.Blurry;
 public class MainActivity extends AppCompatActivity {
 
     public static int q1 = 0, q2 = 0, q3 = 0, q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0;
-    public static int p1 = 10, p2 = 10, p3 = 10, p4 = 10, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
+    public static int p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
     public static int total = 0;
     public int check = 0;
 
@@ -212,6 +212,10 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef3 = database.getReference("title3");
         DatabaseReference myRef4 = database.getReference("title4");
 
+        DatabaseReference myRef1a = database.getReference("price").child("price1");
+        DatabaseReference myRef2a = database.getReference("price").child("price2");
+        DatabaseReference myRef3a = database.getReference("price").child("price3");
+        DatabaseReference myRef4a = database.getReference("price").child("price4");
 
 
         myRef1.addValueEventListener(new ValueEventListener() {
@@ -283,7 +287,78 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        myRef1a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p1=(value);
+                price1.setText(Integer.toString(value));
+            }
 
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+/*
+        myRef2a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                p2=Integer.parseInt(value);
+
+                price2.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef3a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                p3=Integer.parseInt(value);
+
+                price3.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef4a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                p4=Integer.parseInt(value);
+
+                price4.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+*/
 
 
         //firebase storage
