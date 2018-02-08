@@ -54,7 +54,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image1a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
 
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
                             <ImageView
                                 android:id="@+id/image1"
                                 android:layout_width="match_parent"
@@ -192,6 +199,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image2a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
                             <ImageView
                                 android:id="@+id/image2"
                                 android:layout_width="match_parent"
@@ -338,6 +353,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/image3a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
+                            <ImageView
                                 android:id="@+id/image3"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
@@ -474,6 +497,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image4a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
                             <ImageView
                                 android:id="@+id/image4"
                                 android:layout_width="match_parent"
@@ -619,6 +650,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/image5a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
+                            <ImageView
                                 android:id="@+id/image5"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
@@ -755,6 +794,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image6a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
                             <ImageView
                                 android:id="@+id/image6"
                                 android:layout_width="match_parent"
@@ -901,6 +948,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/image7a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
+                            <ImageView
                                 android:id="@+id/image7"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
@@ -1037,6 +1092,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image8a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
                             <ImageView
                                 android:id="@+id/image8"
                                 android:layout_width="match_parent"
@@ -1183,6 +1246,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:id="@+id/image9a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
+                            <ImageView
                                 android:id="@+id/image9"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
@@ -1319,6 +1390,14 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/image10a"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/base" />
                             <ImageView
                                 android:id="@+id/image10"
                                 android:layout_width="match_parent"
