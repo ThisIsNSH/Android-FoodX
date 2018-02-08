@@ -27,6 +27,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.bumptech.glide.Glide;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 import jp.wasabeef.blurry.Blurry;
@@ -119,6 +123,20 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout g4 = findViewById(R.id.group4);
         final LinearLayout g5 = findViewById(R.id.group5);
 
+        //firebase
+        StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
+        final StorageReference imgRef = mStorageRef.child("images/img.jpg");
+        Glide.with(this /* context */)
+                .using(new FirebaseImageLoader())
+                .load(storageReference)
+                .into(imageView);
+
+
+
+
+
+
+        //animation
         Animation main_anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
         main_anim.setStartOffset(200);
         g1.startAnimation(main_anim);
