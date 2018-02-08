@@ -21,6 +21,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -104,6 +105,17 @@ public class MainActivity extends AppCompatActivity {
         final TextView real9 = findViewById(R.id.real9);
         final TextView real10 = findViewById(R.id.real10);
 
+        final ImageView image1 = findViewById(R.id.image1);
+        final ImageView image2 = findViewById(R.id.image2);
+        final ImageView image3 = findViewById(R.id.image3);
+        final ImageView image4 = findViewById(R.id.image4);
+        final ImageView image5 = findViewById(R.id.image5);
+        final ImageView image6 = findViewById(R.id.image6);
+        final ImageView image7 = findViewById(R.id.image7);
+        final ImageView image8 = findViewById(R.id.image8);
+        final ImageView image9 = findViewById(R.id.image9);
+        final ImageView image10 = findViewById(R.id.image10);
+
        /* final TextView menu1 = findViewById(R.id.menu1);
         final TextView menu2 = findViewById(R.id.menu2);*/
 
@@ -125,12 +137,11 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
-        final StorageReference imgRef = mStorageRef.child("images/img.jpg");
-        Glide.with(this /* context */)
-                .using(new FirebaseImageLoader())
-                .load(storageReference)
-                .into(imageView);
+        final StorageReference imgRef1 = mStorageRef.child("images/img.jpg");
 
+        GlideApp.with(this /* context */)
+                .load(imgRef1)
+                .into(image1);
 
 
 
