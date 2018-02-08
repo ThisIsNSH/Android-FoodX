@@ -6,6 +6,7 @@
     <color name="black">#02020A</color>
     <color name="grey">#141414</color>
     <color name="l_grey">#343434</color>
+    <color name="transparent">#00000000</color>
 
 
 </resources>

@@ -37,6 +37,11 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
@@ -112,16 +117,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView real9 = findViewById(R.id.real9);
         final TextView real10 = findViewById(R.id.real10);
 
-        final ImageView image1 = findViewById(R.id.image1);
-        final ImageView image2 = findViewById(R.id.image2);
-        final ImageView image3 = findViewById(R.id.image3);
-        final ImageView image4 = findViewById(R.id.image4);
-        final ImageView image5 = findViewById(R.id.image5);
-        final ImageView image6 = findViewById(R.id.image6);
-        final ImageView image7 = findViewById(R.id.image7);
-        final ImageView image8 = findViewById(R.id.image8);
-        final ImageView image9 = findViewById(R.id.image9);
-        final ImageView image10 = findViewById(R.id.image10);
+
 
   /*      final ImageView image1a = findViewById(R.id.image1a);
         final ImageView image2a = findViewById(R.id.image2a);
@@ -153,7 +149,144 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout g4 = findViewById(R.id.group4);
         final LinearLayout g5 = findViewById(R.id.group5);
 
-        //firebase
+        final ImageView image1 = findViewById(R.id.image1);
+        final ImageView image2 = findViewById(R.id.image2);
+        final ImageView image3 = findViewById(R.id.image3);
+        final ImageView image4 = findViewById(R.id.image4);
+        final ImageView image5 = findViewById(R.id.image5);
+        final ImageView image6 = findViewById(R.id.image6);
+        final ImageView image7 = findViewById(R.id.image7);
+        final ImageView image8 = findViewById(R.id.image8);
+        final ImageView image9 = findViewById(R.id.image9);
+        final ImageView image10 = findViewById(R.id.image10);
+
+        final TextView title1 = findViewById(R.id.title1);
+        final TextView title2 = findViewById(R.id.title2);
+        final TextView title3 = findViewById(R.id.title3);
+        final TextView title4 = findViewById(R.id.title4);
+        final TextView title5 = findViewById(R.id.title5);
+        final TextView title6 = findViewById(R.id.title6);
+        final TextView title7 = findViewById(R.id.title7);
+        final TextView title8 = findViewById(R.id.title8);
+        final TextView title9 = findViewById(R.id.title9);
+        final TextView title10 = findViewById(R.id.title10);
+
+        title1.setText("Loading");
+        title2.setText("Loading");
+        title3.setText("Loading");
+        title4.setText("Loading");
+        title5.setText("Loading");
+        title6.setText("Loading");
+        title7.setText("Loading");
+        title8.setText("Loading");
+        title9.setText("Loading");
+        title10.setText("Loading");
+
+        final TextView price1 = findViewById(R.id.price1);
+        final TextView price2 = findViewById(R.id.price2);
+        final TextView price3 = findViewById(R.id.price3);
+        final TextView price4 = findViewById(R.id.price4);
+        final TextView price5 = findViewById(R.id.price5);
+        final TextView price6 = findViewById(R.id.price6);
+        final TextView price7 = findViewById(R.id.price7);
+        final TextView price8 = findViewById(R.id.price8);
+        final TextView price9 = findViewById(R.id.price9);
+        final TextView price10 = findViewById(R.id.price10);
+
+        price1.setText("Loading");
+        price2.setText("Loading");
+        price3.setText("Loading");
+        price4.setText("Loading");
+        price5.setText("Loading");
+        price6.setText("Loading");
+        price7.setText("Loading");
+        price8.setText("Loading");
+        price9.setText("Loading");
+        price10.setText("Loading");
+
+
+        //firebase database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef1 = database.getReference("title1");
+        DatabaseReference myRef2 = database.getReference("title2");
+        DatabaseReference myRef3 = database.getReference("title3");
+        DatabaseReference myRef4 = database.getReference("title4");
+
+
+
+        myRef1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                title1.setBackgroundColor(getResources().getColor(R.color.transparent));
+                title1.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                title2.setBackgroundColor(getResources().getColor(R.color.transparent));
+                title2.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                title3.setBackgroundColor(getResources().getColor(R.color.transparent));
+                title3.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                title4.setBackgroundColor(getResources().getColor(R.color.transparent));
+                title4.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+
+
+
+
+        //firebase storage
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         final StorageReference imgRef1 = mStorageRef.child("images/img1.jpg");
         final StorageReference imgRef2 = mStorageRef.child("images/img2.jpg");
@@ -194,8 +327,6 @@ public class MainActivity extends AppCompatActivity {
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image4);
-
-
 
 
 
