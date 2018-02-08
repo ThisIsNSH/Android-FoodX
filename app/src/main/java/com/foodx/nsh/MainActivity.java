@@ -304,16 +304,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-/*
         myRef2a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                p2=Integer.parseInt(value);
-
-                price2.setText(value);
+                int value = dataSnapshot.getValue(int.class);
+                p2=(value);
+                price2.setText(Integer.toString(value));
             }
 
             @Override
@@ -328,10 +326,9 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                p3=Integer.parseInt(value);
-
-                price3.setText(value);
+                int value = dataSnapshot.getValue(int.class);
+                p3=(value);
+                price3.setText(Integer.toString(value));
             }
 
             @Override
@@ -346,10 +343,9 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                p4=Integer.parseInt(value);
-
-                price4.setText(value);
+                int value = dataSnapshot.getValue(int.class);
+                p4=(value);
+                price4.setText(Integer.toString(value));
             }
 
             @Override
@@ -358,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-*/
+
 
 
         //firebase storage
