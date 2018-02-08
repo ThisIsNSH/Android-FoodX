@@ -123,6 +123,17 @@ public class MainActivity extends AppCompatActivity {
         final ImageView image9 = findViewById(R.id.image9);
         final ImageView image10 = findViewById(R.id.image10);
 
+  /*      final ImageView image1a = findViewById(R.id.image1a);
+        final ImageView image2a = findViewById(R.id.image2a);
+        final ImageView image3a = findViewById(R.id.image3a);
+        final ImageView image4a = findViewById(R.id.image4a);
+        final ImageView image5a = findViewById(R.id.image5a);
+        final ImageView image6a = findViewById(R.id.image6a);
+        final ImageView image7a = findViewById(R.id.image7a);
+        final ImageView image8a = findViewById(R.id.image8a);
+        final ImageView image9a = findViewById(R.id.image9a);
+        final ImageView image10a = findViewById(R.id.image10a);*/
+
        /* final TextView menu1 = findViewById(R.id.menu1);
         final TextView menu2 = findViewById(R.id.menu2);*/
 
@@ -156,35 +167,29 @@ public class MainActivity extends AppCompatActivity {
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
-                .listener(new RequestListener<Drawable>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        return false;
-                    }
-                })
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .into(image1);
         GlideApp.with(this )
                 .load(imgRef2)
-
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image2);
         GlideApp.with(this )
                 .load(imgRef3)
-
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image3);
         GlideApp.with(this )
                 .load(imgRef4)
-
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
