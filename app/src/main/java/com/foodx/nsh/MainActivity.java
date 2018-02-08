@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public static int p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
     public static int total = 0;
     public int check = 0;
+    public static String t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -224,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                title1.setBackgroundColor(getResources().getColor(R.color.transparent));
+                t1=value;
                 title1.setText(value);
             }
 
@@ -241,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                title2.setBackgroundColor(getResources().getColor(R.color.transparent));
+                t2=value;
                 title2.setText(value);
             }
 
@@ -258,8 +259,8 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                title3.setBackgroundColor(getResources().getColor(R.color.transparent));
-                title3.setText(value);
+                t3=value;
+title3.setText(value);
             }
 
             @Override
@@ -275,8 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                title4.setBackgroundColor(getResources().getColor(R.color.transparent));
-                title4.setText(value);
+t4=value;                title4.setText(value);
             }
 
             @Override

@@ -23,6 +23,10 @@ import static com.foodx.nsh.MainActivity.q6;
 import static com.foodx.nsh.MainActivity.q7;
 import static com.foodx.nsh.MainActivity.q8;
 import static com.foodx.nsh.MainActivity.q9;
+import static com.foodx.nsh.MainActivity.t1;
+import static com.foodx.nsh.MainActivity.t2;
+import static com.foodx.nsh.MainActivity.t3;
+import static com.foodx.nsh.MainActivity.t4;
 
 public class cart extends AppCompatActivity {
 
@@ -59,23 +63,23 @@ public class cart extends AppCompatActivity {
 
 
         if (q1>0){
-            one.setText(getString(R.string.title1)+" : "+Integer.toString(q1));
+            one.setText(t1+" : "+Integer.toString(q1));
             one.setVisibility(View.VISIBLE);
             }
 
 
         if (q2>0){
-            two.setText(getString(R.string.title2)+" : "+Integer.toString(q2));
+            two.setText(t2+" : "+Integer.toString(q2));
             two.setVisibility(View.VISIBLE);
         }
 
         if (q3>0){
-            three.setText(getString(R.string.title3)+" : "+Integer.toString(q3));
+            three.setText(t3+" : "+Integer.toString(q3));
             three.setVisibility(View.VISIBLE);
         }
 
         if (q4>0){
-            four.setText(getString(R.string.title4)+" : "+Integer.toString(q4));
+            four.setText(t4+" : "+Integer.toString(q4));
             four.setVisibility(View.VISIBLE);
         }
 
