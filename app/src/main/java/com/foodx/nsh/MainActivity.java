@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
                 p1=(value);
-                price1.setText(Integer.toString(value));
+                price1.setText("Price : " + Integer.toString(value));
             }
 
             @Override
@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
                 p2=(value);
-                price2.setText(Integer.toString(value));
+                price2.setText("Price : " + Integer.toString(value));
             }
 
             @Override
@@ -328,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
                 p3=(value);
-                price3.setText(Integer.toString(value));
+                price3.setText("Price : " + Integer.toString(value));
             }
 
             @Override
@@ -345,7 +345,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
                 p4=(value);
-                price4.setText(Integer.toString(value));
+                price4.setText("Price : " + Integer.toString(value));
             }
 
             @Override
