@@ -137,11 +137,37 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
-        final StorageReference imgRef1 = mStorageRef.child("images/img.jpg");
+        final StorageReference imgRef1 = mStorageRef.child("images/img1.jpg");
+        final StorageReference imgRef2 = mStorageRef.child("images/img2.jpg");
+        final StorageReference imgRef3 = mStorageRef.child("images/img3.jpg");
+        final StorageReference imgRef4 = mStorageRef.child("images/img4.jpg");
 
-        GlideApp.with(this /* context */)
+
+        GlideApp.with(this )
                 .load(imgRef1)
+                .centerCrop()
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
                 .into(image1);
+        GlideApp.with(this )
+                .load(imgRef2)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image2);
+        GlideApp.with(this )
+                .load(imgRef3)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image3);
+        GlideApp.with(this )
+                .load(imgRef4)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image4);
 
 
 
