@@ -20,6 +20,8 @@ android {
 }
 dependencies {
     compile 'com.tzanou:PercentVisibleLayout:1.1.2@aar'
+    compile 'com.google.firebase:firebase-core:11.8.0'
+
 }
 dependencies {
     compile 'jp.wasabeef:blurry:2.1.1'
@@ -57,3 +59,5 @@ dependencies {
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
 }
+
+apply plugin: 'com.google.gms.google-services'
