@@ -13,6 +13,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -241,7 +242,8 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef9a = database.getReference("price").child("price9");
         DatabaseReference myRef10a = database.getReference("price").child("price10");
 
-        DatabaseReference updater = database.getReference("updater");
+        FirebaseDatabase database1 = FirebaseDatabase.getInstance();
+        DatabaseReference updater = database1.getReference("updater");
 
         final StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         final StorageReference imgRef1 = mStorageRef.child("images/img1.jpg");
@@ -287,8 +289,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                            Intent i = new Intent(MainActivity.this, updating.class);
-                            startActivity(i);
+                            new Handler().postDelayed(new Runnable() {
+
+
+                                @Override
+                                public void run() {
+
+                                    Intent mStartActivity = new Intent(MainActivity.this, splashscreen.class);
+                                    int mPendingIntentId = 1234;
+                                    PendingIntent mPendingIntent = PendingIntent.getActivity(MainActivity.this, mPendingIntentId, mStartActivity,
+                                            PendingIntent.FLAG_CANCEL_CURRENT);
+                                    AlarmManager mgr = (AlarmManager) MainActivity.this.getSystemService(Context.ALARM_SERVICE);
+                                    mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+                                    System.exit(0);
+
+
+                                }
+                            }, 2000);
 
 
 
