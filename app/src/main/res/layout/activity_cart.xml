@@ -30,12 +30,16 @@
             android:layout_gravity="center"
             />-->
 
-        <com.airbnb.lottie.LottieAnimationView
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            app:lottie_fileName="order.json"
-            app:lottie_cacheStrategy="strong"
-            app:lottie_autoPlay="true" />
+            android:layout_height="wrap_content"
+            android:text="Order Review"
+            android:textColor="#fff"
+            android:fontFamily="@font/psbi"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="26dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -74,7 +78,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psb"
             android:text="Title: "
             android:id="@+id/three"
             android:visibility="visible"
