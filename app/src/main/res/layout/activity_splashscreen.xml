@@ -14,6 +14,11 @@
         android:layout_height="match_parent"
         android:src="@drawable/ssl"
         android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
@@ -21,11 +26,47 @@
         android:layout_height="70dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-16dp"
+        android:layout_marginTop="-32dp"
         app:lottie_fileName="data1.json"
         app:lottie_cacheStrategy="strong"
         app:lottie_autoPlay="true" />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A Food Ordering App"
+        android:textColor="#fff"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/psi"
+        android:textSize="20sp"
+        android:layout_below="@id/animation_view"
+        android:layout_centerHorizontal="true"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Internet connection"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-condensed"
+        android:visibility="gone"
+        android:id="@+id/net"
+        android:textColor="#fff"
+        android:layout_above="@id/retry"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/retry"
+        android:visibility="gone"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="retry"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="15sp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#fff"/>
 
 
 </RelativeLayout>

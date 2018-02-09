@@ -53,6 +53,7 @@ import com.google.firebase.storage.StorageReference;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 import jp.wasabeef.blurry.Blurry;
+
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public static int p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
     public static int total = 0;
     public int check = 0;
-    public static String t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    public static String t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
 
 
     @Override
@@ -218,7 +219,6 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        database.setPersistenceEnabled(true);
         DatabaseReference myRef1 = database.getReference("title").child("title1");
         DatabaseReference myRef2 = database.getReference("title").child("title2");
         DatabaseReference myRef3 = database.getReference("title").child("title3");
@@ -267,10 +267,9 @@ public class MainActivity extends AppCompatActivity {
                 int value = dataSnapshot.getValue(int.class);
                 final SharedPreferences pref = getApplicationContext().getSharedPreferences("MyUpdate", MODE_PRIVATE);
                 final SharedPreferences.Editor editor = pref.edit();
-                int update_value = pref.getInt("updater",0);
+                int update_value = pref.getInt("updater", 0);
 
-                if (update_value<value)
-                {
+                if (update_value < value) {
                     editor.putInt("updater", value);
                     editor.commit();
                     up_layout.setVisibility(View.VISIBLE);
@@ -286,8 +285,6 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             });
-
-
 
 
                             new Handler().postDelayed(new Runnable() {
@@ -309,7 +306,6 @@ public class MainActivity extends AppCompatActivity {
                             }, 1000);
 
 
-
                         }
                     });
 
@@ -324,8 +320,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef1)
                 .centerCrop()
                 .transition(withCrossFade())
@@ -333,63 +328,63 @@ public class MainActivity extends AppCompatActivity {
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image1);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef2)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image2);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef3)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image3);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef4)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image4);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef5)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image5);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef6)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image6);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef7)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image7);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef8)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image8);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef9)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image9);
-        GlideApp.with(MainActivity.this )
+        GlideApp.with(MainActivity.this)
                 .load(imgRef10)
                 .transition(withCrossFade())
                 .placeholder(R.drawable.base)
@@ -403,7 +398,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t1=value;
+                t1 = value;
                 title1.setText(value);
             }
 
@@ -419,7 +414,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t2=value;
+                t2 = value;
                 title2.setText(value);
             }
 
@@ -435,8 +430,8 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t3=value;
-title3.setText(value);
+                t3 = value;
+                title3.setText(value);
             }
 
             @Override
@@ -451,7 +446,8 @@ title3.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-t4=value;                title4.setText(value);
+                t4 = value;
+                title4.setText(value);
             }
 
             @Override
@@ -466,7 +462,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t5=value;
+                t5 = value;
                 title5.setText(value);
             }
 
@@ -482,7 +478,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t6=value;
+                t6 = value;
                 title6.setText(value);
             }
 
@@ -498,7 +494,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t7=value;
+                t7 = value;
                 title7.setText(value);
             }
 
@@ -514,7 +510,8 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t8=value;                title8.setText(value);
+                t8 = value;
+                title8.setText(value);
             }
 
             @Override
@@ -529,7 +526,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t9=value;
+                t9 = value;
                 title9.setText(value);
             }
 
@@ -545,7 +542,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                t10=value;
+                t10 = value;
                 title10.setText(value);
             }
 
@@ -562,7 +559,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p1=(value);
+                p1 = (value);
                 price1.setText("Price : " + Integer.toString(value));
             }
 
@@ -578,7 +575,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p2=(value);
+                p2 = (value);
                 price2.setText("Price : " + Integer.toString(value));
             }
 
@@ -594,7 +591,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p3=(value);
+                p3 = (value);
                 price3.setText("Price : " + Integer.toString(value));
             }
 
@@ -610,7 +607,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p4=(value);
+                p4 = (value);
                 price4.setText("Price : " + Integer.toString(value));
             }
 
@@ -626,7 +623,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p5=(value);
+                p5 = (value);
                 price5.setText("Price : " + Integer.toString(value));
             }
 
@@ -642,7 +639,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p6=(value);
+                p6 = (value);
                 price6.setText("Price : " + Integer.toString(value));
             }
 
@@ -658,7 +655,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p7=(value);
+                p7 = (value);
                 price7.setText("Price : " + Integer.toString(value));
             }
 
@@ -674,7 +671,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p8=(value);
+                p8 = (value);
                 price8.setText("Price : " + Integer.toString(value));
             }
 
@@ -690,7 +687,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p9=(value);
+                p9 = (value);
                 price9.setText("Price : " + Integer.toString(value));
             }
 
@@ -706,7 +703,7 @@ t4=value;                title4.setText(value);
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 int value = dataSnapshot.getValue(int.class);
-                p10=(value);
+                p10 = (value);
                 price10.setText("Price : " + Integer.toString(value));
             }
 
@@ -716,9 +713,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
-
-
 
 
         //animation
