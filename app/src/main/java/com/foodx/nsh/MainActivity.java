@@ -208,15 +208,29 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef1 = database.getReference("title1");
-        DatabaseReference myRef2 = database.getReference("title2");
-        DatabaseReference myRef3 = database.getReference("title3");
-        DatabaseReference myRef4 = database.getReference("title4");
+        DatabaseReference myRef1 = database.getReference("title").child("title1");
+        DatabaseReference myRef2 = database.getReference("title").child("title2");
+        DatabaseReference myRef3 = database.getReference("title").child("title3");
+        DatabaseReference myRef4 = database.getReference("title").child("title4");
+        DatabaseReference myRef5 = database.getReference("title").child("title5");
+        DatabaseReference myRef6 = database.getReference("title").child("title6");
+        DatabaseReference myRef7 = database.getReference("title").child("title7");
+        DatabaseReference myRef8 = database.getReference("title").child("title8");
+        DatabaseReference myRef9 = database.getReference("title").child("title9");
+        DatabaseReference myRef10 = database.getReference("title").child("title10");
+
 
         DatabaseReference myRef1a = database.getReference("price").child("price1");
         DatabaseReference myRef2a = database.getReference("price").child("price2");
         DatabaseReference myRef3a = database.getReference("price").child("price3");
         DatabaseReference myRef4a = database.getReference("price").child("price4");
+        DatabaseReference myRef5a = database.getReference("price").child("price5");
+        DatabaseReference myRef6a = database.getReference("price").child("price6");
+        DatabaseReference myRef7a = database.getReference("price").child("price7");
+        DatabaseReference myRef8a = database.getReference("price").child("price8");
+        DatabaseReference myRef9a = database.getReference("price").child("price9");
+        DatabaseReference myRef10a = database.getReference("price").child("price10");
+
 
 
         myRef1.addValueEventListener(new ValueEventListener() {
@@ -286,6 +300,108 @@ t4=value;                title4.setText(value);
             }
         });
 
+        myRef5.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                t5=value;
+                title5.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef6.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                t6=value;
+                title6.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef7.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                t7=value;
+                title7.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef8.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                t8=value;                title8.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef9.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                t9=value;
+                title9.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef10.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                t10=value;
+                title10.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+
 
         myRef1a.addValueEventListener(new ValueEventListener() {
             @Override
@@ -354,6 +470,110 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
+
+        myRef5a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p5=(value);
+                price5.setText("Price : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef6a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p6=(value);
+                price6.setText("Price : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef7a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p7=(value);
+                price7.setText("Price : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef8a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p8=(value);
+                price8.setText("Price : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef9a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p9=(value);
+                price9.setText("Price : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+        myRef10a.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                p10=(value);
+                price10.setText("Price : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
+            }
+        });
+
+
 
 
 
