@@ -12,17 +12,48 @@
         android:id="@+id/tool"
         layout="@layout/toolbar" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/tool"
+        android:elevation="4dp"
+        android:visibility="gone"
+        android:orientation="vertical"
+android:gravity="center"
+        android:id="@+id/up_layout"
+        android:background="#d0000000"
+        android:layout_height="match_parent">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+app:lottie_loop="true"
+            android:layout_marginTop="-32dp"
+            android:scaleType="fitCenter"
+            app:lottie_fileName="acrobatics.json"
+            app:lottie_cacheStrategy="strong"
+            app:lottie_autoPlay="true" />
     <Button
 
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="update your menu"
-        android:visibility="gone"
+        android:visibility="visible"
+        android:layout_marginTop="16dp"
+        android:textColor="#fff"
+        android:backgroundTint="@color/grey"
         android:fontFamily="@font/psb"
         android:id="@+id/update"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:fontFamily="@font/psi"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center"
+        android:text="Update &amp; Wait\nfor Restart"/>
 
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"

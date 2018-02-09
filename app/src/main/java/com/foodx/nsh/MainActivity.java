@@ -257,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         final StorageReference imgRef9 = mStorageRef.child("images/img9.jpg");
         final StorageReference imgRef10 = mStorageRef.child("images/img10.jpg");
 
+        final LinearLayout up_layout = findViewById(R.id.up_layout);
 
         updater.addValueEventListener(new ValueEventListener() {
             @Override
@@ -272,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editor.putInt("updater", value);
                     editor.commit();
-                    update.setVisibility(View.VISIBLE);
+                    up_layout.setVisibility(View.VISIBLE);
                     update.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -296,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
 
                                     Intent mStartActivity = new Intent(MainActivity.this, splashscreen.class);
-                                    int mPendingIntentId = 1234;
+                                    int mPendingIntentId = 123456;
                                     PendingIntent mPendingIntent = PendingIntent.getActivity(MainActivity.this, mPendingIntentId, mStartActivity,
                                             PendingIntent.FLAG_CANCEL_CURRENT);
                                     AlarmManager mgr = (AlarmManager) MainActivity.this.getSystemService(Context.ALARM_SERVICE);
@@ -305,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                                 }
-                            }, 2000);
+                            }, 1000);
 
 
 
