@@ -47,6 +47,8 @@ import com.google.firebase.storage.StorageReference;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
 
 import jp.wasabeef.blurry.Blurry;
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -208,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.setPersistenceEnabled(true);
         DatabaseReference myRef1 = database.getReference("title").child("title1");
         DatabaseReference myRef2 = database.getReference("title").child("title2");
         DatabaseReference myRef3 = database.getReference("title").child("title3");
@@ -594,60 +597,70 @@ t4=value;                title4.setText(value);
         GlideApp.with(this )
                 .load(imgRef1)
                 .centerCrop()
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image1);
         GlideApp.with(this )
                 .load(imgRef2)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image2);
         GlideApp.with(this )
                 .load(imgRef3)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image3);
         GlideApp.with(this )
                 .load(imgRef4)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image4);
         GlideApp.with(this )
                 .load(imgRef5)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image5);
         GlideApp.with(this )
                 .load(imgRef6)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image6);
         GlideApp.with(this )
                 .load(imgRef7)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image7);
         GlideApp.with(this )
                 .load(imgRef8)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image8);
         GlideApp.with(this )
                 .load(imgRef9)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image9);
         GlideApp.with(this )
                 .load(imgRef10)
+                .transition(withCrossFade())
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
