@@ -72,3 +72,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 }
 apply plugin: 'com.google.gms.google-services'
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}

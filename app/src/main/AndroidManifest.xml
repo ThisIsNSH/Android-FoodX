@@ -35,8 +35,10 @@
         <activity
             android:name=".address"
             android:theme="@style/Theme.Transparent" />
-        <activity android:name=".info"
-            android:theme="@style/Theme.Transparent"></activity>
+        <activity
+            android:name=".info"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".updating"></activity>
     </application>
 
 </manifest>

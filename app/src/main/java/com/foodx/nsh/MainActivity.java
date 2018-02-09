@@ -280,14 +280,15 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
                                     Glide.get(MainActivity.this).clearDiskCache();
 
+
                                 }
                             });
 
 
 
-                            Intent i = new Intent(MainActivity.this, splashscreen.class);
-                            startActivity(i);
 
+                            Intent i = new Intent(MainActivity.this, updating.class);
+                            startActivity(i);
 
 
 
