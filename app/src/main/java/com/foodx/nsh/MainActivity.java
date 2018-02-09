@@ -583,6 +583,12 @@ t4=value;                title4.setText(value);
         final StorageReference imgRef2 = mStorageRef.child("images/img2.jpg");
         final StorageReference imgRef3 = mStorageRef.child("images/img3.jpg");
         final StorageReference imgRef4 = mStorageRef.child("images/img4.jpg");
+        final StorageReference imgRef5 = mStorageRef.child("images/img5.jpg");
+        final StorageReference imgRef6 = mStorageRef.child("images/img6.jpg");
+        final StorageReference imgRef7 = mStorageRef.child("images/img7.jpg");
+        final StorageReference imgRef8 = mStorageRef.child("images/img8.jpg");
+        final StorageReference imgRef9 = mStorageRef.child("images/img9.jpg");
+        final StorageReference imgRef10 = mStorageRef.child("images/img10.jpg");
 
 
         GlideApp.with(this )
@@ -591,33 +597,61 @@ t4=value;                title4.setText(value);
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
                 .into(image1);
         GlideApp.with(this )
                 .load(imgRef2)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image2);
         GlideApp.with(this )
                 .load(imgRef3)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image3);
         GlideApp.with(this )
                 .load(imgRef4)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
                 .placeholder(R.drawable.base)
                 .error(R.drawable.base)
                 .fallback(R.drawable.base)
                 .into(image4);
+        GlideApp.with(this )
+                .load(imgRef5)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image5);
+        GlideApp.with(this )
+                .load(imgRef6)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image6);
+        GlideApp.with(this )
+                .load(imgRef7)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image7);
+        GlideApp.with(this )
+                .load(imgRef8)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image8);
+        GlideApp.with(this )
+                .load(imgRef9)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image9);
+        GlideApp.with(this )
+                .load(imgRef10)
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image10);
 
 
 
