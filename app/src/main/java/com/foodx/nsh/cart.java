@@ -24,9 +24,15 @@ import static com.foodx.nsh.MainActivity.q7;
 import static com.foodx.nsh.MainActivity.q8;
 import static com.foodx.nsh.MainActivity.q9;
 import static com.foodx.nsh.MainActivity.t1;
+import static com.foodx.nsh.MainActivity.t10;
 import static com.foodx.nsh.MainActivity.t2;
 import static com.foodx.nsh.MainActivity.t3;
 import static com.foodx.nsh.MainActivity.t4;
+import static com.foodx.nsh.MainActivity.t5;
+import static com.foodx.nsh.MainActivity.t6;
+import static com.foodx.nsh.MainActivity.t7;
+import static com.foodx.nsh.MainActivity.t8;
+import static com.foodx.nsh.MainActivity.t9;
 
 public class cart extends AppCompatActivity {
 
@@ -84,32 +90,32 @@ public class cart extends AppCompatActivity {
         }
 
         if (q5>0){
-            five.setText(getString(R.string.title5)+" : "+Integer.toString(q5));
+            five.setText(t5+" : "+Integer.toString(q5));
             five.setVisibility(View.VISIBLE);
         }
 
         if (q6>0){
-            six.setText(getString(R.string.title6)+" : "+Integer.toString(q6));
+            six.setText(t6+" : "+Integer.toString(q6));
             six.setVisibility(View.VISIBLE);
         }
 
         if (q7>0){
-            seven.setText(getString(R.string.title7)+" : "+Integer.toString(q7));
+            seven.setText(t7+" : "+Integer.toString(q7));
             seven.setVisibility(View.VISIBLE);
         }
 
         if (q8>0){
-            eight.setText(getString(R.string.title8)+" : "+Integer.toString(q8));
+            eight.setText(t8+" : "+Integer.toString(q8));
             eight.setVisibility(View.VISIBLE);
         }
 
         if (q9>0){
-            nine.setText(getString(R.string.title9)+" : "+Integer.toString(q9));
+            nine.setText(t9+" : "+Integer.toString(q9));
             nine.setVisibility(View.VISIBLE);
         }
 
         if (q10>0){
-            ten.setText(getString(R.string.title10)+" : "+Integer.toString(q10));
+            ten.setText(t10+" : "+Integer.toString(q10));
             ten.setVisibility(View.VISIBLE);
         }
 
