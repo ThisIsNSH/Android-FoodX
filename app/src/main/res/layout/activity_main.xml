@@ -12,7 +12,16 @@
         android:id="@+id/tool"
         layout="@layout/toolbar" />
 
+    <Button
 
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update your menu"
+        android:visibility="gone"
+        android:fontFamily="@font/psb"
+        android:id="@+id/update"/>
 
     <LinearLayout
         android:id="@+id/main"
@@ -22,11 +31,7 @@
         android:orientation="vertical">
 
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="update"
-    android:id="@+id/update"/>
+
 
         <ScrollView
             android:id="@+id/scrollView"

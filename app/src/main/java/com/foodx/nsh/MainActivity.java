@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public static int total = 0;
     public int check = 0;
     public static String t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -211,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         price9.setText("Loading");
         price10.setText("Loading");
 
-        Button update = findViewById(R.id.update);
+        final Button update = findViewById(R.id.update);
 
         //firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -239,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef9a = database.getReference("price").child("price9");
         DatabaseReference myRef10a = database.getReference("price").child("price10");
 
+        DatabaseReference updater = database.getReference("updater");
 
         final StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         final StorageReference imgRef1 = mStorageRef.child("images/img1.jpg");
@@ -253,31 +256,55 @@ public class MainActivity extends AppCompatActivity {
         final StorageReference imgRef10 = mStorageRef.child("images/img10.jpg");
 
 
-        update.setOnClickListener(new View.OnClickListener() {
+        updater.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                Glide.get(MainActivity.this).clearMemory();
-                AsyncTask.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        Glide.get(MainActivity.this).clearDiskCache();
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                int value = dataSnapshot.getValue(int.class);
+                final SharedPreferences pref = getApplicationContext().getSharedPreferences("MyUpdate", MODE_PRIVATE);
+                final SharedPreferences.Editor editor = pref.edit();
+                int update_value = pref.getInt("updater",0);
 
-                    }
-                });
+                if (update_value<value)
+                {
+                    editor.putInt("updater", value);
+                    editor.commit();
+                    update.setVisibility(View.VISIBLE);
+                    update.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Glide.get(MainActivity.this).clearMemory();
+                            AsyncTask.execute(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Glide.get(MainActivity.this).clearDiskCache();
 
-                
-
-                Intent mStartActivity = new Intent(MainActivity.this, splashscreen.class);
-                int mPendingIntentId = 123456;
-                PendingIntent mPendingIntent = PendingIntent.getActivity(MainActivity.this, mPendingIntentId, mStartActivity,
-                        PendingIntent.FLAG_CANCEL_CURRENT);
-                AlarmManager mgr = (AlarmManager) MainActivity.this.getSystemService(Context.ALARM_SERVICE);
-                mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
-                System.exit(0);
+                                }
+                            });
 
 
+
+                            Intent i = new Intent(MainActivity.this, splashscreen.class);
+                            startActivity(i);
+
+
+
+
+                        }
+                    });
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("this", "Failed to read value.", error.toException());
             }
         });
+
+
 
         GlideApp.with(MainActivity.this )
                 .load(imgRef1)
