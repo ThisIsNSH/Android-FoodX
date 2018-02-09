@@ -1,6 +1,10 @@
 package com.foodx.nsh;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class splashscreen extends AppCompatActivity {
 
@@ -34,23 +41,19 @@ public class splashscreen extends AppCompatActivity {
         }
 
 
+                    new Handler().postDelayed(new Runnable() {
 
 
-        new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            Intent i = new Intent(splashscreen.this, MainActivity.class);
+                            startActivity(i);
 
 
-            @Override
-            public void run() {
-
-                Intent i = new Intent(splashscreen.this, MainActivity.class);
-                startActivity(i);
-
-
-                finish();
-            }
-        }, SPLASH_TIME_OUT);
-
-
+                            finish();
+                        }
+                    }, SPLASH_TIME_OUT);
 
 
     }

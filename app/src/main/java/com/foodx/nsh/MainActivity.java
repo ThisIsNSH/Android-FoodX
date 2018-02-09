@@ -9,6 +9,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.bumptech.glide.signature.ObjectKey;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -207,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
         price9.setText("Loading");
         price10.setText("Loading");
 
+        Button update = findViewById(R.id.update);
 
         //firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -235,6 +238,104 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef10a = database.getReference("price").child("price10");
 
 
+        final StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
+        final StorageReference imgRef1 = mStorageRef.child("images/img1.jpg");
+        final StorageReference imgRef2 = mStorageRef.child("images/img2.jpg");
+        final StorageReference imgRef3 = mStorageRef.child("images/img3.jpg");
+        final StorageReference imgRef4 = mStorageRef.child("images/img4.jpg");
+        final StorageReference imgRef5 = mStorageRef.child("images/img5.jpg");
+        final StorageReference imgRef6 = mStorageRef.child("images/img6.jpg");
+        final StorageReference imgRef7 = mStorageRef.child("images/img7.jpg");
+        final StorageReference imgRef8 = mStorageRef.child("images/img8.jpg");
+        final StorageReference imgRef9 = mStorageRef.child("images/img9.jpg");
+        final StorageReference imgRef10 = mStorageRef.child("images/img10.jpg");
+
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Glide.get(MainActivity.this).clearMemory();
+                AsyncTask.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Glide.get(MainActivity.this).clearDiskCache();
+
+                    }
+                });
+            }
+        });
+
+        GlideApp.with(MainActivity.this )
+                .load(imgRef1)
+                .centerCrop()
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image1);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef2)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image2);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef3)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image3);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef4)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image4);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef5)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image5);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef6)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image6);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef7)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image7);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef8)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image8);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef9)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image9);
+        GlideApp.with(MainActivity.this )
+                .load(imgRef10)
+                .transition(withCrossFade())
+                .placeholder(R.drawable.base)
+                .error(R.drawable.base)
+                .fallback(R.drawable.base)
+                .into(image10);
 
         myRef1.addValueEventListener(new ValueEventListener() {
             @Override
@@ -252,7 +353,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -269,7 +369,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef3.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -286,7 +385,6 @@ title3.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef4.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -302,7 +400,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef5.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -319,7 +416,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef6.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -336,7 +432,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef7.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -353,7 +448,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef8.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -369,7 +463,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef9.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -386,7 +479,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef10.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -404,8 +496,6 @@ t4=value;                title4.setText(value);
             }
         });
 
-
-
         myRef1a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -422,7 +512,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef2a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -439,7 +528,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef3a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -456,7 +544,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef4a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -473,7 +560,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef5a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -490,7 +576,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef6a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -507,7 +592,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef7a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -524,7 +608,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef8a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -541,7 +624,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef9a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -558,7 +640,6 @@ t4=value;                title4.setText(value);
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
         myRef10a.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -577,94 +658,6 @@ t4=value;                title4.setText(value);
         });
 
 
-
-
-
-        //firebase storage
-        StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
-        final StorageReference imgRef1 = mStorageRef.child("images/img1.jpg");
-        final StorageReference imgRef2 = mStorageRef.child("images/img2.jpg");
-        final StorageReference imgRef3 = mStorageRef.child("images/img3.jpg");
-        final StorageReference imgRef4 = mStorageRef.child("images/img4.jpg");
-        final StorageReference imgRef5 = mStorageRef.child("images/img5.jpg");
-        final StorageReference imgRef6 = mStorageRef.child("images/img6.jpg");
-        final StorageReference imgRef7 = mStorageRef.child("images/img7.jpg");
-        final StorageReference imgRef8 = mStorageRef.child("images/img8.jpg");
-        final StorageReference imgRef9 = mStorageRef.child("images/img9.jpg");
-        final StorageReference imgRef10 = mStorageRef.child("images/img10.jpg");
-
-
-        GlideApp.with(this )
-                .load(imgRef1)
-                .centerCrop()
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image1);
-        GlideApp.with(this )
-                .load(imgRef2)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image2);
-        GlideApp.with(this )
-                .load(imgRef3)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image3);
-        GlideApp.with(this )
-                .load(imgRef4)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image4);
-        GlideApp.with(this )
-                .load(imgRef5)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image5);
-        GlideApp.with(this )
-                .load(imgRef6)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image6);
-        GlideApp.with(this )
-                .load(imgRef7)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image7);
-        GlideApp.with(this )
-                .load(imgRef8)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image8);
-        GlideApp.with(this )
-                .load(imgRef9)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image9);
-        GlideApp.with(this )
-                .load(imgRef10)
-                .transition(withCrossFade())
-                .placeholder(R.drawable.base)
-                .error(R.drawable.base)
-                .fallback(R.drawable.base)
-                .into(image10);
 
 
 
