@@ -30,16 +30,22 @@
             android:layout_gravity="center"
             />-->
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
 android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:id="@+id/burger"
             app:lottie_loop="true"
-            android:layout_marginBottom="-16dp"
-
-            android:layout_marginTop="-16dp"
+            android:layout_marginBottom="-32dp"
+android:layout_marginRight="-32dp"
+            android:layout_marginLeft="-32dp"
+            android:layout_marginTop="-32dp"
             app:lottie_fileName="search.json"
             app:lottie_cacheStrategy="strong"
             app:lottie_autoPlay="true" />
@@ -47,12 +53,15 @@ android:layout_gravity="center"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order Review"
+            android:text="Review"
+            android:layout_centerVertical="true"
             android:textColor="#fff"
-            android:fontFamily="@font/psi"
+            android:layout_toRightOf="@id/burger"
+            android:fontFamily="@font/psbi"
             android:textSize="25sp"
-            android:layout_gravity="center"/>
 
+            android:layout_gravity="center"/>
+        </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
