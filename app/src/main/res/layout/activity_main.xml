@@ -65,7 +65,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-
+sothree:umanoOverlay="true"
+sothree:umanoParallaxOffset="64dp"
         sothree:umanoPanelHeight="48dp"
         sothree:umanoShadowHeight="4dp">
 
@@ -1604,95 +1605,96 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:gravity="center"
-            android:padding="8dp"
-            android:layout_height="wrap_content" android:background="@drawable/ss">
+<RelativeLayout
+    android:background="#00000000"
+    android:theme="@style/Theme.Transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Swipe Up for More"
+    android:textAlignment="center"
+    android:textColor="#fff"
+    android:fontFamily="@font/ps"
+    android:textSize="15sp"
+    android:background="@drawable/gradiwnt"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/a"
+    />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:text="Details"
-                android:textSize="15sp"
-                android:textColor="#fff"
-                android:fontFamily="sans-serif-condensed"/>
+    <LinearLayout  android:layout_below="@id/a" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_height="wrap_content" android:background="@color/black">
+        <TextView
 
-            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Order"
+            android:textColor="#fff"
+            android:layout_margin="8dp"
+            android:id="@+id/recent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="25sp"
+            />
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="#fff"/>
+        <TextView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recent Order"
-                android:textColor="#fff"
-                android:clickable="true"
-                android:layout_margin="8dp"
-                android:id="@+id/recent"
-                android:theme="@style/AppTheme3"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="25sp"
-                />
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:background="#fff"/>
-            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contributors"
+            android:textColor="#fff"
+            android:id="@+id/contributors"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="25sp"
+            android:layout_margin="8dp"
+            />
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="#fff"/>
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contributors"
-                android:textColor="#fff"
-                android:theme="@style/AppTheme3"
-android:clickable="true"
-                android:id="@+id/contributors"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="25sp"
-                android:layout_margin="8dp"
-                />
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:background="#fff"/>
+        <TextView
 
-            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textColor="#fff"
+            android:id="@+id/contact"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="25sp"
+            android:layout_margin="8dp"
+            />
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact Us"
-                android:textColor="#fff"
-                android:clickable="true"
-                android:theme="@style/AppTheme3"
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="#fff"/>
 
-                android:id="@+id/contact"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="25sp"
-                android:layout_margin="8dp"
-                />
+        <TextView
 
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:background="#fff"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textColor="#fff"
+            android:id="@+id/Feedback"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="25sp"
+            android:layout_margin="8dp"
+            />
 
-            <TextView
-android:clickable="true"
-                android:theme="@style/AppTheme3"
+    </LinearLayout>
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feedback"
-                android:textColor="#fff"
-                android:id="@+id/Feedback"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="25sp"
-                android:layout_margin="8dp"
-                />
-
-        </LinearLayout>
-
+</RelativeLayout>
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
 </RelativeLayout>
