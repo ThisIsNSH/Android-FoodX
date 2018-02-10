@@ -186,10 +186,10 @@ android:layout_gravity="center"
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Address"
+            android:text="Continue"
             android:fontFamily="@font/psb"
             android:textColor="@color/black"
-
+            android:layout_marginTop="16dp"
             android:backgroundTint="#F6C427"
             android:layout_gravity="center"
 
