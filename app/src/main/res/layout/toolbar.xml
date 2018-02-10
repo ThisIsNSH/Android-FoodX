@@ -86,17 +86,16 @@
         android:textSize="25sp" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="-16dp"
-        android:layout_marginBottom="-16dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+android:visibility="invisible"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:id="@+id/tick_anim"
         android:scaleType="fitCenter"
         app:lottie_loop="true"
-android:layout_marginRight="0dp"
-        app:lottie_fileName="done.json"
+android:layout_marginRight="16dp"
+        app:lottie_fileName="tick.json"
         app:lottie_cacheStrategy="strong"
         app:lottie_autoPlay="true" />
 

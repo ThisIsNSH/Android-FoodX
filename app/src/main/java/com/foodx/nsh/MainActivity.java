@@ -1354,7 +1354,7 @@ public class MainActivity extends AppCompatActivity {
         total1.setVisibility(View.VISIBLE);
         total2.setVisibility(View.VISIBLE);
         total3.setVisibility(View.VISIBLE);
-
+        findViewById(R.id.tick_anim).setVisibility(View.VISIBLE);
         check = 1;
 
     }
@@ -1362,6 +1362,7 @@ public class MainActivity extends AppCompatActivity {
     public void appBarAnim1() {
 /*    final TextView menu1 = findViewById(R.id.menu1);
     final TextView menu2 = findViewById(R.id.menu2);*/
+        findViewById(R.id.tick_anim).setVisibility(View.INVISIBLE);
         final TextView total1 = findViewById(R.id.total1);
         final TextView total2 = findViewById(R.id.total2);
         final TextView total3 = findViewById(R.id.total3);
