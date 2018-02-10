@@ -59,30 +59,33 @@
     </LinearLayout>
 
 
-    <com.sothree.slidinguppanel.SlidingUpPanelLayout
-        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-sothree:umanoParallaxOffset="64dp"
+        sothree:umanoOverlay="true"
         sothree:umanoPanelHeight="48dp"
-        sothree:umanoShadowHeight="4dp">
+        sothree:umanoParallaxOffset="64dp"
+        sothree:umanoShadowHeight="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <include
                 android:id="@+id/tool"
-                layout="@layout/toolbar" android:visibility="invisible"  />
+                layout="@layout/toolbar"
+                android:visibility="invisible" />
 
             <LinearLayout
                 android:id="@+id/main"
-                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tool"
-                android:orientation="vertical">
+                android:orientation="vertical"
+
+                android:visibility="visible">
 
 
                 <ScrollView
@@ -93,7 +96,8 @@ sothree:umanoParallaxOffset="64dp"
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
 
 
                         <LinearLayout
@@ -1564,7 +1568,7 @@ sothree:umanoParallaxOffset="64dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginBottom="16dp"
+android:layout_marginBottom="16dp"
                                     android:layout_marginLeft="16dp"
                                     android:layout_marginRight="16dp"
                                     android:orientation="horizontal">
@@ -1596,6 +1600,16 @@ sothree:umanoParallaxOffset="64dp"
 
                         </LinearLayout>
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:textColor="#fff"
+                            android:fontFamily="sans-serif-condensed"
+                            android:textAllCaps="true"
+                            android:textAlignment="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:text="Its not the end, more things to come soon"/>
 
                     </LinearLayout>
                 </ScrollView>
@@ -1604,94 +1618,121 @@ sothree:umanoParallaxOffset="64dp"
             </LinearLayout>
         </RelativeLayout>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="More"
-    android:paddingTop="16dp"
-    android:textAlignment="center"
-    android:textColor="#fff"
-    android:fontFamily="@font/ps"
-    android:textSize="15sp"
-    android:layout_centerHorizontal="true"
-    android:id="@+id/a"
-    />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#00141414"
 
-    <LinearLayout  android:layout_below="@id/a" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:gravity="center"
-        android:padding="8dp"
-        android:layout_height="wrap_content" android:background="#d0141414">
-        <TextView
-android:layout_marginTop="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recent Order"
-            android:textColor="#fff"
-            android:layout_margin="8dp"
-            android:id="@+id/recent"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="25sp"
-            />
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="1dp"
-            android:background="#fff"/>
-        <TextView
+            android:layout_height="wrap_content">
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contributors"
-            android:textColor="#fff"
-            android:id="@+id/contributors"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="25sp"
-            android:layout_margin="8dp"
-            />
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="1dp"
-            android:background="#fff"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/up"
 
-        <TextView
+                android:src="@drawable/gradiwnt"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:lottie_loop="true"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                app:lottie_fileName="arrow.json"
+                app:lottie_cacheStrategy="strong"
+                app:lottie_autoPlay="true" />
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact Us"
-            android:textColor="#fff"
-            android:id="@+id/contact"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="25sp"
-            android:layout_margin="8dp"
-            />
 
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="1dp"
-            android:background="#fff"/>
 
-        <TextView
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/up"
+                android:gravity="center"
+                android:background="#d0141414"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Feedback"
-            android:textColor="#fff"
-            android:id="@+id/Feedback"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="25sp"
-            android:layout_margin="8dp"
-            />
+                <TextView
 
-    </LinearLayout>
+                    android:id="@+id/a"
 
-</RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/ps"
+                    android:paddingTop="16dp"
+                    android:text="More"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/recent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Recent Order"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:background="#fff" />
+
+                <TextView
+
+                    android:id="@+id/contributors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Contributors"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:background="#fff" />
+
+                <TextView
+
+                    android:id="@+id/contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Contact Us"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:background="#fff" />
+
+                <TextView
+
+                    android:id="@+id/Feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Feedback"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
 </RelativeLayout>
