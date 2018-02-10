@@ -65,7 +65,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-sothree:umanoOverlay="true"
 sothree:umanoParallaxOffset="64dp"
         sothree:umanoPanelHeight="48dp"
         sothree:umanoShadowHeight="4dp">
@@ -1606,19 +1605,17 @@ sothree:umanoParallaxOffset="64dp"
         </RelativeLayout>
 
 <RelativeLayout
-    android:background="#00000000"
-    android:theme="@style/Theme.Transparent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Swipe Up for More"
+    android:text="More"
+    android:paddingTop="16dp"
     android:textAlignment="center"
     android:textColor="#fff"
     android:fontFamily="@font/ps"
     android:textSize="15sp"
-    android:background="@drawable/gradiwnt"
     android:layout_centerHorizontal="true"
     android:id="@+id/a"
     />
@@ -1627,9 +1624,9 @@ sothree:umanoParallaxOffset="64dp"
         android:orientation="vertical" android:layout_width="match_parent"
         android:gravity="center"
         android:padding="8dp"
-        android:layout_height="wrap_content" android:background="@color/black">
+        android:layout_height="wrap_content" android:background="#d0141414">
         <TextView
-
+android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Recent Order"

@@ -1026,7 +1026,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (q1 > 0) {
                     q1 -= 1;
-                    total -= (p1);
+                    if (total1a > 0)
+
+                    {    total -= p1;
+                        total1a -= (p1);}
                 }
                 if (q1 > 0) {
                     quantity1.setText(Integer.toString(q1 * p1));
@@ -1054,7 +1057,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q2 > 0) {
-                    total -= (p2);
+                    if (total2a > 0)
+
+                    {    total -= p2;
+                        total2a -= (p2);}
                     q2 -= 1;
                 }
                 if (q2 > 0) {
@@ -1082,7 +1088,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q3 > 0) {
-                    total -= (p3);
+                    if (total3a > 0)
+
+                    {    total -= p3;
+                        total3a -= (p3);}
                     q3 -= 1;
                 }
                 if (q3 > 0) {
@@ -1110,7 +1119,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q4 > 0) {
-                    total -= (p4);
+                    if (total4a > 0)
+
+                    {    total -= p4;
+                        total4a -= (p4);}
                     q4 -= 1;
                 }
                 if (q4 > 0) {
@@ -1138,7 +1150,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q5 > 0) {
-                    total -= (p5);
+                    if (total5a > 0)
+
+                    {    total -= p5;
+                        total5a -= (p5);}
                     q5 -= 1;
                 }
                 if (q5 > 0) {
@@ -1166,7 +1181,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q6 > 0) {
-                    total -= (p6);
+                    if (total6a > 0)
+
+                    {    total -= p6;
+                        total6a -= (p6);}
                     q6 -= 1;
                 }
                 if (q6 > 0) {
@@ -1194,7 +1212,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q7 > 0) {
-                    total -= (p7);
+                    if (total7a > 0)
+
+                    {    total -= p7;
+                        total7a -= (p7);}
                     q7 -= 1;
                 }
                 if (q7 > 0) {
@@ -1222,8 +1243,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q8 > 0) {
-                    total -= (p8);
-                    q8 -= 1;
+                    if (total8a > 0)
+
+                    {    total -= p8;
+                        total8a -= (p8);}
+                        q8 -= 1;
                 }
                 if (q8 > 0) {
                     quantity8.setText(Integer.toString(q8 * p8));
@@ -1250,7 +1274,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q9 > 0) {
-                    total -= (p9);
+                    if (total9a > 0)
+
+                    {    total -= p9;
+                        total9a -= (p9);}
                     q9 -= 1;
                 }
                 if (q9 > 0) {
@@ -1279,11 +1306,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (q10 > 0) {
-                    total -= (p10);
+
                     q10 -= 1;
+                    if (total10a > 0)
+
+                    {    total -= p10;
+                        total10a -= (p10);}
                 }
                 if (q10 > 0) {
                     quantity10.setText(Integer.toString(q10 * p10));
+
+
 
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
