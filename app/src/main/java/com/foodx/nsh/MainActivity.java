@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static int q1 = 0, q2 = 0, q3 = 0, q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0;
     public static int p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
-    public static int total = 0;
+    public static int total = 0, total1a = 0, total2a = 0;
     public static String t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
     public int check = 0;
 
@@ -732,7 +732,10 @@ public class MainActivity extends AppCompatActivity {
                     q1 += 1;
                 if (q1 > 0) {
                     quantity1.setText(Integer.toString(q1 * p1));
-                    total += (p1);
+                    if (total1a < 15 * p1)
+                    {
+                        total1a += (p1);
+                    total += p1;}
                     quantity1.setVisibility(View.VISIBLE);
                     real1.setText(Integer.toString(q1));
                     real1.setVisibility(View.VISIBLE);
@@ -758,7 +761,12 @@ public class MainActivity extends AppCompatActivity {
                     q2 += 1;
                 if (q2 > 0) {
                     quantity2.setText(Integer.toString(q2 * p2));
-                    total += (p2);
+
+                    if (total2a < 15 * p2)
+
+                    {    total += p2;
+                            total2a += (p2);}
+
                     quantity2.setVisibility(View.VISIBLE);
                     real2.setText(Integer.toString(q2));
                     real2.setVisibility(View.VISIBLE);
@@ -784,7 +792,9 @@ public class MainActivity extends AppCompatActivity {
                     q3 += 1;
                 if (q3 > 0) {
                     quantity3.setText(Integer.toString(q3 * p3));
-                    total += (p3);
+                    if (total < 15 * p3)
+
+                        total += (p3);
                     quantity3.setVisibility(View.VISIBLE);
                     real3.setText(Integer.toString(q3));
                     real3.setVisibility(View.VISIBLE);
@@ -810,7 +820,9 @@ public class MainActivity extends AppCompatActivity {
                     q4 += 1;
                 if (q4 > 0) {
                     quantity4.setText(Integer.toString(q4 * p4));
-                    total += (p4);
+                    if (total < 15 * p4)
+
+                        total += (p4);
                     quantity4.setVisibility(View.VISIBLE);
                     real4.setText(Integer.toString(q4));
 
@@ -837,7 +849,9 @@ public class MainActivity extends AppCompatActivity {
                     q5 += 1;
                 if (q5 > 0) {
                     quantity5.setText(Integer.toString(q5 * p5));
-                    total += (p5);
+                    if (total < 15 * p5)
+
+                        total += (p5);
                     quantity5.setVisibility(View.VISIBLE);
                     real5.setText(Integer.toString(q5));
                     real5.setVisibility(View.VISIBLE);
@@ -863,7 +877,9 @@ public class MainActivity extends AppCompatActivity {
                     q6 += 1;
                 if (q6 > 0) {
                     quantity6.setText(Integer.toString(q6 * p6));
-                    total += (p6);
+                    if (total < 15 * p6)
+
+                        total += (p6);
                     quantity6.setVisibility(View.VISIBLE);
                     real6.setText(Integer.toString(q6));
                     real6.setVisibility(View.VISIBLE);
@@ -889,7 +905,9 @@ public class MainActivity extends AppCompatActivity {
                     q7 += 1;
                 if (q7 > 0) {
                     quantity7.setText(Integer.toString(q7 * p7));
-                    total += (p7);
+                    if (total < 15 * p7)
+
+                        total += (p7);
                     quantity7.setVisibility(View.VISIBLE);
                     real7.setText(Integer.toString(q7));
                     real7.setVisibility(View.VISIBLE);
@@ -915,7 +933,9 @@ public class MainActivity extends AppCompatActivity {
                     q8 += 1;
                 if (q8 > 0) {
                     quantity8.setText(Integer.toString(q8 * p8));
-                    total += (p8);
+                    if (total < 15 * p9)
+
+                        total += (p8);
                     quantity8.setVisibility(View.VISIBLE);
                     real8.setText(Integer.toString(q8));
                     real8.setVisibility(View.VISIBLE);
@@ -941,7 +961,9 @@ public class MainActivity extends AppCompatActivity {
                     q9 += 1;
                 if (q9 > 0) {
                     quantity9.setText(Integer.toString(q9 * p9));
-                    total += (p9);
+                    if (total < 15 * p9)
+
+                        total += (p9);
                     quantity9.setVisibility(View.VISIBLE);
                     real9.setText(Integer.toString(q9));
                     real9.setVisibility(View.VISIBLE);
@@ -966,11 +988,11 @@ public class MainActivity extends AppCompatActivity {
                 if (q10 < 15)
                     q10 += 1;
 
-                if (q10 > 0 ) {
+                if (q10 > 0) {
                     quantity10.setText(Integer.toString(q10 * p10));
 
-                    if (total<15*p10)
-                    total += (p10);
+                    if (total < 15 * p10)
+                        total += (p10);
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
                     real10.setVisibility(View.VISIBLE);
@@ -980,7 +1002,6 @@ public class MainActivity extends AppCompatActivity {
                     real10.setVisibility(View.INVISIBLE);
                     amount10.setVisibility(View.INVISIBLE);
                 }
-
 
 
                 if (total > 0 && check == 0) {
