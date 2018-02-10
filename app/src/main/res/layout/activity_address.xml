@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+
     tools:context="com.foodx.nsh.address">
 
     <LinearLayout
@@ -108,7 +109,7 @@
             android:textColor="#fff"
             android:text="ORDER"
             android:fontFamily="@font/psb"
-            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#2ecc71"
             android:layout_gravity="center"/>
     </LinearLayout>
