@@ -965,8 +965,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (q10 < 15)
                     q10 += 1;
-                if (q10 > 0) {
+
+                if (q10 > 0 ) {
                     quantity10.setText(Integer.toString(q10 * p10));
+
+                    if (total<15*p10)
                     total += (p10);
                     quantity10.setVisibility(View.VISIBLE);
                     real10.setText(Integer.toString(q10));
@@ -977,6 +980,9 @@ public class MainActivity extends AppCompatActivity {
                     real10.setVisibility(View.INVISIBLE);
                     amount10.setVisibility(View.INVISIBLE);
                 }
+
+
+
                 if (total > 0 && check == 0) {
                     appBarAnim(total);
                 } else if (total > 0 && check == 1) {
