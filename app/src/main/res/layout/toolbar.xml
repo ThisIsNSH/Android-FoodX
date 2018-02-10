@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="-4dp"
-        android:layout_marginBottom="-4dp"
+        android:layout_marginBottom="-8dp"
         android:layout_marginLeft="-86dp"
         android:id="@+id/menu_anim"
         app:lottie_fileName="menu.json"
@@ -78,6 +78,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"
         android:text="X"
+
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@id/total2"
         android:visibility="invisible"
@@ -86,16 +87,17 @@
         android:textSize="25sp" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="34dp"
-        android:layout_height="34dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
 android:visibility="invisible"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:id="@+id/tick_anim"
         android:scaleType="fitCenter"
+        android:layout_marginTop="-2dp"
         app:lottie_loop="true"
 android:layout_marginRight="16dp"
-        app:lottie_fileName="tick.json"
+        app:lottie_fileName="nshtick1.json"
         app:lottie_cacheStrategy="strong"
         app:lottie_autoPlay="true" />
 
