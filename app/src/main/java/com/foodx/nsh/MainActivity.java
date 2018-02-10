@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
     public static int q1 = 0, q2 = 0, q3 = 0, q4 = 0, q5 = 0, q6 = 0, q7 = 0, q8 = 0, q9 = 0, q10 = 0;
     public static int p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 10, p6 = 10, p7 = 10, p8 = 10, p9 = 10, p10 = 10;
     public static int total = 0;
-    public int check = 0;
     public static String t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
+    public int check = 0;
 
 
     @Override
@@ -128,21 +129,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView real9 = findViewById(R.id.real9);
         final TextView real10 = findViewById(R.id.real10);
 
-
-
-  /*      final ImageView image1a = findViewById(R.id.image1a);
-        final ImageView image2a = findViewById(R.id.image2a);
-        final ImageView image3a = findViewById(R.id.image3a);
-        final ImageView image4a = findViewById(R.id.image4a);
-        final ImageView image5a = findViewById(R.id.image5a);
-        final ImageView image6a = findViewById(R.id.image6a);
-        final ImageView image7a = findViewById(R.id.image7a);
-        final ImageView image8a = findViewById(R.id.image8a);
-        final ImageView image9a = findViewById(R.id.image9a);
-        final ImageView image10a = findViewById(R.id.image10a);*/
-
-       /* final TextView menu1 = findViewById(R.id.menu1);
-        final TextView menu2 = findViewById(R.id.menu2);*/
 
         final LottieAnimationView anim = findViewById(R.id.menu_anim);
 
@@ -1285,7 +1271,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        cart.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tick_anim).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, cart.class);

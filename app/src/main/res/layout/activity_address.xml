@@ -70,6 +70,7 @@
             android:id="@+id/input_layout_address"
             android:layout_width="match_parent"
             android:hint="New Address"
+            android:layout_marginTop="8dp"
             android:layout_height="wrap_content">
         <EditText
             android:layout_width="match_parent"

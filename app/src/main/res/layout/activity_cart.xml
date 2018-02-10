@@ -30,16 +30,29 @@
             android:layout_gravity="center"
             />-->
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:id="@+id/burger"
+            app:lottie_loop="true"
+            android:layout_marginBottom="-16dp"
+
+            android:layout_marginTop="-16dp"
+            app:lottie_fileName="search.json"
+            app:lottie_cacheStrategy="strong"
+            app:lottie_autoPlay="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Order Review"
             android:textColor="#fff"
-            android:fontFamily="@font/psbi"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:textSize="26dp"/>
+            android:fontFamily="@font/psi"
+            android:textSize="25sp"
+            android:layout_gravity="center"/>
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -53,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:text="Title: "
                 android:layout_margin="4dp"
             android:id="@+id/one"
@@ -65,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_margin="4dp"
 
             android:text="Title: "
@@ -77,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:fontFamily="@font/psb"
             android:text="Title: "
             android:id="@+id/three"
@@ -90,7 +103,7 @@
             android:layout_margin="4dp"
 
             android:fontFamily="@font/psb"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:text="Title: "
             android:id="@+id/four"
             android:visibility="visible"
@@ -102,7 +115,7 @@
             android:fontFamily="@font/psb"
             android:layout_margin="4dp"
 
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:text="Title: "
             android:id="@+id/five"
             android:visibility="visible"
@@ -111,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/psb"            android:textSize="25sp"
+            android:fontFamily="@font/psb"            android:textSize="20sp"
             android:text="Title: "
             android:layout_margin="4dp"
 
@@ -123,7 +136,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_margin="4dp"
 
             android:text="Title: "
@@ -137,7 +150,7 @@
             android:fontFamily="@font/psb"
             android:layout_margin="4dp"
 
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:text="Title: "
             android:id="@+id/eight"
             android:visibility="visible"
@@ -149,7 +162,7 @@
             android:fontFamily="@font/psb"
             android:layout_margin="4dp"
 
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:text="Title: "
             android:id="@+id/nine"
             android:visibility="visible"
@@ -161,7 +174,7 @@
             android:fontFamily="@font/psb"
             android:layout_margin="4dp"
 
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:text="Title: "
             android:id="@+id/ten"
             android:visibility="visible"
@@ -170,22 +183,21 @@
         </ScrollView>
 
 
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choose Address"
             android:fontFamily="@font/psb"
-            android:textColor="#fff"
-            android:backgroundTint="@color/grey"
+            android:textColor="@color/black"
+
+            android:backgroundTint="#F6C427"
             android:layout_gravity="center"
-android:layout_marginTop="16dp"
+
             android:id="@+id/address"
             android:layout_marginBottom="16dp"
             />
 
-
-
     </LinearLayout>
+
 
 </RelativeLayout>

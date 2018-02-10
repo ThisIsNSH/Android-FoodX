@@ -85,9 +85,26 @@
         android:textColor="#2ecc71"
         android:textSize="25sp" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="-16dp"
+        android:layout_marginBottom="-16dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/tick_anim"
+        android:scaleType="fitCenter"
+        app:lottie_loop="true"
+android:layout_marginRight="0dp"
+        app:lottie_fileName="done.json"
+        app:lottie_cacheStrategy="strong"
+        app:lottie_autoPlay="true" />
+
+
     <ImageButton
         android:layout_width="32dp"
         android:id="@+id/cart"
+        android:visibility="gone"
         android:layout_height="32dp"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
@@ -95,7 +112,7 @@
         android:src="@drawable/tick"
         android:layout_marginRight="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:layout_toLeftOf="@id/info"
+        android:layout_alignParentRight="true"
 
         />
     <ImageButton
@@ -104,6 +121,7 @@
         android:layout_height="32dp"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
+        android:visibility="gone"
         android:src="@drawable/ic_info_outline_white_48dp"
         android:layout_marginRight="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"

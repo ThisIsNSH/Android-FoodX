@@ -13,55 +13,57 @@
         layout="@layout/toolbar" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_below="@id/tool"
-        android:elevation="4dp"
-        android:visibility="gone"
-        android:orientation="vertical"
-android:gravity="center"
         android:id="@+id/up_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tool"
         android:background="#d0000000"
-        android:layout_height="match_parent">
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
-app:lottie_loop="true"
             android:layout_marginTop="-32dp"
             android:scaleType="fitCenter"
-            app:lottie_fileName="acrobatics.json"
+            app:lottie_autoPlay="true"
             app:lottie_cacheStrategy="strong"
-            app:lottie_autoPlay="true" />
-    <Button
+            app:lottie_fileName="acrobatics.json"
+            app:lottie_loop="true" />
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="update your menu"
-        android:visibility="visible"
-        android:layout_marginTop="16dp"
-        android:textColor="#fff"
-        android:backgroundTint="@color/grey"
-        android:fontFamily="@font/psb"
-        android:id="@+id/update"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:fontFamily="@font/psi"
-        android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:textAlignment="center"
-        android:text="Update &amp; Wait\nfor Restart"/>
+        <Button
+
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/grey"
+            android:fontFamily="@font/psb"
+            android:text="update your menu"
+            android:textColor="#fff"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/psi"
+            android:text="Update &amp; Wait\nfor Restart"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="20sp" />
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tool"
         android:orientation="vertical">
-
-
 
 
         <ScrollView
@@ -94,6 +96,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image1a"
                                 android:layout_width="match_parent"
@@ -102,6 +105,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image1"
                                 android:layout_width="match_parent"
@@ -113,48 +117,47 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity1"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity1"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:id="@+id/amount1"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real1"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real1"
-                                android:paddingTop="2dp"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -206,8 +209,8 @@ app:lottie_loop="true"
                                 android:layout_height="30dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:theme="@style/AppTheme1"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add1"
@@ -215,9 +218,9 @@ app:lottie_loop="true"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
-                                android:theme="@style/AppTheme2"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -239,6 +242,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image2a"
                                 android:layout_width="match_parent"
@@ -247,6 +251,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image2"
                                 android:layout_width="match_parent"
@@ -257,49 +262,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity2"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity2"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:visibility="invisible"
-                                android:id="@+id/amount2"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real2"
-                                android:paddingTop="2dp"
-
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -350,20 +354,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="16dp"
-                                android:theme="@style/AppTheme2"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -392,6 +396,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image3a"
                                 android:layout_width="match_parent"
@@ -400,6 +405,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image3"
                                 android:layout_width="match_parent"
@@ -410,49 +416,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity3"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity3"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:id="@+id/amount3"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real3"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:paddingTop="2dp"
-
-                                android:id="@+id/real3"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -502,20 +507,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub3"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add3"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme2"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -537,6 +542,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image4a"
                                 android:layout_width="match_parent"
@@ -545,6 +551,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image4"
                                 android:layout_width="match_parent"
@@ -555,52 +562,52 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity4"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity4"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:id="@+id/amount4"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real4"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:paddingTop="2dp"
-
-                                android:visibility="invisible"
-                                android:id="@+id/real4"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
+
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
+
                         <TextView
                             android:id="@+id/title4"
                             android:layout_width="wrap_content"
@@ -647,20 +654,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub4"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add4"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme2"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -689,6 +696,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image5a"
                                 android:layout_width="match_parent"
@@ -697,6 +705,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image5"
                                 android:layout_width="match_parent"
@@ -707,49 +716,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity5"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity5"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:id="@+id/amount5"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real5"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:paddingTop="2dp"
-
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real5"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -799,20 +807,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub5"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add5"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme2"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -834,6 +842,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image6a"
                                 android:layout_width="match_parent"
@@ -842,6 +851,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image6"
                                 android:layout_width="match_parent"
@@ -852,49 +862,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity6"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity6"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:id="@+id/amount6"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
-                                android:paddingTop="2dp"
+                                android:id="@+id/real6"
 
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real6"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -945,20 +954,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub6"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add6"
                                 android:layout_width="30dp"
-                                android:theme="@style/AppTheme2"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -987,6 +996,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image7a"
                                 android:layout_width="match_parent"
@@ -995,6 +1005,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image7"
                                 android:layout_width="match_parent"
@@ -1005,49 +1016,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity7"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity7"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:id="@+id/amount7"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real7"
                                 android:layout_width="30dp"
-                                android:paddingTop="2dp"
 
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real7"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -1097,20 +1107,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub7"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add7"
                                 android:layout_width="30dp"
-                                android:theme="@style/AppTheme2"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -1132,6 +1142,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image8a"
                                 android:layout_width="match_parent"
@@ -1140,6 +1151,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image8"
                                 android:layout_width="match_parent"
@@ -1150,49 +1162,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity8"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity8"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
-                                android:id="@+id/amount8"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
-                                android:paddingTop="2dp"
+                                android:id="@+id/real8"
 
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real8"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -1243,20 +1254,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub8"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add8"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme2"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -1285,6 +1296,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image9a"
                                 android:layout_width="match_parent"
@@ -1293,6 +1305,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image9"
                                 android:layout_width="match_parent"
@@ -1303,49 +1316,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity9"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity9"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount9"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
-                                android:id="@+id/amount9"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real9"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real9"
-                                android:paddingTop="2dp"
-
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -1395,20 +1407,20 @@ app:lottie_loop="true"
                                 android:id="@+id/sub9"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/AppTheme1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add9"
-                                android:theme="@style/AppTheme2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
@@ -1430,6 +1442,7 @@ app:lottie_loop="true"
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/image10a"
                                 android:layout_width="match_parent"
@@ -1438,6 +1451,7 @@ app:lottie_loop="true"
 
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/base" />
+
                             <ImageView
                                 android:id="@+id/image10"
                                 android:layout_width="match_parent"
@@ -1448,49 +1462,48 @@ app:lottie_loop="true"
 
 
                             <TextView
+                                android:id="@+id/quantity10"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
                                 android:layout_margin="16dp"
-                                android:text="0"
-                                android:visibility="invisible"
-                                android:paddingTop="40dp"
-                                android:textAlignment="center"
-                                android:fontFamily="@font/psb"
-                                android:textSize="45dp"
-                                android:textColor="#fff"
                                 android:background="#80000000"
-                                android:id="@+id/quantity10"/>
+                                android:fontFamily="@font/psb"
+                                android:paddingTop="40dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="#fff"
+                                android:textSize="45dp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/amount10"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Amount"
-                                android:visibility="invisible"
-                                android:textAlignment="center"
+                                android:layout_margin="16dp"
                                 android:fontFamily="@font/ps"
-                                android:textSize="20sp"
                                 android:paddingTop="16sp"
-                                android:id="@+id/amount10"
+                                android:text="Amount"
+                                android:textAlignment="center"
                                 android:textColor="#fff"
-                                android:layout_margin="16dp"/>
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
                             <TextView
+                                android:id="@+id/real10"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:background="@drawable/circle_red"
-                                android:text="0"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:visibility="invisible"
-                                android:id="@+id/real10"
-                                android:paddingTop="2dp"
-
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="8dp"
+                                android:background="@drawable/circle_red"
                                 android:fontFamily="@font/psb"
+                                android:paddingTop="2dp"
+
+                                android:text="0"
                                 android:textAlignment="center"
-                                />
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:visibility="invisible" />
 
 
                         </RelativeLayout>
@@ -1543,18 +1556,18 @@ app:lottie_loop="true"
                                 android:layout_height="30dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:theme="@style/AppTheme1"
-                                android:src="@drawable/rm_cart" />
+                                android:src="@drawable/rm_cart"
+                                android:theme="@style/AppTheme1" />
 
                             <ImageButton
                                 android:id="@+id/add10"
-                                android:theme="@style/AppTheme2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="16dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/add_cart" />
+                                android:src="@drawable/add_cart"
+                                android:theme="@style/AppTheme2" />
 
                         </LinearLayout>
 
