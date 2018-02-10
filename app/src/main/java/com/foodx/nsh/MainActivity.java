@@ -51,7 +51,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.tzanou.PercentVisibleLayout.PercentVisibleLayout;
+
+import org.json.JSONObject;
 
 import jp.wasabeef.blurry.Blurry;
 
@@ -200,6 +203,12 @@ public class MainActivity extends AppCompatActivity {
         price8.setText("Loading");
         price9.setText("Loading");
         price10.setText("Loading");
+
+
+
+
+
+
 
         final Button update = findViewById(R.id.update);
 

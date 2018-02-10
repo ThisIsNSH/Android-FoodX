@@ -65,6 +65,7 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         sothree:umanoOverlay="true"
+
         sothree:umanoPanelHeight="48dp"
         sothree:umanoParallaxOffset="64dp"
         sothree:umanoShadowHeight="0dp">
@@ -1602,7 +1603,7 @@ android:layout_marginBottom="16dp"
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="48dp"
+                            android:layout_height="55dp"
                             android:textColor="#fff"
                             android:fontFamily="sans-serif-condensed"
                             android:textAllCaps="true"
@@ -1636,6 +1637,7 @@ android:layout_marginBottom="16dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
                 app:lottie_loop="true"
+                android:id="@+id/arrow"
                 android:layout_marginTop="16dp"
                 android:layout_centerHorizontal="true"
                 app:lottie_fileName="arrow.json"
@@ -1669,13 +1671,16 @@ android:layout_marginBottom="16dp"
 
                 <TextView
                     android:id="@+id/recent"
-                    android:layout_width="wrap_content"
+                    android:clickable="true"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:textAlignment="center"
+                    android:background="?attr/selectableItemBackground"
                     android:fontFamily="sans-serif-condensed"
                     android:text="Recent Order"
+                    android:theme="@style/AppTheme3"
                     android:textColor="#fff"
                     android:textSize="25sp" />
 
@@ -1687,13 +1692,17 @@ android:layout_marginBottom="16dp"
                 <TextView
 
                     android:id="@+id/contributors"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:clickable="true"
+                    android:textAlignment="center"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="?attr/selectableItemBackground"
                     android:fontFamily="sans-serif-condensed"
                     android:text="Contributors"
                     android:textColor="#fff"
+                    android:theme="@style/AppTheme3"
                     android:textSize="25sp" />
 
                 <LinearLayout
@@ -1702,14 +1711,17 @@ android:layout_marginBottom="16dp"
                     android:background="#fff" />
 
                 <TextView
-
+android:clickable="true"
                     android:id="@+id/contact"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:background="?attr/selectableItemBackground"
                     android:fontFamily="sans-serif-condensed"
                     android:text="Contact Us"
+                    android:theme="@style/AppTheme3"
                     android:textColor="#fff"
                     android:textSize="25sp" />
 
@@ -1719,12 +1731,15 @@ android:layout_marginBottom="16dp"
                     android:background="#fff" />
 
                 <TextView
-
+android:clickable="true"
                     android:id="@+id/Feedback"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textAlignment="center"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:theme="@style/AppTheme3"
+                    android:background="?attr/selectableItemBackground"
                     android:fontFamily="sans-serif-condensed"
                     android:text="Feedback"
                     android:textColor="#fff"
@@ -1733,6 +1748,7 @@ android:layout_marginBottom="16dp"
             </LinearLayout>
 
         </RelativeLayout>
+
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
 </RelativeLayout>
