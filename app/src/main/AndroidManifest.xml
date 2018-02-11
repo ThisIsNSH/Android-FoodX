@@ -3,7 +3,7 @@
     package="com.foodx.nsh">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-feature
         android:name="android.hardware.sensor.gyroscope"
         android:required="true" />
