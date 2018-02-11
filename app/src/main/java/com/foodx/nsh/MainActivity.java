@@ -204,7 +204,14 @@ public class MainActivity extends AppCompatActivity {
         price9.setText("Loading");
         price10.setText("Loading");
 
-
+        //panel click
+        findViewById(R.id.contributors).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,info.class);
+                startActivity(intent);
+            }
+        });
 
 
 

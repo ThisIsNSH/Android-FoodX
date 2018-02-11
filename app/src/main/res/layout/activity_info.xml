@@ -2,29 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#d0000000"
+    android:background="#d0141414"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.foodx.nsh.info">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="-32dp"
-        app:lottie_fileName="data1.json"
-        app:lottie_cacheStrategy="strong"
-        app:lottie_autoPlay="true" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Version X.1"
+        android:text="Version 1"
         android:textColor="#fff"
-        android:textSize="40sp"
-        android:fontFamily="@font/psb"
+        android:textSize="20sp"
+        android:fontFamily="@font/psi"
         android:layout_marginTop="16dp"
         android:layout_gravity="center"/>
 
@@ -32,7 +25,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CONTRIBUTORS"
+        android:text="Debuggers"
         android:textColor="#fff"
         android:textSize="20sp"
         android:fontFamily="@font/psb"
@@ -42,11 +35,32 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUYASH\nVISHAL"
+        android:text="Suyash\nVishal\nNaman"
         android:textColor="#fff"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:fontFamily="@font/ps"
+        android:fontFamily="@font/psi"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developer"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:fontFamily="@font/psb"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nishant"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:fontFamily="@font/psi"
         android:layout_margin="8dp"
         android:layout_gravity="center"/>
 </LinearLayout>
