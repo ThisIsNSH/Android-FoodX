@@ -13,6 +13,133 @@
         layout="@layout/toolbar" />
 
     <LinearLayout
+        android:layout_below="@id/tool"
+        android:id="@+id/welcome"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0141414"
+        android:elevation="5dp"
+
+        android:orientation="vertical">
+
+        <TextView
+        android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to"
+            android:textColor="#fff"
+            android:fontFamily="@font/ps"
+android:layout_marginTop="16dp"
+            android:textSize="20sp"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:lottie_loop="true"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_cacheStrategy="strong"
+            app:lottie_fileName="data1.json"/>
+
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text=""
+
+
+            android:textColor="#fff"
+            android:fontFamily="@font/psi"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Each food item has two buttons.Add to cart &amp; Remove from cart."
+            android:textColor="#fff"
+            android:fontFamily="@font/ps"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text=""
+
+
+            android:textColor="#fff"
+            android:fontFamily="@font/psi"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:textAlignment="center"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total of particular food item is displayed on its own image."
+            android:textColor="#fff"
+            android:fontFamily="@font/ps"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text=""
+
+
+            android:textColor="#fff"
+            android:fontFamily="@font/psi"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:textAlignment="center"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Press the tick button on Top-Right corner to proceed."
+            android:textColor="#fff"
+            android:fontFamily="@font/ps"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text=""
+
+
+            android:textColor="#fff"
+            android:fontFamily="@font/psi"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:textAlignment="center"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other information is accessible from the bottom of the screen by swiping up."
+            android:textColor="#fff"
+            android:fontFamily="@font/ps"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/up_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
