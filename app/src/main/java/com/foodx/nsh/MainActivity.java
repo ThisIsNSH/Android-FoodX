@@ -207,6 +207,35 @@ public class MainActivity extends AppCompatActivity {
         price9.setText("Loading");
         price10.setText("Loading");
 
+
+
+        //Welcome Screen
+        final RelativeLayout welcome = findViewById(R.id.welcome);
+        final SharedPreferences pref = getApplicationContext().getSharedPreferences("Welcome", MODE_PRIVATE);
+        final SharedPreferences.Editor editor1 = pref.edit();
+        int wel_v = pref.getInt("welcome", 0);
+        if ( wel_v == 0 )
+        {
+            welcome.setVisibility(View.VISIBLE);
+            editor1.putInt("welcome", 1);
+            editor1.commit();
+        }
+        else
+        {
+            welcome.setVisibility(View.GONE);
+        }
+
+        findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              welcome.setVisibility(View.GONE);
+            }
+        });
+
+
+
+
+
         //panel click
         findViewById(R.id.contributors).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.contact).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "9560705734"));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "96"));
                 startActivity(intent);
             }
         });
