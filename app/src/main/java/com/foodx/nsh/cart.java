@@ -73,7 +73,7 @@ public class cart extends AppCompatActivity {
 
         if (q1>0){
             one.setText(t1+" : "+Integer.toString(q1));
-            order+=" "+t1+" : "+Integer.toString(q1);
+            order+=" "+t1+" : "+Integer.toString(q1) + " ---";
 
             one.setVisibility(View.VISIBLE);
             }
@@ -81,55 +81,55 @@ public class cart extends AppCompatActivity {
 
         if (q2>0){
             two.setText(t2+" : "+Integer.toString(q2));
-            order+=" "+t2+" : "+Integer.toString(q2);
+            order+=" "+t2+" : "+Integer.toString(q2)+ " ---";
             two.setVisibility(View.VISIBLE);
         }
 
         if (q3>0){
             three.setText(t3+" : "+Integer.toString(q3));
-            order+=" "+t3+" : "+Integer.toString(q3);
+            order+=" "+t3+" : "+Integer.toString(q3)+ " ---";
             three.setVisibility(View.VISIBLE);
         }
 
         if (q4>0){
             four.setText(t4+" : "+Integer.toString(q4));
-            order+=" "+t4+" : "+Integer.toString(q4);
+            order+=" "+t4+" : "+Integer.toString(q4)+ " ---";
             four.setVisibility(View.VISIBLE);
         }
 
         if (q5>0){
             five.setText(t5+" : "+Integer.toString(q5));
-            order+=" "+t5+" : "+Integer.toString(q5);
+            order+=" "+t5+" : "+Integer.toString(q5)+ " ---";
             five.setVisibility(View.VISIBLE);
         }
 
         if (q6>0){
             six.setText(t6+" : "+Integer.toString(q6));
-            order+=" "+t6+" : "+Integer.toString(q6);
+            order+=" "+t6+" : "+Integer.toString(q6)+ " ---";
             six.setVisibility(View.VISIBLE);
         }
 
         if (q7>0){
             seven.setText(t7+" : "+Integer.toString(q7));
-            order+=" "+t7+" : "+Integer.toString(q7);
+            order+=" "+t7+" : "+Integer.toString(q7)+ " ---";
             seven.setVisibility(View.VISIBLE);
         }
 
         if (q8>0){
             eight.setText(t8+" : "+Integer.toString(q8));
-            order+=" "+t8+" : "+Integer.toString(q8);
+            order+=" "+t8+" : "+Integer.toString(q8)+ " ---";
             eight.setVisibility(View.VISIBLE);
         }
 
         if (q9>0){
             nine.setText(t9+" : "+Integer.toString(q9));
-            order+=" "+t9+" : "+Integer.toString(q9);
+            order+=" "+t9+" : "+Integer.toString(q9)+ " ---";
             nine.setVisibility(View.VISIBLE);
         }
 
         if (q10>0){
             ten.setText(t10+" : "+Integer.toString(q10));
-            order+=" "+t10+" : "+Integer.toString(q10);
+            order+=" "+t10+" : "+Integer.toString(q10)+ " ---";
             ten.setVisibility(View.VISIBLE);
         }
 
