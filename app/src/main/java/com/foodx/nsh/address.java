@@ -16,9 +16,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static com.foodx.nsh.cart.order;
+import static com.foodx.nsh.MainActivity.total;
 
 
 public class address extends AppCompatActivity {
+
+    final public String order_temp=order;
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,20 +113,29 @@ public class address extends AppCompatActivity {
             }
         });
 
-        Log.i("this", order);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        final String total_temp= "" + (total);
+        final String address_temp=pref.getString("address","No Address");
+        final String mobile=pref.getString("phone","No Mobile Number");
 
-        /*Button order = findViewById(R.id.final_order);
-        order.setOnClickListener(new View.OnClickListener() {
+        Button order1 = findViewById(R.id.final_order);
+        order1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //firebase database
-                    FirebaseDatabase database2 = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef1 = database2.getReference("order").child();
+                    Log.i("this", order);
+
+                    placeOrder order1 = new placeOrder(order_temp,total_temp,address_temp,mobile);
+
+
+                    mDatabase.child("order").push().setValue(order1);
+
+
                 }
             });
 
-*/
+
 
 
     }
