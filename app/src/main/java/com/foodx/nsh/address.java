@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class address extends AppCompatActivity {
 
@@ -103,7 +107,15 @@ public class address extends AppCompatActivity {
 
 
 
-
+            Button order = findViewById(R.id.final_order);
+            order.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //firebase database
+                    FirebaseDatabase database2 = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef1 = database2.getReference("order").child();
+                }
+            });
 
 
 
