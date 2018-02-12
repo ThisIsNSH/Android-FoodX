@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import static com.foodx.nsh.cart.order;
+
 
 public class address extends AppCompatActivity {
 
@@ -104,11 +108,11 @@ public class address extends AppCompatActivity {
             }
         });
 
+        Log.i("this", order);
 
 
-
-            Button order = findViewById(R.id.final_order);
-            order.setOnClickListener(new View.OnClickListener() {
+        /*Button order = findViewById(R.id.final_order);
+        order.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //firebase database
@@ -117,8 +121,17 @@ public class address extends AppCompatActivity {
                 }
             });
 
-
+*/
 
 
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        order=" ";
+        super.onBackPressed();
+    }
+
+
 }
