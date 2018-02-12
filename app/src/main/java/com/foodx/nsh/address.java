@@ -24,6 +24,8 @@ public class address extends AppCompatActivity {
     final public String order_temp=order;
     private DatabaseReference mDatabase;
 
+    public String address_temp1="null",mobile1="null";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,11 @@ public class address extends AppCompatActivity {
 
         old.setText(pref.getString("address","No Address"));
         oldp.setText(pref.getString("phone","No Mobile Number"));
+
+
+
+        String address_temp=old.getText().toString();
+        String mobile=oldp.getText().toString();
 
 /*
         inputa.setVisibility(View.GONE);
@@ -76,6 +83,7 @@ public class address extends AppCompatActivity {
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         editor.putString("address", new1.getText().toString());
                         old.setText(new1.getText().toString());
+                        address_temp1=old.getText().toString();
                         editor.commit();
                     }
 
@@ -83,6 +91,7 @@ public class address extends AppCompatActivity {
                     public void afterTextChanged(Editable s) {
                         editor.putString("address", new1.getText().toString());
                         old.setText(new1.getText().toString());
+                        address_temp1=old.getText().toString();
                         editor.commit();
 
                     }
@@ -100,6 +109,8 @@ public class address extends AppCompatActivity {
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         editor.putString("phone", newp.getText().toString());
                         oldp.setText(newp.getText().toString());
+                        mobile1=oldp.getText().toString();
+
                         editor.commit();
                     }
 
@@ -107,21 +118,36 @@ public class address extends AppCompatActivity {
                     public void afterTextChanged(Editable s) {
                         editor.putString("phone", newp.getText().toString());
                         oldp.setText(newp.getText().toString());
+                        mobile1=oldp.getText().toString();
+
                         editor.commit();
                     }
                 });
 
-                old.setText(pref.getString("address","No Address"));
-                oldp.setText(pref.getString("phone","No Mobile Number"));
 
           /*  }
         });*/
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        final String address_final,mobile_final;
+
         final String total_temp= "" + (total);
-        final String address_temp=pref.getString("address","No Address");
-        final String mobile=pref.getString("phone","No Mobile Number");
+        if (mobile1=="null")
+        {
+            mobile_final=mobile;
+        }
+        else{
+            mobile_final=mobile1;
+        }
+
+        if (address_temp1=="null")
+        {
+            address_final=address_temp;
+        }
+        else{
+            address_final=address_temp1;
+        }
 
         Button order1 = findViewById(R.id.final_order);
         order1.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +156,7 @@ public class address extends AppCompatActivity {
                     //firebase database
                     Log.i("this", order);
 
-                    placeOrder order1 = new placeOrder(order_temp,total_temp,address_temp,mobile);
+                    placeOrder order1 = new placeOrder(order_temp,total_temp,address_final,mobile_final);
 
 
                     mDatabase.child("order").push().setValue(order1);
