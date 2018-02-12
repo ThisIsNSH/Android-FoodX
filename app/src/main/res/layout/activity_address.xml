@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="ADD NEW ADDRESS"
+            android:text="OR ADD NEW ADDRESS"
             android:fontFamily="@font/psb"
             android:id="@+id/addclick"
             android:textColor="@color/black"

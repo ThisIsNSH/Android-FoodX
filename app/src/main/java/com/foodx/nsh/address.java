@@ -49,14 +49,14 @@ public class address extends AppCompatActivity {
         old.setText(pref.getString("address","No Address"));
         oldp.setText(pref.getString("phone","No Mobile Number"));
 
-
+/*
         inputa.setVisibility(View.GONE);
-    inputm.setVisibility(View.GONE);
+    inputm.setVisibility(View.GONE);*/
 
-        addclick.setOnClickListener(new View.OnClickListener() {
+        /*addclick.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v) {*/
+/*
                 a.setVisibility(View.GONE);
                 m.setVisibility(View.GONE);
 
@@ -64,7 +64,7 @@ public class address extends AppCompatActivity {
                 oldp.setVisibility(View.GONE);
                 addclick.setVisibility(View.GONE);
                 inputa.setVisibility(View.VISIBLE);
-                inputm.setVisibility(View.VISIBLE);
+                inputm.setVisibility(View.VISIBLE);*/
 
                 new1.addTextChangedListener(new TextWatcher() {
                     @Override
@@ -75,12 +75,14 @@ public class address extends AppCompatActivity {
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         editor.putString("address", new1.getText().toString());
+                        old.setText(new1.getText().toString());
                         editor.commit();
                     }
 
                     @Override
                     public void afterTextChanged(Editable s) {
                         editor.putString("address", new1.getText().toString());
+                        old.setText(new1.getText().toString());
                         editor.commit();
 
                     }
@@ -97,12 +99,14 @@ public class address extends AppCompatActivity {
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         editor.putString("phone", newp.getText().toString());
+                        oldp.setText(newp.getText().toString());
                         editor.commit();
                     }
 
                     @Override
                     public void afterTextChanged(Editable s) {
                         editor.putString("phone", newp.getText().toString());
+                        oldp.setText(newp.getText().toString());
                         editor.commit();
                     }
                 });
@@ -110,8 +114,8 @@ public class address extends AppCompatActivity {
                 old.setText(pref.getString("address","No Address"));
                 oldp.setText(pref.getString("phone","No Mobile Number"));
 
-            }
-        });
+          /*  }
+        });*/
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
