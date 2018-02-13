@@ -1,5 +1,6 @@
 package com.foodx.nsh;
 
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TextInputLayout;
@@ -169,9 +170,15 @@ public class address extends AppCompatActivity {
         //Database
         SQLiteDatabase myDB =
                 openOrCreateDatabase("my.db", MODE_PRIVATE, null);
-
-
-
+        myDB.execSQL(
+                "CREATE TABLE IF NOT EXISTS user (name VARCHAR(200), total INT, address VARCHAR(200), mobile VARCHAR(200))"
+        );
+        ContentValues row1 = new ContentValues();
+        row1.put("name", order_temp);
+        row1.put("total", total_temp);
+        row1.put("address", address_final);
+        row1.put("mobile", mobile_final);
+        myDB.insert("user", null, row1);
 
     }
 
