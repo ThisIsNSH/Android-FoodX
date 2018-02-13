@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by ThisIsNSH on 2/13/2018.
  */
@@ -15,13 +17,13 @@ import android.widget.TextView;
 public class FragmentList extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final String[] name;
-    private final String[] address;
-    private final String[] mobile;
-    private final Integer[] total;
+    ArrayList<String> name = new ArrayList<String>();
+    ArrayList<Integer> total= new ArrayList<Integer>();
+    ArrayList<String> address= new ArrayList<String>();
+    ArrayList<String> mobile= new ArrayList<String>();
 
     public FragmentList(Activity context,
-                        String[] name, Integer[] total, String[]  address, String[]  mobile) {
+                        ArrayList<String> name, ArrayList<Integer> total, ArrayList<String> address, ArrayList<String> mobile) {
         super(context, R.layout.list_fragment, name );
         this.context = context;
         this.name = name;
@@ -41,10 +43,10 @@ public class FragmentList extends ArrayAdapter<String> {
         TextView address123 = rowView.findViewById(R.id.addsql);
         TextView mobile123 = rowView.findViewById(R.id.mobsql);
 
-        order123.setText(name[position]);
-        total23.setText(total[position]);
-        address123.setText(address[position]);
-        mobile123.setText(mobile[position]);
+        order123.setText(name.get(position));
+        total23.setText(total.get(position));
+        address123.setText(address.get(position));
+        mobile123.setText(mobile.get(position));
         return rowView;
     }
 }
