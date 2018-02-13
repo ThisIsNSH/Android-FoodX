@@ -180,6 +180,8 @@ public class address extends AppCompatActivity {
         row1.put("mobile", mobile_final);
         myDB.insert("user", null, row1);
 
+        myDB.close();
+
     }
 
     @Override
