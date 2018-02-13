@@ -2,7 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,11 +27,32 @@
         android:id="@+id/ordersql"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/ps"
         android:text="aaaaaaaaaaaaaaaaaaaaasdfghjkkfdjsadbfhvgbssdfchbdsljcrbhlsaefvbhrlaeruvbhaoueravboirwtbowvuerhbvoaweuwtbhvwgouebhfvauobevuchouwtbavuwerabowuvbyoutbowuervagbwoutb"
         android:textColor="#fff"
         android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/totaltitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/psb"
+            android:text="Total"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/totalsql"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/ps"
+            android:text="123213213"
+            android:textColor="#fff"
+            android:textSize="20sp" />
 
     <TextView
         android:id="@+id/addtitle"
@@ -48,7 +69,7 @@
         android:id="@+id/addsql"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/ps"
         android:text="Hno 89, nkjsnckjdsbfas jkdfasdjb"
         android:textColor="#fff"
@@ -69,7 +90,7 @@
         android:id="@+id/mobsql"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/ps"
         android:text="9560705734"
         android:textColor="#fff"
