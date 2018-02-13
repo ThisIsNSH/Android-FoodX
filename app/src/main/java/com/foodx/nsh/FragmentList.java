@@ -44,7 +44,8 @@ public class FragmentList extends ArrayAdapter<String> {
         TextView mobile123 = rowView.findViewById(R.id.mobsql);
 
         order123.setText(name.get(position));
-        total23.setText(total.get(position));
+        total23.setText(Integer.toString(total.get(position)
+        ));
         address123.setText(address.get(position));
         mobile123.setText(mobile.get(position));
         return rowView;
