@@ -272,11 +272,18 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.contact).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "96"));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "9560705734"));
                 startActivity(intent);
             }
         });
 
+        findViewById(R.id.recent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, feedback.class);
+                startActivity(intent);
+            }
+        });
 
         final Button update = findViewById(R.id.update);
 
