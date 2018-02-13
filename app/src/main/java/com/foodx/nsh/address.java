@@ -1,6 +1,7 @@
 package com.foodx.nsh;
 
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -164,6 +165,10 @@ public class address extends AppCompatActivity {
 
                 }
             });
+
+        //Database
+        SQLiteDatabase myDB =
+                openOrCreateDatabase("my.db", MODE_PRIVATE, null);
 
 
 
