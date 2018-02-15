@@ -10,12 +10,16 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 import static com.foodx.nsh.cart.order;
 import static com.foodx.nsh.MainActivity.total;
@@ -32,13 +36,28 @@ public class address extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
 
+        final String address_final,mobile_final;
+
+        final String total_temp= "" + (total);
+
+        ArrayList<String> user_address= new ArrayList<String>();
+
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                 android.R.layout.simple_spinner_item,user_address);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
+
+
+
 
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        final String address_final,mobile_final;
 
-        final String total_temp= "" + (total);
 
 
         Button order1 = findViewById(R.id.final_order);

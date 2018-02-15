@@ -20,48 +20,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address:"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="CHOOSE ADDRESS"
             android:fontFamily="@font/psb"
-            android:textColor="@color/l_grey"
-            android:id="@+id/a"
-            android:layout_marginLeft="8dp"
-            android:textSize="20sp"
-            android:layout_marginTop="8dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
-            android:text="None"
-            android:layout_marginTop="8dp"
-            android:id="@+id/oldaddress"
-            android:textSize="20sp"
-            android:layout_marginLeft="16dp"/>
+            android:id="@+id/oldclick"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Mobile:"
-            android:fontFamily="@font/psb"
-            android:id="@+id/m"
-            android:textColor="@color/l_grey"
-            android:layout_marginLeft="8dp"
-            android:textSize="20sp"
-            android:layout_marginTop="8dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
-            android:text="None"
-            android:layout_marginTop="8dp"
-            android:id="@+id/oldphone"
-            android:textSize="20sp"
-            android:layout_marginLeft="16dp"/>
+
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="OR ADD NEW ADDRESS"
+            android:text="ADD NEW ADDRESS"
             android:fontFamily="@font/psb"
             android:id="@+id/addclick"
             android:textColor="@color/black"
@@ -73,12 +51,14 @@
             android:id="@+id/input_layout_address"
             android:layout_width="match_parent"
             android:hint="New Address"
+
             android:layout_marginTop="8dp"
             android:layout_height="wrap_content">
         <EditText
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psi"
             android:textSize="20sp"
             android:layout_marginTop="16dp"
             android:id="@+id/newaddress"
@@ -92,11 +72,12 @@
             android:id="@+id/input_layout_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:hint="New Mobile">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ps"
+            android:fontFamily="@font/psi"
             android:textSize="20sp"
             android:id="@+id/newphone"
 
@@ -104,6 +85,21 @@
             android:layout_marginRight="8dp"
             />
         </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="ADD"
+
+            android:id="@+id/add_button"
+            android:fontFamily="@font/psb"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#F6C427"
+            android:layout_gravity="center"/>
+
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
