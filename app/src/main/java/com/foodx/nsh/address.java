@@ -2,6 +2,7 @@ package com.foodx.nsh;
 
 import android.content.ContentValues;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +11,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -36,11 +39,39 @@ public class address extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
 
-        final String address_final,mobile_final;
+        final String address_final=" ",mobile_final=" ";
 
         final String total_temp= "" + (total);
 
+        SQLiteDatabase myDB =
+                openOrCreateDatabase("my.db", MODE_PRIVATE, null);
+        Cursor myCursor = myDB.rawQuery("select address from user", null );
+
         ArrayList<String> user_address= new ArrayList<String>();
+
+
+        while(myCursor.moveToNext()) {
+
+            String address = myCursor.getString(0);
+
+            user_address.add(address);
+
+
+
+        }
+
+
+
+
+
+
+
+        myCursor.close();
+        myDB.close();
+
+
+
+
 
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
