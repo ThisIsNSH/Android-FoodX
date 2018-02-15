@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import static android.view.View.GONE;
 import static com.foodx.nsh.cart.order;
 import static com.foodx.nsh.MainActivity.total;
 
@@ -39,13 +40,37 @@ public class address extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
 
+        final SQLiteDatabase myDB =
+                openOrCreateDatabase("my.db", MODE_PRIVATE, null);
+
+        myDB.execSQL(
+                "CREATE TABLE IF NOT EXISTS addTable (address VARCHAR(200), mobile VARCHAR(200))"
+        );
+
+        final EditText newaddress = findViewById(R.id.newaddress);
+        final EditText newphone = findViewById(R.id.newphone);
+
+
+        final ContentValues row1 = new ContentValues();
+
+        row1.put("address", newaddress.getText().toString());
+        row1.put("mobile", newphone.getText().toString());
+
+        findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDB.insert("addTable", null, row1);
+
+            }
+        });
+
+
         final String address_final=" ",mobile_final=" ";
 
         final String total_temp= "" + (total);
 
-        SQLiteDatabase myDB =
-                openOrCreateDatabase("my.db", MODE_PRIVATE, null);
-        Cursor myCursor = myDB.rawQuery("select address from user", null );
+
+        Cursor myCursor = myDB.rawQuery("select address from addTable", null );
 
         ArrayList<String> user_address= new ArrayList<String>();
 
@@ -61,27 +86,14 @@ public class address extends AppCompatActivity {
         }
 
 
-
-
-
-
-
-        myCursor.close();
-        myDB.close();
-
-
-
-
-
-
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                  android.R.layout.simple_spinner_item,user_address);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-
-
+        myCursor.close();
+        myDB.close();
 
 
 
@@ -95,7 +107,7 @@ public class address extends AppCompatActivity {
         order1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //firebase database
+
                     Log.i("this", order);
 
                     placeOrder order1 = new placeOrder(order_temp,total_temp,address_final,mobile_final);
