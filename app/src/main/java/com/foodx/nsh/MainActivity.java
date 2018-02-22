@@ -280,8 +280,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.recent).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, feedback.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(MainActivity.this, feedback.class);
+                startActivity(intent);*/
+
+                Toast.makeText(MainActivity.this, "This feature will be added shortly", Toast.LENGTH_LONG).show();
+
+
             }
         });
 
