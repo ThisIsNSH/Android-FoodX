@@ -40,60 +40,71 @@ public class address extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
 
-        final SQLiteDatabase myDB =
-                openOrCreateDatabase("my.db", MODE_PRIVATE, null);
-
-        myDB.execSQL(
-                "CREATE TABLE IF NOT EXISTS addTable (address VARCHAR(200), mobile VARCHAR(200))"
-        );
-
+        final TextView addDisplay = findViewById(R.id.adddisplay);
+        final TextView mobiledisplay = findViewById(R.id.mobiledisplay);
         final EditText newaddress = findViewById(R.id.newaddress);
         final EditText newphone = findViewById(R.id.newphone);
 
 
-        final ContentValues row1 = new ContentValues();
+        final SharedPreferences pref = getApplicationContext().getSharedPreferences("MyAdd", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = pref.edit();
+        String add_value = pref.getString("add", "None");
+        String mobile_value = pref.getString("mob","None");
 
-        row1.put("address", newaddress.getText().toString());
-        row1.put("mobile", newphone.getText().toString());
+        addDisplay.setText(add_value);
+        mobiledisplay.setText(mobile_value);
 
-        findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
+        newaddress.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                myDB.insert("addTable", null, row1);
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                editor.putString("add", newaddress.getText().toString());
+                editor.commit();
+                editor.apply();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                editor.putString("add", newaddress.getText().toString());
+                editor.commit();
+                editor.apply();
             }
         });
 
 
-        final String address_final=" ",mobile_final=" ";
+        newphone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                editor.putString("mob", newphone.getText().toString());
+                editor.commit();
+                editor.apply();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                editor.putString("mob", newphone.getText().toString());
+                editor.commit();
+                editor.apply();
+            }
+        });
+
+
+
+
 
         final String total_temp= "" + (total);
 
-
-        Cursor myCursor = myDB.rawQuery("select address from addTable", null );
-
-        ArrayList<String> user_address= new ArrayList<String>();
-
-
-        while(myCursor.moveToNext()) {
-
-            String address = myCursor.getString(0);
-
-            user_address.add(address);
-
-
-
-        }
-
-
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                 android.R.layout.simple_spinner_item,user_address);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        myCursor.close();
-        myDB.close();
 
 
 
@@ -108,26 +119,19 @@ public class address extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Log.i("this", order);
+
+                    editor.apply();
+                    String address_final = pref.getString("add","None");
+                    String mobile_final = pref.getString("mob","None");
+
+                    
+                    Log.i("this", order+" address-"+address_final+" mobile-"+mobile_final);
 
                     placeOrder order1 = new placeOrder(order_temp,total_temp,address_final,mobile_final);
 
 
                     mDatabase.child("order").push().setValue(order1);
-                    //Database
-                    SQLiteDatabase myDB =
-                            openOrCreateDatabase("my.db", MODE_PRIVATE, null);
-                    myDB.execSQL(
-                            "CREATE TABLE IF NOT EXISTS user (name VARCHAR(200), total INT, address VARCHAR(200), mobile VARCHAR(200))"
-                    );
-                    ContentValues row1 = new ContentValues();
-                    row1.put("name", order_temp);
-                    row1.put("total", total_temp);
-                    row1.put("address", address_final);
-                    row1.put("mobile", mobile_final);
-                    myDB.insert("user", null, row1);
 
-                    myDB.close();
 
 
 

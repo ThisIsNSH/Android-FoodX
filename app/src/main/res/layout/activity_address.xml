@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -32,19 +32,14 @@
             android:id="@+id/oldclick"
             android:textColor="@color/black"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"/>-->
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_margin="16dp"
-            android:textAlignment="textEnd"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/psb"
             android:text="Address"
             android:textColor="@color/black"
@@ -81,22 +76,13 @@
             android:text="none"
             android:textSize="20sp"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="ORDER"
-            android:id="@+id/final_order"
-            android:fontFamily="@font/psb"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#F6C427"
-            android:layout_gravity="center"/>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:text="ADD NEW ADDRESS"
+                android:text="OR ADD NEW ADDRESS"
                 android:fontFamily="@font/psb"
                 android:id="@+id/addclick"
                 android:textColor="@color/black"
@@ -159,9 +145,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="ADD"
-
-            android:id="@+id/add_button"
+            android:text="ORDER"
+            android:id="@+id/final_order"
             android:fontFamily="@font/psb"
             android:layout_marginTop="16dp"
             android:backgroundTint="#F6C427"
