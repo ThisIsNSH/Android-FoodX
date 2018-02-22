@@ -129,7 +129,7 @@ public class address extends AppCompatActivity {
                     {
                         Toast.makeText(address.this, "Please give required details for the delivery!", Toast.LENGTH_LONG).show();
                     }
-                    else if(mobile_final.length()>10)
+                    else if(mobile_final.length()!=10)
                     {
                         Toast.makeText(address.this, "Is your mobile number correct!", Toast.LENGTH_LONG).show();
                     }
