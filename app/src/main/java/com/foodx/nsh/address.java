@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -124,14 +125,23 @@ public class address extends AppCompatActivity {
                     String address_final = pref.getString("add","None");
                     String mobile_final = pref.getString("mob","None");
 
-                    
-                    Log.i("this", order+" address-"+address_final+" mobile-"+mobile_final);
+                    if (address_final=="None" || mobile_final=="None" )
+                    {
+                        Toast.makeText(address.this, "Please give address for the delivery!", Toast.LENGTH_LONG).show();
+                    }
+                    else if(mobile_final.length()>10)
+                    {
+                        Toast.makeText(address.this, "Is your mobile number correct!", Toast.LENGTH_LONG).show();
+                    }
+                    else {
 
-                    placeOrder order1 = new placeOrder(order_temp,total_temp,address_final,mobile_final);
+                        Log.i("this", order + " address-" + address_final + " mobile-" + mobile_final);
+
+                        placeOrder order1 = new placeOrder(order_temp, total_temp, address_final, mobile_final);
 
 
-                    mDatabase.child("order").push().setValue(order1);
-
+                        mDatabase.child("order").push().setValue(order1);
+                    }
 
 
 
