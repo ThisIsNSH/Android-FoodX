@@ -127,13 +127,16 @@ public class address extends AppCompatActivity {
 
                     if (address_final=="None" || mobile_final=="None" )
                     {
-                        Toast.makeText(address.this, "Please give address for the delivery!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(address.this, "Please give required details for the delivery!", Toast.LENGTH_LONG).show();
                     }
                     else if(mobile_final.length()>10)
                     {
                         Toast.makeText(address.this, "Is your mobile number correct!", Toast.LENGTH_LONG).show();
                     }
                     else {
+
+                        Toast.makeText(address.this, "Order Placed, wait for the confirmation!", Toast.LENGTH_LONG).show();
+
 
                         Log.i("this", order + " address-" + address_final + " mobile-" + mobile_final);
 
