@@ -15,8 +15,10 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -72,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
     public static String t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
     public int check = 0;
 
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -787,7 +795,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("this", "Failed to read value.", error.toException());
             }
         });
-
 
         //animation
         Animation main_anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slideup_main);
