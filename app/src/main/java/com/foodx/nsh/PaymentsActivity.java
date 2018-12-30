@@ -36,7 +36,7 @@ public class PaymentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mDatabase.child("order").push().setValue(place);
-                Toast.makeText(PaymentsActivity.this,"Your order has been placed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(PaymentsActivity.this,"Your order has been placed,please wait for confirmation call.",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(PaymentsActivity.this,MainActivity.class));
                 finish();
             }

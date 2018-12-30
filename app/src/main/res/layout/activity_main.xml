@@ -340,6 +340,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title1"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -482,13 +487,15 @@ android:layout_marginTop="16dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="-8dp"
-
                                     android:fontFamily="@font/psb"
                                     android:text="@string/title2"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
-
-                                    />
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"/>
 
                                 <TextView
                                     android:id="@+id/price2"
@@ -640,6 +647,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title3"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -787,6 +799,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title4"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -940,6 +957,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title5"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -1087,6 +1109,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title6"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -1240,6 +1267,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title7"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -1387,6 +1419,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title8"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -1540,6 +1577,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title9"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 
@@ -1687,6 +1729,11 @@ android:layout_marginTop="16dp"
                                     android:text="@string/title10"
                                     android:textColor="@color/black"
                                     android:textSize="20sp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textAlignment="center"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
 
                                     />
 

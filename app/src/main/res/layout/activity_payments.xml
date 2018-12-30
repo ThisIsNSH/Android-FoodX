@@ -12,10 +12,11 @@
         android:layout_height="wrap_content"
         android:textColor="#fff"
        android:layout_centerInParent="true"
-        android:text="Currently we are only having Cash on delivery"
+        android:text="Currently we are only having Cash on delivery."
         android:fontFamily="@font/psb"
         android:textSize="20sp"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:textAlignment="center"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -28,6 +29,7 @@
         android:id="@+id/payments"
         android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>
