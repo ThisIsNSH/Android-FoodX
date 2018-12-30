@@ -37,15 +37,12 @@ public class FragmentList extends ArrayAdapter<String> {
         LayoutInflater inflater = context.getLayoutInflater();
 
         View rowView= inflater.inflate(R.layout.list_fragment, null, true);
-
         TextView order123 =rowView.findViewById(R.id.ordersql);
         TextView total23 = rowView.findViewById(R.id.totalsql);
         TextView address123 = rowView.findViewById(R.id.addsql);
         TextView mobile123 = rowView.findViewById(R.id.mobsql);
-
         order123.setText(name.get(position));
-        total23.setText(Integer.toString(total.get(position)
-        ));
+        total23.setText(Integer.toString(total.get(position)));
         address123.setText(address.get(position));
         mobile123.setText(mobile.get(position));
         return rowView;
