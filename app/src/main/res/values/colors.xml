@@ -3,10 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="black">#02020A</color>
-    <color name="grey">#141414</color>
-    <color name="l_grey">#343434</color>
-    <color name="transparent">#00000000</color>
 
+    <color name="black">#000000</color>
+
+    <color name="color6">#8019E7</color>
+    <color name="color5">#1980E7</color>
+    <color name="color4">#19E793</color>
+    <color name="color3">#57E719</color>
+    <color name="color2">#E7DE19</color>
+    <color name="color1">#E74B19</color>
+    <color name="color0">#E71935</color>
 
 </resources>

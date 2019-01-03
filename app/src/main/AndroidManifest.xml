@@ -3,50 +3,19 @@
     package="com.foodx.nsh">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-
-    <uses-feature
-        android:name="android.hardware.sensor.gyroscope"
-        android:required="true" />
 
     <application
-        android:name=".MApplication"
         android:allowBackup="true"
-        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label=""
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".splashscreen"
-            android:screenOrientation="portrait">
+
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".cart"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Transparent" />
-        <activity
-            android:name=".address"
-            android:theme="@style/Theme.Transparent" />
-        <activity
-            android:name=".info"
-            android:theme="@style/Theme.Transparent" />
-        <activity
-            android:name=".feedback"
-            android:theme="@style/Theme.Transparent" />
-        <activity android:name=".PaymentsActivity"></activity>
     </application>
 
 </manifest>
