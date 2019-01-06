@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
         hotelList = new ArrayList<>();
-        hotelAdapter = new HotelAdapter(linearLayout, hotelList, this);
+        hotelAdapter = new HotelAdapter(hotelList, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(hotelAdapter);
         getData();

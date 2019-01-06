@@ -18,13 +18,13 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:text="FoodX"
             android:id="@+id/foodx"
             android:fontFamily="@font/psb"
-            android:textSize="32sp"
-            android:paddingLeft="16dp"
+            android:textSize="20sp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:textColor="@color/color4"/>

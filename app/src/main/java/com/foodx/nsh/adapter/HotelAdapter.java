@@ -36,12 +36,10 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
     List<Hotel> hotelsList;
     Activity context;
     ArrayList<Integer> colors = new ArrayList<Integer>();
-    RelativeLayout linearLayout;
 
-    public HotelAdapter(RelativeLayout linearLayout, List<Hotel> hotelsList, Activity context) {
+    public HotelAdapter(List<Hotel> hotelsList, Activity context) {
         this.hotelsList = hotelsList;
         this.context = context;
-        this.linearLayout = linearLayout;
         colors.clear();
         colors.add(R.color.color0);
         colors.add(R.color.color1);
@@ -77,9 +75,9 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.card, "scaleX", 1.05f);
+                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.card, "scaleX", 0.95f);
                 ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(holder.card, "scaleX", 1f);
-                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.card, "scaleY", 1.05f);
+                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.card, "scaleY", 0.95f);
                 ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(holder.card, "scaleY", 1f);
 
                 objectAnimator.setDuration(200);

@@ -11,6 +11,8 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -23,13 +25,22 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.foodx.nsh.R;
+import com.foodx.nsh.adapter.HotelAdapter;
+import com.foodx.nsh.adapter.MenuAdapter;
+import com.foodx.nsh.model.Hotel;
+import com.foodx.nsh.model.Item;
+import com.foodx.nsh.model.Menu;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private ImageView hotelImage;
-    private CardView cardView;
     private TextView hotelName;
+    private RecyclerView recyclerView;
+    private MenuAdapter menuAdapter;
+    private List<Menu> menuList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,46 +50,59 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onInit(){
-        hotelImage = findViewById(R.id.hotel_image);
         hotelName = findViewById(R.id.hotel_name);
-        cardView = findViewById(R.id.card);
-
+        recyclerView = findViewById(R.id.recyclerView);
         Bundle bundle = getIntent().getExtras();
-
-        cardView.setCardBackgroundColor(getResources().getColor(bundle.getInt("color")));
+//        cardView.setCardBackgroundColor(getResources().getColor(bundle.getInt("color")));
         hotelName.setText(bundle.getString("name"));
+        menuList = new ArrayList<>();
+        menuAdapter = new MenuAdapter(bundle.getInt("color"),menuList, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerView.setAdapter(menuAdapter);
+        getData();
+    }
 
-        Picasso.get().load("https://www.foxrc.com/wp-content/themes/frc/static/images/plate2.png").into(hotelImage);
-
-//        hotelImage.setVisibility(View.VISIBLE);
-//        hotelName.setVisibility(View.VISIBLE);
-//        hotelImage.setAlpha(0f);
-//        hotelName.setAlpha(0f);
-//
-//        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(hotelImage,"alpha", 0,1);
-//        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(hotelName,"alpha", 0,1);
-//
-//        objectAnimator.setDuration(1000);
-//        objectAnimator1.setDuration(1000);
-//
-//        AnimatorSet animatorSet = new AnimatorSet();
-//        animatorSet.playTogether(objectAnimator,objectAnimator1);
-//        animatorSet.start();
-//        animatorSet.addListener(new AnimatorListenerAdapter() {
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                super.onAnimationEnd(animation);
-//
-//            }
-//
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                super.onAnimationStart(animation);
-//                hotelImage.setVisibility(View.VISIBLE);
-//                hotelImage.setVisibility(View.VISIBLE);
-//                hotelName.setAlpha(1f);
-//                hotelImage.setAlpha(1f);
-//            }
-//        });
+    public void getData() {
+        List<Item> itemList = new ArrayList<>(),itemList1 = new ArrayList<>(),itemList2 = new ArrayList<>();
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList1.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        itemList2.add(new Item("Item 1", "image", "100"));
+        menuList.add(new Menu("Pizza",itemList));
+        menuList.add(new Menu("Pizza1",itemList1));
+        menuList.add(new Menu("Pizza2",itemList2));
+        menuAdapter.notifyDataSetChanged();
     }
 }
