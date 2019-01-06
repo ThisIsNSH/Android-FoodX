@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/color0"
+    android:transitionName="card"
     app:cardCornerRadius="30dp"
     app:cardElevation="16dp"
     android:id="@+id/card"
@@ -19,7 +21,9 @@
 
         <ImageView
             android:layout_width="200dp"
+            android:transitionName="image"
             android:id="@+id/hotel_image"
+            android:alpha="1"
             android:translationX="50dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -28,6 +32,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/gradient"
+            android:transitionName="gradient"
             android:background="@drawable/black_gradient"/>
 
         <LinearLayout
@@ -38,9 +44,11 @@
 
             <TextView
                 android:id="@+id/hotel_name"
+                android:alpha="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
+                android:transitionName="name"
                 android:layout_marginRight="48dp"
                 android:fontFamily="@font/psb"
                 android:text="Chopra Residency"
@@ -51,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:id="@+id/hotel_address"
+                android:alpha="1"
                 android:layout_marginLeft="16dp"
                 android:fontFamily="@font/psb"
                 android:layout_marginRight="48dp"
@@ -61,6 +70,7 @@
                 android:layout_marginRight="48dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:alpha="1"
                 android:layout_marginLeft="16dp"
                 android:fontFamily="@font/psb"
                 android:text="10:00 - 22:00"

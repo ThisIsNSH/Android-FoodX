@@ -10,12 +10,22 @@ public class Hotel {
     String image;
     String contact;
     String address;
+    String id;
 
-    public Hotel(String name, String image, String contact, String address) {
+    public Hotel(String id, String name, String image, String contact, String address) {
         this.name = name;
+        this.id = id;
         this.image = image;
         this.contact = contact;
         this.address = address;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

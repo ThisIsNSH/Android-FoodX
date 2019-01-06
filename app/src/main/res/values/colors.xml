@@ -5,13 +5,21 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
 
-    <color name="color6">#8019E7</color>
-    <color name="color5">#1980E7</color>
-    <color name="color4">#19E793</color>
-    <color name="color3">#57E719</color>
-    <color name="color2">#E7DE19</color>
-    <color name="color1">#E74B19</color>
-    <color name="color0">#E71935</color>
+    <!--<color name="color6">#8019E7</color>-->
+    <!--<color name="color5">#1980E7</color>-->
+    <!--<color name="color4">#19E793</color>-->
+    <!--<color name="color3">#57E719</color>-->
+    <!--<color name="color2">#E7DE19</color>-->
+    <!--<color name="color1">#E74B19</color>-->
+
+    <color name="color0">#e6ee9c</color>
+    <color name="color1">#dce775</color>
+    <color name="color2">#cddc39</color>
+    <color name="color3">#afb42b</color>
+    <color name="color4">#9e9d24</color>
+    <color name="color5">#cddc39</color>
+    <color name="color6">#dce775</color>
 
 </resources>
