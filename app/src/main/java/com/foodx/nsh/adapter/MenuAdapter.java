@@ -13,10 +13,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.foodx.nsh.R;
+import com.foodx.nsh.activity.CartActivity;
 import com.foodx.nsh.activity.MenuActivity;
 import com.foodx.nsh.model.Hotel;
 import com.foodx.nsh.model.Menu;
@@ -35,11 +37,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
     Activity context;
     int color;
     ItemAdapter itemAdapter;
-
-    public MenuAdapter(int color, List<Menu> menuList, Activity context) {
+    String hotelid = "";
+    public MenuAdapter(int color, List<Menu> menuList, Activity context,String hotelid) {
         this.menuList = menuList;
         this.context = context;
         this.color = color;
+        this.hotelid = hotelid;
     }
 
     @NonNull
@@ -54,7 +57,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         final Menu menu = menuList.get(position);
         holder.card.setCardBackgroundColor(context.getResources().getColor(color));
         holder.category_name.setText(menu.getCategory());
-        itemAdapter = new ItemAdapter(menu.getItemList(),context);
+        itemAdapter = new ItemAdapter(menu.getItemList(),context,hotelid);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         holder.recyclerView.setAdapter(itemAdapter);
         Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(holder.image);
@@ -81,6 +84,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
                 animatorSet.start();
             }
         });
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, CartActivity.class));
+            }
+        });
     }
 
     @Override
@@ -93,13 +102,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         TextView category_name;
         RecyclerView recyclerView;
         ImageView image;
-
+        Button button;
         public MyViewHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
             card = itemView.findViewById(R.id.card);
             category_name = itemView.findViewById(R.id.category_name);
             recyclerView = itemView.findViewById(R.id.recyclerView);
+            button = itemView.findViewById(R.id.cart1);
         }
     }
 

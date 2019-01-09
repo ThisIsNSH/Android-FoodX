@@ -73,6 +73,13 @@
         android:id="@+id/recyclerView">
 
     </android.support.v7.widget.RecyclerView>
-
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:text="Cart"
+    android:layout_margin="32dp"
+    android:id="@+id/cart1"/>
 </RelativeLayout>
 

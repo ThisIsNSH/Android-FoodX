@@ -3,6 +3,8 @@ package com.foodx.nsh.adapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,14 +12,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.foodx.nsh.R;
+import com.foodx.nsh.model.Cart;
 import com.foodx.nsh.model.Item;
 import com.foodx.nsh.model.Menu;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,10 +36,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
     List<Item> itemList;
     Activity context;
-
-    public ItemAdapter(List<Item> itemList, Activity context) {
+    int max=10;
+    String hotelid="";
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    Gson gson = new Gson();
+    String key = "Key";
+    List<Cart> myOrders = new ArrayList<>();
+    public ItemAdapter(List<Item> itemList, Activity context,String hotelid) {
         this.itemList = itemList;
         this.context = context;
+        this.hotelid = hotelid;
     }
 
     @NonNull
@@ -43,10 +58,77 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+        sharedPreferences = context.getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        String response=sharedPreferences.getString(key , "null");
+        if (!response.equals("null"))
+            myOrders = gson.fromJson(response,new TypeToken<List<Cart>>(){}.getType());
         final Item item = itemList.get(position);
         holder.name.setText(item.getName());
         holder.price.setText(item.getPrice());
         Picasso.get().load(item.getImage()).into(holder.image);
+
+        if(item.getName().equals("Roti")) {
+            max = 50;
+        }
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(holder.quantity.getText().toString().equals(String.valueOf(max)))
+                {
+                    holder.button.setEnabled(false);
+                    holder.button1.setEnabled(true);
+                }
+                else{
+                    int quantity = Integer.parseInt(holder.quantity.getText().toString());
+                    holder.quantity.setText(String.valueOf(quantity+1));
+                    holder.button1.setEnabled(true);
+
+                }
+                if(!holder.quantity.getText().toString().equals("0")){
+                    holder.button2.setVisibility(View.VISIBLE);
+                }
+                else {
+                    holder.button2.setVisibility(View.GONE);
+                }
+
+
+            }
+        });
+        holder.button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(holder.quantity.getText().toString().equals("0")){
+                    holder.button.setEnabled(true);
+                    holder.button1.setEnabled(false);
+                }
+                else{
+                    int quantity = Integer.parseInt(holder.quantity.getText().toString());
+                    holder.quantity.setText(String.valueOf(quantity-1));
+                    holder.button.setEnabled(true);
+
+                }
+                if(!holder.quantity.getText().toString().equals("0")){
+                    holder.button2.setVisibility(View.VISIBLE);
+                }
+                else {
+                    holder.button2.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        holder.button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cart cart = new Cart(item.getName(),holder.quantity.getText().toString(),hotelid);
+                myOrders.add(cart);
+                String json = gson.toJson(myOrders);
+                editor.putString(key,json);
+                editor.apply();
+                Toast.makeText(context,"Your item has been added to the cart.",Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override
@@ -55,14 +137,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name,price;
+        TextView name,price,quantity;
         ImageView image;
-
+        Button button,button1,button2;
         public MyViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             image = itemView.findViewById(R.id.image);
             price = itemView.findViewById(R.id.price);
+            button = itemView.findViewById(R.id.addition);
+            button1 = itemView.findViewById(R.id.subtraction);
+            button2 = itemView.findViewById(R.id.addtocart);
+            quantity = itemView.findViewById(R.id.quantity);
         }
     }
 
