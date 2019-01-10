@@ -93,7 +93,19 @@ public class CartActivity extends AppCompatActivity {
 //        jsonArray.add(jsonObject1);
 //        jsonObject.add("items",jsonArray);
         Button button = findViewById(R.id.postorder);
-
+        jsonObject = new JsonObject();
+        jsonObject.addProperty("address",address);
+        jsonObject.addProperty("name",name);
+        jsonObject.addProperty("mobile",mobile);
+        jsonObject.addProperty("hotel_id",hotelid);
+        JsonArray jsonArray = new JsonArray();
+        JsonObject jsonObject1 = new JsonObject();
+        jsonObject1.addProperty("name",myOrders.get(0).getName());
+        jsonObject1.addProperty("quantity",myOrders.get(0).getQuantity());
+        jsonObject1.addProperty("extra","none");
+        jsonArray.add(jsonObject1);
+        jsonObject.add("items",jsonArray);
+        Button button = findViewById(R.id.postorder);
         final JsonArray jsonArray = new JsonArray();
 
         String Key1 = "";

@@ -1,11 +1,17 @@
 package com.foodx.nsh.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
@@ -21,6 +27,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.foodx.nsh.R;
 import com.foodx.nsh.adapter.HotelAdapter;
+import com.foodx.nsh.fragments.CartFragment;
+import com.foodx.nsh.fragments.HotelsFragment;
 import com.foodx.nsh.model.Hotel;
 
 import org.json.JSONArray;
@@ -38,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Hotel> hotelList;
     private TextView foodx;
     private int up = 0, down = 0;
+    private BottomNavigationView btmView;
 //    private float count = 0;
 
     @Override
@@ -48,8 +57,44 @@ public class MainActivity extends AppCompatActivity {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
-        onInit();
+        btmView = findViewById(R.id.nav_bar);
+        btmView.setOnNavigationItemSelectedListener(navigationItemReselectedListener);
+        Intent i = getIntent();
+        String data = i.getStringExtra("FromReservation");
+
+        if (data != null && data.contentEquals("1")) {
+
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, new CartFragment());
+            fragmentTransaction.commitNow();
+
+        }
+        else
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HotelsFragment()).commit();
+
+//        onInit();
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemReselectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment = null;
+            switch (item.getItemId())
+            {
+                case R.id.hotels:
+                    fragment = new HotelsFragment();
+                    break;
+                case R.id.carts:
+                    fragment = new CartFragment();
+                    break;
+                case R.id.settings:
+                    fragment = new Fragment();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+            return true;
+        }
+
+    };
     public void onInit() {
         linearLayout = findViewById(R.id.mainsurface);
         foodx = findViewById(R.id.foodx);

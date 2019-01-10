@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.foodx.nsh.R;
 import com.foodx.nsh.activity.CartActivity;
+import com.foodx.nsh.activity.MainActivity;
 import com.foodx.nsh.activity.MenuActivity;
 import com.foodx.nsh.model.Hotel;
 import com.foodx.nsh.model.Menu;
@@ -87,7 +88,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, CartActivity.class));
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("FromReservation", "1");
+                context.startActivity(intent);
             }
         });
     }
