@@ -59,7 +59,7 @@ public class MenuActivity extends AppCompatActivity {
         hotelName.setText(bundle.getString("name"));
         id = bundle.getString("id");
         menuList = new ArrayList<>();
-        menuAdapter = new MenuAdapter(bundle.getInt("color"), menuList, this);
+        menuAdapter = new MenuAdapter(bundle.getInt("color"), menuList, this,id);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         hotelid = bundle.getString("id");
         menuList = new ArrayList<>();
