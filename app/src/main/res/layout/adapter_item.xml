@@ -14,11 +14,17 @@
     android:layout_marginBottom="8dp"
     android:clickable="true"
     app:cardPreventCornerOverlap="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:id="@+id/mainlayout">
 
         <TextView
             android:id="@+id/name"
@@ -26,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="@font/psb"
-            android:text="Chopra Residency"
+            android:text="Chopra"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -36,25 +42,47 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="@font/ps"
-            android:text="Chopra Residency"
+            android:text="Chopra"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
         <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/addition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/image"/>
-        
-        <Button
+            android:text="+" />
+        <TextView
             android:layout_width="wrap_content"
-            android:text="+"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:fontFamily="@font/psb"
+            android:id="@+id/quantity"/>
+
         <Button
+            android:id="@+id/subtraction"
             android:layout_width="wrap_content"
-            android:text="-"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="-" />
 
     </LinearLayout>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/psb"
+            android:layout_margin="8dp"
+            android:layout_below="@id/mainlayout"
+            android:id="@+id/addtocart"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
 </android.support.v7.widget.CardView>
 

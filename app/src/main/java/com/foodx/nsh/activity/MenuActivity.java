@@ -1,14 +1,17 @@
 package com.foodx.nsh.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.foodx.nsh.R;
+import com.foodx.nsh.adapter.CartAdapter;
 import com.foodx.nsh.adapter.MenuAdapter;
 import com.foodx.nsh.model.Item;
 import com.foodx.nsh.model.Menu;
@@ -22,11 +25,12 @@ public class MenuActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MenuAdapter menuAdapter;
     private List<Menu> menuList;
-
+    private String hotelid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
         onInit();
     }
 
@@ -36,8 +40,9 @@ public class MenuActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 //        cardView.setCardBackgroundColor(getResources().getColor(bundle.getInt("color")));
         hotelName.setText(bundle.getString("name"));
+        hotelid = bundle.getString("id");
         menuList = new ArrayList<>();
-        menuAdapter = new MenuAdapter(bundle.getInt("color"),menuList, this);
+        menuAdapter = new MenuAdapter(bundle.getInt("color"),menuList, this,hotelid);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setAdapter(menuAdapter);
         LinearSnapHelper snapHelper = new LinearSnapHelper() {
