@@ -2,9 +2,6 @@ package com.foodx.nsh.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.DatabaseUtils;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,11 +18,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.CharArrayReader;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class CartActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
@@ -35,9 +33,12 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Gson gson;
     private CartAdapter cartAdapter;
-    private String address,name,mobile,hotelid;
-    JsonObject jsonObject;
+    private String address,name,mobile,hotelid,extra;
 
+    //    private HashSet<String> hashSet;
+    private HashMap<String, ArrayList<Cart>> hashMap;
+    private HashMap<String,Cart>hashMap1;
+    //    private ArrayList<Cart>arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,38 +55,81 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(cartAdapter);
         cartAdapter.notifyDataSetChanged();
-        Set <String> set = new HashSet<>();
+        hashMap1 = new HashMap<>();
         for(int i=0;i<myOrders.size();i++){
-            set.add(myOrders.get(i).getHotelId());
+            hashMap1.put(myOrders.get(i).getHotelId(),myOrders.get(i));
         }
-
+        List<Map<String,List<Cart>>> list = new ArrayList<Map<String,List<Cart>>>();
+        Map<String, List<Cart>> map1 = new HashMap<String, List<Cart>>();
+        List<Cart> arraylist1 = new ArrayList<Cart>();
+        for (String key  : hashMap1.keySet()) {
+            arraylist1.clear();
+            map1.clear();
+            for (int j = 0; j < myOrders.size(); j++) {
+                if (key == myOrders.get(j).getHotelId()){
+                    arraylist1.add(myOrders.get(j));
+                }
+                map1.put(key,arraylist1);
+            }
+            list.add(map1);
+        }
+        //HarCoded Elements input required;
         address = "Hello";
         name = "nishu";
         mobile="988799220";
-        hotelid="Fjrivevjnvks";
-
-        jsonObject = new JsonObject();
-        jsonObject.addProperty("address",address);
-        jsonObject.addProperty("name",name);
-        jsonObject.addProperty("mobile",mobile);
-        jsonObject.addProperty("hotel_id",hotelid);
-
-        JsonArray jsonArray = new JsonArray();
-        JsonObject jsonObject1 = new JsonObject();
-        jsonObject1.addProperty("name",myOrders.get(0).getName());
-        jsonObject1.addProperty("quantity",myOrders.get(0).getQuantity());
-        jsonObject1.addProperty("extra","none");
-        jsonArray.add(jsonObject1);
-        jsonObject.add("items",jsonArray);
+        extra = "";
+//
+//        jsonObject = new JsonObject();
+//        jsonObject.addProperty("address",address);
+//        jsonObject.addProperty("name",name);
+//        jsonObject.addProperty("mobile",mobile);
+//        jsonObject.addProperty("hotel_id",hotelid);
+//
+//        JsonArray jsonArray = new JsonArray();
+//        JsonObject jsonObject1 = new JsonObject();
+//        jsonObject1.addProperty("name",myOrders.get(0).getName());
+//        jsonObject1.addProperty("quantity",myOrders.get(0).getQuantity());
+//        jsonObject1.addProperty("extra","none");
+//        jsonArray.add(jsonObject1);
+//        jsonObject.add("items",jsonArray);
         Button button = findViewById(R.id.postorder);
+
+        final JsonArray jsonArray = new JsonArray();
+
+        String Key1 = "";
+        for(int i=0;i<list.size();i++){
+            Map<String,List<Cart>> map = list.get(i);
+            for (String key  : map.keySet())
+            {
+                Key1 = key;
+            }
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("address",address);
+            jsonObject.addProperty("name",name);
+            jsonObject.addProperty("mobile",mobile);
+            jsonObject.addProperty("hotel_id",Key1);
+            JsonArray jsonArray1 = new JsonArray();
+            for (List<Cart> value  :map.values())
+            {
+                for(int k=0;k<value.size();k++){
+                    Cart cart = value.get(k);
+                    JsonObject jsonObject3 = new JsonObject();
+                    jsonObject3.addProperty("name",cart.getName());
+                    jsonObject3.addProperty("quantity",cart.getQuantity());
+                    jsonObject3.addProperty("extra","none");
+                    jsonArray1.add(jsonObject3);
+                }
+            }
+            jsonObject.add("items",jsonArray1);
+            jsonArray.add(jsonObject);
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("hi",jsonObject.toString());
+                Log.e("hi",jsonArray.toString());
             }
         });
-
-
 
 
     }
