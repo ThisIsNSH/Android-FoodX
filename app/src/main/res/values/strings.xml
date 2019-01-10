@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FoodX</string>
+    <string name = "base_url">fodo1.herokuapp.com</string>
 </resources>

@@ -100,10 +100,9 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
 //                        objectAnimator5.start();
                         final Intent intent = new Intent(context, MenuActivity.class);
                         intent.putExtra("name",hotel.getName());
-                        intent.putExtra("id",hotel.getName());
+                        intent.putExtra("id",hotel.getId());
                         intent.putExtra("color",colors.get(position%7));
                         context.startActivity(intent);
-
 //                        Pair<View, String> p1 = Pair.create((View)holder.card, "card");
 //                        Pair<View, String> p2 = Pair.create((View)holder.hotel_name, "name");
 //                        Pair<View, String> p3 = Pair.create((View)holder.hotel_image, "image");

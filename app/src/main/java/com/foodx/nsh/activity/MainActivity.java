@@ -1,34 +1,44 @@
 package com.foodx.nsh.activity;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.foodx.nsh.R;
 import com.foodx.nsh.adapter.HotelAdapter;
 import com.foodx.nsh.model.Hotel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RelativeLayout linearLayout;
     private HotelAdapter hotelAdapter;
     private List<Hotel> hotelList;
     private TextView foodx;
-    private int up=0,down=0;
-    private float count=0;
+    private int up = 0, down = 0;
+//    private float count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +50,6 @@ public class MainActivity extends AppCompatActivity{
         }
         onInit();
     }
-
     public void onInit() {
         linearLayout = findViewById(R.id.mainsurface);
         foodx = findViewById(R.id.foodx);
@@ -54,8 +63,8 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                up+=dy;
-                foodx.setAlpha(1-((float)up/100 >=0 && (float)up/100 <=1 ? (float)up/100 : ((float)up/100 >1 ? 1 : 0)));
+                up += dy;
+                foodx.setAlpha(1 - ((float) up / 100 >= 0 && (float) up / 100 <= 1 ? (float) up / 100 : ((float) up / 100 > 1 ? 1 : 0)));
 
             }
         });
@@ -65,19 +74,35 @@ public class MainActivity extends AppCompatActivity{
         recyclerView.setAdapter(hotelAdapter);
         getData();
     }
-
     public void getData() {
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelList.add(new Hotel("1","Chopra Residency", "https://i.dlpng.com/static/png/151888_preview.png", "10:00 - 22:00", "abra ka dabra gili gili chhu abra ka dabra gili gili chhu"));
-        hotelAdapter.notifyDataSetChanged();
+        final RequestQueue requestQueue = Volley.newRequestQueue(this);
+            JsonArrayRequest request = new JsonArrayRequest("https://fodo1.herokuapp.com/hotel",
+                    new Response.Listener<JSONArray>() {
+                        @Override
+                        public void onResponse(JSONArray jsonArray) {
+                            for(int i = 0; i < jsonArray.length(); i++) {
+                                try {
+                                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                                    mEntries.add(jsonObject.toString());
+                                    String name, location, mobile, id;
+                                id = jsonObject.getString("_id");
+                                name = jsonObject.getString("name");
+                                location = jsonObject.getString("location");
+                                mobile = jsonObject.getString("mobile");
+                                hotelList.add(new Hotel(id, name, "https://i.dlpng.com/static/png/151888_preview.png", mobile, location));
+                                }
+                                catch(JSONException e) {
+                                }
+                            }
+                            hotelAdapter.notifyDataSetChanged();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+                            Toast.makeText(MainActivity.this, "Unable to fetch data: " + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            requestQueue.add(request);
     }
 }
