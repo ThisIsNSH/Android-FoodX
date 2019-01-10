@@ -7,10 +7,12 @@ public class Menu {
 
     String category;
     List<Item> itemList = new ArrayList<>();
+    String hotelid;
 
     public Menu(String category, List<Item> itemList){
         this.category = category;
         this.itemList = itemList;
+
     }
 
     public String getCategory() {
