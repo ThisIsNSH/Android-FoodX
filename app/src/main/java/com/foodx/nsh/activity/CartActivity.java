@@ -69,7 +69,6 @@ public class CartActivity extends AppCompatActivity {
         jsonObject.addProperty("name",name);
         jsonObject.addProperty("mobile",mobile);
         jsonObject.addProperty("hotel_id",hotelid);
-
         JsonArray jsonArray = new JsonArray();
         JsonObject jsonObject1 = new JsonObject();
         jsonObject1.addProperty("name",myOrders.get(0).getName());

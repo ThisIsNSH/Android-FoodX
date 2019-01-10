@@ -1,43 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/mainsurface"
-    android:fitsSystemWindows="true"
-    android:background="@color/white"
+<RelativeLayout
     android:layout_height="match_parent"
-    tools:context="com.foodx.nsh.activity.MainActivity">
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_above="@+id/nav_bar"
+    android:id="@+id/fragment_container"
+    >
 
-    <LinearLayout
-        android:background="@drawable/white_gradient"
-        android:paddingTop="20dp"
+
+</FrameLayout>
+    <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:text="FoodX"
-            android:id="@+id/foodx"
-            android:fontFamily="@font/psb"
-            android:textSize="20sp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:textColor="@color/color4"/>
-
-    </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/recyclerView"
-        android:paddingTop="94dp"
-        android:clipToPadding="false"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
-</RelativeLayout>
+        android:id="@+id/nav_bar"
+        app:menu="@menu/menu"
+        android:layout_alignParentBottom="true"
+        >
+    </android.support.design.widget.BottomNavigationView>
+    </RelativeLayout>
