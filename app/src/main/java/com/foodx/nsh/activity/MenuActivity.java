@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -37,6 +36,7 @@ public class MenuActivity extends AppCompatActivity {
     private MenuAdapter menuAdapter;
     private List<Menu> menuList;
     String id;
+    String mere;
     JSONArray array;
 
     @Override
@@ -97,13 +97,43 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void menulist() {
+        String temp = "https://fodo1.herokuapp.com/hotel/menu/";
         final RequestQueue requestQueue = Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.GET, "https://fodo1.herokuapp.com/hotel/menu",
+        StringRequest request = new StringRequest(Request.Method.GET, temp + id,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String jsonArray) {
-                        System.out.print(jsonArray);
-
+//                            Log.v("responsefuck",jsonArray);
+                        try {
+                            array = new JSONArray(jsonArray);
+                            HashMap<String, ArrayList<Item>> menu = new HashMap<>();
+//        array = new JSONArray("[{\"_id\":\"5c3607018469fa00170ce1cf\",\"category\":\"Category 1\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1ce\",\"category\":\"Category 1\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cd\",\"category\":\"Category 1\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cc\",\"category\":\"Category 2\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cb\",\"category\":\"Category 2\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1ca\",\"category\":\"Category 2\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c9\",\"category\":\"Category 3\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c8\",\"category\":\"Category 3\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c7\",\"category\":\"Category 3\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"}]");
+                            for (int i = 0; i < array.length(); i++) {
+                                Log.v("hello", String.valueOf(i));
+                                JSONObject jsonObject = array.getJSONObject(i);
+                                String category = jsonObject.getString("category");
+//                                category += category;
+                                if (menu.containsKey(category)) {
+                                    menu.get(category).add(new Item(jsonObject.getString("food_name"),
+                                            jsonObject.getString("food_image"),
+                                            jsonObject.getString("food_price")));
+                                } else {
+                                    menu.put(category, new ArrayList<Item>());
+                                    menu.get(category).add(new Item(jsonObject.getString("food_name"),
+                                            jsonObject.getString("food_image"),
+                                            jsonObject.getString("food_price")));
+                                }
+                            }
+                            for (Map.Entry<String, ArrayList<Item>> entry : menu.entrySet()) {
+                                String h = entry.getKey();
+                                ArrayList<Item> m = entry.getValue();
+                                menuList.add(new Menu(h, m));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+//                        Log.v("responsefuck",mere);
+                        menuAdapter.notifyDataSetChanged();
                     }
                 },
                 new Response.ErrorListener() {
@@ -111,41 +141,11 @@ public class MenuActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 //                        Toast.makeText(MainActivity.this, "Unable to fetch data: " + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String, String> hashMap = new HashMap<>();
-                hashMap.put("hotel_id", id);
-                return hashMap;
-            }
-        };
+                });
         requestQueue.add(request);
     }
 
     public void getData() throws JSONException {
-//        menulist();
-        HashMap<String, ArrayList<Item>> menu = new HashMap<>();
-        array = new JSONArray("[{\"_id\":\"5c3607018469fa00170ce1cf\",\"category\":\"Category 1\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1ce\",\"category\":\"Category 1\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cd\",\"category\":\"Category 1\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cc\",\"category\":\"Category 2\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cb\",\"category\":\"Category 2\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1ca\",\"category\":\"Category 2\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c9\",\"category\":\"Category 3\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c8\",\"category\":\"Category 3\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c7\",\"category\":\"Category 3\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"}]");
-        for (int i = 0; i < array.length(); i++) {
-            Log.v("hello", String.valueOf(i));
-            JSONObject jsonObject = array.getJSONObject(i);
-            String category = jsonObject.getString("category");
-            if (menu.containsKey(category)) {
-                menu.get(category).add(new Item(jsonObject.getString("food_name"),
-                        jsonObject.getString("food_image"),
-                        jsonObject.getString("food_price")));
-            } else {
-                menu.put(category, new ArrayList<Item>());
-                menu.get(category).add(new Item(jsonObject.getString("food_name"),
-                        jsonObject.getString("food_image"),
-                        jsonObject.getString("food_price")));
-            }
-        }
-        for (Map.Entry<String, ArrayList<Item>> entry : menu.entrySet()) {
-            String h = entry.getKey();
-            ArrayList<Item> m = entry.getValue();
-            menuList.add(new Menu(h, m));
-        }
-        menuAdapter.notifyDataSetChanged();
+        menulist();
     }
 }
