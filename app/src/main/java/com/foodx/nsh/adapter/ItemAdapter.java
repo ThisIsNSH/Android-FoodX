@@ -1,13 +1,9 @@
 package com.foodx.nsh.adapter;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +16,6 @@ import android.widget.Toast;
 import com.foodx.nsh.R;
 import com.foodx.nsh.model.Cart;
 import com.foodx.nsh.model.Item;
-import com.foodx.nsh.model.Menu;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
@@ -42,8 +37,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     SharedPreferences.Editor editor;
     Gson gson = new Gson();
     String key = "Key";
+    int color;
     List<Cart> myOrders = new ArrayList<>();
-    public ItemAdapter(List<Item> itemList, Activity context,String hotelid) {
+
+    public ItemAdapter(List<Item> itemList, Activity context,String hotelid,int color) {
+        this.color = color;
         this.itemList = itemList;
         this.context = context;
         this.hotelid = hotelid;
@@ -66,7 +64,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         final Item item = itemList.get(position);
         holder.name.setText(item.getName());
         holder.price.setText(item.getPrice());
-        Picasso.get().load(item.getImage()).into(holder.image);
+//        Picasso.get().load(item.getImage()).into(holder.image);
+        Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(holder.image1);
+        holder.button.setBackground(context.getResources().getDrawable(drawable(color)));
+        holder.button1.setBackground(context.getResources().getDrawable(drawable(color)));
+        holder.button2.setBackground(context.getResources().getDrawable(drawable(color)));
 
         if(item.getName().equals("Roti")) {
             max = 50;
@@ -138,11 +140,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,price,quantity;
-        ImageView image;
+        ImageView image,image1;
         Button button,button1,button2;
         public MyViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
+            image1 = itemView.findViewById(R.id.image1);
             image = itemView.findViewById(R.id.image);
             price = itemView.findViewById(R.id.price);
             button = itemView.findViewById(R.id.addition);
@@ -152,5 +155,23 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         }
     }
 
-
+    public int drawable(int color){
+        switch (color){
+            case R.color.color0 :
+                return R.drawable.curvedback;
+            case R.color.color1 :
+                return R.drawable.curvedback1;
+            case R.color.color2 :
+                return R.drawable.curvedback2;
+            case R.color.color3 :
+                return R.drawable.curvedback3;
+            case R.color.color4 :
+                return R.drawable.curvedback4;
+            case R.color.color5 :
+                return R.drawable.curvedback5;
+            case R.color.color6 :
+                return R.drawable.curvedback6;
+        }
+        return R.drawable.curvedback6;
+    }
 }
