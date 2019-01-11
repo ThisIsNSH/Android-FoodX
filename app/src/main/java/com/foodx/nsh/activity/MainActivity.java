@@ -1,12 +1,19 @@
 package com.foodx.nsh.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -30,10 +37,12 @@ import com.foodx.nsh.adapter.HotelAdapter;
 import com.foodx.nsh.fragments.CartFragment;
 import com.foodx.nsh.fragments.HotelsFragment;
 import com.foodx.nsh.model.Hotel;
+import com.foodx.nsh.model.Item;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView btmView;
 //    private float count = 0;
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,32 +71,57 @@ public class MainActivity extends AppCompatActivity {
         btmView.setOnNavigationItemSelectedListener(navigationItemReselectedListener);
         Intent i = getIntent();
         String data = i.getStringExtra("FromReservation");
-
         if (data != null && data.contentEquals("1")) {
-
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, new CartFragment());
             fragmentTransaction.commitNow();
-
         }
         else
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HotelsFragment()).commit();
 
+        int[] colors = new int[] {
+                Color.parseColor("#afb42b"),
+                Color.parseColor("#9e9d24")
+        };
+
+        int [][] states = new int [][]{
+                new int[] { android.R.attr.state_enabled, -android.R.attr.state_checked},
+                new int[] {android.R.attr.state_enabled, android.R.attr.state_checked}
+        };
+        btmView.setItemTextColor(new ColorStateList(states, colors));
+//       btmView.setBackground(ActivityCompat.getDrawable(getApplicationContext(),R.drawable.white_gradient));
+
 //        onInit();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemReselectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @SuppressLint("ResourceAsColor")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment = null;
+
+            int[] colors = new int[] {
+                      Color.parseColor("#afb42b"),
+                    Color.parseColor("#9e9d24")
+            };
+
+            int [][] states = new int [][]{
+                    new int[] { android.R.attr.state_enabled, -android.R.attr.state_checked},
+                    new int[] {android.R.attr.state_enabled, android.R.attr.state_checked}
+            };
+
             switch (item.getItemId())
             {
                 case R.id.hotels:
+                    btmView.setItemTextColor(new ColorStateList(states, colors));
+//                    btmView.setItemIconTintList(new ColorStateList(states, colors));
                     fragment = new HotelsFragment();
                     break;
                 case R.id.carts:
+                    btmView.setItemTextColor(new ColorStateList(states,colors));
                     fragment = new CartFragment();
                     break;
                 case R.id.settings:
+                    btmView.setItemTextColor(new ColorStateList(states,colors));
                     fragment = new Fragment();
                     break;
             }
@@ -150,4 +185,11 @@ public class MainActivity extends AppCompatActivity {
                     });
             requestQueue.add(request);
     }
+//    public void setBackground(Drawable background) {
+//        //noinspection deprecation
+//        setBackgroundDrawable(background);
+//    }
+//
+//    @Deprecated
+//    public void setBackgroundDrawable(Drawable background) {}
 }

@@ -11,8 +11,6 @@
     android:layout_above="@+id/nav_bar"
     android:id="@+id/fragment_container"
     >
-
-
 </FrameLayout>
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
@@ -20,6 +18,7 @@
         android:id="@+id/nav_bar"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"
+        app:itemTextColor="@color/color4"
         >
     </android.support.design.widget.BottomNavigationView>
     </RelativeLayout>
