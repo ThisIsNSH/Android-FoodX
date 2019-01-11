@@ -1,6 +1,7 @@
 package com.foodx.nsh.fragments;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -18,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.foodx.nsh.R;
-import com.foodx.nsh.activity.MainActivity;
 import com.foodx.nsh.adapter.HotelAdapter;
 import com.foodx.nsh.model.Hotel;
 
@@ -39,18 +38,20 @@ public class HotelsFragment extends Fragment {
     private HotelAdapter hotelAdapter;
     private List<Hotel> hotelList;
     private TextView foodx;
+    private Activity activity;
     private int up = 0, down = 0;
     View view;
 
     public HotelsFragment() {
-        // Required empty public constructor
     }
 
+    public HotelsFragment(Activity activity){
+        this.activity = activity;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_hotels, container, false);
         onInit();
         return view;
@@ -74,13 +75,13 @@ public class HotelsFragment extends Fragment {
             }
         });
         hotelList = new ArrayList<>();
-        hotelAdapter = new HotelAdapter(hotelList, getActivity());
+        hotelAdapter = new HotelAdapter(hotelList, activity);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(hotelAdapter);
         getData();
     }
     public void getData() {
-        final RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        final RequestQueue requestQueue = Volley.newRequestQueue(activity);
         JsonArrayRequest request = new JsonArrayRequest("https://fodo1.herokuapp.com/hotel",
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -88,7 +89,6 @@ public class HotelsFragment extends Fragment {
                         for(int i = 0; i < jsonArray.length(); i++) {
                             try {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-//                                    mEntries.add(jsonObject.toString());
                                 String name, location, mobile, id;
                                 id = jsonObject.getString("_id");
                                 name = jsonObject.getString("name");
@@ -105,7 +105,6 @@ public class HotelsFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-//                        Toast.makeText(MainActivity.this, "Unable to fetch data: " + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
         requestQueue.add(request);

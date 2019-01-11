@@ -1,6 +1,7 @@
 package com.foodx.nsh.fragments;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,9 +20,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,20 +32,22 @@ public class CartFragment extends Fragment {
     private List<Cart> myOrders;
     private RecyclerView recyclerView;
     private Gson gson;
+    private Activity activity;
     private CartAdapter cartAdapter;
     private String address,name,mobile,hotelid;
     JsonObject jsonObject;
 
     public CartFragment() {
-        // Required empty public constructor
-
     }
 
+    public CartFragment(Activity activity){
+        this.activity = activity;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        sharedPreferences = getActivity().getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
+        sharedPreferences = activity.getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         gson = new Gson();
         myOrders = new ArrayList<>();
