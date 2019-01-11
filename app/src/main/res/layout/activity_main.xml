@@ -4,14 +4,13 @@
     android:orientation="horizontal"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentTop="true"
-    android:layout_above="@+id/nav_bar"
-    android:id="@+id/fragment_container"
-    >
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/nav_bar"
+        android:id="@+id/fragment_container">
+    </FrameLayout>
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,4 +20,4 @@
         app:itemTextColor="@color/color4"
         >
     </android.support.design.widget.BottomNavigationView>
-    </RelativeLayout>
+</RelativeLayout>

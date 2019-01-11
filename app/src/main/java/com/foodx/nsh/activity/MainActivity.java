@@ -15,25 +15,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.foodx.nsh.R;
-import com.foodx.nsh.adapter.HotelAdapter;
 import com.foodx.nsh.fragments.CartFragment;
 import com.foodx.nsh.fragments.HotelsFragment;
 import com.foodx.nsh.model.Hotel;
@@ -46,17 +32,11 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.foodx.nsh.fragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RelativeLayout linearLayout;
-    private HotelAdapter hotelAdapter;
-    private List<Hotel> hotelList;
-    private TextView foodx;
-    private int up = 0, down = 0;
     private BottomNavigationView btmView;
-//    private float count = 0;
 
     @SuppressLint("ResourceType")
     @Override
@@ -73,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         String data = i.getStringExtra("FromReservation");
         if (data != null && data.contentEquals("1")) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, new CartFragment());
+            fragmentTransaction.replace(R.id.fragment_container, new CartFragment(MainActivity.this));
             fragmentTransaction.commitNow();
         }
         else
@@ -92,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
 //       btmView.setBackground(ActivityCompat.getDrawable(getApplicationContext(),R.drawable.white_gradient));
 
 //        onInit();
+       // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HotelsFragment(MainActivity.this)).commit();
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemReselectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @SuppressLint("ResourceAsColor")
         @Override
@@ -123,6 +105,13 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.settings:
                     btmView.setItemTextColor(new ColorStateList(states,colors));
                     fragment = new Fragment();
+                    fragment = new HotelsFragment(MainActivity.this);
+                    break;
+                case R.id.carts:
+                    fragment = new CartFragment(MainActivity.this);
+                    break;
+                case R.id.settings:
+                    fragment = new SettingsFragment(MainActivity.this);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
@@ -130,22 +119,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
-    public void onInit() {
-        linearLayout = findViewById(R.id.mainsurface);
-        foodx = findViewById(R.id.foodx);
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                up += dy;
-                foodx.setAlpha(1 - ((float) up / 100 >= 0 && (float) up / 100 <= 1 ? (float) up / 100 : ((float) up / 100 > 1 ? 1 : 0)));
-
             }
         });
         hotelList = new ArrayList<>();
@@ -192,4 +165,5 @@ public class MainActivity extends AppCompatActivity {
 //
 //    @Deprecated
 //    public void setBackgroundDrawable(Drawable background) {}
+=======
 }
