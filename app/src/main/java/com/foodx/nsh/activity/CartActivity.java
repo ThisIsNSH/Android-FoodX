@@ -239,58 +239,58 @@ public class CartActivity extends AppCompatActivity {
 //
 //    }
 
-    }
-}
-        Button button = findViewById(R.id.postorder);
-        jsonObject = new JsonObject();
-        jsonObject.addProperty("address",address);
-        jsonObject.addProperty("name",name);
-        jsonObject.addProperty("mobile",mobile);
-        jsonObject.addProperty("hotel_id",hotelid);
-        final JsonArray jsonArray = new JsonArray();
-        JsonObject jsonObject1 = new JsonObject();
-        jsonObject1.addProperty("name",myOrders.get(0).getName());
-        jsonObject1.addProperty("quantity",myOrders.get(0).getQuantity());
-        jsonObject1.addProperty("extra","none");
-        jsonArray.add(jsonObject1);
-        jsonObject.add("items",jsonArray);
+//    }
+//}
 //        Button button = findViewById(R.id.postorder);
+//        jsonObject = new JsonObject();
+//        jsonObject.addProperty("address",address);
+//        jsonObject.addProperty("name",name);
+//        jsonObject.addProperty("mobile",mobile);
+//        jsonObject.addProperty("hotel_id",hotelid);
 //        final JsonArray jsonArray = new JsonArray();
-
-        String Key1 = "";
-        for(int i=0;i<list.size();i++){
-            Map<String,List<Cart>> map = list.get(i);
-            for (String key  : map.keySet())
-            {
-                Key1 = key;
-            }
-            JsonObject jsonObject = new JsonObject();
-            jsonObject.addProperty("address",address);
-            jsonObject.addProperty("name",name);
-            jsonObject.addProperty("mobile",mobile);
-            jsonObject.addProperty("hotel_id",Key1);
-            JsonArray jsonArray1 = new JsonArray();
-            for (List<Cart> value  :map.values())
-            {
-                for(int k=0;k<value.size();k++){
-                    Cart cart = value.get(k);
-                    JsonObject jsonObject3 = new JsonObject();
-                    jsonObject3.addProperty("name",cart.getName());
-                    jsonObject3.addProperty("quantity",cart.getQuantity());
-                    jsonObject3.addProperty("extra","none");
-                    jsonArray1.add(jsonObject3);
-                }
-            }
-            jsonObject.add("items",jsonArray1);
-            jsonArray.add(jsonObject);
-        }
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("hi",jsonArray.toString());
-            }
-        });
+//        JsonObject jsonObject1 = new JsonObject();
+//        jsonObject1.addProperty("name",myOrders.get(0).getName());
+//        jsonObject1.addProperty("quantity",myOrders.get(0).getQuantity());
+//        jsonObject1.addProperty("extra","none");
+//        jsonArray.add(jsonObject1);
+//        jsonObject.add("items",jsonArray);
+////        Button button = findViewById(R.id.postorder);
+////        final JsonArray jsonArray = new JsonArray();
+//
+//        String Key1 = "";
+//        for(int i=0;i<list.size();i++){
+//            Map<String,List<Cart>> map = list.get(i);
+//            for (String key  : map.keySet())
+//            {
+//                Key1 = key;
+//            }
+//            JsonObject jsonObject = new JsonObject();
+//            jsonObject.addProperty("address",address);
+//            jsonObject.addProperty("name",name);
+//            jsonObject.addProperty("mobile",mobile);
+//            jsonObject.addProperty("hotel_id",Key1);
+//            JsonArray jsonArray1 = new JsonArray();
+//            for (List<Cart> value  :map.values())
+//            {
+//                for(int k=0;k<value.size();k++){
+//                    Cart cart = value.get(k);
+//                    JsonObject jsonObject3 = new JsonObject();
+//                    jsonObject3.addProperty("name",cart.getName());
+//                    jsonObject3.addProperty("quantity",cart.getQuantity());
+//                    jsonObject3.addProperty("extra","none");
+//                    jsonArray1.add(jsonObject3);
+//                }
+//            }
+//            jsonObject.add("items",jsonArray1);
+//            jsonArray.add(jsonObject);
+//        }
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.e("hi",jsonArray.toString());
+//            }
+//        });
 
 
     }

@@ -73,6 +73,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         if(item.getName().equals("Roti")) {
             max = 50;
         }
+        holder.button.setVisibility(View.GONE);
+        holder.button1.setVisibility(View.GONE);
+        holder.quantity.setVisibility(View.GONE);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,16 +88,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
                     int quantity = Integer.parseInt(holder.quantity.getText().toString());
                     holder.quantity.setText(String.valueOf(quantity+1));
                     holder.button1.setEnabled(true);
-
                 }
                 if(!holder.quantity.getText().toString().equals("0")){
                     holder.button2.setVisibility(View.VISIBLE);
+                    holder.button2.setText("DONE");
                 }
                 else {
-                    holder.button2.setVisibility(View.GONE);
+                    holder.button.setVisibility(View.GONE);
+                    holder.button1.setVisibility(View.GONE);
+                    holder.quantity.setVisibility(View.GONE);
+                    holder.button2.setText("ADD TO CART");
                 }
-
-
             }
         });
         holder.button1.setOnClickListener(new View.OnClickListener() {
@@ -112,9 +116,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
                 }
                 if(!holder.quantity.getText().toString().equals("0")){
                     holder.button2.setVisibility(View.VISIBLE);
+                    holder.button2.setText("DONE");
                 }
                 else {
-                    holder.button2.setVisibility(View.GONE);
+                    holder.button.setVisibility(View.GONE);
+                    holder.button1.setVisibility(View.GONE);
+                    holder.quantity.setVisibility(View.GONE);
+                    holder.button2.setText("ADD TO CART");
                 }
             }
         });
@@ -122,13 +130,23 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cart cart = new Cart(item.getName(),holder.quantity.getText().toString(),hotelid);
-                myOrders.add(cart);
-                String json = gson.toJson(myOrders);
-                editor.putString(key,json);
-                editor.apply();
-                Toast.makeText(context,"Your item has been added to the cart.",Toast.LENGTH_SHORT).show();
+                if (holder.button2.getText() == "DONE") {
+                    Cart cart = new Cart(item.getName(), holder.quantity.getText().toString(), hotelid);
+                    myOrders.add(cart);
+                    String json = gson.toJson(myOrders);
+                    editor.putString(key, json);
+                    editor.apply();
+                    Toast.makeText(context, "Your item has been added to the cart.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
 
+                    holder.button.setVisibility(View.VISIBLE);
+                    holder.button1.setVisibility(View.VISIBLE);
+                    holder.quantity.setVisibility(View.VISIBLE);
+                    holder.quantity.setText("1");
+                    holder.button2.setText("DONE");
+                }
             }
         });
     }

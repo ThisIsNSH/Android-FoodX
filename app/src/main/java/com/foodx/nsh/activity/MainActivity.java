@@ -1,7 +1,9 @@
 package com.foodx.nsh.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -28,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
         btmView = findViewById(R.id.nav_bar);
         btmView.setOnNavigationItemSelectedListener(navigationItemReselectedListener);
         btmView.setItemBackgroundResource(R.drawable.transparent);
-
+        SharedPreferences preferences = getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
         Intent i = getIntent();
         String data = i.getStringExtra("FromReservation");
         if (data != null && data.contentEquals("1")) {
