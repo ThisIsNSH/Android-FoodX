@@ -17,7 +17,6 @@
         android:id="@+id/nav_bar"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"
-        app:itemTextColor="@color/color4"
-        >
+        app:itemTextColor="@color/color4">
     </android.support.design.widget.BottomNavigationView>
 </RelativeLayout>

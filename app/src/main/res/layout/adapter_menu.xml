@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/gradient"
+                android:visibility="gone"
                 android:layout_alignTop="@id/category_name"
                 android:layout_alignBottom="@id/category_name"
                 android:background="@drawable/black_gradient"/>
