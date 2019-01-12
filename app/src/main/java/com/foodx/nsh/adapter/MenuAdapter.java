@@ -1,7 +1,5 @@
 package com.foodx.nsh.adapter;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -18,14 +16,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.foodx.nsh.R;
-import com.foodx.nsh.activity.CartActivity;
 import com.foodx.nsh.activity.MainActivity;
-import com.foodx.nsh.activity.MenuActivity;
-import com.foodx.nsh.model.Hotel;
 import com.foodx.nsh.model.Menu;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -58,7 +52,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         final Menu menu = menuList.get(position);
         holder.card.setCardBackgroundColor(context.getResources().getColor(color));
         holder.category_name.setText(menu.getCategory());
-        itemAdapter = new ItemAdapter(menu.getItemList(),context,hotelid);
+        itemAdapter = new ItemAdapter(menu.getItemList(),context,hotelid,color);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         holder.recyclerView.setAdapter(itemAdapter);
         Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(holder.image);

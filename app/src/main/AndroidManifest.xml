@@ -13,14 +13,16 @@
 
         </activity>
         <activity android:name=".activity.FirebaseLogin">
+        </activity>
+        <activity android:name=".activity.MenuActivity" />
+        <activity android:name=".activity.CartActivity"></activity>
+        <activity android:name=".activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MenuActivity" />
-        <activity android:name=".activity.CartActivity"></activity>
     </application>
 
 </manifest>
