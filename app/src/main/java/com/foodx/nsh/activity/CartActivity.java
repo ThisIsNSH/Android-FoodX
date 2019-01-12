@@ -37,7 +37,8 @@ public class CartActivity extends AppCompatActivity {
     private JsonObject jsonObject;
     //    private HashSet<String> hashSet;
     private HashMap<String, ArrayList<Cart>> hashMap;
-    private HashMap<String,Cart>hashMap1;
+    private HashMap<String, Cart> hashMap1;
+
     //    private ArrayList<Cart>arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,36 +48,37 @@ public class CartActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
         gson = new Gson();
         myOrders = new ArrayList<>();
-        String response=sharedPreferences.getString(key , "null");
+        String response = sharedPreferences.getString(key, "null");
         if (!response.equals("null"))
-            myOrders = gson.fromJson(response,new TypeToken<List<Cart>>(){}.getType());
+            myOrders = gson.fromJson(response, new TypeToken<List<Cart>>() {
+            }.getType());
         recyclerView = findViewById(R.id.recyclerView1);
-        cartAdapter = new CartAdapter(myOrders,this);
+        cartAdapter = new CartAdapter(myOrders, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(cartAdapter);
         cartAdapter.notifyDataSetChanged();
         hashMap1 = new HashMap<>();
-        for(int i=0;i<myOrders.size();i++){
-            hashMap1.put(myOrders.get(i).getHotelId(),myOrders.get(i));
+        for (int i = 0; i < myOrders.size(); i++) {
+            hashMap1.put(myOrders.get(i).getHotelId(), myOrders.get(i));
         }
-        List<Map<String,List<Cart>>> list = new ArrayList<Map<String,List<Cart>>>();
+        List<Map<String, List<Cart>>> list = new ArrayList<Map<String, List<Cart>>>();
         Map<String, List<Cart>> map1 = new HashMap<String, List<Cart>>();
         List<Cart> arraylist1 = new ArrayList<Cart>();
-        for (String key  : hashMap1.keySet()) {
+        for (String key : hashMap1.keySet()) {
             arraylist1.clear();
             map1.clear();
             for (int j = 0; j < myOrders.size(); j++) {
-                if (key == myOrders.get(j).getHotelId()){
+                if (key == myOrders.get(j).getHotelId()) {
                     arraylist1.add(myOrders.get(j));
                 }
-                map1.put(key,arraylist1);
+                map1.put(key, arraylist1);
             }
             list.add(map1);
         }
         //HarCoded Elements input required;
         address = "Hello";
         name = "nishu";
-        mobile="988799220";
+        mobile = "988799220";
         extra = "";
 //package com.foodx.nsh.activity;
 //
@@ -183,7 +185,62 @@ public class CartActivity extends AppCompatActivity {
 //        jsonObject1.addProperty("extra","none");
 //        jsonArray.add(jsonObject1);
 //        jsonObject.add("items",jsonArray);
-// <<<<<<< epic
+//        Button button = findViewById(R.id.postorder);
+//        jsonObject = new JsonObject();
+//        jsonObject.addProperty("address",address);
+//        jsonObject.addProperty("name",name);
+//        jsonObject.addProperty("mobile",mobile);
+//        jsonObject.addProperty("hotel_id",hotelid);
+//        JsonArray jsonArray = new JsonArray();
+//        JsonObject jsonObject1 = new JsonObject();
+//        jsonObject1.addProperty("name",myOrders.get(0).getName());
+//        jsonObject1.addProperty("quantity",myOrders.get(0).getQuantity());
+//        jsonObject1.addProperty("extra","none");
+//        jsonArray.add(jsonObject1);
+//        jsonObject.add("items",jsonArray);
+//        Button button = findViewById(R.id.postorder);
+//        final JsonArray jsonArray = new JsonArray();
+//
+//        String Key1 = "";
+//        for(int i=0;i<list.size();i++){
+//            Map<String,List<Cart>> map = list.get(i);
+//            for (String key  : map.keySet())
+//            {
+//                Key1 = key;
+//            }
+//            JsonObject jsonObject = new JsonObject();
+//            jsonObject.addProperty("address",address);
+//            jsonObject.addProperty("name",name);
+//            jsonObject.addProperty("mobile",mobile);
+//            jsonObject.addProperty("hotel_id",Key1);
+//            JsonArray jsonArray1 = new JsonArray();
+//            for (List<Cart> value  :map.values())
+//            {
+//                for(int k=0;k<value.size();k++){
+//                    Cart cart = value.get(k);
+//                    JsonObject jsonObject3 = new JsonObject();
+//                    jsonObject3.addProperty("name",cart.getName());
+//                    jsonObject3.addProperty("quantity",cart.getQuantity());
+//                    jsonObject3.addProperty("extra","none");
+//                    jsonArray1.add(jsonObject3);
+//                }
+//            }
+//            jsonObject.add("items",jsonArray1);
+//            jsonArray.add(jsonObject);
+//        }
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.e("hi",jsonArray.toString());
+//            }
+//        });
+//
+//
+//    }
+
+    }
+}
         Button button = findViewById(R.id.postorder);
         jsonObject = new JsonObject();
         jsonObject.addProperty("address",address);
@@ -239,7 +296,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
 }
-// =======
+// 
 //        Button button = findViewById(R.id.postorder);
 //        final JsonArray jsonArray = new JsonArray();
 //
@@ -282,4 +339,5 @@ public class CartActivity extends AppCompatActivity {
 //    }
 //
 //}
+// >>>>>>> v2
 // >>>>>>> v2

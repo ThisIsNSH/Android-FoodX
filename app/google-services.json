@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "347278050649",
-    "firebase_url": "https://nsh-food-x.firebaseio.com",
-    "project_id": "nsh-food-x",
-    "storage_bucket": "nsh-food-x.appspot.com"
+    "project_number": "910597300841",
+    "firebase_url": "https://fudo-3a55c.firebaseio.com",
+    "project_id": "fudo-3a55c",
+    "storage_bucket": "fudo-3a55c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:347278050649:android:2460fa31909bbdf0",
+        "mobilesdk_app_id": "1:910597300841:android:2460fa31909bbdf0",
         "android_client_info": {
           "package_name": "com.foodx.nsh"
         }
       },
       "oauth_client": [
         {
-          "client_id": "347278050649-l2nrc0nqsidv6m42v85kvh23r5smgsua.apps.googleusercontent.com",
+          "client_id": "910597300841-2jgllviqg8r7t2ip8m6bk06la2inpp4f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBCh4fzKiNrQEQXosIARVuNhO2I5UYa--U"
+          "current_key": "AIzaSyDVX9sm495jmN1rN9uCKrzWEtb6kb9nv-g"
         }
       ],
       "services": {

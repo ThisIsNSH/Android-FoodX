@@ -150,7 +150,6 @@ public class MenuActivity extends AppCompatActivity {
                 });
         requestQueue.add(request);
     }
-
     public void getData() throws JSONException {
         menulist();
     }
