@@ -11,7 +11,7 @@
     tools:context="com.foodx.nsh.activity.MainActivity">
 
     <LinearLayout
-        android:paddingTop="20dp"
+        android:background="@drawable/white_gradient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="30dp"
@@ -20,20 +20,26 @@
             android:layout_width="match_parent"
             android:gravity="center"
             android:layout_height="wrap_content"
-            android:text="FoodX"
+            android:text="Mangwalo!!"
             android:id="@+id/foodx"
             android:fontFamily="@font/psb"
             android:textSize="20sp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:textColor="@color/color4"/>
+            android:textColor="@color/color2"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb"
+        android:layout_centerInParent="true"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/recyclerView"
-        android:paddingTop="94dp"
+        android:paddingTop="50dp"
         android:clipToPadding="false"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>

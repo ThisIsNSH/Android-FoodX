@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="#fafafa"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="30dp"
     app:cardElevation="0dp"
     android:id="@+id/card"
     android:layout_marginLeft="16dp"
@@ -94,6 +94,7 @@
                 android:background="@drawable/curvedback"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:text="-" />
 
@@ -120,6 +121,7 @@
                 android:background="@drawable/curvedback"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:textColor="@color/white"
                 android:layout_toRightOf="@id/quantity"
                 android:textStyle="bold"
                 android:text="+" />
@@ -131,6 +133,7 @@
                 android:paddingRight="16dp"
                 android:paddingTop="-8dp"
                 android:paddingBottom="-8dp"
+                android:textColor="@color/white"
                 android:paddingLeft="16dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_height="wrap_content"

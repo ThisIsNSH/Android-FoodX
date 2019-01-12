@@ -39,7 +39,6 @@ public class MenuActivity extends AppCompatActivity {
     String mere;
     JSONArray array;
 
-    private String hotelid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,17 +51,15 @@ public class MenuActivity extends AppCompatActivity {
         hotelName = findViewById(R.id.hotel_name);
         recyclerView = findViewById(R.id.recyclerView);
         Bundle bundle = getIntent().getExtras();
-//        cardView.setCardBackgroundColor(getResources().getColor(bundle.getInt("color")));
         hotelName.setText(bundle.getString("name"));
+
         id = bundle.getString("id");
         menuList = new ArrayList<>();
-        menuAdapter = new MenuAdapter(bundle.getInt("color"), menuList, this,id);
+        //bundle.getInt("color")
+        menuAdapter = new MenuAdapter(R.color.color2, menuList, this,id);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        hotelid = bundle.getString("id");
-        menuList = new ArrayList<>();
-        menuAdapter = new MenuAdapter(bundle.getInt("color"),menuList, this,hotelid);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setAdapter(menuAdapter);
+
         LinearSnapHelper snapHelper = new LinearSnapHelper() {
             @Override
             public int findTargetSnapPosition(RecyclerView.LayoutManager layoutManager, int velocityX, int velocityY) {
@@ -103,22 +100,19 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void menulist() {
-        String temp = "https://fodo1.herokuapp.com/hotel/menu/";
+        String temp = getString(R.string.base_url)+"/hotel/menu/";
         final RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.GET, temp + id,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String jsonArray) {
-//                            Log.v("responsefuck",jsonArray);
                         try {
                             array = new JSONArray(jsonArray);
                             HashMap<String, ArrayList<Item>> menu = new HashMap<>();
-//        array = new JSONArray("[{\"_id\":\"5c3607018469fa00170ce1cf\",\"category\":\"Category 1\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1ce\",\"category\":\"Category 1\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cd\",\"category\":\"Category 1\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cc\",\"category\":\"Category 2\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1cb\",\"category\":\"Category 2\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1ca\",\"category\":\"Category 2\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c9\",\"category\":\"Category 3\",\"food_name\":\"Food 1\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c8\",\"category\":\"Category 3\",\"food_name\":\"Food 2\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"},{\"_id\":\"5c3607018469fa00170ce1c7\",\"category\":\"Category 3\",\"food_name\":\"Food 3\",\"food_price\":\"100\",\"food_image\":\"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg\"}]");
                             for (int i = 0; i < array.length(); i++) {
                                 Log.v("hello", String.valueOf(i));
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 String category = jsonObject.getString("category");
-//                                category += category;
                                 if (menu.containsKey(category)) {
                                     menu.get(category).add(new Item(jsonObject.getString("food_name"),
                                             jsonObject.getString("food_image"),
@@ -138,19 +132,24 @@ public class MenuActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-//                        Log.v("responsefuck",mere);
                         menuAdapter.notifyDataSetChanged();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-//                        Toast.makeText(MainActivity.this, "Unable to fetch data: " + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
         requestQueue.add(request);
     }
+
     public void getData() throws JSONException {
         menulist();
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        this.overridePendingTransition(R.anim.fadein,R.anim.fadeout);
     }
 }

@@ -4,18 +4,62 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/psb"
+        android:textColor="@color/color2"
+        android:text="Khana Mangwalo!!"
+        android:textSize="40sp"
+        android:id="@+id/nilText"
+        android:textAlignment="center"
+        android:layout_margin="32dp"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="30dp"
+        android:background="@drawable/white_gradient"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Total 0!!"
+            android:id="@+id/foodx"
+            android:fontFamily="@font/psb"
+            android:textSize="20sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/color2"/>
+
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:clipToPadding="true"
-        android:paddingTop="16dp"
-        android:layout_below="@id/card"
+        android:clipToPadding="false"
+        android:layout_alignParentTop="true"
+        android:paddingTop="50dp"
+        android:paddingBottom="32dp"
+        android:layout_marginBottom="-24dp"
+        android:layout_above="@id/postorder"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerView1" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/white"
+        android:layout_above="@id/postorder"
+        android:layout_marginBottom="-24dp"
+        android:background="@drawable/white_gradient1"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Post Order"
+        android:text="Confirm Order"
+        android:textColor="@color/white"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         style="?android:attr/borderlessButtonStyle"

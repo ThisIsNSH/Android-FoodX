@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:title="Hotel" android:id="@+id/hotels" android:color = "@color/color0"/>
-<item android:title="Cart" android:id="@+id/carts" android:color = "@color/color0"/>
-<item android:title="Settings" android:id="@+id/settings" android:color = "@color/color0"/>
+<item android:title="Hotels" android:id="@+id/hotels" android:color = "@color/color0" android:icon="@drawable/hotels" android:iconTint="@color/color0"/>
+<item android:title="Cart" android:id="@+id/carts" android:color = "@color/color0" android:icon="@drawable/cart" android:iconTint="@color/color0"/>
+<item android:title="Orders" android:id="@+id/settings" android:color = "@color/color0" android:icon="@drawable/settings" android:iconTint="@color/color0"/>
 </menu>

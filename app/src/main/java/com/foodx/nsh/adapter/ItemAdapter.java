@@ -1,7 +1,12 @@
 package com.foodx.nsh.adapter;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodx.nsh.R;
+import com.foodx.nsh.activity.MenuActivity;
 import com.foodx.nsh.model.Cart;
 import com.foodx.nsh.model.Item;
 import com.google.gson.Gson;
@@ -76,77 +82,147 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.button.setVisibility(View.GONE);
         holder.button1.setVisibility(View.GONE);
         holder.quantity.setVisibility(View.GONE);
+
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(holder.quantity.getText().toString().equals(String.valueOf(max)))
-                {
-                    holder.button.setEnabled(false);
-                    holder.button1.setEnabled(true);
-                }
-                else{
-                    int quantity = Integer.parseInt(holder.quantity.getText().toString());
-                    holder.quantity.setText(String.valueOf(quantity+1));
-                    holder.button1.setEnabled(true);
-                }
-                if(!holder.quantity.getText().toString().equals("0")){
-                    holder.button2.setVisibility(View.VISIBLE);
-                    holder.button2.setText("DONE");
-                }
-                else {
-                    holder.button.setVisibility(View.GONE);
-                    holder.button1.setVisibility(View.GONE);
-                    holder.quantity.setVisibility(View.GONE);
-                    holder.button2.setText("ADD TO CART");
-                }
+
+                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.button, "scaleX", 0.95f);
+                ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(holder.button, "scaleX", 1f);
+                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.button, "scaleY", 0.95f);
+                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(holder.button, "scaleY", 1f);
+
+                objectAnimator.setDuration(200);
+                objectAnimator1.setDuration(100);
+                objectAnimator2.setDuration(200);
+                objectAnimator3.setDuration(100);
+
+                objectAnimator1.setStartDelay(200);
+                objectAnimator3.setStartDelay(200);
+
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(objectAnimator,objectAnimator1,objectAnimator2,objectAnimator3);
+                animatorSet.start();
+                animatorSet.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        if(holder.quantity.getText().toString().equals(String.valueOf(max)))
+                        {
+                            holder.button.setEnabled(false);
+                            holder.button1.setEnabled(true);
+                        }
+                        else{
+                            int quantity = Integer.parseInt(holder.quantity.getText().toString());
+                            holder.quantity.setText(String.valueOf(quantity+1));
+                            holder.button1.setEnabled(true);
+                        }
+                        if(!holder.quantity.getText().toString().equals("0")){
+                            holder.button2.setVisibility(View.VISIBLE);
+                            holder.button2.setText("DONE");
+                        }
+                        else {
+                            holder.button.setVisibility(View.GONE);
+                            holder.button1.setVisibility(View.GONE);
+                            holder.quantity.setVisibility(View.GONE);
+                            holder.button2.setText("ADD TO CART");
+                        }
+                    }
+                });
             }
         });
+
         holder.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(holder.quantity.getText().toString().equals("0")){
-                    holder.button.setEnabled(true);
-                    holder.button1.setEnabled(false);
-                }
-                else{
-                    int quantity = Integer.parseInt(holder.quantity.getText().toString());
-                    holder.quantity.setText(String.valueOf(quantity-1));
-                    holder.button.setEnabled(true);
 
-                }
-                if(!holder.quantity.getText().toString().equals("0")){
-                    holder.button2.setVisibility(View.VISIBLE);
-                    holder.button2.setText("DONE");
-                }
-                else {
-                    holder.button.setVisibility(View.GONE);
-                    holder.button1.setVisibility(View.GONE);
-                    holder.quantity.setVisibility(View.GONE);
-                    holder.button2.setText("ADD TO CART");
-                }
+                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.button1, "scaleX", 0.95f);
+                ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(holder.button1, "scaleX", 1f);
+                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.button1, "scaleY", 0.95f);
+                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(holder.button1, "scaleY", 1f);
+
+                objectAnimator.setDuration(200);
+                objectAnimator1.setDuration(100);
+                objectAnimator2.setDuration(200);
+                objectAnimator3.setDuration(100);
+
+                objectAnimator1.setStartDelay(200);
+                objectAnimator3.setStartDelay(200);
+
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(objectAnimator,objectAnimator1,objectAnimator2,objectAnimator3);
+                animatorSet.start();
+                animatorSet.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        if(holder.quantity.getText().toString().equals("0")){
+                            holder.button.setEnabled(true);
+                            holder.button1.setEnabled(false);
+                        }
+                        else{
+                            int quantity = Integer.parseInt(holder.quantity.getText().toString());
+                            holder.quantity.setText(String.valueOf(quantity-1));
+                            holder.button.setEnabled(true);
+
+                        }
+                        if(!holder.quantity.getText().toString().equals("0")){
+                            holder.button2.setVisibility(View.VISIBLE);
+                            holder.button2.setText("DONE");
+                        }
+                        else {
+                            holder.button.setVisibility(View.GONE);
+                            holder.button1.setVisibility(View.GONE);
+                            holder.quantity.setVisibility(View.GONE);
+                            holder.button2.setText("ADD TO CART");
+                        }
+                    }
+                });
             }
         });
 
         holder.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (holder.button2.getText() == "DONE") {
-                    Cart cart = new Cart(item.getName(), holder.quantity.getText().toString(), hotelid);
-                    myOrders.add(cart);
-                    String json = gson.toJson(myOrders);
-                    editor.putString(key, json);
-                    editor.apply();
-                    Toast.makeText(context, "Your item has been added to the cart.", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
 
-                    holder.button.setVisibility(View.VISIBLE);
-                    holder.button1.setVisibility(View.VISIBLE);
-                    holder.quantity.setVisibility(View.VISIBLE);
-                    holder.quantity.setText("1");
-                    holder.button2.setText("DONE");
-                }
+                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.button2, "scaleX", 0.95f);
+                ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(holder.button2, "scaleX", 1f);
+                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.button2, "scaleY", 0.95f);
+                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(holder.button2, "scaleY", 1f);
+
+                objectAnimator.setDuration(200);
+                objectAnimator1.setDuration(100);
+                objectAnimator2.setDuration(200);
+                objectAnimator3.setDuration(100);
+
+                objectAnimator1.setStartDelay(200);
+                objectAnimator3.setStartDelay(200);
+
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(objectAnimator,objectAnimator1,objectAnimator2,objectAnimator3);
+                animatorSet.start();
+                animatorSet.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        if (holder.button2.getText() == "DONE") {
+                            Cart cart = new Cart(item.getName(), holder.quantity.getText().toString(), hotelid);
+                            myOrders.add(cart);
+                            String json = gson.toJson(myOrders);
+                            editor.putString(key, json);
+                            editor.apply();
+                            Toast.makeText(context, "Your item has been added to the cart.", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            holder.button.setVisibility(View.VISIBLE);
+                            holder.button1.setVisibility(View.VISIBLE);
+                            holder.quantity.setVisibility(View.VISIBLE);
+                            holder.quantity.setText("1");
+                            holder.button2.setText("DONE");
+                        }
+                    }
+                });
             }
         });
     }

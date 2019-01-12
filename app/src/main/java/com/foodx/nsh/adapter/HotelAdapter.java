@@ -62,12 +62,6 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
         holder.hotel_address.setText(hotel.getAddress());
         Picasso.get().load(hotel.getImage()).into(holder.hotel_image);
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            StateListAnimator stateListAnimator = AnimatorInflater
-//                    .loadStateListAnimator(context, R.animator.lift_on_touch);
-//            holder.card.setStateListAnimator(stateListAnimator);
-//        }
-
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,38 +85,12 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         super.onAnimationEnd(animation);
-//                        ObjectAnimator objectAnimator5 = ObjectAnimator.ofFloat(linearLayout,"translationX", 0, -linearLayout.getWidth());
-//                        objectAnimator5.setDuration(300);
-//                        objectAnimator5.start();
                         final Intent intent = new Intent(context, MenuActivity.class);
                         intent.putExtra("name",hotel.getName());
                         intent.putExtra("id",hotel.getId());
                         intent.putExtra("color",colors.get(position%7));
                         context.startActivity(intent);
-//                        Pair<View, String> p1 = Pair.create((View)holder.card, "card");
-//                        Pair<View, String> p2 = Pair.create((View)holder.hotel_name, "name");
-//                        Pair<View, String> p3 = Pair.create((View)holder.hotel_image, "image");
-//                        Pair<View, String> p4 = Pair.create((View)holder.gradient, "gradient");
-
-//                        final ActivityOptionsCompat options = ActivityOptionsCompat.
-//                                makeSceneTransitionAnimation(context, p1,  p4);
-
-//                        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.hotel_name,"alpha", 1,0);
-//                        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(holder.hotel_image,"alpha", 1,0);
-//                        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.hotel_address,"alpha", 1,0);
-//                        ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(holder.hotel_phone,"alpha", 1,0);
-//
-//                        objectAnimator.setDuration(300);
-//                        objectAnimator1.setDuration(300);
-//                        objectAnimator2.setDuration(300);
-//                        objectAnimator3.setDuration(300);
-//
-//                        AnimatorSet animatorSet = new AnimatorSet();
-//                        animatorSet.playTogether(objectAnimator,objectAnimator1,objectAnimator2,objectAnimator3);
-//                        animatorSet.start();
-//
-//                        context.startActivity(intent, options.toBundle());
-//                        context.overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+                        context.overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                     }
                 });
             }

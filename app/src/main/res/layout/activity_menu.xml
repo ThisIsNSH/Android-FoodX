@@ -13,7 +13,6 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:paddingTop="20dp"
             android:id="@+id/a"
             android:background="@drawable/white_gradient"
             android:layout_width="match_parent"
@@ -31,7 +30,7 @@
                 android:textSize="20sp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                android:textColor="@color/color4"/>
+                android:textColor="@color/color2"/>
 
         </LinearLayout>
 
@@ -40,7 +39,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/recyclerView"
-        android:paddingTop="62dp"
+        android:paddingTop="50dp"
         android:clipToPadding="false"
         android:layout_height="wrap_content">
 

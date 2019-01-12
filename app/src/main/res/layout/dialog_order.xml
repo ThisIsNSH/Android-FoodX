@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    android:layout_centerInParent="true"
+    app:cardCornerRadius="32dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_curve"
+            android:fontFamily="@font/ps"
+            android:hint="Name"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="17sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"/>
+        <EditText
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_curve"
+            android:fontFamily="@font/ps"
+            android:hint="Address"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="17sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/address"/>
+        <EditText
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_curve"
+            android:fontFamily="@font/ps"
+            android:hint="Mobile"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="17sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mobile"/>
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post Order"
+            android:textColor="@color/white"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="16dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/curvedback2"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/postorder"/>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

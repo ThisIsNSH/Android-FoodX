@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -38,8 +39,9 @@ public class HotelsFragment extends Fragment {
     private HotelAdapter hotelAdapter;
     private List<Hotel> hotelList;
     private TextView foodx;
+    private ProgressBar pb;
     private Activity activity;
-    private int up = 0, down = 0;
+    private int up = 0;
     View view;
 
     public HotelsFragment() {
@@ -57,6 +59,7 @@ public class HotelsFragment extends Fragment {
         return view;
     }
     public void onInit() {
+        pb = view.findViewById(R.id.pb);
         linearLayout = view.findViewById(R.id.mainsurface);
         foodx = view.findViewById(R.id.foodx);
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -82,7 +85,7 @@ public class HotelsFragment extends Fragment {
     }
     public void getData() {
         final RequestQueue requestQueue = Volley.newRequestQueue(activity);
-        JsonArrayRequest request = new JsonArrayRequest("https://fodo1.herokuapp.com/hotel",
+        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.base_url)+"/hotel",
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray jsonArray) {
@@ -100,6 +103,7 @@ public class HotelsFragment extends Fragment {
                             }
                         }
                         hotelAdapter.notifyDataSetChanged();
+                        pb.setVisibility(View.GONE);
                     }
                 },
                 new Response.ErrorListener() {

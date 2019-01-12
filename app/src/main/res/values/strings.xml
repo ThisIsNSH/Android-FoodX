@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">FoodX</string>
+    <string name="app_name">Mangwalo</string>
     <string name="base_url">https://fodo1.herokuapp.com</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

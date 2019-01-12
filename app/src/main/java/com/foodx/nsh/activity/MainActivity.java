@@ -7,20 +7,24 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.foodx.nsh.R;
 import com.foodx.nsh.fragments.CartFragment;
 import com.foodx.nsh.fragments.HotelsFragment;
+import com.foodx.nsh.fragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView btmView;
+    boolean doubleBackToExitPressedOnce = false;
 
     @SuppressLint("ResourceType")
     @Override
@@ -45,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HotelsFragment(MainActivity.this)).commit();
 
         int[] colors = new int[] {
-                Color.parseColor("#afb42b"),
-                Color.parseColor("#9e9d24")
+                Color.parseColor("#dadada"),
+                Color.parseColor("#cddc39")
         };
 
         int [][] states = new int [][]{
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 new int[] {android.R.attr.state_enabled, android.R.attr.state_checked}
         };
         btmView.setItemTextColor(new ColorStateList(states, colors));
+        btmView.setItemIconTintList(new ColorStateList(states, colors));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemReselectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -63,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = null;
 
             int[] colors = new int[] {
-                    Color.parseColor("#afb42b"),
-                    Color.parseColor("#9e9d24")
+                    Color.parseColor("#dadada"),
+                    Color.parseColor("#cddc39")
             };
 
             int [][] states = new int [][]{
@@ -76,15 +81,18 @@ public class MainActivity extends AppCompatActivity {
             {
                 case R.id.hotels:
                     btmView.setItemTextColor(new ColorStateList(states, colors));
+                    btmView.setItemIconTintList(new ColorStateList(states, colors));
                     fragment = new HotelsFragment(MainActivity.this);
                     break;
                 case R.id.carts:
                     btmView.setItemTextColor(new ColorStateList(states,colors));
+                    btmView.setItemIconTintList(new ColorStateList(states, colors));
                     fragment = new CartFragment(MainActivity.this);
                     break;
                 case R.id.settings:
                     btmView.setItemTextColor(new ColorStateList(states,colors));
-                    fragment = new HotelsFragment(MainActivity.this);
+                    btmView.setItemIconTintList(new ColorStateList(states, colors));
+                    fragment = new SettingsFragment(MainActivity.this);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
@@ -92,4 +100,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
+
+
 }
