@@ -10,7 +10,7 @@
     android:id="@+id/card"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="16dp"
     app:cardPreventCornerOverlap="true">
     <RelativeLayout
         android:id="@+id/a"
@@ -32,6 +32,9 @@
         <TextView
             android:layout_toRightOf="@id/nametag"
             android:id="@+id/name"
+            android:paddingRight="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/f"
             android:layout_width="wrap_content"
             android:paddingTop="16dp"
             android:paddingLeft="16dp"
@@ -48,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
+            android:paddingBottom="16dp"
             android:text="Price: "
             android:layout_marginRight="16dp"
             android:textColor="@color/black"
@@ -58,6 +62,10 @@
             android:layout_toRightOf="@id/pricetag"
             android:paddingLeft="16dp"
             android:layout_width="wrap_content"
+            android:layout_alignParentStart="true"
+            android:paddingBottom="16dp"
+            android:paddingRight="0dp"
+            android:layout_toLeftOf="@id/f"
             android:layout_below="@id/name"
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
@@ -71,67 +79,71 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:visibility="visible"
-            android:id="@+id/addition"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_below="@id/price"
-            style="?android:attr/borderlessButtonStyle"
-            android:background="@drawable/curvedback"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:textStyle="bold"
-            android:text="+" />
-
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_below="@id/price"
-            android:layout_marginBottom="16dp"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:layout_marginLeft="16dp"
-            android:textColor="@color/black"
-            android:layout_marginRight="16dp"
-            android:layout_toRightOf="@id/addition"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:fontFamily="@font/ps"
-            android:id="@+id/quantity"/>
-
-        <Button
-            android:id="@+id/subtraction"
-            android:layout_marginBottom="16dp"
-            android:layout_toRightOf="@id/quantity"
-            android:layout_marginTop="8dp"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_below="@id/price"
-            android:background="@drawable/curvedback"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:textStyle="bold"
-            android:text="-" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:paddingRight="16dp"
-            android:paddingTop="-8dp"
-            android:paddingBottom="-8dp"
-            android:paddingLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_height="wrap_content"
-            android:text="Add to Cart"
-            android:layout_alignBaseline="@id/addition"
+            android:id="@+id/f"
+            android:padding="16dp"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:fontFamily="@font/psb"
-            android:textSize="14sp"
-            android:layout_margin="8dp"
-            android:background="@drawable/curvedback"
-            android:id="@+id/addtocart" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/subtraction"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/curvedback"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:text="-" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginLeft="16dp"
+                android:textColor="@color/black"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/subtraction"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@font/ps"
+                android:id="@+id/quantity"/>
+
+            <Button
+                android:visibility="visible"
+                android:id="@+id/addition"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/curvedback"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@id/quantity"
+                android:textStyle="bold"
+                android:text="+" />
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:paddingRight="16dp"
+                android:paddingTop="-8dp"
+                android:paddingBottom="-8dp"
+                android:paddingLeft="16dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_height="wrap_content"
+                android:text="Add to Cart"
+                android:layout_below="@id/subtraction"
+                android:fontFamily="@font/psb"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_alignStart="@id/subtraction"
+                android:layout_alignEnd="@id/addition"
+                android:background="@drawable/curvedback"
+                android:id="@+id/addtocart" />
+        </RelativeLayout>
 
         <ImageView
             android:layout_marginTop="16dp"

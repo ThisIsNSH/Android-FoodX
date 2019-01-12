@@ -16,27 +16,27 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> {
 
-        List<Cart> itemList;
-        Activity context;
-        int max=10;
-public CartAdapter(List<Cart> itemList, Activity context) {
+    private List<Cart> itemList;
+    private Activity context;
+    private int max=10;
+    public CartAdapter(List<Cart> itemList, Activity context) {
         this.itemList = itemList;
         this.context = context;
-        }
+    }
 
-@NonNull
-@Override
-public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, parent, false);
         return new MyViewHolder(itemView);
-        }
+    }
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
-    final Cart cart = itemList.get(position);
-    holder.textView.setText(cart.getName());
-    holder.textView1.setText(cart.getQuantity());
-    holder.textView2.setText(cart.getHotelId());
+        final Cart cart = itemList.get(position);
+        holder.textView.setText(cart.getName());
+        holder.textView1.setText(cart.getQuantity());
+        holder.textView2.setText(cart.getHotelId());
         if(cart.getName().equals("Roti")) {
             max = 50;
         }
@@ -77,25 +77,25 @@ public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) 
     }
 
 
-@Override
-public int getItemCount() {
+    @Override
+    public int getItemCount() {
         return itemList.size();
-        }
-
-public class MyViewHolder extends RecyclerView.ViewHolder {
-
-    TextView textView,textView1,textView2;
-    Button button,button1;
-    public MyViewHolder(View itemView) {
-        super(itemView);
-
-        textView = itemView.findViewById(R.id.item_name);
-        textView1 = itemView.findViewById(R.id.Quantity);
-        textView2 = itemView.findViewById(R.id.hotelid);
-        button = itemView.findViewById(R.id.addition1);
-        button1 = itemView.findViewById(R.id.subtraction1);
     }
-}
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView textView,textView1,textView2;
+        Button button,button1;
+        public MyViewHolder(View itemView) {
+            super(itemView);
+
+            textView = itemView.findViewById(R.id.item_name);
+            textView1 = itemView.findViewById(R.id.Quantity);
+            textView2 = itemView.findViewById(R.id.hotelid);
+            button = itemView.findViewById(R.id.addition1);
+            button1 = itemView.findViewById(R.id.subtraction1);
+        }
+    }
 
 
 }
