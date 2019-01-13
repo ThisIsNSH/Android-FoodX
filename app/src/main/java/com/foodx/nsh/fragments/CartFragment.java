@@ -1,6 +1,4 @@
 package com.foodx.nsh.fragments;
-
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,8 +47,8 @@ import java.util.Map;
  */
 public class CartFragment extends Fragment {
 
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences,orderSharedPreferences,Bill;
+    private SharedPreferences.Editor editor,editor2;
     private String key = "Key";
     private List<Cart> myOrders;
     private RecyclerView recyclerView;
@@ -68,7 +67,6 @@ public class CartFragment extends Fragment {
     View view;
     private int up = 0;
     TextView foodx,nilText;
-
     public CartFragment() {
     }
 
@@ -79,25 +77,52 @@ public class CartFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-
+//        orderSharedPreferences = getContext().getSharedPreferences("orderList",);
         sharedPreferences = activity.getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         gson = new Gson();
         myOrders = new ArrayList<>();
         view = inflater.inflate(R.layout.fragment_cart, container, false);
-
         nilText = view.findViewById(R.id.nilText);
         foodx = view.findViewById(R.id.foodx);
         String response = sharedPreferences.getString(key, "null");
         if (!response.equals("null"))
             myOrders = gson.fromJson(response, new TypeToken<List<Cart>>() {
             }.getType());
+//        ArrayList<Integer> remove = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recyclerView1);
+        HashMap<Integer,Integer> remove = new HashMap<>();
+        ArrayList<Cart> neone = new ArrayList<>();
+        for (int p = 0;p<myOrders.size();p++) {
+            if (remove.containsKey(p))
+                continue;
+            Cart existCart = myOrders.get(p);
+            int Quantity = Integer.parseInt(existCart.getQuantity());
+            for (int i = p + 1; i < myOrders.size(); i++) {
+                Cart cart = myOrders.get(i);
+                String HotelName = existCart.getName();
+                String HotelId = existCart.getHotelId();
+                String checkN = cart.getName();
+                int quantity = Integer.parseInt(cart.getQuantity());
+                String checkId = cart.getHotelId();
+                if (HotelName.equals(checkN) && HotelId.equals(checkId)) {
+                    remove.put(i, 1);
+                    Quantity += quantity;
+                }
+            }
+            String op = String.valueOf(Quantity);
+            neone.add(new Cart(existCart.getName(), op, existCart.getHotelId(),existCart.getPrice()));
+        }
+        myOrders.clear();
+        for (int i = 0;i<neone.size();i++)
+            myOrders.add(neone.get(i));
+        String json = gson.toJson(myOrders);
+        editor.putString(key,json);
+        editor.apply();
         cartAdapter = new CartAdapter(myOrders, activity);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setAdapter(cartAdapter);
         cartAdapter.notifyDataSetChanged();
-
         if (myOrders.size()>0) {
             nilText.setVisibility(View.GONE);
             foodx.setVisibility(View.INVISIBLE);
@@ -113,23 +138,30 @@ public class CartFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
                 up += dy;
                 foodx.setAlpha(1 - ((float) up / 100 >= 0 && (float) up / 100 <= 1 ? (float) up / 100 : ((float) up / 100 > 1 ? 1 : 0)));
-
             }
         });
-
-
         Button button = view.findViewById(R.id.postorder);
         button.setOnClickListener(new View.OnClickListener() {
+            String keys;
             @Override
             public void onClick(View v) {
-
+                int totalBill = 0;
+                for (int i = 0;i<cartAdapter.getItemCount();i++)
+                {
+                    Bill = activity.getSharedPreferences("BILL",Context.MODE_PRIVATE);
+                    editor2 = Bill.edit();
+                    keys = String.valueOf(i);
+                    totalBill = totalBill + Integer.parseInt(Bill.getString(keys,null));
+                    editor2.apply();
+                }
+//                Log.v("FINALTOTAL", String.valueOf(totalBill));
                 OrderDialog customDialog = new OrderDialog(activity);
                 customDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 customDialog.show();
+//                total.setText(String.valueOf(totalBill));
                 customDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialogInterface) {
-
                         hashMap1 = new HashMap<>();
                         for (int i = 0; i < myOrders.size(); i++) {
                             hashMap1.put(myOrders.get(i).getHotelId(),myOrders.get(i));
@@ -228,8 +260,6 @@ public class CartFragment extends Fragment {
 
         return view;
     }
-
-
 }
 
 

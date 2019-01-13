@@ -21,11 +21,13 @@ import com.foodx.nsh.fragments.CartFragment;
 import com.foodx.nsh.fragments.HotelsFragment;
 import com.foodx.nsh.fragments.SettingsFragment;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView btmView;
     boolean doubleBackToExitPressedOnce = false;
-
+//    public static HashMap<<String,String>,String> orderList;
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
