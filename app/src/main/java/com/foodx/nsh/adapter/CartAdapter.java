@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.foodx.nsh.R;
 import com.foodx.nsh.fragments.CartFragment;
@@ -73,10 +74,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 //        holder.textView2.setText(cart.getHotelId());
         totalPrice = String.valueOf((Integer.parseInt(textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
         holder.textView3.setText(totalPrice);
-        Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
-        editor2 = Bill.edit();
-        editor2.putString(String.valueOf(position),totalPrice);
-        editor2.apply();
+        editor.apply();
+//        Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
+//        editor2 = Bill.edit();
+//        editor2.putString(String.valueOf(position),totalPrice);
+//        editor2.apply();
 //        Log.v("CHECKCHECK",cart.getPrice());
         if(cart.getName().equals("Roti")) {
             max = 50;
@@ -101,11 +103,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 Log.v("menulist", json);
                 editor.putString(key, json);
                 editor.apply();
-                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor2;
-                editor2 = Bill.edit();
-                editor2.putString(String.valueOf(position),totalPrice);
-                editor2.apply();
+//                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor2;
+//                editor2 = Bill.edit();
+//                editor2.putString(String.valueOf(position),totalPrice);
+//                editor2.apply();
             }
 
         });
@@ -119,9 +121,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 }
                 else{
                     int quantity = Integer.parseInt(textView1.getText().toString());
-                    textView1.setText(String.valueOf(quantity-1));
-                    holder.button.setEnabled(true);
-
+                    if (quantity - 1 != 0) {
+                        textView1.setText(String.valueOf(quantity - 1));
+                        holder.button.setEnabled(true);
+                    }
+                    else
+                        Toast.makeText(context, "At least one item is required", Toast.LENGTH_SHORT).show();
                 }
                 totalPrice = String.valueOf((Integer.parseInt(textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
                 holder.textView3.setText(totalPrice);
@@ -130,11 +135,28 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 Log.v("menulist", json);
                 editor.putString(key, json);
                 editor.apply();
-                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor2;
-                editor2 = Bill.edit();
-                editor2.putString(String.valueOf(position),totalPrice);
-                editor2.apply();
+//                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor2;
+//                editor2 = Bill.edit();
+//                editor2.putString(String.valueOf(position),totalPrice);
+//                editor2.apply();
+            }
+        });
+        holder.textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                itemList.remove(position);
+                myOrders.remove(position);
+                String json = gson.toJson(myOrders);
+                Log.v("menulist", json);
+                editor.putString(key, json);
+                editor.apply();
+//                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor2;
+//                editor2 = Bill.edit();
+//                editor2.remove(String.valueOf(position));
+//                editor2.apply();
+                notifyItemRemoved(position);
             }
         });
     }
@@ -147,7 +169,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView,textView2,textView3;
+        TextView textView,textView2,textView3,textView4;
         Button button,button1;
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -157,6 +179,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             textView3 = itemView.findViewById(R.id.price);
             button = itemView.findViewById(R.id.addition1);
             button1 = itemView.findViewById(R.id.subtraction1);
+            textView4 = itemView.findViewById(R.id.remove);
         }
     }
 

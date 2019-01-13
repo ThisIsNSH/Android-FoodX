@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:textColor="@color/color0"
+            android:fontFamily="@font/psb"
+            android:textColor="@color/color6"
             android:id="@+id/total"
             />
         <EditText

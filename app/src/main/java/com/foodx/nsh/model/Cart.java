@@ -5,7 +5,6 @@ public class Cart {
     private String Quantity;
     private String HotelId;
     private String price;
-
     public Cart(String name, String quantity, String hotelId,String Price) {
         Name = name;
         Quantity = quantity;
