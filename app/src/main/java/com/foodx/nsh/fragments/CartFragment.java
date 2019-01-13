@@ -69,7 +69,7 @@ public class CartFragment extends Fragment {
     TextView foodx,nilText;
     public CartFragment() {
     }
-
+    String response;
     @SuppressLint("ValidFragment")
     public CartFragment(Activity activity) {
         this.activity = activity;
@@ -85,13 +85,13 @@ public class CartFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_cart, container, false);
         nilText = view.findViewById(R.id.nilText);
         foodx = view.findViewById(R.id.foodx);
-        String response = sharedPreferences.getString(key, "null");
+        response = sharedPreferences.getString(key, "null");
         if (!response.equals("null"))
             myOrders = gson.fromJson(response, new TypeToken<List<Cart>>() {
             }.getType());
 //        ArrayList<Integer> remove = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recyclerView1);
-        HashMap<Integer,Integer> remove = new HashMap<>();
+        final HashMap<Integer,Integer> remove = new HashMap<>();
         ArrayList<Cart> neone = new ArrayList<>();
         for (int p = 0;p<myOrders.size();p++) {
             if (remove.containsKey(p))
@@ -146,16 +146,22 @@ public class CartFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 int totalBill = 0;
-                for (int i = 0;i<cartAdapter.getItemCount();i++)
+                editor2 = sharedPreferences.edit();
+                response = sharedPreferences.getString("Key" ,null);
+                if (response != null)
+                    myOrders = gson.fromJson(response, new TypeToken<List<Cart>>() {
+                    }.getType());
+                editor2.apply();
+                Log.v("calcc",response);
+                for (int i = 0;i<myOrders.size();i++)
                 {
-                    Bill = activity.getSharedPreferences("BILL",Context.MODE_PRIVATE);
-                    editor2 = Bill.edit();
-                    keys = String.valueOf(i);
-                    totalBill = totalBill + Integer.parseInt(Bill.getString(keys,null));
-                    editor2.apply();
+                    Cart calc = myOrders.get(i);
+                    Integer p = Integer.parseInt(calc.getPrice());
+                    Integer q = Integer.parseInt(calc.getQuantity());
+                    totalBill = totalBill + p*q;
                 }
 //                Log.v("FINALTOTAL", String.valueOf(totalBill));
-                OrderDialog customDialog = new OrderDialog(activity);
+                OrderDialog customDialog = new OrderDialog(activity,totalBill);
                 customDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 customDialog.show();
 //                total.setText(String.valueOf(totalBill));
