@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.foodx.nsh.R;
 import com.foodx.nsh.activity.MenuActivity;
 import com.foodx.nsh.model.Cart;
+import com.foodx.nsh.model.Hotel;
 import com.foodx.nsh.model.Item;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -39,20 +41,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     Activity context;
     int max=10;
     String hotelid="";
-    SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences,ordered;
     SharedPreferences.Editor editor;
     Gson gson = new Gson();
     String key = "Key";
     int color;
     List<Cart> myOrders = new ArrayList<>();
-
     public ItemAdapter(List<Item> itemList, Activity context,String hotelid,int color) {
         this.color = color;
         this.itemList = itemList;
         this.context = context;
         this.hotelid = hotelid;
     }
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -206,9 +206,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
                     public void onAnimationEnd(Animator animation) {
                         super.onAnimationEnd(animation);
                         if (holder.button2.getText() == "DONE") {
-                            Cart cart = new Cart(item.getName(), holder.quantity.getText().toString(), hotelid);
+                            int notExists = 1;
+                            Cart cart = new Cart(item.getName(), holder.quantity.getText().toString(), hotelid ,item.getPrice());
+//                            Log.v("SIZING", String.valueOf(myOrders.size()));
+//                            Log.v("fuckoff",item.getPrice());
                             myOrders.add(cart);
+
                             String json = gson.toJson(myOrders);
+                            Log.v("menulist",json);
                             editor.putString(key, json);
                             editor.apply();
                             Toast.makeText(context, "Your item has been added to the cart.", Toast.LENGTH_SHORT).show();
