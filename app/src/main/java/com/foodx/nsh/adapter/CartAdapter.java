@@ -119,11 +119,21 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                     holder.button1.setEnabled(false);
                 }
                 else{
+// <<<<<<< Fixing
                     int quantity = Integer.parseInt(holder.textView1.getText().toString());
                         holder.textView1.setText(String.valueOf(quantity - 1));
                         holder.button.setEnabled(true);
 //                    else
 //                        Toast.makeText(context, "At least one item is required", Toast.LENGTH_SHORT).show();
+// =======
+//                     int quantity = Integer.parseInt(textView1.getText().toString());
+//                     if (quantity - 1 != 0) {
+//                         textView1.setText(String.valueOf(quantity - 1));
+//                         holder.button.setEnabled(true);
+//                     }
+//                     else
+//                         Toast.makeText(context, "At least one item is required", Toast.LENGTH_SHORT).show();
+// >>>>>>> v2
                 }
                 totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
                 holder.textView3.setText(totalPrice);
@@ -151,6 +161,25 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 //                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
 //                SharedPreferences.Editor editor2;
 //                editor2 = Bill.edit();
+// <<<<<<< Fixing
+// =======
+//                editor2.putString(String.valueOf(position),totalPrice);
+//                editor2.apply();
+            }
+        });
+        holder.textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                itemList.remove(position);
+                myOrders.remove(position);
+                String json = gson.toJson(myOrders);
+                Log.v("menulist", json);
+                editor.putString(key, json);
+                editor.apply();
+//                Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor2;
+//                editor2 = Bill.edit();
+// >>>>>>> v2
 //                editor2.remove(String.valueOf(position));
 //                editor2.apply();
                 notifyItemRemoved(position);
@@ -166,7 +195,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
+// <<<<<<< Fixing
         TextView textView,textView2,textView3,textView4,textView1;
+
         Button button,button1;
         public MyViewHolder(View itemView) {
             super(itemView);
