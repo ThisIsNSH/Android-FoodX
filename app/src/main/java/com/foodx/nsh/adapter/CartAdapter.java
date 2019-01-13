@@ -27,7 +27,6 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> {
     private List<Cart> itemList;
     private Activity context;
-    TextView textView1;
     private int max=10;
     private SharedPreferences sharedPreferences,Bill;
     String key = "Key";
@@ -70,9 +69,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 //        Log.v("FOOKERY", String.valueOf(myOrders));
         final Cart cart = itemList.get(position);
         holder.textView.setText(cart.getName());
-        textView1.setText(cart.getQuantity());
+        holder.textView1.setText(cart.getQuantity());
 //        holder.textView2.setText(cart.getHotelId());
-        totalPrice = String.valueOf((Integer.parseInt(textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
+        totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
         holder.textView3.setText(totalPrice);
         editor.apply();
 //        Bill = context.getSharedPreferences("BILL",Context.MODE_PRIVATE);
@@ -86,19 +85,19 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(textView1.getText().toString().equals(String.valueOf(max)))
+                if(holder.textView1.getText().toString().equals(String.valueOf(max)))
                 {
                     holder.button.setEnabled(false);
                     holder.button1.setEnabled(true);
                 }
                 else{
-                    int quantity = Integer.parseInt(textView1.getText().toString());
-                    textView1.setText(String.valueOf(quantity+1));
+                    int quantity = Integer.parseInt(holder.textView1.getText().toString());
+                    holder.textView1.setText(String.valueOf(quantity+1));
                     holder.button1.setEnabled(true);
                 }
-                totalPrice = String.valueOf((Integer.parseInt(textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
+                totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
                 holder.textView3.setText(totalPrice);
-                myOrders.get(position).finalQuantity(textView1.getText().toString());
+                myOrders.get(position).finalQuantity(holder.textView1.getText().toString());
                 String json = gson.toJson(myOrders);
                 Log.v("menulist", json);
                 editor.putString(key, json);
@@ -115,22 +114,20 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             @Override
             public void onClick(View v) {
 
-                if(textView1.getText().toString().equals("0")){
+                if(holder.textView1.getText().toString().equals("0")){
                     holder.button.setEnabled(true);
                     holder.button1.setEnabled(false);
                 }
                 else{
-                    int quantity = Integer.parseInt(textView1.getText().toString());
-                    if (quantity - 1 != 0) {
-                        textView1.setText(String.valueOf(quantity - 1));
+                    int quantity = Integer.parseInt(holder.textView1.getText().toString());
+                        holder.textView1.setText(String.valueOf(quantity - 1));
                         holder.button.setEnabled(true);
-                    }
-                    else
-                        Toast.makeText(context, "At least one item is required", Toast.LENGTH_SHORT).show();
+//                    else
+//                        Toast.makeText(context, "At least one item is required", Toast.LENGTH_SHORT).show();
                 }
-                totalPrice = String.valueOf((Integer.parseInt(textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
+                totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
                 holder.textView3.setText(totalPrice);
-                myOrders.get(position).finalQuantity(textView1.getText().toString());
+                myOrders.get(position).finalQuantity(holder.textView1.getText().toString());
                 String json = gson.toJson(myOrders);
                 Log.v("menulist", json);
                 editor.putString(key, json);
@@ -169,7 +166,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView,textView2,textView3,textView4;
+        TextView textView,textView2,textView3,textView4,textView1;
         Button button,button1;
         public MyViewHolder(View itemView) {
             super(itemView);
