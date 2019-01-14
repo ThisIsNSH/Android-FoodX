@@ -58,18 +58,19 @@ public class CartFragment extends Fragment {
     private String address, name, mobile, hotelid, extra;
     List<Map<String, List<Cart>>> list;
     Map<String, List<Cart>> mapl;
-    //    private HashSet<String> hashSet;
     private HashMap<String, ArrayList<Cart>> hashMap;
     private HashMap<String, Cart> hashMap1;
-    //    private ArrayList<Cart>arrayList;
     Volley volley;
     String Key1 = "";
     View view;
     private int up = 0;
     TextView foodx,nilText;
+    String response;
+
     public CartFragment() {
     }
-    String response;
+
+
     @SuppressLint("ValidFragment")
     public CartFragment(Activity activity) {
         this.activity = activity;
@@ -77,7 +78,9 @@ public class CartFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-//        orderSharedPreferences = getContext().getSharedPreferences("orderList",);
+
+        //        orderSharedPreferences = getContext().getSharedPreferences("orderList",);
+
         sharedPreferences = activity.getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         gson = new Gson();
@@ -86,10 +89,13 @@ public class CartFragment extends Fragment {
         nilText = view.findViewById(R.id.nilText);
         foodx = view.findViewById(R.id.foodx);
         response = sharedPreferences.getString(key, "null");
+
         if (!response.equals("null"))
             myOrders = gson.fromJson(response, new TypeToken<List<Cart>>() {
             }.getType());
+
 //        ArrayList<Integer> remove = new ArrayList<>();
+
         recyclerView = view.findViewById(R.id.recyclerView1);
         final HashMap<Integer,Integer> remove = new HashMap<>();
         ArrayList<Cart> neone = new ArrayList<>();
@@ -113,9 +119,12 @@ public class CartFragment extends Fragment {
             String op = String.valueOf(Quantity);
             neone.add(new Cart(existCart.getName(), op, existCart.getHotelId(),existCart.getPrice()));
         }
+
         myOrders.clear();
+
         for (int i = 0;i<neone.size();i++)
             myOrders.add(neone.get(i));
+
         String json = gson.toJson(myOrders);
         editor.putString(key,json);
         editor.apply();
@@ -123,10 +132,12 @@ public class CartFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setAdapter(cartAdapter);
         cartAdapter.notifyDataSetChanged();
+
         if (myOrders.size()>0) {
             nilText.setVisibility(View.GONE);
             foodx.setVisibility(View.INVISIBLE);
         }
+
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -140,6 +151,7 @@ public class CartFragment extends Fragment {
                 foodx.setAlpha(1 - ((float) up / 100 >= 0 && (float) up / 100 <= 1 ? (float) up / 100 : ((float) up / 100 > 1 ? 1 : 0)));
             }
         });
+
         Button button = view.findViewById(R.id.postorder);
         button.setOnClickListener(new View.OnClickListener() {
             String keys;
