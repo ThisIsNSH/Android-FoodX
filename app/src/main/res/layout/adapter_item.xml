@@ -88,15 +88,13 @@
             android:layout_alignParentRight="true"
             android:orientation="vertical">
 
-            <Button
+            <ImageView
                 android:id="@+id/subtraction"
-                style="?android:attr/borderlessButtonStyle"
-                android:background="@drawable/curvedback"
+                android:background="@drawable/curvedback2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="-" />
+                android:src="@drawable/minus"
+                android:padding="10dp"/>
 
 
             <TextView
@@ -114,19 +112,14 @@
                 android:fontFamily="@font/ps"
                 android:id="@+id/quantity"/>
 
-            <Button
-                android:visibility="visible"
+            <ImageView
                 android:id="@+id/addition"
-                style="?android:attr/borderlessButtonStyle"
-                android:background="@drawable/curvedback"
+                android:background="@drawable/curvedback2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:textColor="@color/white"
-                android:layout_toRightOf="@id/quantity"
-                android:textStyle="bold"
-                android:text="+" />
-
-
+                android:src="@drawable/add"
+                android:padding="10dp"
+                android:layout_toRightOf="@id/quantity"/>
 
             <Button
                 android:layout_width="wrap_content"

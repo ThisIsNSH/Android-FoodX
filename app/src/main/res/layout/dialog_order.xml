@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/psb"
             android:textColor="@color/color6"
             android:id="@+id/total"

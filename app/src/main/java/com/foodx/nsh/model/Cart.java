@@ -1,6 +1,7 @@
 package com.foodx.nsh.model;
 
 public class Cart {
+
     private String Name;
     private String Quantity;
     private String HotelId;
