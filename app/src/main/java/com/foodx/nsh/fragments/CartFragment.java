@@ -135,7 +135,7 @@ public class CartFragment extends Fragment {
 
         if (myOrders.size()>0) {
             nilText.setVisibility(View.GONE);
-            foodx.setVisibility(View.INVISIBLE);
+//            foodx.setVisibility(View.INVISIBLE);
         }
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -165,6 +165,7 @@ public class CartFragment extends Fragment {
                     }.getType());
                 editor2.apply();
                 Log.v("calcc",response);
+
                 for (int i = 0;i<myOrders.size();i++)
                 {
                     Cart calc = myOrders.get(i);

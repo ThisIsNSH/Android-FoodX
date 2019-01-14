@@ -69,7 +69,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
             myOrders = gson.fromJson(response,new TypeToken<List<Cart>>(){}.getType());
         final Item item = itemList.get(position);
         holder.name.setText(item.getName());
-        holder.price.setText(item.getPrice());
+        holder.price.setText("Price: "+item.getPrice());
 //        Picasso.get().load(item.getImage()).into(holder.image);
         Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(holder.image1);
         holder.button.setBackground(context.getResources().getDrawable(drawable(color)));
@@ -240,7 +240,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,price,quantity;
         ImageView image,image1;
-        Button button,button1,button2;
+        ImageView button,button1;
+        Button button2;
         public MyViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,7 +74,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         holder.textView1.setText(cart.getQuantity());
 //        holder.textView2.setText(cart.getHotelId());
         totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
-        holder.textView3.setText(totalPrice);
+        holder.textView3.setText("Price: "+totalPrice);
         editor.apply();
         if (cart.getName().equals("Roti")) {
             max = 50;
@@ -151,7 +152,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
         TextView textView, textView2, textView3, textView4, textView1;
 
-        Button button, button1,button3;
+        ImageView button, button1,button3;
 
         public MyViewHolder(View itemView) {
             super(itemView);

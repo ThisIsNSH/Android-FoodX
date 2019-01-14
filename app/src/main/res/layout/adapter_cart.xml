@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="#fafafa"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="24dp"
     app:cardElevation="0dp"
     android:id="@+id/card"
     android:layout_marginLeft="16dp"
@@ -14,23 +14,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:padding="4dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
         android:layout_height="wrap_content">
-        <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/edit_text"
-            android:text="X"
-            android:padding="2dp"
-            android:id="@+id/remove"
-            style="?android:attr/borderlessButtonStyle"
-            android:paddingLeft="8dp"
-            android:textSize="12sp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/white"
-            >
-        </Button>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,48 +31,52 @@
             android:fontFamily="@font/psb"
             android:textColor="@color/black"
             android:id="@+id/hotelid" />
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/f"
-            android:text="HI"
-            android:paddingRight="16dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/psb"
-            android:id="@+id/item_name"/>
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/price"
-            android:fontFamily="@font/psb"
-            android:textColor="@color/black"
-            android:layout_marginTop="24dp"
-            android:layout_below="@id/item_name"
-            android:textSize="16sp"
-            />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HI"
+                android:paddingRight="16dp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/psb"
+                android:id="@+id/item_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price"
+                android:text="a"
+                android:fontFamily="@font/psb"
+                android:textColor="@color/black"
+                android:layout_below="@id/item_name"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/f"
             android:layout_centerVertical="true"
-            android:layout_below="@id/remove"
-            android:layout_marginTop="8dp"
             android:layout_alignParentRight="true"
             android:gravity="center">
 
-            <Button
-                style="?android:attr/borderlessButtonStyle"
+            <ImageView
                 android:background="@drawable/curvedback2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:textStyle="bold"
-                android:text="-"
-                android:textColor="@color/white"
+                android:src="@drawable/minus"
+                android:padding="10dp"
                 android:id="@+id/subtraction1"/>
 
             <TextView
@@ -98,15 +92,24 @@
                 android:textSize="20sp"
                 android:fontFamily="@font/ps"
                 android:id="@+id/Quantity"/>
-            <Button
-                style="?android:attr/borderlessButtonStyle"
+
+            <ImageView
                 android:background="@drawable/curvedback2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:text="+"
+                android:src="@drawable/add"
+                android:padding="10dp"
+                android:layout_marginRight="16dp"
                 android:id="@+id/addition1"/>
+
+            <ImageView
+                android:background="@drawable/curvedback_red"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/cross"
+                android:padding="10dp"
+                android:id="@+id/remove"/>
+
 
         </LinearLayout>
 
