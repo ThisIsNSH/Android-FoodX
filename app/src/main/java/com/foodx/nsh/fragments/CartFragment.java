@@ -161,102 +161,104 @@ public class CartFragment extends Fragment {
                     totalBill = totalBill + p*q;
                 }
 //                Log.v("FINALTOTAL", String.valueOf(totalBill));
-                OrderDialog customDialog = new OrderDialog(activity,totalBill);
+                OrderDialog customDialog = new OrderDialog(activity,totalBill,myOrders);
                 customDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 customDialog.show();
+//                myOrders.clear();
+
 //                total.setText(String.valueOf(totalBill));
                 customDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialogInterface) {
-                        hashMap1 = new HashMap<>();
-                        for (int i = 0; i < myOrders.size(); i++) {
-                            hashMap1.put(myOrders.get(i).getHotelId(),myOrders.get(i));
-                        }
-                        Log.e("Keysinhashmap",hashMap1.keySet().toString());
-                        list = new ArrayList<>();
-                        mapl = new HashMap<>();
-
-                        List<Cart> arraylist1 = new ArrayList<>();
-                        for (String key : hashMap1.keySet()) {
-                            arraylist1.clear();
-                            for(int i=0;i<myOrders.size();i++)
-                            {
-                                if(key.equals(myOrders.get(i).getHotelId()))
-                                {
-                                    arraylist1.add(myOrders.get(i));
-                                }
-                            }
-                            mapl.put(key,arraylist1);
-                        }
-                        list.add(mapl);
-
-                        address = "Hello";
-                        name = "nishu";
-                        mobile = "988799220";
-                        extra = "n";
-
-                        final JsonArray jsonArray = new JsonArray();
-
-                        for (String key : mapl.keySet()) {
-                            Key1 = key;
-
-                            JsonObject jsonObject = new JsonObject();
-                            jsonObject.addProperty("address", address);
-                            jsonObject.addProperty("name", name);
-                            jsonObject.addProperty("mobile", mobile);
-                            jsonObject.addProperty("hotel_id", Key1);
-                            JsonArray jsonArray1 = new JsonArray();
-                            for (Cart cart : mapl.get(key)) {
-
-                                JsonObject jsonObject3 = new JsonObject();
-                                jsonObject3.addProperty("name", cart.getName());
-                                jsonObject3.addProperty("quantity", cart.getQuantity());
-                                jsonObject3.addProperty("extra", "none");
-                                jsonArray1.add(jsonObject3);
-
-                            }
-                            jsonObject.add("items", jsonArray1);
-                            jsonArray.add(jsonObject);
-                        }
-
-                        RequestQueue requestQueue = Volley.newRequestQueue(activity);
-                        String URL = getString(R.string.base_url) + "/order";
-
-                        final String requestBody = jsonArray.toString();
-
-                        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                            }
-                        }) {
-                            @Override
-                            public String getBodyContentType() {
-                                return "application/json; charset=utf-8";
-                            }
-
-                            @Override
-                            public byte[] getBody() throws AuthFailureError {
-                                try {
-                                    return requestBody == null ? null : requestBody.getBytes("utf-8");
-                                } catch (UnsupportedEncodingException uee) {
-                                    return null;
-                                }
-                            }
-
-                            @Override
-                            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-                                String responseString = "";
-                                if (response != null) {
-                                    responseString = String.valueOf(response.statusCode);
-                                }
-                                return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
-                            }
-                        };
-
+//                        hashMap1 = new HashMap<>();
+//                        for (int i = 0; i < myOrders.size(); i++) {
+//                            hashMap1.put(myOrders.get(i).getHotelId(),myOrders.get(i));
+//                        }
+//                        Log.e("Keysinhashmap",hashMap1.keySet().toString());
+//                        list = new ArrayList<>();
+//                        mapl = new HashMap<>();
+//
+//                        List<Cart> arraylist1 = new ArrayList<>();
+//                        for (String key : hashMap1.keySet()) {
+//                            arraylist1.clear();
+//                            for(int i=0;i<myOrders.size();i++)
+//                            {
+//                                if(key.equals(myOrders.get(i).getHotelId()))
+//                                {
+//                                    arraylist1.add(myOrders.get(i));
+//                                }
+//                            }
+//                            mapl.put(key,arraylist1);
+//                        }
+//                        list.add(mapl);
+//
+//                        address = "Hello";
+//                        name = "nishu";
+//                        mobile = "988799220";
+//                        extra = "n";
+//
+//                        final JsonArray jsonArray = new JsonArray();
+//
+//                        for (String key : mapl.keySet()) {
+//                            Key1 = key;
+//
+//                            JsonObject jsonObject = new JsonObject();
+//                            jsonObject.addProperty("address", address);
+//                            jsonObject.addProperty("name", name);
+//                            jsonObject.addProperty("mobile", mobile);
+//                            jsonObject.addProperty("hotel_id", Key1);
+//                            JsonArray jsonArray1 = new JsonArray();
+//                            for (Cart cart : mapl.get(key)) {
+//
+//                                JsonObject jsonObject3 = new JsonObject();
+//                                jsonObject3.addProperty("name", cart.getName());
+//                                jsonObject3.addProperty("quantity", cart.getQuantity());
+//                                jsonObject3.addProperty("extra", "none");
+//                                jsonArray1.add(jsonObject3);
+//
+//                            }
+//                            jsonObject.add("items", jsonArray1);
+//                            jsonArray.add(jsonObject);
+//                        }
+//
+//                        RequestQueue requestQueue = Volley.newRequestQueue(activity);
+//                        String URL = getString(R.string.base_url) + "/order";
+//
+//                        final String requestBody = jsonArray.toString();
+//
+//                        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+//                            @Override
+//                            public void onResponse(String response) {
+//                            }
+//                        }, new Response.ErrorListener() {
+//                            @Override
+//                            public void onErrorResponse(VolleyError error) {
+//                            }
+//                        }) {
+//                            @Override
+//                            public String getBodyContentType() {
+//                                return "application/json; charset=utf-8";
+//                            }
+//
+//                            @Override
+//                            public byte[] getBody() throws AuthFailureError {
+//                                try {
+//                                    return requestBody == null ? null : requestBody.getBytes("utf-8");
+//                                } catch (UnsupportedEncodingException uee) {
+//                                    return null;
+//                                }
+//                            }
+//
+//                            @Override
+//                            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+//                                String responseString = "";
+//                                if (response != null) {
+//                                    responseString = String.valueOf(response.statusCode);
+//                                }
+//                                return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
+//                            }
+//                        };
+//
 //                requestQueue.add(stringRequest);
 
                     }
