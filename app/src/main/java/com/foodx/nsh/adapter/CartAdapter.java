@@ -126,7 +126,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             }
         });
 
-        holder.textView4.setOnClickListener(new View.OnClickListener() {
+        holder.button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 itemList.remove(position);
@@ -151,7 +151,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
         TextView textView, textView2, textView3, textView4, textView1;
 
-        Button button, button1;
+        Button button, button1,button3;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -161,7 +161,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             textView3 = itemView.findViewById(R.id.price);
             button = itemView.findViewById(R.id.addition1);
             button1 = itemView.findViewById(R.id.subtraction1);
-            textView4 = itemView.findViewById(R.id.remove);
+            button3 = itemView.findViewById(R.id.remove);
         }
     }
 

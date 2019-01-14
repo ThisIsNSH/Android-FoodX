@@ -60,6 +60,7 @@
             android:textSize="17sp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:inputType="phone"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
