@@ -46,8 +46,8 @@ public class FirebaseLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mobile = findViewById(R.id.mobile);
-        number = mobile.getText().toString();
+//        mobile = findViewById(R.id.mobile);
+//        number = mobile.getText().toString();
         login_display = findViewById(R.id.image_food);
         Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(login_display);
         loginBtn = findViewById(R.id.login);
@@ -58,12 +58,12 @@ public class FirebaseLogin extends AppCompatActivity {
 
         final SharedPreferences sharedPreferences = getSharedPreferences("number", Context.MODE_PRIVATE);
         String Login = sharedPreferences.getString("Login", "gsbs");
+
         if (Login.equals("Complete")) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }
-
     public void onLoginBtnClick(View v) {
         startActivityForResult(
                 AuthUI.getInstance()
