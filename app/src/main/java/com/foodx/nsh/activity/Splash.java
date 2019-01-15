@@ -29,8 +29,9 @@ public class Splash extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    Intent intent = new Intent(Splash.this, MainActivity.class);
+                    Intent intent = new Intent(Splash.this, FirebaseLogin.class);
                     startActivity(intent);
+                    finish();
                     overridePendingTransition(0,0);
                 }
             }

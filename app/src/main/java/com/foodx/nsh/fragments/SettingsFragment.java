@@ -1,6 +1,7 @@
 package com.foodx.nsh.fragments;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -35,6 +36,7 @@ public class SettingsFragment extends Fragment {
     public SettingsFragment() {
     }
 
+    @SuppressLint("ValidFragment")
     public SettingsFragment(Activity activity){
         this.activity = activity;
     }

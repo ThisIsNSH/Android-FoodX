@@ -16,12 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.foodx.nsh.fragments.DetailsFragment;
 import com.foodx.nsh.R;
 import com.foodx.nsh.fragments.CartFragment;
 import com.foodx.nsh.fragments.HotelsFragment;
 import com.foodx.nsh.fragments.SettingsFragment;
-
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -95,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
                     btmView.setItemTextColor(new ColorStateList(states,colors));
                     btmView.setItemIconTintList(new ColorStateList(states, colors));
                     fragment = new SettingsFragment(MainActivity.this);
+                    break;
+                case R.id.details:
+                    btmView.setItemTextColor(new ColorStateList(states,colors));
+                    btmView.setItemIconTintList(new ColorStateList(states,colors));
+                    fragment = new DetailsFragment(MainActivity.this);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
