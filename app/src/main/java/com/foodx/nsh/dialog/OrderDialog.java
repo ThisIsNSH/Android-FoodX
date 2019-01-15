@@ -40,6 +40,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class OrderDialog extends Dialog implements
         android.view.View.OnClickListener {
     private SharedPreferences sharedPreferences,orderSharedPreferences,Bill;
@@ -80,10 +82,16 @@ public class OrderDialog extends Dialog implements
         setContentView(R.layout.dialog_order);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         totalB = findViewById(R.id.total);
+//        SharedPreferences prefs = getContext().getSharedPreferences("number", MODE_PRIVATE);
+//        SharedPreferences.Editor editor3 = prefs.edit();
+//        String restoredText = prefs.getString("phone", null);
+//        editor3.commit();
+//        Log.v("HALLO",restoredText);
         totalB.setText("Total : "+String.valueOf(total));
         editText = findViewById(R.id.name);
         editText1 = findViewById(R.id.address);
         editText2 = findViewById(R.id.mobile);
+//        editText2.setText(restoredText);
         button = findViewById(R.id.postorder);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +99,6 @@ public class OrderDialog extends Dialog implements
                 address = editText1.getText().toString();
                 name = editText.getText().toString();
                 mobile = editText2.getText().toString();
-
                 extra = "n";
                 if(TextUtils.isEmpty(address)){
                     Toast.makeText(activity,"Please enter your address",Toast.LENGTH_SHORT).show();
@@ -172,7 +179,7 @@ public class OrderDialog extends Dialog implements
                                 newArray.put(jsonArray.getJSONObject(i).getJSONArray("_pipeline").getJSONObject(0).getJSONObject("$match").getJSONObject("order"));
                             }
 
-                            SharedPreferences oldOrders = activity.getSharedPreferences("myOldOrders", Context.MODE_PRIVATE);
+                            SharedPreferences oldOrders = activity.getSharedPreferences("myOldOrders", MODE_PRIVATE);
                             SharedPreferences.Editor oldOrderEditor = oldOrders.edit();
 
                             String strJson = oldOrders.getString("oldOrders","[]");
@@ -191,7 +198,7 @@ public class OrderDialog extends Dialog implements
                         dismiss();
 
                         myOrders.clear();
-                        sharedPreferences = activity.getSharedPreferences("Myprefs", Context.MODE_PRIVATE);
+                        sharedPreferences = activity.getSharedPreferences("Myprefs", MODE_PRIVATE);
                         editor = sharedPreferences.edit();
                         gson = new Gson();
                         String json = gson.toJson(myOrders);
