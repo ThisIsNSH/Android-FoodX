@@ -74,7 +74,7 @@ public class SettingsFragment extends Fragment {
 
             OrderAdapter orderAdapter = new OrderAdapter(orderArrayList,activity);
             recyclerView.setAdapter(orderAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+            recyclerView.setLayoutManager(new LinearLayoutManager(activity,LinearLayoutManager.VERTICAL,true));
             orderAdapter.notifyDataSetChanged();
         }catch (JSONException e){
             e.printStackTrace();
