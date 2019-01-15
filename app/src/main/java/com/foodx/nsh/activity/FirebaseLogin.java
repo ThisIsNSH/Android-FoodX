@@ -40,6 +40,7 @@ public class FirebaseLogin extends AppCompatActivity {
     String number;
     ImageView login_display;
     private List<AuthUI.IdpConfig> providers;
+    SharedPreferences sharedPreferences;
 //    private SharedPref sharedPref;
 
     @Override
@@ -55,11 +56,10 @@ public class FirebaseLogin extends AppCompatActivity {
 
         providers = Arrays.asList(
                 new AuthUI.IdpConfig.PhoneBuilder().build());
-
-        final SharedPreferences sharedPreferences = getSharedPreferences("number", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("number", Context.MODE_PRIVATE);
         String Login = sharedPreferences.getString("Login", "gsbs");
-
         if (Login.equals("Complete")) {
+//            Log.v("ABSSSSDD",sharedPreferences.getString("phone",null));
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
@@ -69,6 +69,7 @@ public class FirebaseLogin extends AppCompatActivity {
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
+                        .setTheme(R.style.AppTheme)
                         .setLogo(R.drawable.ic_launcher_background)
                         .build(),
                 RC_SIGN_IN);
@@ -86,6 +87,9 @@ public class FirebaseLogin extends AppCompatActivity {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 Log.d("pno.: ", user.getPhoneNumber().substring(3));
+                SharedPreferences.Editor num = sharedPreferences.edit();
+                num.putString("mobile",user.getPhoneNumber().substring(3));
+                num.apply();
                 Log.d("uid: ", user.getUid());
                 checkUser(user.getPhoneNumber().substring(3));
 //                checkUser("");
@@ -112,17 +116,16 @@ public class FirebaseLogin extends AppCompatActivity {
         } else {
             SharedPreferences.Editor editor = getSharedPreferences("number", MODE_PRIVATE).edit();
             editor.putString("phone", number);
+//            Log.v("KOOKO","ABSS"+number);
             editor.apply();
             saveLoginStatus();
             Intent intent = new Intent(FirebaseLogin.this, MainActivity.class);
             startActivity(intent);
         }
     }
-
     private void saveLoginStatus() {
         final SharedPreferences sharedPreferences = getSharedPreferences("number", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
-
         editor.putString("Login", "Complete");
         editor.commit();
     }

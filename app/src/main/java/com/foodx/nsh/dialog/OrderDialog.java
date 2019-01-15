@@ -83,16 +83,16 @@ public class OrderDialog extends Dialog implements
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         SharedPreferences sharedPreferences1 = activity.getSharedPreferences("number", Context.MODE_PRIVATE);
         totalB = findViewById(R.id.total);
-//        SharedPreferences prefs = getContext().getSharedPreferences("number", MODE_PRIVATE);
-//        SharedPreferences.Editor editor3 = prefs.edit();
-//        String restoredText = prefs.getString("phone", null);
-//        editor3.commit();
-//        Log.v("HALLO",restoredText);
+        SharedPreferences prefs = getContext().getSharedPreferences("number", MODE_PRIVATE);
+        SharedPreferences.Editor editor3 = prefs.edit();
+        String restoredText = prefs.getString("mobile", null);
+        editor3.commit();
+//        Log.v("HALLO","ABC" + restoredText);
         totalB.setText("Total : "+String.valueOf(total));
         editText = findViewById(R.id.name);
         editText1 = findViewById(R.id.address);
         editText2 = findViewById(R.id.mobile);
-
+        editText2.setText(restoredText);
         button = findViewById(R.id.postorder);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
