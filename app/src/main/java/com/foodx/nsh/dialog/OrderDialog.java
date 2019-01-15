@@ -81,6 +81,7 @@ public class OrderDialog extends Dialog implements
 
         setContentView(R.layout.dialog_order);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        SharedPreferences sharedPreferences1 = activity.getSharedPreferences("number", Context.MODE_PRIVATE);
         totalB = findViewById(R.id.total);
 //        SharedPreferences prefs = getContext().getSharedPreferences("number", MODE_PRIVATE);
 //        SharedPreferences.Editor editor3 = prefs.edit();
@@ -91,7 +92,7 @@ public class OrderDialog extends Dialog implements
         editText = findViewById(R.id.name);
         editText1 = findViewById(R.id.address);
         editText2 = findViewById(R.id.mobile);
-//        editText2.setText(restoredText);
+
         button = findViewById(R.id.postorder);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

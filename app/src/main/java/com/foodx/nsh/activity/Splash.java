@@ -31,6 +31,7 @@ public class Splash extends AppCompatActivity {
                 } finally {
                     Intent intent = new Intent(Splash.this, FirebaseLogin.class);
                     startActivity(intent);
+                    finish();
                     overridePendingTransition(0,0);
                 }
             }

@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -183,6 +184,15 @@ public class CartFragment extends Fragment {
                 customDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialogInterface) {
+//                        Fragment frg = null;
+////                        frg = getActivity().getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
+//                        frg = getActivity().getSupportFragmentManager().findFragmentById(R.id.carts);
+//                        final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+//                        ft.detach(frg);
+//                        ft.attach(frg);
+//                        ft.commit();
+                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.detach(CartFragment.this).attach(CartFragment.this).commit();
 //                        hashMap1 = new HashMap<>();
 //                        for (int i = 0; i < myOrders.size(); i++) {
 //                            hashMap1.put(myOrders.get(i).getHotelId(),myOrders.get(i));

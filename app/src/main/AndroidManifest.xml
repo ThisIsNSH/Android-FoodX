@@ -9,10 +9,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.FirebaseLogin" />
-        <activity android:name=".activity.MenuActivity" />
-        <activity android:name=".activity.Splash">
+        <activity android:name=".activity.MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.FirebaseLogin" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.Splash" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
