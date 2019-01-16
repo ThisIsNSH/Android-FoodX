@@ -4,6 +4,10 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +21,7 @@ import android.widget.TextView;
 
 import com.foodx.nsh.R;
 import com.foodx.nsh.activity.MainActivity;
+import com.foodx.nsh.dialog.Notificationdialog;
 import com.foodx.nsh.model.Menu;
 import com.squareup.picasso.Picasso;
 
@@ -52,6 +57,17 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         final Menu menu = menuList.get(position);
         holder.card.setCardBackgroundColor(context.getResources().getColor(color));
         holder.category_name.setText(menu.getCategory());
+//        SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(context);
+//        boolean isFirstRun = wmbPreference.getBoolean("SECONDRUN", true);
+//        if (isFirstRun)
+//        {
+//            Notificationdialog customDialog = new Notificationdialog(context,"Features","Swipe Left Right to change categories.");
+//            customDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//            customDialog.show();
+//            SharedPreferences.Editor editor = wmbPreference.edit();
+//            editor.putBoolean("SECONDRUN", false);
+//            editor.commit();
+//        }
         itemAdapter = new ItemAdapter(menu.getItemList(),context,hotelid,color);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         holder.recyclerView.setAdapter(itemAdapter);

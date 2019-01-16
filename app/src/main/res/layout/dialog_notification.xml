@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    android:layout_centerInParent="true"
+    app:cardCornerRadius="32dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/psb"
+            android:textColor="#000"
+            android:id="@+id/total"
+            android:text="text"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/psb"
+            android:textColor="#000"
+            android:id="@+id/text1"
+            android:text="text"
+            />
+
+
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:textColor="@color/white"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="16dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/curvedback2"
+            android:backgroundTint="#000"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/postorder"/>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

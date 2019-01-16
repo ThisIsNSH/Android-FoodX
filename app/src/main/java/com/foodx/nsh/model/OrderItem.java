@@ -6,12 +6,13 @@ public class OrderItem {
     String quantity;
     String order_id;
     String hotel_id;
-
-    public OrderItem(String name,String quantity,String order_id, String hotel_id){
+    String extra;
+    public OrderItem(String name,String quantity,String extra,String order_id, String hotel_id){
         this.name = name;
         this.quantity = quantity;
         this.order_id = order_id;
         this.hotel_id = hotel_id;
+        this.extra = extra;
     }
 
     public String getHotel_id() {
@@ -44,5 +45,9 @@ public class OrderItem {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public String getExtra() {
+        return extra;
     }
 }

@@ -44,7 +44,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.MyVi
         OrderItem orderItem = orderItemList.get(position);
         holder.name.setText(orderItem.getName());
         holder.price.setText("Quantity: "+orderItem.getQuantity());
-
+        holder.price1.setText("Price: "+orderItem.getExtra());
         System.out.println(orderItem.getHotel_id());
         System.out.println(orderItem.getOrder_id());
 
@@ -84,13 +84,14 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, price, status;
+        TextView name, price, status,price1;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             price = itemView.findViewById(R.id.price);
             status = itemView.findViewById(R.id.f);
+            price1 = itemView.findViewById(R.id.price1);
         }
     }
 

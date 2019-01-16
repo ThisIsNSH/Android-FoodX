@@ -42,5 +42,7 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.github.takusemba:spotlight:1.5.0'
+
 }
 apply plugin: 'com.google.gms.google-services'
