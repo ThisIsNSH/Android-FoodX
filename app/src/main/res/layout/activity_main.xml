@@ -10,6 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_above="@+id/nav_bar"
         android:id="@+id/fragment_container">
+
     </FrameLayout>
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"

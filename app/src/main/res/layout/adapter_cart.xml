@@ -27,7 +27,7 @@
             android:paddingRight="16dp"
             android:layout_alignParentLeft="true"
             android:textSize="0sp"
-            android:layout_toLeftOf="@id/price"
+            android:visibility="gone"
             android:fontFamily="@font/psb"
             android:textColor="@color/black"
             android:id="@+id/hotelid" />
