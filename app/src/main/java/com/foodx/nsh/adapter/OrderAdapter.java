@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.foodx.nsh.R;
 import com.foodx.nsh.model.Cart;
@@ -34,6 +35,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         OrderArray orderArray = orderArrayList.get(position);
+        holder.total.setText("Total: "+String.valueOf(orderArray.getTotal()));
         OrderItemAdapter orderItemAdapter = new OrderItemAdapter(orderArray.getItemList(),context);
         holder.recyclerView.setAdapter(orderItemAdapter);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -49,9 +51,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         RecyclerView recyclerView;
+        TextView total;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            total = itemView.findViewById(R.id.total);
             recyclerView = itemView.findViewById(R.id.recyclerView);
         }
     }

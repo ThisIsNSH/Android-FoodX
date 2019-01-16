@@ -154,7 +154,7 @@ public class OrderDialog extends Dialog implements
                         JsonObject jsonObject3 = new JsonObject();
                         jsonObject3.addProperty("name", cart.getName());
                         jsonObject3.addProperty("quantity", cart.getQuantity());
-                        jsonObject3.addProperty("extra", "none");
+                        jsonObject3.addProperty("extra", String.valueOf(Integer.parseInt(cart.getQuantity())*Integer.parseInt(cart.getPrice())));
                         jsonArray1.add(jsonObject3);
 
                     }

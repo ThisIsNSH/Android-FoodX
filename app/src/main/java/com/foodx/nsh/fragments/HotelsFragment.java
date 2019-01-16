@@ -1,8 +1,14 @@
 package com.foodx.nsh.fragments;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +26,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.foodx.nsh.R;
 import com.foodx.nsh.adapter.HotelAdapter;
+import com.foodx.nsh.dialog.Notificationdialog;
+import com.foodx.nsh.dialog.OrderDialog;
 import com.foodx.nsh.model.Hotel;
 
 import org.json.JSONArray;
@@ -47,6 +55,7 @@ public class HotelsFragment extends Fragment {
     public HotelsFragment() {
     }
 
+    @SuppressLint("ValidFragment")
     public HotelsFragment(Activity activity){
         this.activity = activity;
     }
@@ -81,11 +90,22 @@ public class HotelsFragment extends Fragment {
         hotelAdapter = new HotelAdapter(hotelList, activity);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(hotelAdapter);
+//        SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(activity);
+//        boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
+//        if (isFirstRun)
+//        {
+//            Notificationdialog customDialog = new Notificationdialog(activity,"Terms and Conditions","Minimum Order of ₹250 will be entertained.");
+//            customDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//            customDialog.show();
+//            SharedPreferences.Editor editor = wmbPreference.edit();
+//            editor.putBoolean("FIRSTRUN", false);
+//            editor.commit();
+//        }
         getData();
     }
     public void getData() {
         final RequestQueue requestQueue = Volley.newRequestQueue(activity);
-        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.base_url)+"/hotel",
+        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.base_url)+"/hotel/Z2FuZXNo",
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray jsonArray) {
