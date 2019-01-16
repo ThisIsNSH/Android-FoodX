@@ -211,7 +211,6 @@ public class MenuActivity extends AppCompatActivity {
                 .dismissOnBackPress(true)
                 .enableDismissAfterShown(true)
                 .usageId(usageId) //UNIQUE ID
-                .setTypeface(Typeface.defaultFromStyle(R.font.psb))
                 .show();
     }
 

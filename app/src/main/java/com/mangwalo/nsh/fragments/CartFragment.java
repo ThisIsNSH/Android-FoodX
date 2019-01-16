@@ -326,7 +326,6 @@ public class CartFragment extends Fragment {
                 .dismissOnTouch(true)
                 .dismissOnBackPress(true)
                 .enableDismissAfterShown(true)
-                .setTypeface(Typeface.defaultFromStyle(R.font.psb))
                 .usageId(usageId) //UNIQUE ID
                 .show();
     }
