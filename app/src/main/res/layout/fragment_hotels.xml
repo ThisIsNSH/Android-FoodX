@@ -8,14 +8,20 @@
     android:fitsSystemWindows="true"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context="com.foodx.nsh.activity.MainActivity">
-
+    tools:context="com.mangwalo.nsh.activity.MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/play"
+        android:layout_marginLeft="16dp"
+        />
     <LinearLayout
         android:background="@drawable/white_gradient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="30dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="match_parent"
             android:gravity="center"

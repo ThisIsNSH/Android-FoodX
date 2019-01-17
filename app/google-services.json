@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "910597300841",
-    "firebase_url": "https://fudo-3a55c.firebaseio.com",
-    "project_id": "fudo-3a55c",
-    "storage_bucket": "fudo-3a55c.appspot.com"
+    "project_number": "594029150216",
+    "firebase_url": "https://mangwalo-1beb5.firebaseio.com",
+    "project_id": "mangwalo-1beb5",
+    "storage_bucket": "mangwalo-1beb5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:910597300841:android:2460fa31909bbdf0",
+        "mobilesdk_app_id": "1:594029150216:android:bfbf0bf943801d15",
         "android_client_info": {
-          "package_name": "com.foodx.nsh"
+          "package_name": "com.mangwalo.nsh"
         }
       },
       "oauth_client": [
         {
-          "client_id": "910597300841-2jgllviqg8r7t2ip8m6bk06la2inpp4f.apps.googleusercontent.com",
+          "client_id": "594029150216-ae0ko4g4ei26taodpdv03ggak48vts9i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVX9sm495jmN1rN9uCKrzWEtb6kb9nv-g"
+          "current_key": "AIzaSyDZrvh1LeJW0PpXppKkeAUPRUGbn3AroPM"
         }
       ],
       "services": {

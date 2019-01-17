@@ -4,12 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.DetailsFragment"
-    android:background="@android:color/transparent">
-<LinearLayout
+    tools:context=".fragments.DetailsFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/play"
+            />
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -113,7 +128,11 @@
                 android:text="The rates and variety of food is provided by all the restaurants available in the city. While we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the taste, quality, ingredients or availability of the food with respect to the app or the products or services contained on the app for any purpose. Home-delivery is provided by respective restaurant staff,no such greviance will be encountered on our behalf."
                 android:fontFamily="@font/psb"
                 android:textSize="16sp"/>
+
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
+
 </LinearLayout>
+    </RelativeLayout>
 </ScrollView>
