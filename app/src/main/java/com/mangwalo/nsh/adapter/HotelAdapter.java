@@ -4,17 +4,25 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mangwalo.nsh.R;
 import com.mangwalo.nsh.activity.MenuActivity;
 import com.mangwalo.nsh.model.Hotel;
@@ -32,7 +40,8 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
     List<Hotel> hotelsList;
     Activity context;
     ArrayList<Integer> colors = new ArrayList<Integer>();
-
+    DatabaseReference reference;
+    boolean hello = true;
     public HotelAdapter(List<Hotel> hotelsList, Activity context) {
         this.hotelsList = hotelsList;
         this.context = context;
@@ -49,6 +58,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        reference = FirebaseDatabase.getInstance().getReference("Hotels");
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_hotel, parent, false);
         return new MyViewHolder(itemView);
     }
@@ -56,11 +66,43 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         final Hotel hotel = hotelsList.get(position);
-        holder.card.setCardBackgroundColor(context.getResources().getColor(colors.get(position%7)));
+//        holder.card.setCardBackgroundColor(context.getResources().getColor(colors.get(position%7)));
         holder.hotel_name.setText(hotel.getName());
         holder.hotel_phone.setText(hotel.getContact());
         holder.hotel_address.setText(hotel.getAddress());
         Picasso.get().load(hotel.getImage()).into(holder.hotel_image);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                    if(snapshot.getKey().equals(hotel.getName())){
+                        hello = (boolean) snapshot.getValue();
+//                        Log.e("hello", String.valueOf(hello));
+                        if(hello){
+                            holder.card.setClickable(true);
+                            holder.card.setEnabled(true);
+                            holder.card.setCardBackgroundColor(context.getResources().getColor(colors.get(position%7)));
+                        }
+                        else {
+                            holder.card.setClickable(false);
+                            holder.card.setEnabled(false);
+            holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.invalid));
+                        }
+                    }
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +159,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
             hotel_image = itemView.findViewById(R.id.hotel_image);
         }
     }
+
 
 
 }

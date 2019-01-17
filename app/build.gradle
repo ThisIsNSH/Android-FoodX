@@ -40,6 +40,7 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.5'
     compile 'com.github.wooplr:Spotlight:1.2.3'
 }
 apply plugin: 'com.google.gms.google-services'

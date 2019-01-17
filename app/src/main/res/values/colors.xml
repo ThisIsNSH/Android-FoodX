@@ -6,7 +6,7 @@
 
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-
+    <color name="invalid">#bbbbbb</color>
     <!--<color name="color6">#8019E7</color>-->
     <!--<color name="color5">#1980E7</color>-->
     <!--<color name="color4">#19E793</color>-->
