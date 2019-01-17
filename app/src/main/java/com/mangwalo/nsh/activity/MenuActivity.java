@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
@@ -191,12 +192,14 @@ public class MenuActivity extends AppCompatActivity {
         this.overridePendingTransition(R.anim.fadein,R.anim.fadeout);
     }
     private void showIntro(View view, String usageId) {
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.psb);
         spotLight = new SpotlightView.Builder(this)
                 .introAnimationDuration(400)
                 .enableRevealAnimation(true)
                 .performClick(true)
                 .fadeinTextDuration(400)
-                //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
+                .setTypeface(typeface)
+//                .setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
                 .headingTvColor(Color.parseColor("#9e9d24"))
                 .headingTvSize(32)
                 .headingTvText("Swipe left-right & Scroll up-down")

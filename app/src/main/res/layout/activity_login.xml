@@ -62,8 +62,10 @@
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_below="@id/mang"
             android:visibility="gone"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
             android:id="@+id/pb"
             />
 

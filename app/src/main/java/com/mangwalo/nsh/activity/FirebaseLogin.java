@@ -74,6 +74,7 @@ public class FirebaseLogin extends AppCompatActivity {
                         .build(),
                 RC_SIGN_IN);
 //        loginBtn.setVisibility(View.GONE);
+        loginBtn.setVisibility(View.GONE);
         pb.setVisibility(View.VISIBLE);
     }
 
