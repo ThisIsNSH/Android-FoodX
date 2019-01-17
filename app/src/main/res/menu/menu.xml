@@ -4,5 +4,4 @@
 <item android:title="Cart" android:id="@+id/carts" android:color = "@color/color0" android:icon="@drawable/cart" android:iconTint="@color/color0"/>
 <item android:title="Orders" android:id="@+id/settings" android:color = "@color/color0" android:icon="@drawable/settings" android:iconTint="@color/color0"/>
 <item android:title="Details" android:id="@+id/details" android:color = "@color/color0" android:icon="@drawable/details12" android:iconTint="@color/color0"/>
-
 </menu>

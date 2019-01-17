@@ -10,15 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name="com.mangwalo.nsh.activity.MainActivity" android:screenOrientation="portrait" />
-        <activity android:name="com.mangwalo.nsh.activity.FirebaseLogin" android:screenOrientation="portrait">
+        <activity android:name=".activity.MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.FirebaseLogin" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.mangwalo.nsh.activity.MenuActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.mangwalo.nsh.activity.Splash" android:screenOrientation="portrait">
+        <activity android:name=".activity.MenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.Splash" android:screenOrientation="portrait">
         </activity>
     </application>
 
