@@ -6,10 +6,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -160,11 +162,13 @@ public class HotelsFragment extends Fragment {
     }
 
     private void showIntro(View view, String usageId) {
+        Typeface typeface = ResourcesCompat.getFont(getActivity(), R.font.psb);
         spotLight = new SpotlightView.Builder(getActivity())
                 .introAnimationDuration(400)
                 .enableRevealAnimation(true)
                 .performClick(true)
                 .fadeinTextDuration(400)
+                .setTypeface(typeface)
                 //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
                 .headingTvColor(Color.parseColor("#9e9d24"))
                 .headingTvSize(32)

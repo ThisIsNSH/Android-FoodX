@@ -60,7 +60,6 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.MyVi
                         break;
                     default:
                         break;
-
                 }
             }
         }, new Response.ErrorListener() {
@@ -90,6 +89,4 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.MyVi
             price1 = itemView.findViewById(R.id.price1);
         }
     }
-
-
 }
