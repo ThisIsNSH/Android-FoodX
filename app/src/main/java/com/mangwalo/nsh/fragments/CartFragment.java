@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.Volley;
 import com.mangwalo.nsh.R;
@@ -170,6 +171,7 @@ public class CartFragment extends Fragment {
         });
 
         Button button = view.findViewById(R.id.postorder);
+
         button.setOnClickListener(new View.OnClickListener() {
             String keys;
             @Override
@@ -189,6 +191,10 @@ public class CartFragment extends Fragment {
                     Integer p = Integer.parseInt(calc.getPrice());
                     Integer q = Integer.parseInt(calc.getQuantity());
                     totalBill = totalBill + p*q;
+                }
+                if(myOrders.size()==0){
+                    Toast.makeText(activity,"Cart is empty",Toast.LENGTH_LONG).show();
+                    return;
                 }
 //                Log.v("FINALTOTAL", String.valueOf(totalBill));
                 OrderDialog customDialog = new OrderDialog(activity,totalBill,myOrders);

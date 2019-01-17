@@ -90,7 +90,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                     holder.button1.setEnabled(true);
                 }
                 totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
-                holder.textView3.setText(totalPrice);
+                holder.textView3.setText("Price: "+ totalPrice);
                 myOrders.get(position).finalQuantity(holder.textView1.getText().toString());
                 String json = gson.toJson(myOrders);
                 Log.v("menulist", json);
@@ -117,7 +117,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
                 }
                 totalPrice = String.valueOf((Integer.parseInt(holder.textView1.getText().toString()) * Integer.parseInt(cart.getPrice())));
-                holder.textView3.setText(totalPrice);
+                holder.textView3.setText("Price: "+totalPrice);
                 myOrders.get(position).finalQuantity(holder.textView1.getText().toString());
                 String json = gson.toJson(myOrders);
                 Log.v("menulist", json);
