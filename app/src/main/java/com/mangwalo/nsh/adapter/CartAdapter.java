@@ -162,7 +162,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             button = itemView.findViewById(R.id.addition1);
             button1 = itemView.findViewById(R.id.subtraction1);
             button3 = itemView.findViewById(R.id.remove);
+//            this.setIsRecyclable(false);
         }
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
     }
 
 

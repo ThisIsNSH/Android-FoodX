@@ -157,9 +157,17 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
             hotel_phone = itemView.findViewById(R.id.hotel_phone);
             hotel_address = itemView.findViewById(R.id.hotel_address);
             hotel_image = itemView.findViewById(R.id.hotel_image);
+            this.setIsRecyclable(false);
         }
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
 
-
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
 }

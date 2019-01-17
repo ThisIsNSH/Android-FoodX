@@ -200,7 +200,7 @@ public class MenuActivity extends AppCompatActivity {
                 .fadeinTextDuration(400)
                 .setTypeface(typeface)
 //                .setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
-                .headingTvColor(Color.parseColor("#9e9d24"))
+                .headingTvColor(Color.parseColor("#cddc39"))
                 .headingTvSize(32)
                 .headingTvText("Swipe left-right & Scroll up-down")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))

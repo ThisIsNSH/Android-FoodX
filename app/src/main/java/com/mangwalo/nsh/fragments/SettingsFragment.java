@@ -119,7 +119,8 @@ public class SettingsFragment extends Fragment {
             OrderAdapter orderAdapter = new OrderAdapter(orderArrayList,activity);
             recyclerView.setAdapter(orderAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(activity,LinearLayoutManager.VERTICAL,true));
-            recyclerView.scrollToPosition(0);
+            if (orderArrayList.size() != 0)
+            recyclerView.scrollToPosition(orderArrayList.size() - 1);
             orderAdapter.notifyDataSetChanged();
         }catch (JSONException e){
             e.printStackTrace();
@@ -135,7 +136,7 @@ public class SettingsFragment extends Fragment {
                 .fadeinTextDuration(400)
                 .setTypeface(typeface)
                 //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
-                .headingTvColor(Color.parseColor("#9e9d24"))
+                .headingTvColor(Color.parseColor("#cddc39"))
                 .headingTvSize(32)
                 .headingTvText("Order History")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))

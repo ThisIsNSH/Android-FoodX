@@ -150,7 +150,6 @@ public class CartFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setAdapter(cartAdapter);
         cartAdapter.notifyDataSetChanged();
-
         if (myOrders.size()>0) {
             nilText.setVisibility(View.GONE);
 //            foodx.setVisibility(View.INVISIBLE);
@@ -322,7 +321,7 @@ public class CartFragment extends Fragment {
                 .fadeinTextDuration(400)
                 .setTypeface(typeface)
                 //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
-                .headingTvColor(Color.parseColor("#9e9d24"))
+                .headingTvColor(Color.parseColor("#cddc39"))
                 .headingTvSize(32)
                 .headingTvText("Cart")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))

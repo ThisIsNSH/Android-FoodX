@@ -49,6 +49,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         this.itemList = itemList;
         this.context = context;
         this.hotelid = hotelid;
+//        setHasStableIds(true);
     }
     @NonNull
     @Override
@@ -72,7 +73,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.button.setBackground(context.getResources().getDrawable(drawable(color)));
         holder.button1.setBackground(context.getResources().getDrawable(drawable(color)));
         holder.button2.setBackground(context.getResources().getDrawable(drawable(color)));
-
+        holder.button2.setText("ADD TO CART");
         if(item.getName().equals("Roti")) {
             max = 50;
         }
@@ -250,6 +251,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
             button2 = itemView.findViewById(R.id.addtocart);
             quantity = itemView.findViewById(R.id.quantity);
         }
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     public int drawable(int color){

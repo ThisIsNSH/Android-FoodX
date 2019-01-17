@@ -87,6 +87,17 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.MyVi
             price = itemView.findViewById(R.id.price);
             status = itemView.findViewById(R.id.f);
             price1 = itemView.findViewById(R.id.price1);
+            this.setIsRecyclable(false);
         }
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
     }
 }

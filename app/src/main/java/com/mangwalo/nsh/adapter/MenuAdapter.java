@@ -52,6 +52,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         final Menu menu = menuList.get(position);
         holder.card.setCardBackgroundColor(context.getResources().getColor(color));
         holder.category_name.setText(menu.getCategory());
+
 //        SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(context);
 //        boolean isFirstRun = wmbPreference.getBoolean("SECONDRUN", true);
 //        if (isFirstRun)
@@ -118,7 +119,18 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
             category_name = itemView.findViewById(R.id.category_name);
             recyclerView = itemView.findViewById(R.id.recyclerView);
             button = itemView.findViewById(R.id.cart1);
+            this.setIsRecyclable(false);
         }
+
+    }
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
 

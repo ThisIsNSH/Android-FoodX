@@ -56,8 +56,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             super(itemView);
             total = itemView.findViewById(R.id.total);
             recyclerView = itemView.findViewById(R.id.recyclerView);
+            this.setIsRecyclable(false);
         }
     }
 
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
 
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
 }
