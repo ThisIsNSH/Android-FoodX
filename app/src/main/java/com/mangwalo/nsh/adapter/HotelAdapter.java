@@ -42,17 +42,18 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
     ArrayList<Integer> colors = new ArrayList<Integer>();
     DatabaseReference reference;
     boolean hello = true;
+
     public HotelAdapter(List<Hotel> hotelsList, Activity context) {
         this.hotelsList = hotelsList;
         this.context = context;
         colors.clear();
-        colors.add(R.color.color0);
-        colors.add(R.color.color1);
         colors.add(R.color.color2);
-        colors.add(R.color.color3);
-        colors.add(R.color.color4);
-        colors.add(R.color.color5);
-        colors.add(R.color.color6);
+        colors.add(R.color.color2);
+        colors.add(R.color.color2);
+        colors.add(R.color.color2);
+        colors.add(R.color.color2);
+        colors.add(R.color.color2);
+        colors.add(R.color.color2);
     }
 
     @NonNull
@@ -72,32 +73,41 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
         holder.hotel_address.setText(hotel.getAddress());
         Picasso.get().load(hotel.getImage()).into(holder.hotel_image);
 
+        holder.card.setClickable(false);
+        holder.card.setEnabled(false);
+//        holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.invalid));
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot:dataSnapshot.getChildren()){
-                    if(snapshot.getKey().equals(hotel.getName())){
-                        hello = (boolean) snapshot.getValue();
+                    try {
+                        if (snapshot.getKey().equals(hotel.getName())) {
+                            hello = (boolean) snapshot.getValue();
 //                        Log.e("hello", String.valueOf(hello));
-                        if(hello){
-                            holder.card.setClickable(true);
-                            holder.card.setEnabled(true);
-                            holder.card.setCardBackgroundColor(context.getResources().getColor(colors.get(position%7)));
+                            if (hello) {
+                                holder.card.setClickable(true);
+                                holder.card.setEnabled(true);
+                                holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.color2));
+                            } else {
+                                holder.card.setClickable(false);
+                                holder.card.setEnabled(false);
+                                holder.hotel_address.setText("Now Closed");
+                                holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.invalid));
+                            }
                         }
-                        else {
-                            holder.card.setClickable(false);
-                            holder.card.setEnabled(false);
-            holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.invalid));
-                        }
+                    }catch (NullPointerException e){
+                        holder.card.setClickable(false);
+                        holder.card.setEnabled(false);
+                        holder.hotel_address.setText("Now Closed");
+                        holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.invalid));
                     }
-
 
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -130,7 +140,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.MyViewHolder
                         final Intent intent = new Intent(context, MenuActivity.class);
                         intent.putExtra("name",hotel.getName());
                         intent.putExtra("id",hotel.getId());
-                        intent.putExtra("color",colors.get(position%7));
+                        intent.putExtra("color",R.color.color2);
                         context.startActivity(intent);
                         context.overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                     }

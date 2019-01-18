@@ -21,8 +21,7 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/psb"
             android:textColor="@color/color6"
-            android:id="@+id/total"
-            />
+            android:id="@+id/total" />
         <EditText
             android:layout_margin="8dp"
             android:background="@drawable/edit_text_curve"
@@ -82,6 +81,16 @@
             android:layout_alignParentBottom="true"
             android:id="@+id/postorder"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/ps"
+            android:textColor="#333"
+            android:textSize="12sp"
+            android:text="*Additional delivery charge for orders below specified amount by the respective restaurant."/>
 
     </LinearLayout>
 </android.support.v7.widget.CardView>

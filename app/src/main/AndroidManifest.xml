@@ -7,8 +7,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:icon="@drawable/l1"
-        >
+        android:icon="@drawable/logo">
         <activity android:name=".activity.MainActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.FirebaseLogin" android:screenOrientation="portrait">
             <intent-filter>
@@ -20,4 +19,4 @@
         <activity android:name=".activity.Splash" android:screenOrientation="portrait">
         </activity>
     </application>
-</manifest>
+</manifest> 

@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "594029150216-vna4vnpcn6ghch4e0bsuvrc96ip73fur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mangwalo.nsh",
+            "certificate_hash": "841df6e1ae34bfbd826a5560419a018dfb47f4b3"
+          }
+        },
+        {
+          "client_id": "594029150216-fukkbceirhfs4n12st8qa2emm6k0j8gk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mangwalo.nsh",
+            "certificate_hash": "f41996ad3e46772ad7d2ca87b4a0f04c82e8aaea"
+          }
+        },
+        {
           "client_id": "594029150216-ae0ko4g4ei26taodpdv03ggak48vts9i.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +45,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594029150216-ae0ko4g4ei26taodpdv03ggak48vts9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
