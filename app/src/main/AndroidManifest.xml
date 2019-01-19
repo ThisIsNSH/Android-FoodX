@@ -19,4 +19,4 @@
         <activity android:name=".activity.Splash" android:screenOrientation="portrait">
         </activity>
     </application>
-</manifest> 
+</manifest>

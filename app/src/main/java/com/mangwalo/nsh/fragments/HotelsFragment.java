@@ -162,8 +162,8 @@ public class HotelsFragment extends Fragment {
     }
 
     private void showIntro(View view, String usageId) {
-        Typeface typeface = ResourcesCompat.getFont(getActivity(), R.font.psb);
-        spotLight = new SpotlightView.Builder(getActivity())
+        Typeface typeface = ResourcesCompat.getFont(activity, R.font.psb);
+        spotLight = new SpotlightView.Builder(activity)
                 .introAnimationDuration(400)
                 .enableRevealAnimation(true)
                 .performClick(true)
@@ -172,10 +172,10 @@ public class HotelsFragment extends Fragment {
                 //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
                 .headingTvColor(Color.parseColor("#cddc39"))
                 .headingTvSize(32)
-                .headingTvText("Terms & Conditions")
+                .headingTvText("Welcome To Mangwalo")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))
                 .subHeadingTvSize(16)
-                .subHeadingTvText("Minimum order Rs.250.Orders from\ndifferent hotels will be delivered\nby different delivery man.")
+                .subHeadingTvText("Mangwalo serves from different restaurants at same time. So now you can order anything from anywhere at same time.")
                 .maskColor(Color.parseColor("#dc000000"))
                 .target(view)
                 .lineAnimDuration(400)

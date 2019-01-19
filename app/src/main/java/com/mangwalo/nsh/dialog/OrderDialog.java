@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.RestrictTo;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,12 +19,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+//import com.android.volley.Request;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mangwalo.nsh.R;
 import com.mangwalo.nsh.adapter.CartAdapter;
 import com.mangwalo.nsh.model.Cart;
@@ -31,17 +42,24 @@ import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+
 import static android.content.Context.MODE_PRIVATE;
 
 public class OrderDialog extends Dialog implements
         android.view.View.OnClickListener {
+
     private SharedPreferences sharedPreferences,orderSharedPreferences,Bill;
     private SharedPreferences.Editor editor,editor2;
     public Activity activity;
@@ -65,6 +83,9 @@ public class OrderDialog extends Dialog implements
     Volley volley;
     String Key1 = "";
     View view;
+    DatabaseReference reference;
+    String temp;
+
     public OrderDialog(Activity activity,int totalBill,List<Cart>myOrders) {
         super(activity);
         total = totalBill;
@@ -76,6 +97,8 @@ public class OrderDialog extends Dialog implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        reference = FirebaseDatabase.getInstance().getReference("Mobiles");
 
         setContentView(R.layout.dialog_order);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -168,9 +191,36 @@ public class OrderDialog extends Dialog implements
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         Log.e("VOLLEY","Ass");
 
                         try {
+
+                            reference.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                                        System.out.println(snapshot.getKey());
+                                        try {
+                                            for (String keynsh : hashMap1.keySet()) {
+                                                if (keynsh.equals(snapshot.getKey())) {
+                                                    System.out.println(snapshot.getValue());
+                                                    new RetrieveFeedTask(String.valueOf(snapshot.getValue())).execute();
+                                                }
+                                            }
+
+                                        }
+                                        catch (NullPointerException e){ }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+
+
+
                             JSONArray jsonArray = new JSONArray(response);
                             JSONArray newArray = new JSONArray();
 
@@ -239,6 +289,41 @@ public class OrderDialog extends Dialog implements
         switch (v.getId()) {
             default:
                 break;
+        }
+    }
+
+    class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
+
+        okhttp3.Response response1;
+        String number;
+
+        public RetrieveFeedTask(String number){
+            this.number = number;
+        }
+
+        protected String doInBackground(Void... urls) {
+            try{
+                OkHttpClient client = new OkHttpClient();
+                MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+                RequestBody body = RequestBody.create(mediaType, "From=%2B16012029776&Body=YOU HAVE AN ORDER PLEASE CHECK&To=%2B91"+number+"&undefined=");
+                okhttp3.Request request = new okhttp3.Request.Builder()
+                        .url("https://api.twilio.com/2010-04-01/Accounts/AC67908b31996687c2360d064ad635256e/Messages.json")
+                        .post(body)
+                        .addHeader("Authorization", "Basic QUM2NzkwOGIzMTk5NjY4N2MyMzYwZDA2NGFkNjM1MjU2ZTo3NjY1ZWYyOTU5OWI5YjZkNmMyZGFmODU4OWZmODQ2MA==")
+                        .addHeader("cache-control", "no-cache")
+                        .build();
+
+                response1 = client.newCall(request).execute();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+            return (response1.message());
+
+        }
+
+        protected void onPostExecute(String feed) {
         }
     }
 }

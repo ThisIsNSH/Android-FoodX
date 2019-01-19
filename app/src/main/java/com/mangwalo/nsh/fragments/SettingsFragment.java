@@ -87,7 +87,7 @@ public class SettingsFragment extends Fragment {
                     showIntro(play, "fab_intro");
                 }
             }, 0);
-            PreferencesManager mPreferencesManager = new PreferencesManager(getActivity());
+            PreferencesManager mPreferencesManager = new PreferencesManager(activity);
             mPreferencesManager.resetAll();
         }
         SharedPreferences oldOrders = activity.getSharedPreferences("myOldOrders", Context.MODE_PRIVATE);
@@ -128,8 +128,8 @@ public class SettingsFragment extends Fragment {
         return view;
     }
     private void showIntro(View view, String usageId) {
-        Typeface typeface = ResourcesCompat.getFont(getActivity(), R.font.psb);
-        spotLight = new SpotlightView.Builder(getActivity())
+        Typeface typeface = ResourcesCompat.getFont(activity, R.font.psb);
+        spotLight = new SpotlightView.Builder(activity)
                 .introAnimationDuration(400)
                 .enableRevealAnimation(true)
                 .performClick(true)
@@ -141,7 +141,7 @@ public class SettingsFragment extends Fragment {
                 .headingTvText("Order History")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))
                 .subHeadingTvSize(16)
-                .subHeadingTvText("Check your orders status here!")
+                .subHeadingTvText("Check your current orders status and old orders here.")
                 .maskColor(Color.parseColor("#dc000000"))
                 .target(view)
                 .lineAnimDuration(400)
