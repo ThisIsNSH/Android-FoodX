@@ -114,6 +114,7 @@ public class OrderDialog extends Dialog implements
         editText1 = findViewById(R.id.address);
         editText2 = findViewById(R.id.mobile);
         editText2.setText(restoredText);
+        editText2.setEnabled(false);
         button = findViewById(R.id.postorder);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
