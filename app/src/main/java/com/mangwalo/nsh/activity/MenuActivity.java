@@ -35,9 +35,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -146,7 +148,7 @@ public class MenuActivity extends AppCompatActivity {
                     public void onResponse(String jsonArray) {
                         try {
                             array = new JSONArray(jsonArray);
-                            HashMap<String, ArrayList<Item>> menu = new HashMap<>();
+                            Map<String, ArrayList<Item>> menu = new TreeMap<>();
                             for (int i = 0; i < array.length(); i++) {
                                 Log.v("hello", String.valueOf(i));
                                 JSONObject jsonObject = array.getJSONObject(i);
