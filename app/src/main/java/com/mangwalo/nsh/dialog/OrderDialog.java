@@ -347,7 +347,6 @@ public class OrderDialog extends Dialog implements
             return (response1.message());
 
         }
-
         protected void onPostExecute(String feed) {
         }
     }
