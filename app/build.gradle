@@ -28,7 +28,7 @@ android {
     buildToolsVersion '27.0.3'
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:exifinterface:27.1.1'
@@ -43,13 +43,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.mcxiaoke.volley:library:1.0.0'
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
-    implementation group: 'commons-io', name: 'commons-io', version: '2.0.1'
+    implementation 'commons-io:commons-io:2.0.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.github.wooplr:Spotlight:1.2.3'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
-
 }
 apply plugin: 'com.google.gms.google-services'
