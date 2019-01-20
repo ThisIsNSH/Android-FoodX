@@ -56,6 +56,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.crashlytics.android.beta.Beta.TAG;
 
 public class OrderDialog extends Dialog implements
         android.view.View.OnClickListener {
@@ -109,16 +110,23 @@ public class OrderDialog extends Dialog implements
         String restoredText = prefs.getString("mobile", null);
         editor3.commit();
 //        Log.v("HALLO","ABC" + restoredText);
+
         totalB.setText("Total : "+String.valueOf(total));
+
         editText = findViewById(R.id.name);
         editText1 = findViewById(R.id.address);
         editText2 = findViewById(R.id.mobile);
         editText2.setText(restoredText);
         editText2.setEnabled(false);
+
         button = findViewById(R.id.postorder);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                button.setEnabled(false);
+
                 address = editText1.getText().toString();
                 name = editText.getText().toString();
                 mobile = editText2.getText().toString();
@@ -146,9 +154,11 @@ public class OrderDialog extends Dialog implements
                 list = new ArrayList<>();
                 mapl = new HashMap<>();
 
-                List<Cart> arraylist1 = new ArrayList<>();
                 for (String key : hashMap1.keySet()) {
-                    arraylist1.clear();
+
+                    List<Cart> arraylist1 = new ArrayList<>();
+//                    arraylist1.clear();
+
                     for(int i=0;i<myOrders.size();i++)
                     {
                         if(key.equals(myOrders.get(i).getHotelId()))
@@ -157,10 +167,14 @@ public class OrderDialog extends Dialog implements
                         }
                     }
                     mapl.put(key,arraylist1);
+
                 }
                 list.add(mapl);
 
                 final JsonArray jsonArray = new JsonArray();
+
+                Log.e(TAG, "onClick: " );
+                System.out.println(mapl);
 
                 for (String key : mapl.keySet()) {
                     Key1 = key;
@@ -171,7 +185,11 @@ public class OrderDialog extends Dialog implements
                     jsonObject.addProperty("mobile", mobile);
                     jsonObject.addProperty("hotel_id", Key1);
                     JsonArray jsonArray1 = new JsonArray();
-                    for (Cart cart : mapl.get(key)) {
+
+                    for (Cart cart : mapl.get(Key1)) {
+
+                        Log.e(TAG, "cart cart: ." );
+                        System.out.println(Key1);
 
                         JsonObject jsonObject3 = new JsonObject();
                         jsonObject3.addProperty("name", cart.getName());
@@ -189,6 +207,9 @@ public class OrderDialog extends Dialog implements
 
                 final String requestBody = jsonArray.toString();
 
+                Log.e(TAG, "onClick: ." );
+                System.out.println(requestBody);
+
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -196,16 +217,15 @@ public class OrderDialog extends Dialog implements
                         Log.e("VOLLEY","Ass");
 
                         try {
-
                             reference.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     for(DataSnapshot snapshot:dataSnapshot.getChildren()){
-                                        System.out.println(snapshot.getKey());
+//                                        System.out.println(snapshot.getKey());
                                         try {
                                             for (String keynsh : hashMap1.keySet()) {
                                                 if (keynsh.equals(snapshot.getKey())) {
-                                                    System.out.println(snapshot.getValue());
+//                                                    System.out.println(snapshot.getValue());
                                                     new RetrieveFeedTask(String.valueOf(snapshot.getValue())).execute();
                                                 }
                                             }
@@ -246,6 +266,7 @@ public class OrderDialog extends Dialog implements
                         Toast.makeText(activity,"Your order has been successfully placed",Toast.LENGTH_LONG).show();
 
                         dismiss();
+                        button.setEnabled(true);
 
                         myOrders.clear();
                         sharedPreferences = activity.getSharedPreferences("Myprefs", MODE_PRIVATE);
@@ -260,6 +281,8 @@ public class OrderDialog extends Dialog implements
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(activity,"Error in placing order",Toast.LENGTH_LONG).show();
                         dismiss();
+                        button.setEnabled(true);
+
                     }
                 }) {
                     @Override
@@ -304,11 +327,12 @@ public class OrderDialog extends Dialog implements
 
         protected String doInBackground(Void... urls) {
             try{
+
                 OkHttpClient client = new OkHttpClient();
                 MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-                RequestBody body = RequestBody.create(mediaType, "From=%2B16012029776&Body=YOU HAVE AN ORDER PLEASE CHECK&To=%2B91"+number+"&undefined=");
+                RequestBody body = RequestBody.create(mediaType, "Url=http%3A%2F%2Fdemo.twilio.com%2Fdocs%2Fvoice.xml&To=%2B91"+number+"&From=%2B16012029776&undefined=");
                 okhttp3.Request request = new okhttp3.Request.Builder()
-                        .url("https://api.twilio.com/2010-04-01/Accounts/AC67908b31996687c2360d064ad635256e/Messages.json")
+                        .url("https://api.twilio.com/2010-04-01/Accounts/AC67908b31996687c2360d064ad635256e/Calls.json")
                         .post(body)
                         .addHeader("Authorization", "Basic QUM2NzkwOGIzMTk5NjY4N2MyMzYwZDA2NGFkNjM1MjU2ZTo3NjY1ZWYyOTU5OWI5YjZkNmMyZGFmODU4OWZmODQ2MA==")
                         .addHeader("cache-control", "no-cache")
