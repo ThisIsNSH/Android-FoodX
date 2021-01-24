@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
             android:textColor="@color/color2"
-            android:text="Hello"
+            android:text="Processing"
             android:id="@+id/hello"
             android:textSize="30sp"/>
         <TextView
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
             android:textColor="@color/color2"
-            android:text="Friends"
+            android:text="Payment"
             android:id="@+id/friends"
             android:textSize="40sp"/>
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
             android:textColor="@color/color2"
-            android:text="Saamaan"
+            android:text="Please Wait"
             android:id="@+id/khana"
             android:textSize="50sp"/>
         <TextView
@@ -42,35 +42,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
             android:textColor="@color/color2"
-            android:text="Mangwalo!!"
+            android:text=""
             android:id="@+id/mang"
             android:textSize="60sp"/>
-        <TextView
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mang"
-            android:layout_centerHorizontal="true"
-            android:onClick="onLoginBtnClick"
-            android:text="Login"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:layout_margin="8dp"
-            android:fontFamily="@font/ps"
-            android:textColor="@color/color0"
-            android:background="@drawable/black_corner"
-            android:textSize="16dp" />
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mang"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/pb" />
-
     </RelativeLayout>
 
     <ImageView

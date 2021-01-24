@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
-import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class FirebaseLogin extends AppCompatActivity {
 //        number = mobile.getText().toString();
         pb = findViewById(R.id.pb);
         login_display = findViewById(R.id.image);
-        Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(login_display);
+        Picasso.get().load("https://pluspng.com/img-png/grocery-items-png-supermarket-coupons-png-image-12852-366.png").into(login_display);
         loginBtn = findViewById(R.id.login);
 //        progressBar = (ProgressBar) findViewById(R.id.login_progress);
 

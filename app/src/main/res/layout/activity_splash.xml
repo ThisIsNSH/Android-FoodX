@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/psb"
             android:textColor="@color/color2"
-            android:text="Khaana"
+            android:text="Saamaan"
             android:id="@+id/khana"
             android:textSize="50sp"/>
         <TextView

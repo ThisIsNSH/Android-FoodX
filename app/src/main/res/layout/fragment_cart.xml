@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"
         android:textColor="@color/color2"
-        android:text="Khana Mangwalo!!"
+        android:text="Saamaan Mangwalo!!"
         android:textSize="40sp"
         android:id="@+id/nilText"
         android:textAlignment="center"
@@ -36,7 +36,7 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:clipToPadding="false"
         android:layout_alignParentTop="true"

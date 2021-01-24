@@ -7,11 +7,11 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.LinearSnapHelper;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -35,8 +35,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -207,7 +205,7 @@ public class MenuActivity extends AppCompatActivity {
                 .headingTvText("Swipe Horizontally and Vertically")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))
                 .subHeadingTvSize(16)
-                .subHeadingTvText("See new categories by swiping horizontally and new item by swiping vertically")
+                .subHeadingTvText("See categories by swiping horizontally and items by swiping vertically")
                 .maskColor(Color.parseColor("#dc000000"))
                 .target(view)
                 .lineAnimDuration(400)

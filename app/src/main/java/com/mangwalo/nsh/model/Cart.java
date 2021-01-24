@@ -1,6 +1,8 @@
 package com.mangwalo.nsh.model;
 
-public class Cart {
+import java.io.Serializable;
+
+public class Cart implements Serializable {
 
     private String Name;
     private String Quantity;

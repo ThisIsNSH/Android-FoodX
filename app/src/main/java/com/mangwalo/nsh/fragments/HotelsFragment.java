@@ -10,10 +10,10 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -144,7 +144,7 @@ public class HotelsFragment extends Fragment {
                                 name = jsonObject.getString("name");
                                 location = jsonObject.getString("location");
                                 mobile = jsonObject.getString("mobile");
-                                hotelList.add(new Hotel(id, name, "https://i.dlpng.com/static/png/151888_preview.png", mobile, location));
+                                hotelList.add(new Hotel(id, name, "https://pluspng.com/img-png/grocery-items-png-supermarket-coupons-png-image-12852-366.png", mobile, location));
                             }
                             catch(JSONException e) {
                             }
@@ -172,10 +172,10 @@ public class HotelsFragment extends Fragment {
                 //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
                 .headingTvColor(Color.parseColor("#cddc39"))
                 .headingTvSize(32)
-                .headingTvText("Welcome To Mangwalo")
+                .headingTvText("Welcome To Kota Store")
                 .subHeadingTvColor(Color.parseColor("#cddc39"))
                 .subHeadingTvSize(16)
-                .subHeadingTvText("Mangwalo serves from different restaurants at same time. So now you can order anything from anywhere at same time.")
+                .subHeadingTvText("We serve different items at your door steps.")
                 .maskColor(Color.parseColor("#dc000000"))
                 .target(view)
                 .lineAnimDuration(400)

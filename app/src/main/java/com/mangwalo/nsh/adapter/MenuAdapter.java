@@ -4,10 +4,10 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +67,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         itemAdapter = new ItemAdapter(menu.getItemList(),context,hotelid,color);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         holder.recyclerView.setAdapter(itemAdapter);
-        Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(holder.image);
+        Picasso.get().load("https://pluspng.com/img-png/grocery-items-png-supermarket-coupons-png-image-12852-366.png").into(holder.image);
 
 
         holder.card.setOnClickListener(new View.OnClickListener() {

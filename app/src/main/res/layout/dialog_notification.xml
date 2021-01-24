@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView app:cardBackgroundColor="@color/white"
+<androidx.cardview.widget.CardView app:cardBackgroundColor="@color/white"
     app:cardUseCompatPadding="true"
     android:layout_centerInParent="true"
     app:cardCornerRadius="32dp"
@@ -56,4 +56,4 @@
 
 
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

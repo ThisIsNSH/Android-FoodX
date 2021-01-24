@@ -10,8 +10,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.res.ResourcesCompat;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.res.ResourcesCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,28 +69,28 @@ public class DetailsFragment extends Fragment {
         return view;
     }
     private void showIntro(View view, String usageId) {
-//        Typeface typeface = ResourcesCompat.getFont(getActivity(), R.font.psb);
-//        spotLight = new SpotlightView.Builder(getActivity())
-//                .introAnimationDuration(400)
-//                .enableRevealAnimation(true)
-//                .performClick(true)
-//                .fadeinTextDuration(400)
-//                .setTypeface(typeface)
-//                //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
-//                .headingTvColor(Color.parseColor("#cddc39"))
-//                .headingTvSize(32)
-//                .headingTvText("Details")
-//                .subHeadingTvColor(Color.parseColor("#cddc39"))
-//                .subHeadingTvSize(16)
-//                .subHeadingTvText("Read them carefully!")
-//                .maskColor(Color.parseColor("#dc000000"))
-//                .target(view)
-//                .lineAnimDuration(400)
-//                .lineAndArcColor(Color.parseColor("#ffffff"))
-//                .dismissOnTouch(true)
-//                .dismissOnBackPress(true)
-//                .enableDismissAfterShown(true)
-//                .usageId(usageId) //UNIQUE ID
-//                .show();
+        Typeface typeface = ResourcesCompat.getFont(getActivity(), R.font.psb);
+        spotLight = new SpotlightView.Builder(getActivity())
+                .introAnimationDuration(400)
+                .enableRevealAnimation(true)
+                .performClick(true)
+                .fadeinTextDuration(400)
+                .setTypeface(typeface)
+                //.setTypeface(FontUtil.get(this, "RemachineScript_Personal_Use"))
+                .headingTvColor(Color.parseColor("#cddc39"))
+                .headingTvSize(32)
+                .headingTvText("Details")
+                .subHeadingTvColor(Color.parseColor("#cddc39"))
+                .subHeadingTvSize(16)
+                .subHeadingTvText("Read them carefully!")
+                .maskColor(Color.parseColor("#dc000000"))
+                .target(view)
+                .lineAnimDuration(400)
+                .lineAndArcColor(Color.parseColor("#ffffff"))
+                .dismissOnTouch(true)
+                .dismissOnBackPress(true)
+                .enableDismissAfterShown(true)
+                .usageId(usageId) //UNIQUE ID
+                .show();
     }
 }

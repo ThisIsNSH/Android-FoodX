@@ -2,7 +2,7 @@ package com.mangwalo.nsh.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.mangwalo.nsh.R;
@@ -20,7 +20,7 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         ImageView image = findViewById(R.id.image);
-        Picasso.get().load("https://i.dlpng.com/static/png/151888_preview.png").into(image);
+        Picasso.get().load("https://pluspng.com/img-png/grocery-items-png-supermarket-coupons-png-image-12852-366.png").into(image);
 
         Thread timer = new Thread() {
             public void run() {
